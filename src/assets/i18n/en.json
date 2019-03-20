@@ -1,0 +1,10 @@
+{
+  "some": "some english",
+  "language": "English",
+  "portfolioPage": {
+    "title": "Portfolio",
+    "desc": {
+      "some text 3": "english text"
+    }
+  }
+}
