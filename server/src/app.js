@@ -6,7 +6,7 @@ import mongoose from 'mongoose';
 import  cors from 'cors';
 
 
-import userRoutes from './api/routes/user';
+import api from './api/routes/api';
 import adminRoutes from './admin/routes/admin';
 
 const app = express();
@@ -29,7 +29,8 @@ app.use(cors());
 
 app.use('/uploads', express.static(__dirname + '_uploads'));
 app.use('/admin', adminRoutes);
-app.use('/user', userRoutes);
+app.use('/api', api);
+
 
 
 

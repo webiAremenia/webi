@@ -2,80 +2,53 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="58ced441-2fc2-48f1-b47a-fdca25f7f633" name="Default" comment="first">
-      <change beforePath="$PROJECT_DIR$/.editorconfig" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/admin/configs/multer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/admin/controllers/media.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/admin/controllers/page.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/admin/controllers/portfolio.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/admin/controllers/post.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/admin/controllers/setting.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/admin/controllers/team.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/admin/models/Media.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/admin/models/Page.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/admin/models/Portfolio.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/admin/models/Post.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/admin/models/Setting.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/admin/models/Team.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/admin/routes/crud/media.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/admin/routes/crud/page.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/admin/routes/crud/portfolio.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/admin/routes/crud/post.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/admin/routes/crud/setting.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/admin/routes/crud/team.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/api/configs/multer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/api/controllers/media.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/api/controllers/page.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/api/controllers/portfolio.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/api/controllers/post.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/api/controllers/setting.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/api/controllers/team.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/api/models/Media.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/api/models/Page.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/api/models/Portfolio.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/api/models/Post.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/api/models/Setting.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/api/models/Team.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/api/routes/api.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/api/routes/crud/media.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/api/routes/crud/page.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/api/routes/crud/portfolio.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/api/routes/crud/post.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/api/routes/crud/setting.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/api/routes/crud/team.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/angular.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/e2e/protractor.conf.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/e2e/src/app.e2e-spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/e2e/src/app.po.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/e2e/tsconfig.e2e.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/app-routing.module.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/app.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/app.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/app.component.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/app.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/app.globals.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/app.module.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/_guards/auth.guard.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/_guards/auth.guard.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/_models/menu.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/_models/page.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/_models/portfolio.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/_models/setting.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/_models/tets.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/_services/contact.service.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/_services/media.service.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/_services/menu.service.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/_services/message.service.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/_services/page.service.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/_services/test.service.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/pages/about/about.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/pages/about/about.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/pages/about/about.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/pages/contact/contact.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/pages/contact/contact.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/pages/contact/contact.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/pages/home/home.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/pages/home/home.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/pages/home/home.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/pages/pages/pages.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/pages/pages/pages.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/pages/pages/pages.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/pages/portfolio/portfolio.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/pages/portfolio/portfolio.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/pages/portfolio/portfolio.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/partials/footer/footer.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/partials/footer/footer.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/partials/footer/footer.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/partials/message/message.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/partials/message/message.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/partials/message/message.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/partials/top-menu/top-menu.component.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/partials/top-menu/top-menu.component.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/components/partials/top-menu/top-menu.component.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/.gitkeep" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/i18n/en.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/i18n/ru.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/Mask Group 3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/Mask Group 3@2x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/Mask Group 3@3x.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/browserslist" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/environments/environment.prod.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/environments/environment.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/favicon.ico" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/karma.conf.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/polyfills.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/styles.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tsconfig.app.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tsconfig.spec.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tslint.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tslint.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/admin/controller/admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/admin/controllers/admin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/admin/model/admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/admin/models/admin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/admin/routes/admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/admin/routes/admin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/api/controllers/user/user.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/api/models/user/user.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/api/routes/user.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/app.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/dist/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -88,67 +61,31 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/.gitignore">
-          <provider selected="true" editor-type-id="text-editor" />
+        <entry file="file://$PROJECT_DIR$/server/src/app.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-218">
+              <caret line="8" column="14" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/server/src/api/routes/api.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="306">
+              <caret line="18" column="24" lean-forward="true" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
+              <folding>
+                <element signature="e#65#98#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/server/src/admin/routes/admin.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="32" column="32" selection-start-line="32" selection-start-column="32" selection-end-line="32" selection-end-column="32" />
-              <folding>
-                <element signature="e#0#30#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/src/admin/model/admin.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <folding>
-                <element signature="e#0#32#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/src/admin/controller/admin.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <folding>
-                <element signature="e#0#35#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/src/app.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-102">
-              <caret line="9" selection-start-line="9" selection-end-line="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/nodemon.json">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="3" column="56" selection-start-line="3" selection-start-column="56" selection-end-line="3" selection-end-column="56" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/server/src/api/routes/user.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="680">
-              <caret line="40" selection-start-line="40" selection-end-line="40" />
+            <state relative-caret-position="510">
+              <caret line="43" column="26" lean-forward="true" selection-start-line="43" selection-start-column="26" selection-end-line="43" selection-end-column="26" />
               <folding>
                 <element signature="e#0#30#0" expanded="true" />
               </folding>
@@ -164,13 +101,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/angular.json" />
-        <option value="$PROJECT_DIR$/node_modules/rxjs/internal/types.d.ts" />
-        <option value="$PROJECT_DIR$/package.json" />
-        <option value="$PROJECT_DIR$/src/app/components/partials/footer/footer.component.html" />
-        <option value="$PROJECT_DIR$/src/app/components/partials/footer/footer.component.css" />
-        <option value="$PROJECT_DIR$/src/app/app.component.css" />
-        <option value="$PROJECT_DIR$/src/app/components/pages/home/home.component.html" />
         <option value="$PROJECT_DIR$/src/app/components/_services/media.service.ts" />
         <option value="$PROJECT_DIR$/src/app/components/_services/test.service.spec.ts" />
         <option value="$PROJECT_DIR$/src/app/components/models/tets.ts" />
@@ -212,7 +142,16 @@
         <option value="$PROJECT_DIR$/server/src/api/routes/user.js" />
         <option value="$PROJECT_DIR$/server/nodemon.json" />
         <option value="$PROJECT_DIR$/server/src/app.js" />
+        <option value="$PROJECT_DIR$/server/src/admin/routes/crud/media.js" />
+        <option value="$PROJECT_DIR$/server/src/admin/models/Media.js" />
+        <option value="$PROJECT_DIR$/server/src/admin/models/Page.js" />
+        <option value="$PROJECT_DIR$/server/src/admin/models/Portfolio.js" />
+        <option value="$PROJECT_DIR$/server/src/admin/models/Post.js" />
+        <option value="$PROJECT_DIR$/server/src/admin/models/Setting.js" />
+        <option value="$PROJECT_DIR$/server/src/admin/models/Team.js" />
         <option value="$PROJECT_DIR$/server/src/admin/routes/admin.js" />
+        <option value="$PROJECT_DIR$/server/src/admin/controllers/admin.js" />
+        <option value="$PROJECT_DIR$/server/src/api/routes/api.js" />
       </list>
     </option>
   </component>
@@ -238,6 +177,50 @@
             <path>
               <item name="webi" type="b2602c69:ProjectViewProjectNode" />
               <item name="webi" type="462c0819:PsiDirectoryNode" />
+              <item name="front" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="webi" type="b2602c69:ProjectViewProjectNode" />
+              <item name="webi" type="462c0819:PsiDirectoryNode" />
+              <item name="front" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="webi" type="b2602c69:ProjectViewProjectNode" />
+              <item name="webi" type="462c0819:PsiDirectoryNode" />
+              <item name="front" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="webi" type="b2602c69:ProjectViewProjectNode" />
+              <item name="webi" type="462c0819:PsiDirectoryNode" />
+              <item name="front" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="webi" type="b2602c69:ProjectViewProjectNode" />
+              <item name="webi" type="462c0819:PsiDirectoryNode" />
+              <item name="front" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="webi" type="b2602c69:ProjectViewProjectNode" />
+              <item name="webi" type="462c0819:PsiDirectoryNode" />
+              <item name="front" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="partials" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="webi" type="b2602c69:ProjectViewProjectNode" />
+              <item name="webi" type="462c0819:PsiDirectoryNode" />
               <item name="server" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -245,29 +228,6 @@
               <item name="webi" type="462c0819:PsiDirectoryNode" />
               <item name="server" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="webi" type="b2602c69:ProjectViewProjectNode" />
-              <item name="webi" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="webi" type="b2602c69:ProjectViewProjectNode" />
-              <item name="webi" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="webi" type="b2602c69:ProjectViewProjectNode" />
-              <item name="webi" type="462c0819:PsiDirectoryNode" />
-              <item name="server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="admin" type="462c0819:PsiDirectoryNode" />
-              <item name="routes" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="webi" type="b2602c69:ProjectViewProjectNode" />
@@ -275,6 +235,19 @@
               <item name="server" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="api" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="webi" type="b2602c69:ProjectViewProjectNode" />
+              <item name="webi" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+              <item name="routes" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="webi" type="b2602c69:ProjectViewProjectNode" />
+              <item name="webi" type="462c0819:PsiDirectoryNode" />
+              <item name="Webi Back" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -293,13 +266,18 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="com.chrisrm.idea.config" />
-    <property name="ts.external.directory.path" value="C:\Users\Modeling\Desktop\angular\webi\node_modules\typescript\lib" />
+    <property name="ts.external.directory.path" value="C:\Users\Modeling\Desktop\angular\webi\front\node_modules\typescript\lib" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Modeling\Desktop\angular\webi" />
+      <recent name="C:\Users\Modeling\Desktop\angular\webi\server\src\admin" />
+      <recent name="C:\Users\Modeling\Desktop\angular\webi\server\src\admin\routes" />
+      <recent name="C:\Users\Modeling\Desktop\angular\webi\server\src\admin\model" />
+      <recent name="C:\Users\Modeling\Desktop\angular\webi\server\src\admin\controller" />
+      <recent name="C:\Users\Modeling\Desktop\angular\webi\server\src\api" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Modeling\Desktop\angular\webi\server\src\api\routes\crud" />
       <recent name="C:\Users\Modeling\Desktop\angular\webi" />
       <recent name="C:\Users\Modeling\Desktop\angular\webi\front" />
     </key>
@@ -342,12 +320,20 @@
       <workItem from="1552205207561" duration="2266000" />
       <workItem from="1552315609093" duration="599000" />
       <workItem from="1553674036601" duration="1628000" />
-      <workItem from="1553675912127" duration="635000" />
+      <workItem from="1553675912127" duration="9396000" />
     </task>
+    <task id="LOCAL-00001" summary="first">
+      <created>1553676691076</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1553676691076</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="88254000" />
+    <option name="totallyTimeSpent" value="97015000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -367,7 +353,7 @@
       <window_info anchor="bottom" id="TODO" order="7" />
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.33694476" />
+      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.1375948" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="12" weight="0.32936078" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -379,33 +365,11 @@
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="first" />
+    <option name="LAST_COMMIT_MESSAGE" value="first" />
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/app/app.component.css" />
-    <entry file="file://$PROJECT_DIR$/src/app/components/partials/footer/footer.component.html" />
-    <entry file="file://$PROJECT_DIR$/src/app/components/partials/footer/footer.component.css" />
-    <entry file="file://$PROJECT_DIR$/src/app/components/_services/test.service.spec.ts" />
-    <entry file="file://$PROJECT_DIR$/src/app/components/_services/media.service.ts" />
-    <entry file="file://$PROJECT_DIR$/src/app/components/_services/message.service.ts" />
-    <entry file="file://$PROJECT_DIR$/src/app/components/partials/message/message.component.html" />
-    <entry file="file://$PROJECT_DIR$/src/app/components/partials/message/message.component.ts" />
-    <entry file="file://$PROJECT_DIR$/package.json" />
-    <entry file="file://$PROJECT_DIR$/src/app/components/_services/test.service.ts" />
-    <entry file="file://$PROJECT_DIR$/src/main.ts" />
-    <entry file="file://$PROJECT_DIR$/src/app/components/pages/page-detail/page-detail.component.html" />
-    <entry file="file://$PROJECT_DIR$/src/app/components/pages/page-detail/page-detail.component.ts" />
-    <entry file="file://$PROJECT_DIR$/src/app/app.module.ts" />
-    <entry file="file://$PROJECT_DIR$/src/app/components/pages/contact/contact.component.ts" />
-    <entry file="file://$PROJECT_DIR$/src/app/components/pages/home/home.component.ts" />
-    <entry file="file://$PROJECT_DIR$/src/app/components/pages/home/home.component.html" />
-    <entry file="file://$PROJECT_DIR$/src/app/components/_services/contact.service.ts" />
-    <entry file="file://$PROJECT_DIR$/src/app/components/_guards/auth.guard.ts" />
-    <entry file="file://$PROJECT_DIR$/src/app/app-routing.module.ts" />
-    <entry file="file://$PROJECT_DIR$/src/app/components/pages/contact/contact.component.html" />
-    <entry file="file://$PROJECT_DIR$/src/app/app.component.ts" />
-    <entry file="file://$PROJECT_DIR$/src/app/components/pages/pages/pages.component.html" />
-    <entry file="file://$PROJECT_DIR$/src/index.html" />
-    <entry file="file://$PROJECT_DIR$/src/app/components/pages/pages/pages.component.ts" />
-    <entry file="file://$PROJECT_DIR$/src/assets/i18n/ru.json" />
     <entry file="file://$PROJECT_DIR$/src/app/components/pages/portfolio/portfolio.component.html" />
     <entry file="file://$PROJECT_DIR$/src/app/components/pages/portfolio/portfolio.component.ts" />
     <entry file="file://$PROJECT_DIR$/src/app/components/_models/menu.ts" />
@@ -427,25 +391,6 @@
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/src/admin/model/admin.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/src/api/routes/user.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="680">
-          <caret line="40" selection-start-line="40" selection-end-line="40" />
-          <folding>
-            <element signature="e#0#30#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server/nodemon.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -453,26 +398,201 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/src/app.js">
+    <entry file="file://$PROJECT_DIR$/server/src/api/routes/user.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-102">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        <state relative-caret-position="632">
+          <caret line="40" selection-start-line="40" selection-end-line="40" />
+          <folding>
+            <element signature="e#0#30#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/src/admin/controller/admin.js">
+    <entry file="file://$PROJECT_DIR$/server/src/api/routes/crud/page.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/api/models/Page.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/api/controllers/page.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/api/configs/multer.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/api/routes/crud/post.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Webi Back/Webi Back/admin/controllers/admin.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="821">
+          <caret line="63" column="18" lean-forward="true" selection-start-line="63" selection-start-column="18" selection-end-line="63" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/admin/controllers/media.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/admin/routes/crud/page.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/admin/configs/multer.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/node_modules/babel-register/lib/node.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="143" column="4" selection-start-line="143" selection-start-column="4" selection-end-line="143" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/admin/routes/crud/media.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="24" selection-start-line="17" selection-start-column="24" selection-end-line="17" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/admin/models/Media.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="15" column="3" selection-start-line="15" selection-start-column="3" selection-end-line="15" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/admin/models/Page.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="369">
+          <caret line="33" column="33" selection-start-line="33" selection-start-column="33" selection-end-line="33" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/admin/models/Portfolio.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="369">
+          <caret line="33" column="43" selection-start-line="33" selection-start-column="43" selection-end-line="33" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/admin/models/Post.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="369">
+          <caret line="32" column="33" selection-start-line="32" selection-start-column="33" selection-end-line="32" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/admin/models/Setting.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="39" selection-start-line="17" selection-start-column="39" selection-end-line="17" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/admin/models/Team.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="369">
+          <caret line="37" column="33" selection-start-line="37" selection-start-column="33" selection-end-line="37" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/src/app/app.module.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-474">
+          <folding>
+            <element signature="e#0#56#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/src/app/app.globals.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/admin/models/admin.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-209">
+          <folding>
+            <element signature="e#0#32#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/admin/controllers/admin.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="647">
+          <caret line="100" lean-forward="true" selection-start-line="100" selection-end-line="100" />
+          <folding>
+            <element signature="e#0#36#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/src/app/components/_services/page.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-612">
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/src/app/components/_services/message.service.ts">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/src/app/components/_services/menu.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-102">
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/src/app/components/_services/media.service.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <folding>
-            <element signature="e#0#35#0" expanded="true" />
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/src/app/components/_services/test.service.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-204">
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/front/src/app/components/_services/contact.service.ts">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-218">
+          <caret line="8" column="14" selection-start-line="8" selection-start-column="14" selection-end-line="8" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server/src/api/routes/api.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" column="24" lean-forward="true" selection-start-line="18" selection-start-column="24" selection-end-line="18" selection-end-column="24" />
+          <folding>
+            <element signature="e#65#98#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/src/admin/routes/admin.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="32" column="32" selection-start-line="32" selection-start-column="32" selection-end-line="32" selection-end-column="32" />
+        <state relative-caret-position="510">
+          <caret line="43" column="26" lean-forward="true" selection-start-line="43" selection-start-column="26" selection-end-line="43" selection-end-column="26" />
           <folding>
             <element signature="e#0#30#0" expanded="true" />
           </folding>

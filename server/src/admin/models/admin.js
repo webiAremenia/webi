@@ -19,7 +19,7 @@ const AdminSchema = new Schema({
 });
 
 
-// Export the model
+// Export the models
 module.exports = mongoose.model('Admin', AdminSchema);
 
 module.exports.getToken = function (admin) {

@@ -1,4 +1,4 @@
-import Admin from '../model/admin';
+import Admin from '../models/admin';
 import bcrypt from 'bcrypt';
 import helper from '../../_helpers/functions';
 
@@ -97,3 +97,4 @@ exports.delete = (req, res, next) => {
 
 
 };
+

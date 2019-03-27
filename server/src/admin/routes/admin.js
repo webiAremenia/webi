@@ -2,8 +2,13 @@ import express from 'express';
 
 import checkAuth from '../middleware/check-auth';
 
-import controller from '../controller/admin';
-
+import controller from '../controllers/admin';
+import media from './crud/media';
+import page from './crud/page';
+import portfolio from './crud/portfolio';
+import post from './crud/post';
+import setting from './crud/setting';
+import team from './crud/team';
 import multer from "multer";
 
 const router = express.Router();
@@ -25,12 +30,22 @@ const upload = multer({storage: storage});
 //=======================  Admin CRUD  =====================================
 //==========================================================================
 
+router.post('/create' ,controller.create);
 router.post('/login', controller.login);
 router.use('/', checkAuth );
 // Grouping routes
-router.post('/create' ,controller.create);
+
 router.put('/update/:adminId', controller.update);
 router.delete('/delete/:adminId', controller.delete);
+
+
+
+router.use('/media', media);
+router.use('/page', page);
+router.use('/portfolio', portfolio);
+router.use('/post', post);
+router.use('/setting', setting);
+router.use('/team', team);
 
 
 module.exports = router;
