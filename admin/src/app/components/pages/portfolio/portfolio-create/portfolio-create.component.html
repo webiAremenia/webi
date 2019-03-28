@@ -1,0 +1,57 @@
+<div class="container ">
+  <div class="row">
+    <div class="col-md-10 offset-1">
+      <h2 class="text-center">Create Portfolio</h2>
+      <form [formGroup]="porfolioForm">
+
+        <div class="form-group">
+          <label for="image">Image: <span class="invalid">(required) </span> </label>
+          <br>
+          <input type="file" id="image" (change)="onFileChange($event)" #fileInput>
+          <p *ngIf="porfolioForm.get('img').invalid && porfolioForm.get('img').touched" class="invalid">Type true
+            Img</p>
+        </div>
+
+        <div class="form-group">
+          <label>Url: </label>
+          <input type="text" placeholder="Url" class="form-control" formControlName="url">
+          <p *ngIf="porfolioForm.get('url').invalid && porfolioForm.get('url').touched" class="invalid">Type true
+            Url</p>
+
+        </div>
+          <button class="btn btn-primary" (click)="changeLanguage('en')">en</button>
+          <button class="btn btn-primary ml-1" (click)="changeLanguage('ru')">ru</button>
+          <button class="btn btn-primary ml-1" (click)="changeLanguage('am')">am</button>
+          <br>
+        <div class="form-group">
+          <label>Title: </label>
+          <input type="text" placeholder="en" class="form-control" formControlName="enTitle" *ngIf="language=='en'">
+          <input type="text" placeholder="ru" class="form-control" formControlName="ruTitle" *ngIf="language=='ru'">
+          <input type="text" placeholder="am" class="form-control" formControlName="amTitle" *ngIf="language=='am'">
+          <p *ngIf="porfolioForm.get('enTitle').invalid && porfolioForm.get('enTitle').touched" class="invalid">Type en
+            Title</p>
+
+        </div>
+
+
+        <div class="form-group">
+          <label>Description: </label>
+
+          <ckeditor *ngIf="language=='en'" tagName="input" formControlName="enDescription" [editor]="Editor"></ckeditor>
+          <ckeditor *ngIf="language=='ru'" tagName="input" formControlName="ruDescription" [editor]="Editor"></ckeditor>
+          <ckeditor *ngIf="language=='am'" tagName="input" formControlName="amDescription" [editor]="Editor"></ckeditor>
+
+          <p *ngIf="porfolioForm.get('enDescription').invalid && porfolioForm.get('enDescription').touched"
+             class="invalid">Type en Description</p>
+
+
+        </div>
+
+
+        <button type="button" class="btn btn-info" (click)="myPortfolio()" [disabled]="!porfolioForm.valid">Create <i
+          class="fa fa-check"></i></button>
+      </form>
+    </div>
+
+  </div>
+</div>

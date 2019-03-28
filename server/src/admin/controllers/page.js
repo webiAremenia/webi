@@ -105,7 +105,7 @@ module.exports.update = async (req, res) => {
                 })
             } else {
                 if (req.file) {
-                    fs.unlink(`./public/assets/img/page/${result.banner}`, (err) => {
+                    fs.unlink(__dirname + `/../../_uploads/page/${result.banner}`, (err) => {
                         if (err) {
                             console.log(err)
                         }
@@ -138,7 +138,7 @@ module.exports.delete = (req, res) => {
                             msg: "Page not found with id " + req.params.id
                         })
                     } else {
-                        fs.unlink(`./public/assets/img/page/${result.banner}`, (err) => {
+                        fs.unlink(__dirname + `/../../_uploads/page/${result.banner}`, (err) => {
                             if (err) {
                                 console.log(err)
                             }

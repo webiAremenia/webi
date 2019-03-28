@@ -1,0 +1,9 @@
+.max{
+  max-width: 30%;
+}
+
+
+.invalid{
+  text-decoration: none;
+  color: red;
+}
