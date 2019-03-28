@@ -1,5 +1,7 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { CarouselModule } from 'ngx-owl-carousel-o';
 
 import {HttpClientModule, HttpClient} from '@angular/common/http';
 import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
@@ -18,6 +20,18 @@ import {Globals} from './app.globals';
 import {MessageComponent} from './components/partials/message/message.component';
 import {PagesComponent} from './components/pages/pages/pages.component';
 import {RouterModule, RouterStateSnapshot} from '@angular/router';
+import { AllPortfoliosComponent } from './components/pages/portfolio/all-portfolios/all-portfolios.component';
+import { ScrollSpyDirective } from './components/_directives/scroll-spy.directive';
+import { IntroductionComponent } from './components/pages/pages/introduction/introduction.component';
+import { SidebarComponent } from './components/partials/sidebar/sidebar.component';
+import { SliderComponent } from './components/partials/slider/slider.component';
+import { TeamComponent } from './components/pages/pages/team/team.component';
+import { AllTeamComponent } from './components/pages/pages/team/all-team/all-team.component';
+import { BlogComponent } from './components/pages/pages/blog/blog.component';
+import { BlogDetailesComponent } from './components/pages/pages/blog/blog-detailes/blog-detailes.component';
+import { ProcessComponent } from './components/pages/pages/process/process.component';
+import { SuggestComponent } from './components/pages/pages/suggest/suggest.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -34,12 +48,26 @@ export function HttpLoaderFactory(http: HttpClient) {
     FooterComponent,
     PortfolioComponent,
     MessageComponent,
-    PagesComponent
+    PagesComponent,
+    AllPortfoliosComponent,
+    ScrollSpyDirective,
+    IntroductionComponent,
+    SidebarComponent,
+    SliderComponent,
+    TeamComponent,
+    AllTeamComponent,
+    BlogComponent,
+    BlogDetailesComponent,
+    ProcessComponent,
+    SuggestComponent
   ],
   imports: [
+    BrowserAnimationsModule,
+    NgbModule,
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
+    CarouselModule,
     RouterModule.forRoot([]),
     TranslateModule.forRoot({
       loader: {
