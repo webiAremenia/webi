@@ -46,11 +46,11 @@ app.get('/admin-panel/*', function(req,res) {
     res.sendFile(path.join(__dirname + '/../admin/dist/Project/index.html'));
 });
 app.get('/', function(req,res) {
-    res.sendFile(path.join(__dirname + '/../client/dist/front/index.html'));
+    res.sendFile(path.join(__dirname + '/../front/dist/front/index.html'));
 });
 
 app.get('/*', function(req,res) {
-    res.sendFile(path.join(__dirname + '/../client/dist/front/index.html'));
+    res.sendFile(path.join(__dirname + '/../front/dist/front/index.html'));
 });
 
 
