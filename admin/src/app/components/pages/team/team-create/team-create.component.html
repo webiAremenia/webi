@@ -1,0 +1,66 @@
+<div class="container ">
+  <div class="row">
+    <div class="col-md-10 offset-1">
+      <h2 class="text-center">Create Team</h2>
+      <form [formGroup]="teamForm">
+
+        <div class="form-group">
+          <label for="image">Avatar: <span class="invalid">(required) </span> </label>
+          <br>
+          <input type="file" id="image" (change)="onFileChange($event)" #fileInput>
+          <p *ngIf="teamForm.get('img').invalid && teamForm.get('img').touched" class="invalid">Type true
+            Img</p>
+        </div>
+
+        <button class="btn btn-primary" (click)="changeLanguage('en')">en</button>
+        <button class="btn btn-primary ml-1" (click)="changeLanguage('ru')">ru</button>
+        <button class="btn btn-primary ml-1" (click)="changeLanguage('am')">am</button>
+        <br>
+
+        <div class="form-group">
+          <label>Full Name: </label>
+          <input type="text" placeholder="en" class="form-control" formControlName="enFullName" *ngIf="language=='en'">
+          <input type="text" placeholder="ru" class="form-control" formControlName="ruFullName" *ngIf="language=='ru'">
+          <input type="text" placeholder="am" class="form-control" formControlName="amFullName" *ngIf="language=='am'">
+          <p *ngIf="teamForm.get('enFullName').invalid && teamForm.get('enFullName').touched" class="invalid">Type en
+            Full Name</p>
+
+        </div>
+
+
+        <div class="form-group">
+          <label>Position: </label>
+          <input type="text" placeholder="en" class="form-control" formControlName="enPosition" *ngIf="language=='en'">
+          <input type="text" placeholder="ru" class="form-control" formControlName="ruPosition" *ngIf="language=='ru'">
+          <input type="text" placeholder="am" class="form-control" formControlName="amPosition" *ngIf="language=='am'">
+          <p *ngIf="teamForm.get('enPosition').invalid && teamForm.get('enPosition').touched" class="invalid">Type en
+            Position</p>
+
+
+        </div>
+
+        <div class="form-group">
+          <label>Info: </label>
+
+          <ckeditor *ngIf="language=='en'" tagName="input" formControlName="enInfo" [editor]="Editor"></ckeditor>
+          <ckeditor *ngIf="language=='ru'" tagName="input" formControlName="ruInfo" [editor]="Editor"></ckeditor>
+          <ckeditor *ngIf="language=='am'" tagName="input" formControlName="amInfo" [editor]="Editor"></ckeditor>
+
+          <p *ngIf="teamForm.get('enInfo').invalid && teamForm.get('enInfo').touched"
+             class="invalid">Type en Description</p>
+        </div>
+
+        <div class="form-group">
+          <label>Sort:</label>
+          <input type="number" placeholder="sort" class="form-control" formControlName="sort">
+          <p *ngIf="teamForm.get('sort').invalid && teamForm.get('sort').touched"  class="invalid">Type true english Value</p>
+        </div>
+
+
+        <button type="button" class="btn btn-info" (click)="myPage()" [disabled]="!teamForm.valid">Create <i
+          class="fa fa-check"></i></button>
+      </form>
+    </div>
+
+  </div>
+</div>

@@ -27,7 +27,7 @@ app.use(bodyParser.json());
 
 app.use(cors());
 
-app.use('/uploads', express.static(__dirname + '_uploads'));
+app.use('/uploads', express.static(__dirname + '/_uploads'));
 app.use('/admin', adminRoutes);
 app.use('/api', api);
 

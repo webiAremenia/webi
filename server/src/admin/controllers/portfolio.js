@@ -13,7 +13,7 @@ module.exports.getAll = (req, res) => {
         .catch(e => console.log(e))
 };
 
-module.exports.getOne =  (req, res) => {
+module.exports.getOne = (req, res) => {
     Portfolio.findOne({_id: req.params.id})
         .then(result => {
             if (!result) {
@@ -37,15 +37,14 @@ module.exports.getOne =  (req, res) => {
 };
 
 
-module.exports.create =  (req, res) => {
+module.exports.create = (req, res) => {
     if (!req.file) {
         return res.status(500).json({
-            success : false,
-            msg : "error"
+            success: false,
+            msg: "error"
         })
     }
 
-    console.log(req.body)
 
     const portfolio = new Portfolio({
         url: req.body.url,
@@ -69,7 +68,7 @@ module.exports.create =  (req, res) => {
         });
 };
 
-module.exports.update =  (req, res) => {
+module.exports.update = (req, res) => {
     let update = req.body;
     if (!req.body) {
         return res.status(400).send({
@@ -99,7 +98,7 @@ module.exports.update =  (req, res) => {
                 })
             } else {
                 if (req.file) {
-                    fs.unlink(`./public/assets/img/portfolio/${result.image}`, (err) => {
+                    fs.unlink(__dirname + `/../../_uploads/portfolio/${result.image}`, (err) => {
                         if (err) {
                             console.log(err)
                         }
@@ -132,7 +131,7 @@ module.exports.delete = (req, res) => {
                             msg: "Portfolio not found with id " + req.params.id
                         })
                     } else {
-                        fs.unlink(`./public/assets/img/portfolio/${result.image}`, (err) => {
+                        fs.unlink(__dirname + `/../../_uploads/portfolio/${result.image}`, (err) => {
                             if (err) {
                                 console.log(err)
                             }
@@ -140,7 +139,7 @@ module.exports.delete = (req, res) => {
                         res.status(200).json({
                             success: true,
                             msg: "Portfolio deleted successfully!",
-                            result : result
+                            result: result
                         });
                     }
                 })
