@@ -1,0 +1,51 @@
+.container{
+  height: auto;
+  color:white;
+  font-family: Arial;
+  margin-left: 180px;
+}
+.col-5 p a{
+  text-decoration: none;
+  color: white;
+  transition: 2ms ease;
+}
+.col-5 p a:hover{
+  color:grey;
+}
+.line{
+  width: 100px;
+  border: 1px solid lightgrey;
+  margin: 20px 0;
+}
+.one{
+  height: 676px;
+  background-color:#1c488e;
+}
+h6{
+  text-align: center;
+}
+.one img, .two img{
+  width: 160px;
+  height: 160px;
+  margin:30px 50px;
+}
+.col-3 p{
+  margin: 10px;
+}
+.one a img{
+  width: 50px;
+  height: 30px;
+  margin-left: 180px;
+  margin-top: 100px;
+}
+.second{
+  height: 148px;
+}
+.second a img{
+  width: 65px;
+  height: 40px;
+  margin-top: 50px;
+}
+.secongImage{
+  transform: rotateY(180deg);
+}

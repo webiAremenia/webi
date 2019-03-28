@@ -1,0 +1,48 @@
+.sectionOne{
+  display: grid;
+  grid-template-columns: repeat(2, 560px);
+  grid-template-rows: repeat(1, 478px);
+  grid-gap: 20px;
+}
+.sectionTwo{
+  display: grid;
+  grid-template-columns: repeat(4, 250px);
+  grid-template-rows: repeat(1, 450px);
+  grid-gap: 20px;
+}
+.menu{
+  margin-left: 400px;
+}
+.menu li{
+  display: inline-block;
+  font-size: 18px;
+  padding: 50px;
+}
+.menu li a{
+  color: #B2C3DF;
+}
+.menu li a:focus{
+  color: #ffffff;
+}
+.menu li a:active{
+  color: #ffffff;
+}
+.box{
+  color:white;
+}
+.sectionOne img{
+  width: 100%;
+  height: 100%;
+}
+.sectionTwo{
+ margin: 160px 50px;
+  color: white;
+}
+.cardBox img{
+  border-radius: 5px;
+  height: 150px;
+  width: 100%;
+}
+.card-body{
+  height: 180px;
+}

@@ -1,0 +1,12 @@
+
+body, html {
+  overflow: hidden;
+}
+#parentDiv{
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+#section7{
+  height: 100vh;
+}
