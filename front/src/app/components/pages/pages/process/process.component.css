@@ -1,0 +1,26 @@
+.container{
+  height: 100vh;
+  color:white;
+  font-family: Arial;
+  margin-left: 180px;
+}
+.col-5{
+  padding-top: 100px;
+}
+.line{
+  width: 100px;
+  border: 1px solid lightgrey;
+  margin: 20px 0;
+}
+.one{
+  height: 100vh;
+  padding-top: 100px;
+  background-color:#4076cc;
+}
+.two{
+  padding-top: 100px;
+}
+
+h6{
+  padding: 10px 0 30px 0;
+}

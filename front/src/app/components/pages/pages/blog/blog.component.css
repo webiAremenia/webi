@@ -1,0 +1,43 @@
+.container{
+  display: grid;
+  grid-template-columns: repeat(2, 560px);
+  grid-template-rows: repeat(3, 478px);
+  grid-gap: 20px;
+}
+.card{
+  color: #3966ae;
+  border-radius: 5px;
+}
+.card img{
+  height: 260px;
+  width: 100%;
+}
+.menu{
+  margin:50px 400px;
+}
+.menu li{
+  display: inline-block;
+  font-size: 18px;
+  padding: 50px;
+}
+.menu li a{
+  color: #B2C3DF;
+}
+.menu li a:focus{
+  color: #ffffff;
+}
+.menu li a:active{
+  color: #ffffff;
+}
+.col-12{
+  text-align: center;
+}
+button{
+  color:white;
+  margin-top:30px;
+  margin-bottom: 110px;
+  background: none;
+  border:none;
+
+
+}

@@ -1,1 +1,50 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #3966ae;
+  max-width: 1440px;
+}
+
+body, html {
+  overflow-x: hidden;
+}
+
+#slider .owl-next, #slider .owl-prev{
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+#slider .owl-next{
+  right: -80px;
+  top: 45px;
+  background: #5582CA;
+}
+#slider .owl-prev{
+  right: -80px;
+  top: 85px;
+  background: white;
+}
+
+/*.modal-content{*/
+/*transform: scale(.3);*/
+/*}*/
+.modal-content{
+  -webkit-animation-name: zoom;
+  -webkit-animation-duration: 0.6s;
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+@-webkit-keyframes zoom {
+  from {-webkit-transform: scale(0)}
+  to {-webkit-transform: scale(1)}
+}
+
+@keyframes zoom {
+  from {transform: scale(0.1)}
+  to {transform: scale(1)}
+}
