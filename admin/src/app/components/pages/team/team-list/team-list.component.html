@@ -1,0 +1,49 @@
+<div class="d-flex">
+  <div class="mr-auto p-2">
+    <button class="btn btn-primary" routerLink="/admin/team/create">Create Team</button>
+
+  </div>
+  <div class="p-2">
+    <input class="mr-sm-2" type="text" placeholder="Search" aria-label="Search" [(ngModel)]="searchTerm">
+  </div>
+</div>
+
+
+<br>
+<table class="table table-dark table-hover table-striped">
+  <thead class="thead-light">
+  <tr>
+    <th>_id</th>
+    <th>FullName</th>
+    <th>Position</th>
+    <th>Sort</th>
+    <th></th>
+  </tr>
+  </thead>
+  <tbody [sortablejs]="team" [sortablejsOptions]="options">
+
+  <tr *ngFor="let team of teams | titleFilter: searchTerm; let i = index">
+
+    <td>{{team._id}}</td>
+    <td>{{team.fullName.en}}</td>
+    <td>{{team.position.en}}</td>
+    <td>{{team.sort}}</td>
+
+    <td>
+      <button [routerLink]="['/admin/team', team._id]" (click)="viewTeam(team)" class="btn btn-info"><i
+        class="fas fa-eye"></i></button>
+
+      <button (click)="updateTeam(team)" style="margin-left: 20px;" class="btn btn-primary"><i
+        class="far fa-edit"></i></button>
+
+      <button (click)="deleteTeam(team,i)" style="margin-left: 20px;" class="btn btn-danger"><i
+        class="fa fa-times"></i>
+      </button>
+    </td>
+  </tr>
+  </tbody>
+</table>
+<div class="d-flex flex-row-reverse">
+  <button class="btn btn-success" (click)="save()">Save</button>
+</div>
+

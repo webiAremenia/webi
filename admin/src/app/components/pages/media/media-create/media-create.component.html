@@ -1,0 +1,48 @@
+<div class="container ">
+  <div class="row">
+    <div class="col-md-10 offset-1">
+      <h2 class="text-center">Create Media</h2>
+      <form [formGroup]="mediaForm">
+
+        <div class="form-group">
+          <label for="image">Image:  <span class="invalid">(required) </span></label>
+          <br>
+          <input type="file" id="image" (change)="onFileChange($event)" #fileInput>
+          <p *ngIf="mediaForm.get('img').invalid && mediaForm.get('img').touched" class="invalid">Type true Img</p>
+        </div>
+
+        <p>Category:</p>
+        <select class="form-control" formControlName="category">
+          <option value="{{i}}" *ngFor="let category of categories; let i = index">{{category}}</option>
+        </select>
+        <p *ngIf="mediaForm.get('category').invalid && mediaForm.get('category').touched"  class="invalid">Type true Category</p>
+        <br>
+        <div class="form-group">
+          <button class="btn btn-primary" (click)="changeLanguage('en')">en</button>
+          <button class="btn btn-primary ml-1" (click)="changeLanguage('ru')">ru</button>
+          <button class="btn btn-primary ml-1" (click)="changeLanguage('am')">am</button>
+          <br>
+          <div class="form-group">
+            <label>Alt: </label>
+            <input type="text" placeholder="en" class="form-control" formControlName="enAlt" *ngIf="language=='en'">
+            <input type="text" placeholder="ru" class="form-control" formControlName="ruAlt" *ngIf="language=='ru'">
+            <input type="text" placeholder="am" class="form-control" formControlName="amAlt" *ngIf="language=='am'">
+
+            <p *ngIf="mediaForm.get('enAlt').invalid  && mediaForm.get('enAlt').touched"  class="invalid">Type true Alt</p>
+
+            <!--<input type="text" placeholder="en" class="form-control" formControlName="enDescription"-->
+            <!--*ngIf="language=='en'">-->
+            <!--<input type="text" placeholder="ru" class="form-control" formControlName="ruDescription"-->
+            <!--*ngIf="language=='ru'">-->
+            <!--<input type="text" placeholder="am" class="form-control" formControlName="amDescription"-->
+            <!--*ngIf="language=='am'">-->
+          </div>
+        </div>
+
+
+        <button type="button" class="btn btn-primary" (click)="myMedia()" [disabled]="!mediaForm.valid" >Create <i class="fa fa-check"></i></button>
+      </form>
+    </div>
+
+  </div>
+</div>

@@ -3,7 +3,7 @@ const fs = require('fs');
 const jwt = require('jsonwebtoken');
 
 module.exports.getAll = (req, res) => {
-    const teams = Team.find({})
+    const teams = Team.find({}).sort({sort : 1})
         .then(result => {
             res.status(200).json({
                 success: true,
@@ -45,8 +45,6 @@ module.exports.create =  (req, res) => {
         })
     }
 
-    console.log(req.body);
-
     const team = new Team({
         avatar: req.file.filename,
         fullName: JSON.parse(req.body.fullName),
@@ -79,28 +77,32 @@ module.exports.update =  (req, res) => {
     } else {
         if (req.file) {
             // console.log(1)
-            update.image = req.file.filename;
+            update.avatar = req.file.filename;
         }
-        if (req.body.description) {
+        if (req.body.fullName) {
             // console.log(2)
-            update.description = JSON.parse(req.body.description)
+            update.fullName = JSON.parse(req.body.fullName)
         }
-        if (req.body.title) {
+        if (req.body.position) {
             // console.log(3)
-            update.title = JSON.parse(req.body.title)
+            update.position = JSON.parse(req.body.position)
+        }
+        if (req.body.info) {
+            // console.log(3)
+            update.info = JSON.parse(req.body.info)
         }
     }
 
-    Portfolio.findByIdAndUpdate({_id: req.params.id}, update)
+    Team.findByIdAndUpdate({_id: req.params.id}, update)
         .then(result => {
             if (!result) {
                 res.status(404).json({
                     success: false,
-                    error: "Portfolio not found with id " + req.params.id
+                    error: "Team not found with id " + req.params.id
                 })
             } else {
                 if (req.file) {
-                    fs.unlink(`./public/assets/img/portfolio/${result.image}`, (err) => {
+                    fs.unlink(__dirname + `/../../_uploads/team/${result.avatar}`, (err) => {
                         if (err) {
                             console.log(err)
                         }
@@ -108,7 +110,7 @@ module.exports.update =  (req, res) => {
                 }
                 res.status(200).json({
                     success: true,
-                    msg: "Portfolio deleted successfully!"
+                    msg: "Team deleted successfully!"
                 });
             }
         })
@@ -118,6 +120,24 @@ module.exports.update =  (req, res) => {
                 error: err.message,
             });
         });
+};
+
+module.exports.updateList = (req,res)=>{
+    let update = {};
+
+   for(let i in req.body){
+       update.sort = i;
+       Team.findByIdAndUpdate({_id : req.body[i]},update)
+           .then(result=>{
+               console.log('Result ', result)
+           })
+           .catch(err => {
+               return res.status(500).send({
+                   success: false,
+                   error: err.message,
+               });
+           });
+   }
 };
 
 module.exports.delete = (req, res) => {
@@ -133,7 +153,7 @@ module.exports.delete = (req, res) => {
                             msg: "Team not found with id " + req.params.id
                         })
                     } else {
-                        fs.unlink(`./public/assets/img/team/${result.avatar}`, (err) => {
+                        fs.unlink(__dirname + `/../../_uploads/team/${result.avatar}`, (err) => {
                             if (err) {
                                 console.log(err)
                             }

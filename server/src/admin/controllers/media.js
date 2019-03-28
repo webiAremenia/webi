@@ -24,7 +24,7 @@ module.exports.getOne = (req, res) => {
             if (!result) {
                 res.status(404).json({
                     success: false,
-                    msg: "Media not found with id " + req.params.id
+                    msg: `Media not found with id  ${req.params.id}`
                 })
             } else {
                 res.status(200).json({
@@ -97,7 +97,7 @@ module.exports.update = async (req, res) => {
                 })
             } else {
                 if (req.file) {
-                    fs.unlink(`./public/assets/img/media/${result.image}`, (err) => {
+                    fs.unlink(__dirname + `/../../_uploads/media/${result.image}`, (err) => {
                         if (err) {
                             console.log(err)
                         }
@@ -130,7 +130,7 @@ module.exports.delete = (req, res) => {
                             msg: "Media not found with id " + req.params.id
                         })
                     } else {
-                        fs.unlink(`./public/assets/img/media/${result.image}`, (err) => {
+                        fs.unlink(__dirname + `/../../_uploads/media/${result.image}`, (err) => {
                             if (err) {
                                 console.log(err)
                             }
