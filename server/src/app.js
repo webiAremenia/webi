@@ -1,9 +1,8 @@
-require('dotenv').config();
 import express from 'express';
 import morgan from 'morgan';
 import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
-import  cors from 'cors';
+import cors from 'cors';
 
 
 import api from './api/routes/api';
@@ -32,27 +31,31 @@ app.use('/admin', adminRoutes);
 app.use('/api', api);
 
 
-
-
 //----------- Connect to Angular client
 
-app.use(express.static(__dirname + '/../client/dist/front'));
-app.use(express.static(__dirname + '/../admin/dist/Project'));
+app.use('/admin-panel', express.static(__dirname + '/../../admin/dist/Client'));
+app.use('/admin-panel/*', express.static(__dirname + '/../../admin/dist/Client'));
 
-app.get('/admin-panel', function(req,res) {
-    res.sendFile(path.join(__dirname + '/../admin/dist/Project/index.html'));
-});
-app.get('/admin-panel/*', function(req,res) {
-    res.sendFile(path.join(__dirname + '/../admin/dist/Project/index.html'));
-});
-app.get('/', function(req,res) {
-    res.sendFile(path.join(__dirname + '/../front/dist/front/index.html'));
-});
+app.use('/', express.static(__dirname + '/../../front/dist/webiFront'));
+app.use('/*', express.static(__dirname + '/../../front/dist/webiFront'));
 
-app.get('/*', function(req,res) {
-    res.sendFile(path.join(__dirname + '/../front/dist/front/index.html'));
-});
-
+// app.use(express.static(__dirname + '/../../front/dist/webiFront'));
+// app.use(express.static(__dirname + '/../../admin/dist/client'));
+//
+// app.get('/admin-panel', function (req, res) {
+//     console.log(__dirname + '/../../admin/dist/client/index.html');
+//     res.sendFile(path.join(__dirname + '/../../admin/dist/client/index.html'));
+// });
+// app.get('/admin-panel/*', function (req, res) {
+//     res.sendFile(path.join(__dirname + '/../../admin/dist/client/index.html'));
+// });
+// app.get('/', function (req, res) {
+//     res.sendFile(path.join(__dirname + '/../../front/dist/webiFront/index.html'));
+// });
+//
+// app.get('/*', function (req, res) {
+//     res.sendFile(path.join(__dirname + '/../../front/dist/webiFront/index.html'));
+// });
 
 app.use((req, res, next) => {
     const err = new Error('Not found');

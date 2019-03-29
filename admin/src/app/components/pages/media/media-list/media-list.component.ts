@@ -14,7 +14,7 @@ export class MediaListComponent implements OnInit {
   medias: Media[];
   delete: any;
   searchTerm: String;
-  options;
+
   constructor(private router : Router, private dataService: DataService, private itemService : ItemService) {
   }
 
@@ -27,11 +27,6 @@ export class MediaListComponent implements OnInit {
       console.log('ALt ', this.medias[0]);
     });
 
-    this.options = {
-      onUpdate: (event: any) => {
-        console.log(this.medias)
-      }
-    };
   }
 
   deleteMedia(media,i) {
