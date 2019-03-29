@@ -53,7 +53,7 @@ exports.login = function (req, res, next) {
                 }
                 if (result) {
                     const token = Admin.getToken(admin[0]);
-                    return res.status(200).json({token: token});
+                    return res.status(200).json({success: true, token: token});
                 }
                 res.status(401).json({
                     message: 'Auth failed'
