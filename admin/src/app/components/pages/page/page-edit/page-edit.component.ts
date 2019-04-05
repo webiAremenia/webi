@@ -67,12 +67,12 @@ export class PageEditComponent implements OnInit {
 
 
     this.dataService.updateData(fd, 'page', this.page._id).subscribe(data => {
-      console.log('DAta ', data);
       if (data['success']) {
         this.router.navigate(['admin/page']);
       }
+    },(err)=>{
+      console.log(err);
     });
-    console.log('Form ', this.pageForm.value);
   }
 
 

@@ -12,7 +12,6 @@ import {SideNavComponent} from './components/partials/side-nav/side-nav.componen
 import {PortfolioListComponent} from './components/pages/portfolio/portfolio-list/portfolio-list.component';
 import {PortfolioCreateComponent} from './components/pages/portfolio/portfolio-create/portfolio-create.component';
 import {PortfolioEditComponent} from './components/pages/portfolio/portfolio-edit/portfolio-edit.component';
-import {TitleFilterPipe} from './_pipes/title-filter.pipe';
 import {PortfolioViewComponent} from './components/pages/portfolio/portfolio-view/portfolio-view.component';
 import {CKEditorModule} from '@ckeditor/ckeditor5-angular';
 import { HeaderComponent } from './components/partials/header/header.component';
@@ -33,6 +32,24 @@ import { TeamViewComponent } from './components/pages/team/team-view/team-view.c
 import { TeamCreateComponent } from './components/pages/team/team-create/team-create.component';
 import { TeamEditComponent } from './components/pages/team/team-edit/team-edit.component';
 import {SortablejsModule} from 'angular-sortablejs';
+import { TitleDescriptionFilterPipe } from './_pipes/title-description-filter.pipe';
+import { FullNameFilterPipe } from './_pipes/full-name-filter.pipe';
+import { KeyFilterPipe } from './_pipes/key-filter.pipe';
+import { CategoryListComponent } from './components/pages/category/category-list/category-list.component';
+import { CategoryViewComponent } from './components/pages/category/category-view/category-view.component';
+import { CategoryEditComponent } from './components/pages/category/category-edit/category-edit.component';
+import { CategoryCreateComponent } from './components/pages/category/category-create/category-create.component';
+import { NameFilterPipe } from './_pipes/name-filter.pipe';
+import { MenuListComponent } from './components/pages/menu/menu-list/menu-list.component';
+import { MenuCreateComponent } from './components/pages/menu/menu-create/menu-create.component';
+import { MenuEditComponent } from './components/pages/menu/menu-edit/menu-edit.component';
+import { MenuViewComponent } from './components/pages/menu/menu-view/menu-view.component';
+import { MenuSortComponent } from './components/pages/menu/menu-sort/menu-sort.component';
+import {NgxTreeDndModule} from "ngx-tree-dnd";
+import { LanguageListComponent } from './components/pages/language/language-list/language-list.component';
+import { LanguageCreateComponent } from './components/pages/language/language-create/language-create.component';
+import { LanguageViewComponent } from './components/pages/language/language-view/language-view.component';
+import { LanguageEditComponent } from './components/pages/language/language-edit/language-edit.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +60,6 @@ import {SortablejsModule} from 'angular-sortablejs';
     PortfolioListComponent,
     PortfolioCreateComponent,
     PortfolioEditComponent,
-    TitleFilterPipe,
     PortfolioViewComponent,
     HeaderComponent,
     MediaListComponent,
@@ -62,6 +78,23 @@ import {SortablejsModule} from 'angular-sortablejs';
     TeamViewComponent,
     TeamCreateComponent,
     TeamEditComponent,
+    TitleDescriptionFilterPipe,
+    FullNameFilterPipe,
+    KeyFilterPipe,
+    CategoryListComponent,
+    CategoryViewComponent,
+    CategoryEditComponent,
+    CategoryCreateComponent,
+    NameFilterPipe,
+    MenuListComponent,
+    MenuCreateComponent,
+    MenuEditComponent,
+    MenuViewComponent,
+    MenuSortComponent,
+    LanguageListComponent,
+    LanguageCreateComponent,
+    LanguageViewComponent,
+    LanguageEditComponent,
 
 
   ],
@@ -73,6 +106,7 @@ import {SortablejsModule} from 'angular-sortablejs';
     HttpClientModule,
     CKEditorModule,
     SortablejsModule.forRoot({ animation: 150 }),
+    NgxTreeDndModule
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,

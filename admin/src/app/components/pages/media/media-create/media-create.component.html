@@ -1,4 +1,4 @@
-<div class="container ">
+
   <div class="row">
     <div class="col-md-10 offset-1">
       <h2 class="text-center">Create Media</h2>
@@ -12,8 +12,8 @@
         </div>
 
         <p>Category:</p>
-        <select class="form-control" formControlName="category">
-          <option value="{{i}}" *ngFor="let category of categories; let i = index">{{category}}</option>
+        <select class="form-control" formControlName="category" >
+          <option value="{{i}}" *ngFor="let category of categories; let i = index" >{{category}}</option>
         </select>
         <p *ngIf="mediaForm.get('category').invalid && mediaForm.get('category').touched"  class="invalid">Type true Category</p>
         <br>
@@ -45,4 +45,3 @@
     </div>
 
   </div>
-</div>

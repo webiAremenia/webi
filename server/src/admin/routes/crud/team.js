@@ -1,9 +1,15 @@
-const express = require('express');
+// const express = require('express');
+// const router = express.Router();
+// const upload = require('../../middleware/multer');
+// const team = require('../../controllers/team');
+
+import express from 'express';
+import team from '../../controllers/team';
+import upload from '../../middleware/multer';
+
+
 const router = express.Router();
-const upload = require('../../middleware/multer');
 
-
-const team = require('../../controllers/team');
 
 router.get('/', team.getAll);
 router.get('/:id', team.getOne);

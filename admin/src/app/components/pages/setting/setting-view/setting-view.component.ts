@@ -38,18 +38,9 @@ export class SettingViewComponent implements OnInit {
     this.router.navigate(['admin/setting/edit']);
   }
 
-  deteSetting(setting, i) {
-    this.delete = confirm('Are you want to delete?');
-    if (this.delete == true) {
-      this.dataService.delete('setting', setting._id).subscribe(data => {
-
-        if (data['success']) {
-          this.router.navigate(['admin/setting']);
-        } else {
-          console.log('DAta ', data);
-        }
-      });
-    }
+  ok() {
+    this.router.navigate(['admin/setting']);
   }
+
 
 }

@@ -1,9 +1,14 @@
-const express = require('express');
+// const express = require('express');
+// const router = express.Router();
+// const upload = require('../../middleware/multer');
+// const portfolio = require('../../controllers/portfolio');
+
+import express from 'express';
+import portfolio from '../../controllers/portfolio';
+import upload from '../../middleware/multer';
+
+
 const router = express.Router();
-const upload = require('../../middleware/multer');
-
-
-const portfolio = require('../../controllers/portfolio');
 
 router.get('/', portfolio.getAll);
 router.get('/:id', portfolio.getOne);

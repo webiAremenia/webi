@@ -23,12 +23,6 @@ export class SettingEditComponent implements OnInit {
   }
 
   ngOnInit() {
-    // this.dataService.getOne('setting', localStorage.getItem('settingItem')).subscribe(data => {
-    //   console.log('Data ', data);
-    //   this.setting = data['setting'];
-    //   this.done = true;
-    //   console.log('Setting ', this.setting);
-    // });
 
     this.setting = this.itemService.setting;
     this.done = true;
@@ -54,10 +48,11 @@ export class SettingEditComponent implements OnInit {
       }
     };
     this.dataService.updateData(form, 'setting', this.setting._id).subscribe(data => {
-      console.log('DAta ', data);
       if (data['success']) {
         this.router.navigate(['admin/setting']);
       }
+    },(err)=>{
+      console.log(err);
     });
     console.log('FOrm ', form);
   }

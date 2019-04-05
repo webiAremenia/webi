@@ -1,4 +1,4 @@
-<div class="container-fluid">
+
   <div class="row">
     <div class="col-md-10 offset-1" *ngIf="done">
       <h2 class="text-center">{{setting.value.en}}</h2>
@@ -26,9 +26,6 @@
       </button>
       <button type="button" class="btn btn-info" (click)="updateSetting(setting)" style="margin-left: 20px;">Edit <i
         class="far fa-edit"></i></button>
-      <button (click)="deteSetting(setting,i)" style="margin-left: 20px;" class="btn btn-danger"><i
-        class="fa fa-times"></i>
-      </button>
     </div>
   </div>
-</div>
+

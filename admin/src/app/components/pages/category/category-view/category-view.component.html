@@ -1,0 +1,32 @@
+
+<div class="row">
+  <div class="col-md-10 offset-1" *ngIf="done">
+    <h2 class="text-center">{{category.name.en}}</h2>
+    <h2>Name </h2>
+    <table class="table table-dark table-hover table-striped">
+      <thead class="thead-light">
+      <tr>
+        <th>am</th>
+        <th>ru</th>
+        <th>en</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>{{category.name.am}}</td>
+        <td>{{category.name.ru}}</td>
+        <td>{{category.name.en}}</td>
+      </tr>
+      </tbody>
+    </table>
+    <button type="button" class="btn btn-success" (click)="ok()"><i
+      class="fa fa-check" aria-hidden="true"></i>
+    </button>
+    <button type="button" class="btn btn-info" (click)="updateCategory(category)" style="margin-left: 20px;">Edit <i
+      class="far fa-edit"></i></button>
+    <button (click)="deteCategory(category,i)" style="margin-left: 20px;" class="btn btn-danger"><i
+      class="fa fa-times"></i>
+    </button>
+  </div>
+</div>
+

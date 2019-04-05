@@ -14,7 +14,7 @@ export class InterceptorService {
     const idToken = localStorage.getItem('jwt_token');
     if (idToken) {
       const cloned = req.clone({
-        headers : req.headers.set('Authorization', idToken)
+        headers : req.headers.set('Authorization', 'Bearer ' + idToken)
       });
       return next.handle(cloned);
     } else {
