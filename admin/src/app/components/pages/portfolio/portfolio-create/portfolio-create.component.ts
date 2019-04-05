@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {DataService} from '../../../../_services/data.service';
-import {element} from 'protractor';
 import {Router} from '@angular/router';
 import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
@@ -11,7 +10,7 @@ import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
   styleUrls: ['./portfolio-create.component.css']
 })
 export class PortfolioCreateComponent implements OnInit {
-  porfolioForm: FormGroup;
+  portfolioForm: FormGroup;
   language: String = 'en';
   public Editor = ClassicEditor;
 
@@ -19,7 +18,7 @@ export class PortfolioCreateComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.porfolioForm = this.formBuilder.group({
+    this.portfolioForm = this.formBuilder.group({
       url: ['', Validators.required],
       amTitle: [''],
       ruTitle: [''],
@@ -35,7 +34,7 @@ export class PortfolioCreateComponent implements OnInit {
 
     if (event.target.files.length > 0) {
       let file = event.target.files[0];
-      this.porfolioForm.get('img').setValue(file);
+      this.portfolioForm.get('img').setValue(file);
     }
   }
 
@@ -43,17 +42,17 @@ export class PortfolioCreateComponent implements OnInit {
   myPortfolio() {
     const fd: any = new FormData();
     const title: {} = {
-      am: this.porfolioForm.get('amTitle').value,
-      ru: this.porfolioForm.get('ruTitle').value,
-      en: this.porfolioForm.get('enTitle').value
+      am: this.portfolioForm.get('amTitle').value,
+      ru: this.portfolioForm.get('ruTitle').value,
+      en: this.portfolioForm.get('enTitle').value
     };
     const description: {} = {
-      am: this.porfolioForm.get('amDescription').value,
-      ru: this.porfolioForm.get('ruDescription').value,
-      en: this.porfolioForm.get('enDescription').value
+      am: this.portfolioForm.get('amDescription').value,
+      ru: this.portfolioForm.get('ruDescription').value,
+      en: this.portfolioForm.get('enDescription').value
     };
-    fd.append('url', this.porfolioForm.get('url').value);
-    fd.append('img', this.porfolioForm.get('img').value);
+    fd.append('url', this.portfolioForm.get('url').value);
+    fd.append('img', this.portfolioForm.get('img').value);
     fd.append('title', JSON.stringify(title));
     fd.append('description', JSON.stringify(description));
 
@@ -64,7 +63,7 @@ export class PortfolioCreateComponent implements OnInit {
         this.router.navigate(['admin/portfolio']);
       }
     });
-    console.log('FOrm ', this.porfolioForm.value);
+    console.log('FOrm ', this.portfolioForm.value);
   }
 
   changeLanguage(language) {
