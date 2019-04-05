@@ -14,6 +14,10 @@ export class DataService {
     return this.http.get(`${this.baseUrl}/${url}`);
   }
 
+  getPagesAndCategories(url){
+    return this.http.get(`${this.baseUrl}/menu/${url}`);
+  }
+
   sendData(data, url) {
     return this.http.post(`${this.baseUrl}/${url}`, data);
   }
@@ -32,7 +36,10 @@ export class DataService {
 
   teamUpdate(data,url){
     return this.http.put(`${this.baseUrl}/${url}/`, data);
+  }
 
+  menuUpdate(data,url){
+    return this.http.put(`${this.baseUrl}/${url}/`, data);
   }
 
 

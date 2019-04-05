@@ -31,6 +31,6 @@ module.exports.getToken = function (admin) {
             role: admin.role,
             permissions: admin.permissions
         },
-        process.env.JWT_Key, {expiresIn: '2h'});
+        process.env.JWT_Key, {expiresIn: '4h'});
 };
 

@@ -28,14 +28,6 @@ export class MediaEditComponent implements OnInit {
 
   ngOnInit() {
 
-    // this.dataService.getOne('media', localStorage.getItem('mediaItem')).subscribe(data => {
-    //   console.log('Data ', data);
-    //   this.media = data['media'];
-    //   this.done = true;
-    //   console.log('Media ', this.media);
-    //
-    // });
-
     this.media = this.itemService.media;
     this.done = true;
     console.log('Media ', this.media);
@@ -46,11 +38,6 @@ export class MediaEditComponent implements OnInit {
       ruAlt: [this.media['alt'].ru],
       enAlt: [this.media['alt'].en, Validators.required],
       img: [this.media['img']]
-      // category: ['',['category']],
-      // amAlt: [''['alt'].am],
-      // ruAlt: [''['alt'].ru],
-      // enAlt: [''['alt'].en],
-      // img: [''['img']]
     });
   }
 
@@ -73,12 +60,12 @@ export class MediaEditComponent implements OnInit {
 
 
     this.dataService.updateData(fd, 'media', this.media._id).subscribe(data => {
-      console.log('DAta ', data);
       if (data['success']) {
         this.router.navigate(['admin/media']);
       }
+    }, (err)=>{
+      console.log(err);
     });
-    console.log('FOrm ', this.mediaForm.value);
   }
 
 

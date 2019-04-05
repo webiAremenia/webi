@@ -1,9 +1,14 @@
-const express = require('express');
+// const express = require('express');
+// const router = express.Router();
+// const upload = require('../../middleware/multer');
+// const page = require('../../controllers/page');
+
+import express from 'express';
+import page from '../../controllers/page';
+import upload from '../../middleware/multer';
+
+
 const router = express.Router();
-const upload = require('../../middleware/multer');
-
-
-const page = require('../../controllers/page');
 
 
 router.get('/', page.getAll);

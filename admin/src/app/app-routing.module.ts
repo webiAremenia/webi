@@ -23,6 +23,19 @@ import {TeamListComponent} from './components/pages/team/team-list/team-list.com
 import {TeamCreateComponent} from './components/pages/team/team-create/team-create.component';
 import {TeamEditComponent} from './components/pages/team/team-edit/team-edit.component';
 import {TeamViewComponent} from './components/pages/team/team-view/team-view.component';
+import {CategoryListComponent} from "./components/pages/category/category-list/category-list.component";
+import {CategoryCreateComponent} from "./components/pages/category/category-create/category-create.component";
+import {CategoryEditComponent} from "./components/pages/category/category-edit/category-edit.component";
+import {CategoryViewComponent} from "./components/pages/category/category-view/category-view.component";
+import {MenuListComponent} from "./components/pages/menu/menu-list/menu-list.component";
+import {MenuCreateComponent} from "./components/pages/menu/menu-create/menu-create.component";
+import {MenuEditComponent} from "./components/pages/menu/menu-edit/menu-edit.component";
+import {MenuViewComponent} from "./components/pages/menu/menu-view/menu-view.component";
+import {MenuSortComponent} from "./components/pages/menu/menu-sort/menu-sort.component";
+import {LanguageListComponent} from "./components/pages/language/language-list/language-list.component";
+import {LanguageCreateComponent} from "./components/pages/language/language-create/language-create.component";
+import {LanguageEditComponent} from "./components/pages/language/language-edit/language-edit.component";
+import {LanguageViewComponent} from "./components/pages/language/language-view/language-view.component";
 
 
 const dashboardRoutes: Routes = [
@@ -50,6 +63,23 @@ const dashboardRoutes: Routes = [
   {path: 'team/create', component: TeamCreateComponent},
   {path: 'team/edit', component: TeamEditComponent},
   {path: 'team/:id', component: TeamViewComponent},
+
+  {path: 'category', component: CategoryListComponent},
+  {path: 'category/create', component: CategoryCreateComponent},
+  {path: 'category/edit', component: CategoryEditComponent},
+  {path: 'category/:id', component: CategoryViewComponent},
+
+  {path: 'menu', component: MenuListComponent},
+  {path: 'menu/create', component: MenuCreateComponent},
+  {path: 'menu/sort', component: MenuSortComponent},
+  {path: 'menu/edit', component: MenuEditComponent},
+  {path: 'menu/:id', component: MenuViewComponent},
+
+  {path: 'language', component: LanguageListComponent},
+  {path: 'language/create', component: LanguageCreateComponent},
+  {path: 'language/edit', component: LanguageEditComponent},
+  {path: 'language/:id', component: LanguageViewComponent},
+
 ];
 
 

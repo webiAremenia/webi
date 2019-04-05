@@ -20,20 +20,21 @@
   </tr>
   </thead>
   <tbody>
-  <tr *ngFor="let setting of settings | titleFilter: searchTerm; let i = index">
+  <tr *ngFor="let setting of settings | keyFilter: searchTerm ; let i = index">
 
     <td>{{setting._id}}</td>
     <td>{{setting.key}}</td>
     <td>{{setting.value.en}}</td>
 
     <td>
-      <button [routerLink]="['/admin/setting', setting._id]" (click)="viewSetting(setting)" class="btn btn-info"><i class="fas fa-eye"></i></button>
+      <button [routerLink]="['/admin/setting', setting._id]" (click)="viewSetting(setting)" class="btn btn-info"><i
+        class="fas fa-eye"></i></button>
 
       <button (click)="updateSetting(setting)" style="margin-left: 20px;" class="btn btn-primary"><i
         class="far fa-edit"></i></button>
 
       <!--<button (click)="deleteSetting(setting,i)" style="margin-left: 20px;" class="btn btn-danger"><i-->
-        <!--class="fa fa-times"></i>-->
+      <!--class="fa fa-times"></i>-->
       <!--</button>-->
     </td>
   </tr>

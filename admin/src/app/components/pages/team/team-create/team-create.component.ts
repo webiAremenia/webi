@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {DataService} from '../../../../_services/data.service';
 import {Router} from '@angular/router';
@@ -28,7 +28,7 @@ export class TeamCreateComponent implements OnInit {
       amInfo: [''],
       ruInfo: [''],
       enInfo: ['', Validators.required],
-      sort : ['10', Validators.required],
+      sort: ['10', Validators.required],
       img: ['', Validators.required],
     });
   }
@@ -71,6 +71,8 @@ export class TeamCreateComponent implements OnInit {
       if (data['success']) {
         this.router.navigate(['admin/team']);
       }
+    }, (err) => {
+      console.log(err);
     });
     console.log('FOrm ', this.teamForm.value);
   }

@@ -1,0 +1,82 @@
+<div class="row">
+  <div class="col-md-10 offset-1" *ngIf="done">
+    <h2 class="text-center">Edit Menu</h2>
+    <form [formGroup]="menuForm">
+
+      <h2 class="text-center">{{menu.title.en}}</h2>
+
+      <div class="form-group">
+
+        <button class="btn btn-primary" (click)="changeLanguage('en')">en</button>
+        <button class="btn btn-primary ml-1" (click)="changeLanguage('ru')">ru</button>
+        <button class="btn btn-primary ml-1" (click)="changeLanguage('am')">am</button>
+        <br>
+
+        <div class="form-group">
+          <label>Title:</label>
+          <input type="text" placeholder="en" class="form-control" formControlName="enTitle" *ngIf="language=='en'">
+          <input type="text" placeholder="ru" class="form-control" formControlName="ruTitle" *ngIf="language=='ru'">
+          <input type="text" placeholder="am" class="form-control" formControlName="amTitle" *ngIf="language=='am'">
+
+          <p *ngIf="menuForm.get('enTitle').invalid  && menuForm.get('enTitle').touched" class="invalid">Type true
+            Alt</p>
+
+        </div>
+      </div>
+
+      <p>Type:</p>
+      <select class="form-control" formControlName="type" (change)="mySelect($event)">
+        <option value="{{i}}" *ngFor="let category of categories; let i = index">{{category}}</option>
+      </select>
+      <br>
+      <div *ngIf="value == 'category'">
+        <p>TypeId:</p>
+        <select class="form-control" formControlName="typeId">
+          <option value="{{item._id}}" *ngFor="let item of categoriesArr; let i = index">{{item.name.en}}</option>
+        </select>
+      </div>
+
+      <div *ngIf="value == 'page'">
+        <p>TypeId:</p>
+        <select class="form-control" formControlName="typeId">
+          <option value="{{item._id}}" *ngFor="let item of pagesArr; let i = index">{{item.title.en}}</option>
+        </select>
+      </div>
+
+      <div *ngIf="value == 'url'">
+        <div class="form-group">
+          <label>URL: </label>
+          <input type="text" class="form-control" formControlName="typeId">
+          <p *ngIf="menuForm.get('typeId').invalid  && menuForm.get('typeId').touched" class="invalid">Type true URL</p>
+        </div>
+      </div>
+
+      <br>
+      <p>Parent:</p>
+      <div class="form-group">
+        <select class="form-control" formControlName="parent">
+          <option value="">No Parent</option>
+          <option value="{{item._id}}" *ngFor="let item of menus; let i = index">{{item.title.en}}</option>
+        </select>
+      </div>
+      <br>
+      <div class="form-group">
+        <label>Order: </label>
+        <input type="number"  class="form-control" formControlName="order">
+
+        <p *ngIf="menuForm.get('order').invalid  && menuForm.get('order').touched"  class="invalid">Type true Order</p>
+
+      </div>
+
+      <br>
+
+
+
+      <button type="button" class="btn btn-info" (click)="myMedia()" [disabled]="!menuForm.valid">Edit <i
+        class="fa fa-check"></i></button>
+    </form>
+  </div>
+
+</div>
+
+

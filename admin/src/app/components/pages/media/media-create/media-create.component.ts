@@ -52,16 +52,18 @@ export class MediaCreateComponent implements OnInit {
 
 
     this.dataService.sendData(fd, 'media').subscribe(data => {
-      console.log('DAta ', data);
       if (data['success']) {
         this.router.navigate(['admin/media']);
       }
+    }, (err)=>{
+      console.log(err);
     });
-    console.log('FOrm ', this.mediaForm.value);
   }
 
   changeLanguage(language) {
     this.language = language;
   }
+
+
 
 }

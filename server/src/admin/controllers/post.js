@@ -1,5 +1,5 @@
-const Post = require('../models/Post');
 const fs = require('fs');
+import Post from '../models/Post'
 
 module.exports.getAll = async (req, res) => {
     const posts = await Post.find({});

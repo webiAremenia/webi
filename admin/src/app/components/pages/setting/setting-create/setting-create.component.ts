@@ -30,24 +30,29 @@ export class SettingCreateComponent implements OnInit {
 
 
   mySetting() {
+    let form = {
+      key : this.settingForm.get('key').value,
+      value: {
+        am: this.settingForm.get('amValue').value,
+        ru: this.settingForm.get('ruValue').value,
+        en: this.settingForm.get('enValue').value
+      },
+  };
     // const fd: any = new FormData();
-    // const value: {} = {
-    //   am: this.settingForm.get('amValue').value,
-    //   ru: this.settingForm.get('ruValue').value,
-    //   en: this.settingForm.get('enValue').value
-    // };
+
     // fd.append('key', this.settingForm.get('key').value);
     // fd.append('value', JSON.stringify(value));
 
-    this.dataService.sendData(this.settingForm.value, 'setting').subscribe(data => {
-      console.log('DAta ', data);
+    this.dataService.sendData(form, 'setting').subscribe(data => {
       if (data['success']) {
         this.router.navigate(['admin/setting']);
       } else {
         this.res = data['msg'];
       }
+    }, (err) => {
+      console.log(err);
     });
-    console.log('FOrm ', this.settingForm.value);
+    console.log('FOrm ', form);
   }
 
   changeLanguage(language) {

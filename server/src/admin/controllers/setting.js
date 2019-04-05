@@ -1,4 +1,6 @@
-const Setting = require('../models/Setting');
+// const Setting = require('../models/Setting');
+import Setting from '../models/Setting'
+
 const fs = require('fs');
 
 module.exports.getAll = (req, res) => {
@@ -51,11 +53,8 @@ module.exports.create = (req, res) => {
                 });
             }
             else {
-                const value = {
-                    am: req.body.amValue,
-                    ru: req.body.ruValue,
-                    en: req.body.enValue,
-                };
+
+                const value = req.body.value;
                 const setting = new Setting({
                     key: req.body.key,
                     value: value
@@ -82,28 +81,6 @@ module.exports.create = (req, res) => {
             });
         });
 
-    // const value = {
-    //     am: req.body.amValue,
-    //     ru: req.body.ruValue,
-    //     en: req.body.enValue,
-    // };
-    // const setting = new Setting({
-    //     key: req.body.key,
-    //     value: value
-    // });
-    // setting.save()
-    //     .then(result => {
-    //         res.status(200).json({
-    //             success: true,
-    //             key: result
-    //         })
-    //     })
-    //     .catch(err => {
-    //         return res.status(500).send({
-    //             success: false,
-    //             error: err.message,
-    //         });
-    //     });
 };
 
 module.exports.update = async (req, res) => {

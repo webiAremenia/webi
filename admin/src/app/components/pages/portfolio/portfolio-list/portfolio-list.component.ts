@@ -20,7 +20,8 @@ export class PortfolioListComponent implements OnInit {
   ngOnInit() {
     this.dataService.getData('portfolio').subscribe(data => {
       this.portfolios = data['portfolios'];
-      console.log('Title ', this.portfolios[0]);
+    },(err)=>{
+      console.log(err);
     });
   }
 
@@ -29,13 +30,14 @@ export class PortfolioListComponent implements OnInit {
     this.delete = confirm('Are you want to delete?');
     if (this.delete == true) {
       this.dataService.delete('portfolio', portfolio._id).subscribe(data => {
-        console.log('Data ', data);
 
         if (data['success']) {
           this.portfolios.splice(i, 1);
         } else {
           this.router.navigate(['login']);
         }
+      },(err)=>{
+        console.log(err);
       });
     }
   }

@@ -26,15 +26,9 @@ export class MediaViewComponent implements OnInit {
   }
 
   ngOnInit() {
-    // this.dataService.getOne('media', localStorage.getItem('mediaItem')).subscribe(data => {
-    //   console.log('Data ', data);
-    //   this.media = data['media'];
-    //   this.done = true;
-    //   console.log('Media ', this.media);
-    // });
+
     this.media = this.itemService.media;
     this.done = true;
-    // console.log(typeof this.media.category)
     this.optionVal = this.categories[+this.media.category];
   }
 
@@ -47,14 +41,19 @@ export class MediaViewComponent implements OnInit {
     this.delete = confirm('Are you want to delete?');
     if (this.delete == true) {
       this.dataService.delete('media', media._id).subscribe(data => {
-
         if (data['success']) {
           this.router.navigate(['admin/media']);
         } else {
           console.log('DAta ', data);
         }
+      },(err)=>{
+        console.log(err);
       });
     }
+  }
+
+  ok() {
+    this.router.navigate(['admin/media']);
   }
 
 }

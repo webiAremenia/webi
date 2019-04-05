@@ -62,8 +62,13 @@ export class PortfolioCreateComponent implements OnInit {
       if (data['success']) {
         this.router.navigate(['admin/portfolio']);
       }
+    },(err)=>{
+      console.log(err);
     });
+<<<<<<< HEAD
     console.log('FOrm ', this.portfolioForm.value);
+=======
+>>>>>>> 45c75e5908c08350e1fc5e87e60182522dcbb12c
   }
 
   changeLanguage(language) {

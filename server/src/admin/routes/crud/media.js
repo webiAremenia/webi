@@ -1,9 +1,13 @@
-const express = require('express');
+// const express = require('express');
+// const upload = require('../../middleware/multer');
+// const media = require('../../controllers/media');
+
+import express from 'express';
+import media from '../../controllers/media';
+import upload from '../../middleware/multer';
+
 const router = express.Router();
-const upload = require('../../middleware/multer');
 
-
-const media = require('../../controllers/media');
 
 router.get('/', media.getAll);
 router.get('/:id', media.getOne);
