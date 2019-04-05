@@ -19,8 +19,9 @@ export class PageListComponent implements OnInit {
 
   ngOnInit() {
     this.dataService.getData('page').subscribe(data => {
-      this.pages = data['pages'];
-      console.log('Title ', this.pages[0]);
+      this.pages = data['data'];
+    },(err)=>{
+      console.log(err);
     });
   }
 
@@ -29,13 +30,13 @@ export class PageListComponent implements OnInit {
     this.delete = confirm('Are you want to delete?');
     if (this.delete == true) {
       this.dataService.delete('page', page._id).subscribe(data => {
-        console.log('Data ', data);
-
         if (data['success']) {
           this.pages.splice(i, 1);
         } else {
           this.router.navigate(['login']);
         }
+      },(err)=>{
+        console.log(err);
       });
     }
   }

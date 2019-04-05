@@ -10,16 +10,17 @@ import {ItemService} from '../../../../_services/item.service';
   styleUrls: ['./setting-list.component.css']
 })
 export class SettingListComponent implements OnInit {
-  delete: any;
-  searchTerm: String;
   settings : Setting[];
+
+  delete: any;
+  searchTerm: '';
   constructor(private router : Router, private dataService: DataService, private itemService : ItemService) { }
 
   ngOnInit() {
     this.dataService.getData('setting').subscribe(data => {
-      console.log('Data ', data);
       this.settings = data['settings'];
-      // console.log('ALt ', this.settings[0]);
+    }, (err)=>{
+      console.log(err);
     });
   }
 

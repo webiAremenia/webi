@@ -8,7 +8,6 @@
   </div>
 </div>
 
-
 <br>
 <table class="table table-dark table-hover table-striped">
   <thead class="thead-light">
@@ -22,7 +21,7 @@
   </thead>
   <tbody [sortablejs]="teams" [sortablejsOptions]="options">
 
-  <tr *ngFor="let team of teams | titleFilter: searchTerm; let i = index">
+  <tr *ngFor="let team of teams | fullNameFilter : searchTerm; let i = index">
 
     <td>{{team._id}}</td>
     <td>{{team.fullName.en}}</td>

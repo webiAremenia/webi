@@ -63,19 +63,16 @@ export class PortfolioEditComponent implements OnInit {
       if (data['success']) {
         this.router.navigate(['admin/portfolio']);
       }
+    },(err)=>{
+      console.log(err);
     });
-    console.log('Form ', this.porfolioForm.value);
   }
-
 
   changeLanguage(language) {
     this.language = language;
-    console.log('Language ', this.language);
   }
 
-
   onFileChange(event) {
-
     if (event.target.files.length > 0) {
       let file = event.target.files[0];
       this.porfolioForm.get('img').setValue(file);

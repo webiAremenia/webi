@@ -66,12 +66,12 @@ export class PageCreateComponent implements OnInit {
 
 
     this.dataService.sendData(fd, 'page').subscribe(data => {
-      console.log('DAta ', data);
       if (data['success']) {
         this.router.navigate(['admin/page']);
       }
+    },(err)=>{
+      console.log(err);
     });
-    console.log('FOrm ', this.pageForm.value);
   }
 
   changeLanguage(language) {

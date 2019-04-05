@@ -1,9 +1,9 @@
-const Team = require('../models/Team');
+// const Team = require('../models/Team');
 const fs = require('fs');
-const jwt = require('jsonwebtoken');
+import Team from '../models/Team'
 
 module.exports.getAll = (req, res) => {
-    const teams = Team.find({}).sort({sort : 1})
+    const teams = Team.find({}).sort({sort: 1})
         .then(result => {
             res.status(200).json({
                 success: true,
@@ -13,7 +13,7 @@ module.exports.getAll = (req, res) => {
         .catch(e => console.log(e))
 };
 
-module.exports.getOne =  (req, res) => {
+module.exports.getOne = (req, res) => {
     // Team.findOne({_id: req.params.id})
     //     .then(result => {
     //         if (!result) {
@@ -37,11 +37,11 @@ module.exports.getOne =  (req, res) => {
 };
 
 
-module.exports.create =  (req, res) => {
+module.exports.create = (req, res) => {
     if (!req.file) {
         return res.status(500).json({
-            success : false,
-            msg : "error"
+            success: false,
+            msg: "error"
         })
     }
 
@@ -50,11 +50,11 @@ module.exports.create =  (req, res) => {
         fullName: JSON.parse(req.body.fullName),
         position: JSON.parse(req.body.position),
         info: JSON.parse(req.body.info),
-        sort : req.body.sort
+        sort: req.body.sort
     });
     team.save()
         .then(result => {
-            res.status(200).json({
+            res.status(201).json({
                 success: true,
                 team: result
             })
@@ -68,7 +68,7 @@ module.exports.create =  (req, res) => {
         });
 };
 
-module.exports.update =  (req, res) => {
+module.exports.update = (req, res) => {
     let update = req.body;
     if (!req.body) {
         return res.status(400).send({
@@ -122,62 +122,53 @@ module.exports.update =  (req, res) => {
         });
 };
 
-module.exports.updateList = (req,res)=>{
+module.exports.updateList = (req, res) => {
     let update = {};
 
-   for(let i in req.body){
-       update.sort = i;
-       Team.findByIdAndUpdate({_id : req.body[i]},update)
-           .then(result=>{
-               console.log('Result ', result)
-           })
-           .catch(err => {
-               return res.status(500).send({
-                   success: false,
-                   error: err.message,
-               });
-           });
-   }
+    for (let i in req.body) {
+        update.sort = i;
+        Team.findByIdAndUpdate({_id: req.body[i]}, update)
+            .then(result => {
+                console.log('Result ', result)
+            })
+            .catch(err => {
+                return res.status(500).send({
+                    success: false,
+                    error: err.message,
+                });
+            });
+    }
 };
 
 module.exports.delete = (req, res) => {
-    const token = req.headers.authorization.replace('Bearer ', '');
-    jwt.verify(token, 'secret', function (err, decoded) {
-        if (decoded.role == 'superadmin') {
-            Team.findByIdAndRemove({_id: req.params.id})
-                .then(result => {
-                    if (!result) {
 
-                        res.status(404).json({
-                            success: false,
-                            msg: "Team not found with id " + req.params.id
-                        })
-                    } else {
-                        fs.unlink(__dirname + `/../../_uploads/team/${result.avatar}`, (err) => {
-                            if (err) {
-                                console.log(err)
-                            }
-                        });
-                        res.status(200).json({
-                            success: true,
-                            msg: "Team deleted successfully!",
-                            result : result
-                        });
-                    }
+    Team.findByIdAndRemove({_id: req.params.id})
+        .then(result => {
+            if (!result) {
+
+                res.status(404).json({
+                    success: false,
+                    msg: "Team not found with id " + req.params.id
                 })
-                .catch(err => {
-                    return res.status(500).send({
-                        success: false,
-                        error: err.message,
-                    });
+            } else {
+                fs.unlink(__dirname + `/../../_uploads/team/${result.avatar}`, (err) => {
+                    if (err) {
+                        console.log(err)
+                    }
                 });
-        } else {
-            res.status(200).json({
+                res.status(200).json({
+                    success: true,
+                    msg: "Team deleted successfully!",
+                    result: result
+                });
+            }
+        })
+        .catch(err => {
+            return res.status(500).send({
                 success: false,
-                msg: "You are not admin"
-            })
-        }
-    });
+                error: err.message,
+            });
+        });
 
 };
 

@@ -2,3 +2,15 @@
   width: 100%;
   min-height: 150px;
 }
+/*body{*/
+  /*overflow-x: hidden;*/
+/*}*/
+
+.max{
+  max-width: 30%;
+}
+
+.invalid{
+  text-decoration: none;
+  color: red;
+}

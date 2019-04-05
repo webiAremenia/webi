@@ -22,6 +22,8 @@ export class TeamListComponent implements OnInit {
   ngOnInit() {
     this.dataService.getData('team').subscribe(data => {
       this.teams = data['teams'];
+    },(err)=>{
+      console.log(err);
     });
     let arr = [];
     // [this.teams[event.newIndex], this.teams[event.oldIndex]] = [this.teams[event.oldIndex], this.teams[event.newIndex]];
@@ -29,11 +31,10 @@ export class TeamListComponent implements OnInit {
     this.options = {
       onUpdate: (event: any) => {
         arr = [];
-        for (let item in event.target.children) {
-          if (event.target.children[item].children) {
-            arr.push(event.target.children[item].children[0].innerText);
-          }
-        }
+        this.teams.forEach(person=>{
+          arr.push(person._id)
+        });
+
         this.personsArr = arr;
       }
     };
@@ -50,6 +51,8 @@ export class TeamListComponent implements OnInit {
         } else {
           this.router.navigate(['login']);
         }
+      },(err)=>{
+        console.log(err);
       });
     }
   }
@@ -68,6 +71,8 @@ export class TeamListComponent implements OnInit {
     if (this.personsArr) {
       this.dataService.teamUpdate(this.personsArr, 'team').subscribe(data => {
         console.log(data);
+      },(err)=>{
+        console.log(err);
       });
       console.log(this.personsArr);
       this.personsArr.length = 0;
