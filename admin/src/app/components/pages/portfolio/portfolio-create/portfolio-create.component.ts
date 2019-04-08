@@ -3,6 +3,7 @@ import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {DataService} from '../../../../_services/data.service';
 import {Router} from '@angular/router';
 import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import CKFinder from '@ckeditor/ckeditor5-ckfinder/src/ckfinder';
 
 @Component({
   selector: 'app-portfolio-create',
@@ -14,6 +15,23 @@ export class PortfolioCreateComponent implements OnInit {
   language: String = 'en';
   public Editor = ClassicEditor;
 
+
+  config = {
+    plugins: [CKFinder],
+
+    // Enable the CKFinder button in the toolbar.
+    toolbar: ['ckfinder'],
+
+    ckfinder: {
+      // Upload the images to the server using the CKFinder QuickUpload command.
+      uploadUrl: 'http://localhost:3000/images',
+
+      // Define the CKFinder configuration (if necessary).
+      options: {
+        resourceType: 'Images'
+      }
+    }
+  };
   constructor(private formBuilder: FormBuilder, private dataService: DataService, private router: Router) {
   }
 
@@ -65,10 +83,7 @@ export class PortfolioCreateComponent implements OnInit {
     },(err)=>{
       console.log(err);
     });
-<<<<<<< HEAD
     console.log('FOrm ', this.portfolioForm.value);
-=======
->>>>>>> 45c75e5908c08350e1fc5e87e60182522dcbb12c
   }
 
   changeLanguage(language) {

@@ -37,7 +37,7 @@
         <div class="form-group">
           <label>Description: </label>
 
-          <ckeditor *ngIf="language=='en'" tagName="input" formControlName="enDescription" [editor]="Editor"></ckeditor>
+          <ckeditor *ngIf="language=='en'" tagName="input" formControlName="enDescription" [config]="{ ckfinder: {uploadUrl: 'http://localhost:3000/connector'} }"  [editor]="Editor" ></ckeditor>
           <ckeditor *ngIf="language=='ru'" tagName="input" formControlName="ruDescription" [editor]="Editor"></ckeditor>
           <ckeditor *ngIf="language=='am'" tagName="input" formControlName="amDescription" [editor]="Editor"></ckeditor>
 

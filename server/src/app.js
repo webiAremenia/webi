@@ -36,8 +36,8 @@ const elFinder = require("elfinder-node");
 const roots = [
     {
         driver: elFinder.LocalFileStorage,
-        URL: "/upload",       //Required
-        path: "",   //Required
+        URL: '/images/', //Required
+        path: 'http://localhost:3000/uploads' ,   //Required
         permissions: { read:1, write: 1, lock: 0 }
     },
     {
@@ -48,7 +48,10 @@ const roots = [
     },
 ];
 
-app.use( "/connector", elFinder( roots ) );
+// app.use( "/connector", elFinder( roots ) );
+app.use( "/connector", (req, res , next) => {
+    console.log(req)
+} );
 
 
 
