@@ -1,25 +1,36 @@
-<div class="menu">
-  <ul>
-    <li><a href="">Activity</a></li>
-    <li><a href="">Discover</a></li>
-    <li><a href="">Job</a></li>
-  </ul>
-</div>
+<div class="container-fluid">
+<div class="row">
+  <div class="col-lg-10 offset-lg-1">
 
-
-<div class="container">
-  <div class="card" *ngFor="let new of news">
-    <a routerLink="/blog/{{new.id}}"><img src='{{new.img}}' class="card-img-top" alt="..." style="height: 260px"></a>
-    <div class="card-body">
-      <h5 class="card-title">{{new.title}}</h5>
-      <p class="card-text">{{new.text}}</p>
+  <div class="row">
+    <div class="col-lg-12 menu">
+      <ul>
+        <li><a href="">Activity</a></li>
+        <li><a href="">Discover</a></li>
+        <li><a href="">Job</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="row">
+    <div class="card col-lg-6" *ngFor="let new of news">
+      <a routerLink="/blog/{{new.id}}">
+        <div class="imageWrapper h-50 w-100">
+          <img src='{{new.img}}' class="card-img-top h-100" alt="..." class="topWidth">
+        </div>
+          <div class="card-body">
+            <h5 class="card-title">{{new.title}}</h5>
+            <p class="card-text">{{new.text}}</p>
+          </div>
+      </a>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-12 menu">
+      <button type="button">See More</button>
     </div>
   </div>
 
 </div>
-<div class="row">
-  <div class="col-12">
-    <button type="button">See More </button>
-  </div>
-</div>
 
+</div>
+</div>

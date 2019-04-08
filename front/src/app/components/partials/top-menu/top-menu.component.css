@@ -1,54 +1,60 @@
-.mainMenu{
+.navbar{
   height:160px;
-  width: 100%;
   font-family: Arial;
   box-sizing: border-box;
+  background-color: #3966ae;
 }
 #logo img{
   margin:36px 0;
+}
+.logoCol{
+  padding: 0;
+  width:100%;
 }
 #logo{
   width: 170px;
   height: 160px;
   background: #3966be;
   text-align: center;
-  float: left;
+  padding-left: 0;
 }
 #about {
-  color:#fff;
-  font-size: 15px;
+  font-size: 17px;
 }
-h1{
-  color: #fff;
+.navbar-brand{
+  color: white;
   font-size: 60px;
-  display: inline-block;
-  margin-left: 12px;
-  margin-right: 100px;
   cursor: pointer;
+  text-decoration: none;
 }
-.menu{
-  float: left;
-  padding: 40px 0;
+/*.navbar-brand a:active{*/
+  /*color: white;*/
+/*}*/
+#navbarNav{
+    margin-left: 100px;
 }
 ul{
   margin-left: 20px;
   padding-top: 20px;
-  display: inline-block;
+
 }
 ul li{
-  list-style: none;
-  display: inline-block;
   padding-right: 100px ;
   cursor: pointer;
 }
 ul li a{
-  text-decoration: none;
   color:#B2C3DF;
   font-size: 20px;
 }
 
-
-
+#navbarNav li a:active{
+  color: white !important;
+  text-decoration: underline;
+}
+#navbarNav li a:focus{
+  color: white !important;
+  text-decoration: underline;
+}
 
 
 

@@ -1,15 +1,11 @@
-.container {
+.container-fluid {
   font-family: Arial;
   color: white;
-  margin-left: 180px;
 }
-
-
 .lorem {
   font-size: 13px;
   margin-right: 10px;
 }
-
 button{
   width: 30px;
   height: 30px;
@@ -30,7 +26,7 @@ button img{
   height: 200px;
 }
 .one, .two, .three{
-  width: 358px;
+  width: 100%;
   height: 200px;
   color: black;
   padding: 10px 20px;

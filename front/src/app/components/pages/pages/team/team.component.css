@@ -1,8 +1,8 @@
-.container{
+.container-fluid{
   height: auto;
   color:white;
   font-family: Arial;
-  margin-left: 180px;
+
 }
 .col-5 p a{
   text-decoration: none;
