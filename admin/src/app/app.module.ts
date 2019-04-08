@@ -50,6 +50,10 @@ import { LanguageListComponent } from './components/pages/language/language-list
 import { LanguageCreateComponent } from './components/pages/language/language-create/language-create.component';
 import { LanguageViewComponent } from './components/pages/language/language-view/language-view.component';
 import { LanguageEditComponent } from './components/pages/language/language-edit/language-edit.component';
+import { NewsListComponent } from './components/pages/news/news-list/news-list.component';
+import { NewsCreateComponent } from './components/pages/news/news-create/news-create.component';
+import { NewsEditComponent } from './components/pages/news/news-edit/news-edit.component';
+import { NewsViewComponent } from './components/pages/news/news-view/news-view.component';
 
 @NgModule({
   declarations: [
@@ -95,6 +99,10 @@ import { LanguageEditComponent } from './components/pages/language/language-edit
     LanguageCreateComponent,
     LanguageViewComponent,
     LanguageEditComponent,
+    NewsListComponent,
+    NewsCreateComponent,
+    NewsEditComponent,
+    NewsViewComponent,
 
 
   ],

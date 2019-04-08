@@ -11,6 +11,9 @@ const storage = multer.diskStorage({
         if(req.originalUrl.split('/')[2] === 'page'){
             cb(null, './public/assets/img/page')
         }
+        if(req.originalUrl.split('/')[2] === 'news'){
+            cb(null, './public/assets/img/news')
+        }
         if(req.originalUrl.split('/')[2] === 'team'){
             cb(null, './public/assets/img/team')
         }

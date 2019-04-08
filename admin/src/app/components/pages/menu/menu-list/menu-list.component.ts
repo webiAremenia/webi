@@ -13,6 +13,7 @@ export class MenuListComponent implements OnInit {
   menus : Menu[];
   delete: any;
   done : boolean = false;
+  button : boolean = false;
 
   constructor(private router : Router, private dataService: DataService, private itemService : ItemService) {
   }
@@ -21,8 +22,10 @@ export class MenuListComponent implements OnInit {
 
     this.dataService.getData('menu').subscribe(data => {
       this.menus = data['menus'];
+      if(this.menus.length !== 0){
+        this.button = true;
+      }
       console.log(this.menus)
-
     }, (err)=>{
       console.log(err);
     });
@@ -30,13 +33,15 @@ export class MenuListComponent implements OnInit {
   }
 
   deleteMenu(menu,i) {
+    this.button = false;
     this.delete = confirm('Are you want to delete?');
     if (this.delete == true) {
       this.dataService.delete('menu', menu._id).subscribe(data => {
-        console.log('Data ', data);
-
         if (data['success']) {
           this.menus.splice(i, 1);
+          if(this.menus.length !== 0){
+            this.button = true;
+          }
         } else {
           this.router.navigate(['login']);
         }

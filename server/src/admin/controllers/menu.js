@@ -174,7 +174,10 @@ module.exports.updateMenu = (req,res)=>{
 
        Menu.findByIdAndUpdate({_id: req.body.data[i].id}, update)
             .then(result => {
-                console.log('Result ', result)
+                res.status(200).json({
+                    success : true,
+                    msg : "updated"
+                })
             })
             .catch(err => {
                 return res.status(500).send({

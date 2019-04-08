@@ -30,7 +30,6 @@ export class MediaEditComponent implements OnInit {
 
     this.media = this.itemService.media;
     this.done = true;
-    console.log('Media ', this.media);
 
     this.mediaForm = this.formBuilder.group({
       category: [this.media['category']],
@@ -40,7 +39,6 @@ export class MediaEditComponent implements OnInit {
       img: [this.media['img']]
     });
   }
-
 
   changeLanguage(language) {
     this.language = language;

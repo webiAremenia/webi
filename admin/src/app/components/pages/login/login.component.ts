@@ -33,7 +33,6 @@ export class LoginComponent implements OnInit {
       if (data['success']) {
         const token = data['token'];
         const tokenPayload = decode(token);
-        console.log(tokenPayload.email)
         localStorage.setItem('jwt_token', data['token']);
         localStorage.setItem('email',tokenPayload.email);
         this.router.navigate(['admin/portfolio']);
@@ -41,7 +40,8 @@ export class LoginComponent implements OnInit {
         this.router.navigate(['login']);
       }
     }, (err)=>{
-      console.log(err);
+      localStorage.clear();
+      this.router.navigate(['login']);
     });
     this.loginForm.reset()
   }

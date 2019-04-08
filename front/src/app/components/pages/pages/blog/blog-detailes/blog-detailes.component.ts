@@ -27,6 +27,7 @@ export class BlogDetailesComponent implements OnInit {
 
   getFourNews() {
     let i = 0;
+    this.fourNews=[];
     while ( this.fourNews.length < 4 ) {
       if (this.news[i].id != this.id) {
         this.fourNews.push(this.news[i]);
@@ -34,7 +35,10 @@ export class BlogDetailesComponent implements OnInit {
       i++;
     }
   }
-
+  onVisible(){
+    this.blog = this.service.getNewsId(this.id);
+    this.getFourNews();
+  }
 
 // this.fourNews =this.news.slice(0,4);
 }

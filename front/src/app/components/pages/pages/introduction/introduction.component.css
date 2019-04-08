@@ -1,25 +1,22 @@
-.container{
+.container-fluid{
   height: 100vh;
   font-family: Arial;
-  margin-left: 180px;
-}
 
+}
 .circle{
-  margin:auto;
+  text-align: center;
 }
 .circle img{
   width: 400px;
   height: 400px;
 }
-
-
 .title h1{
   color:#fff;
-  font-size: 50px;
+  font-size: 80px;
   line-height: 80px;
 }
 .title{
-  width: 400px;
+  padding: 20px;
   color:#fff;
   position: relative;
 }

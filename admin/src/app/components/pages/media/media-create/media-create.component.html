@@ -27,9 +27,6 @@
             <input type="text" placeholder="en" class="form-control" formControlName="enAlt" *ngIf="language=='en'">
             <input type="text" placeholder="ru" class="form-control" formControlName="ruAlt" *ngIf="language=='ru'">
             <input type="text" placeholder="am" class="form-control" formControlName="amAlt" *ngIf="language=='am'">
-
-            <p *ngIf="mediaForm.get('enAlt').invalid  && mediaForm.get('enAlt').touched"  class="invalid">Type true Alt</p>
-
             <!--<input type="text" placeholder="en" class="form-control" formControlName="enDescription"-->
             <!--*ngIf="language=='en'">-->
             <!--<input type="text" placeholder="ru" class="form-control" formControlName="ruDescription"-->

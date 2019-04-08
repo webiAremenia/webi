@@ -21,7 +21,11 @@ export class PortfolioListComponent implements OnInit {
     this.dataService.getData('portfolio').subscribe(data => {
       this.portfolios = data['portfolios'];
     },(err)=>{
-      console.log(err);
+      // console.log(err.error.message);
+      if(err.error.message == 'Auth failed !'){
+        localStorage.clear();
+        // this.router.navigate(['login'])
+      }
     });
   }
 

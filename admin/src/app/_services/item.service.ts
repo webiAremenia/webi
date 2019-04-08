@@ -7,6 +7,7 @@ import {Team} from '../_models/Team';
 import {Category} from "../_models/Category";
 import {Menu} from "../../../../front/src/app/components/_models/menu";
 import {Language} from "../_models/Language";
+import {News} from "../_models/News";
 
 @Injectable({
   providedIn: 'root'
@@ -21,6 +22,7 @@ export class ItemService {
   menu : Menu;
   menus : Menu[];
   language : Language;
+  news : News;
 
   constructor() {
   }

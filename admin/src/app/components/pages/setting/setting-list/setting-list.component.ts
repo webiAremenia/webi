@@ -11,7 +11,6 @@ import {ItemService} from '../../../../_services/item.service';
 })
 export class SettingListComponent implements OnInit {
   settings : Setting[];
-
   delete: any;
   searchTerm: '';
   constructor(private router : Router, private dataService: DataService, private itemService : ItemService) { }

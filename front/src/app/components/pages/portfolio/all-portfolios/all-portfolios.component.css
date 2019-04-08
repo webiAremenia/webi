@@ -1,6 +1,5 @@
-.container{
+.container-fluid{
   height: auto;
-  width: 90%;
 }
 .section1, .section3{
   display: grid;
@@ -11,6 +10,9 @@
   margin-bottom: 20px;
 }
 
+.navbar-collapse{
+  padding-left: 25%;
+}
 .box img{
   width: 100%;
   height: 100%;
@@ -23,10 +25,13 @@
     margin-bottom: 20px;
   }
 }
+nav{
+  padding: auto;
+}
 .section2, .section4{
   display: grid;
-  grid-template-columns: repeat(1, 680px) 410px;
-  grid-template-rows:  500px;
+  grid-template-columns: repeat(1, 2fr) 410px;
+  grid-template-rows: 500px;
   grid-gap: 20px;
   margin-bottom: 20px;
 }
@@ -40,11 +45,12 @@ p{
   margin-top: 100px;
 }
 .navbar-collapse li a{
-  color:white;
+  color:#ffffff;
   font-size: 20px;
   margin-left: 45px;
   margin-bottom: 75px;
 }
+
 .navbar-collapse{
-  margin-left: 150px;
+  margin:0 auto;
 }

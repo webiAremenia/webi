@@ -1,12 +1,10 @@
-
 body, html {
   overflow: unset !important;
 }
-.container{
-  height: auto;
+.container-fluid{
   color:white;
   font-family: Arial;
-  margin-left: 180px;
+  padding: 185px;
 }
 .col-2 p{
   font-size: 20px;

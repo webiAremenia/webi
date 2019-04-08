@@ -23,12 +23,7 @@ export class SettingViewComponent implements OnInit {
   }
 
   ngOnInit() {
-    // this.dataService.getOne('setting', localStorage.getItem('settingItem')).subscribe(data => {
-    //   console.log('Data ', data);
-    //   this.setting = data['setting'];
-    //   this.done = true;
-    //   console.log('Setting ', this.setting);
-    // });
+
     this.setting = this.itemService.setting;
     this.done = true;
   }
