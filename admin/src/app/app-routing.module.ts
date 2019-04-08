@@ -36,6 +36,10 @@ import {LanguageListComponent} from "./components/pages/language/language-list/l
 import {LanguageCreateComponent} from "./components/pages/language/language-create/language-create.component";
 import {LanguageEditComponent} from "./components/pages/language/language-edit/language-edit.component";
 import {LanguageViewComponent} from "./components/pages/language/language-view/language-view.component";
+import {NewsListComponent} from "./components/pages/news/news-list/news-list.component";
+import {NewsCreateComponent} from "./components/pages/news/news-create/news-create.component";
+import {NewsEditComponent} from "./components/pages/news/news-edit/news-edit.component";
+import {NewsViewComponent} from "./components/pages/news/news-view/news-view.component";
 
 
 const dashboardRoutes: Routes = [
@@ -79,6 +83,11 @@ const dashboardRoutes: Routes = [
   {path: 'language/create', component: LanguageCreateComponent},
   {path: 'language/edit', component: LanguageEditComponent},
   {path: 'language/:id', component: LanguageViewComponent},
+
+  {path: 'news', component: NewsListComponent},
+  {path: 'news/create', component: NewsCreateComponent},
+  {path: 'news/edit', component: NewsEditComponent},
+  {path: 'news/:id', component: NewsViewComponent},
 
 ];
 

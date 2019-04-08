@@ -90,12 +90,12 @@ module.exports.update = (req, res) => {
             if (!result) {
                 res.status(404).json({
                     success: false,
-                    error: "Category not found with id " + req.params.id
+                    error: "Language not found with id " + req.params.id
                 })
             } else {
                 res.status(200).json({
                     success: true,
-                    msg: "Category updated successfully!"
+                    msg: "Language updated successfully!"
                 });
             }
         })

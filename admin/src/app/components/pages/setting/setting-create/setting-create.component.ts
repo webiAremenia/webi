@@ -38,11 +38,6 @@ export class SettingCreateComponent implements OnInit {
         en: this.settingForm.get('enValue').value
       },
   };
-    // const fd: any = new FormData();
-
-    // fd.append('key', this.settingForm.get('key').value);
-    // fd.append('value', JSON.stringify(value));
-
     this.dataService.sendData(form, 'setting').subscribe(data => {
       if (data['success']) {
         this.router.navigate(['admin/setting']);

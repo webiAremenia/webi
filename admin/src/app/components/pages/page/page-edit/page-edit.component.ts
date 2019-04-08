@@ -27,7 +27,6 @@ export class PageEditComponent implements OnInit {
   ngOnInit() {
     this.page = this.itemService.page;
     this.done = true;
-    console.log('page ', this.page);
     this.pageForm = this.formBuilder.group({
       amTitle: [this.page['title'].am],
       ruTitle: [this.page['title'].ru],
@@ -78,7 +77,6 @@ export class PageEditComponent implements OnInit {
 
   changeLanguage(language) {
     this.language = language;
-    console.log('Language ', this.language);
   }
 
 

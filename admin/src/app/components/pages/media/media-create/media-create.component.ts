@@ -24,7 +24,7 @@ export class MediaCreateComponent implements OnInit {
       category: ['', [Validators.required]],
       amAlt: [''],
       ruAlt: [''],
-      enAlt: ['', [Validators.required]],
+      enAlt: [''],
       img: ['', Validators.required],
     });
 

@@ -12,6 +12,7 @@ import team from './crud/team';
 import menu from './crud/menu';
 import category from './crud/category'
 import language from './crud/language'
+import news from './crud/news'
 import multer from "multer";
 
 const router = express.Router();
@@ -51,6 +52,7 @@ router.use('/team', team);
 router.use('/menu', menu);
 router.use('/category', category);
 router.use('/language', language);
+router.use('/news', news);
 
 
 module.exports = router;

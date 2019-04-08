@@ -54,7 +54,6 @@ export class CategoryEditComponent implements OnInit {
     },(err)=>{
       console.log(err);
     });
-    console.log('FOrm ', form);
   }
 
 

@@ -49,16 +49,16 @@ export class MenuSortComponent implements OnInit {
       data['menus'].forEach(menu => {
         if (!menu.parent) {
           let obj: Tree = {
-            name: menu.title.en,
-            id: k++,
-            _id: menu._id,
-            parentId: null,
-            parent: null,
-            childrens: [],
-            options : {
-              showActionButtons : false
+              name: menu.title.en,
+              id: k++,
+              _id: menu._id,
+              parentId: null,
+              parent: null,
+              childrens: [],
+              options: {
+                showActionButtons: false
+              }
             }
-        }
           ;
           parentArr.push(obj);
         } else {
@@ -68,8 +68,8 @@ export class MenuSortComponent implements OnInit {
             _id: menu._id,
             parentId: menu.parent,
             childrens: [],
-            options : {
-              showActionButtons : false
+            options: {
+              showActionButtons: false
             }
           };
           childArr.push(obj2);
@@ -79,10 +79,6 @@ export class MenuSortComponent implements OnInit {
       for (let i = 0; i < parentArr.length; ++i) {
         makeTree(childArr, parentArr[i]);
       }
-
-
-      console.log('-----', childArr);
-      console.log('+++++', parentArr);
       this.myTree = parentArr;
       this.done = true;
     }, (err) => {
@@ -142,7 +138,11 @@ export class MenuSortComponent implements OnInit {
       data: data
     };
     this.dataService.menuUpdate(form, 'menu').subscribe(data => {
-      console.log('DAta ', data)
+      // console.log('DAta ', data)
+      if (data['success']){
+        this.router.navigate(['admin/menu']);
+      }
+      // if()
     }, (err) => {
       console.log(err)
     })

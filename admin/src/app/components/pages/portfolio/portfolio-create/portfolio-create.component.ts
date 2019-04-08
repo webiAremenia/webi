@@ -59,7 +59,6 @@ export class PortfolioCreateComponent implements OnInit {
 
 
     this.dataService.sendData(fd, 'portfolio').subscribe(data => {
-      console.log('DAta ', data);
       if (data['success']) {
         this.router.navigate(['admin/portfolio']);
       }
