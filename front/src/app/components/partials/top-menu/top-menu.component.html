@@ -1,16 +1,34 @@
-<div class="mainMenu">
-  <div id="logo">
-    <a routerLink=""><img src="./assets/images/logo.png"  alt=""></a>
-  </div>
-
-  <div class="menu">
-    <h1>WEBI</h1>
-    <ul>
-      <li><a href="#" id="about">About</a></li>
-      <li><a routerLink="allPortfolios">Portfolio</a></li>
-      <li><a routerLink="blog">Blog</a></li>
-      <li><a routerLink="contact">Contact</a></li>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-lg-1 logoCol">
+      <div id="logo">
+        <a routerLink=""><img src="./assets/images/logo.png"  alt=""></a>
+      </div>
+    </div>
+    <div class="col-lg-10">
+  <nav class="navbar navbar-expand-lg navbar-light">
+  <a class="navbar-brand" routerLink="">WEBI</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" id="about" href="#">About <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="allPortfolios">allPortfolios</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="blog">Blog</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="contact">Contact</a>
+      </li>
     </ul>
+  </div>
+</nav>
+    </div>
   </div>
 </div>
 
@@ -25,11 +43,16 @@
 
 
 
-
-
-
-
-
+  <!--<div class="menu">-->
+  <!--<h1>WEBI</h1>-->
+  <!--<ul>-->
+  <!--<li><a href="#" id="about">About</a></li>-->
+  <!--<li><a routerLink="allPortfolios">Portfolio</a></li>-->
+  <!--<li><a routerLink="blog">Blog</a></li>-->
+  <!--<li><a routerLink="contact">Contact</a></li>-->
+  <!--</ul>-->
+  <!--</div>-->
+  <!--</div>-->
 
 
 

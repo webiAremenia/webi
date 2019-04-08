@@ -1,6 +1,8 @@
-
 body, html {
   overflow: hidden;
+}
+.container-fluid{
+  padding: 170px;
 }
 #parentDiv{
   height: 100vh;
