@@ -57,7 +57,6 @@ export class MenuCreateComponent implements OnInit {
     });
 
     this.dataService.getPagesAndCategories('pc').subscribe(data=>{
-      console.log(data)
     },(err) => {
       console.log(err);
     })

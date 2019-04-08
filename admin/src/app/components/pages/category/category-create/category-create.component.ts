@@ -38,7 +38,6 @@ export class CategoryCreateComponent implements OnInit {
     };
 
     this.dataService.sendData(form, 'category').subscribe(data => {
-      console.log(data)
       if (data['success']) {
         this.router.navigate(['admin/category']);
       } else {
@@ -47,7 +46,6 @@ export class CategoryCreateComponent implements OnInit {
     },(err)=>{
       console.log(err);
     });
-    console.log('FOrm ', form);
   }
 
   changeLanguage(language) {

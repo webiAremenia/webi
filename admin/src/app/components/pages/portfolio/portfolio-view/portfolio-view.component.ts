@@ -41,7 +41,6 @@ export class PortfolioViewComponent implements OnInit {
     this.delete = confirm('Are you want to delete?');
     if (this.delete == true) {
       this.dataService.delete('portfolio', portfolio._id).subscribe(data => {
-
         if (data['success']) {
           this.router.navigate(['admin/portfolio']);
         } else {

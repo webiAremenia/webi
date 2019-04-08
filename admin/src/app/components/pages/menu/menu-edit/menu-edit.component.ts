@@ -83,8 +83,6 @@ export class MenuEditComponent implements OnInit {
       order: this.menuForm.get('order').value,
       parent: this.menuForm.get('parent').value
     };
-
-    // console.log(form)
     this.dataService.updateData(form, 'menu', this.menu['_id']).subscribe(data => {
       if (data['success']) {
         this.router.navigate(['admin/menu']);

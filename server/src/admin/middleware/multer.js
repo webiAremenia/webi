@@ -16,6 +16,9 @@ const storage = multer.diskStorage({
         if (!fs.existsSync(__dirname + '/../../_uploads/page')) {
             fs.mkdirSync(__dirname + '/../../_uploads/page');
         }
+        if (!fs.existsSync(__dirname + '/../../_uploads/news')) {
+            fs.mkdirSync(__dirname + '/../../_uploads/news');
+        }
 
         if (!fs.existsSync(__dirname + '/../../_uploads/portfolio')) {
             fs.mkdirSync(__dirname + '/../../_uploads/portfolio');
@@ -29,6 +32,9 @@ const storage = multer.diskStorage({
         }
         if (req.originalUrl.split('/')[2] === 'page') {
             cb(null, __dirname + '/../../_uploads/page');
+        }
+        if (req.originalUrl.split('/')[2] === 'news') {
+            cb(null, __dirname + '/../../_uploads/news');
         }
         if (req.originalUrl.split('/')[2] === 'portfolio') {
             cb(null, __dirname + '/../../_uploads/portfolio');

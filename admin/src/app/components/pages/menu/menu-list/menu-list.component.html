@@ -1,8 +1,10 @@
 <div class="mr-auto">
   <button class="btn btn-primary"  (click)="myCreate()">Create Menu</button>
-  <button class="btn btn-primary ml-2"  (click)="mySort()">Sort Menu</button>
+  <button class="btn btn-primary ml-2"  (click)="mySort()" [disabled]="!button">Sort Menu</button>
 </div>
-
+<div class="alert alert-danger" role="alert" *ngIf="msg">
+  {{msg}}
+</div>
 
 <br>
 <table class="table table-dark table-hover table-striped">

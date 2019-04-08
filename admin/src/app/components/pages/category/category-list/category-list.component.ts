@@ -27,8 +27,6 @@ export class CategoryListComponent implements OnInit {
     this.delete = confirm('Are you want to delete?');
     if (this.delete == true) {
       this.dataService.delete('category', category._id).subscribe(data => {
-        console.log('Data ', data);
-
         if (data['success']) {
           this.categories.splice(i, 1);
         } else {

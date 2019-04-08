@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
+import {DataService} from "../../../../_services/data.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-language-create',
@@ -7,9 +10,44 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LanguageCreateComponent implements OnInit {
 
-  constructor() { }
+  languageForm: FormGroup;
+  language: String = 'en';
+  res: String = '';
+
+  constructor(private formBuilder: FormBuilder, private dataService: DataService, private router: Router) {
+  }
 
   ngOnInit() {
+    this.languageForm = this.formBuilder.group({
+      value: ['', Validators.required],
+      slug: ['', Validators.required],
+      status: ['', Validators.required],
+    });
+
+  }
+
+
+  mySetting() {
+    let form = {
+      value : this.languageForm.get('value').value,
+      slug : this.languageForm.get('slug').value,
+      status : this.languageForm.get('status').value,
+    };
+
+    this.dataService.sendData(form, 'language').subscribe(data => {
+      if (data['success']) {
+        this.router.navigate(['admin/language']);
+      } else {
+        this.res = data['msg'];
+      }
+    }, (err) => {
+      console.log(err);
+    });
+    console.log('FOrm ', form);
+  }
+
+  changeLanguage(language) {
+    this.language = language;
   }
 
 }
