@@ -45,7 +45,6 @@ export class MenuEditComponent implements OnInit {
     });
 
     this.dataService.getData('menu').subscribe(data => {
-      console.log('Menus ', data['menus']);
       this.menus = data['menus'].filter((item) => {
         return item.title.en !== this.menu.title.en && !item.parent
       })

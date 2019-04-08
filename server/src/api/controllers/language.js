@@ -1,7 +1,7 @@
-import Setting from '../../admin/models/Setting';
+import Language from '../../admin/models/Language';
 
 module.exports.getAll = (req, res) => {
-    Setting.find({})
+    Language.find({})
         .then(result => {
             res.status(200).json({
                 success: true,
@@ -16,18 +16,18 @@ module.exports.getAll = (req, res) => {
         })
 };
 
-module.exports.getOne = async (req, res) => {
-    Setting.findOne({_id: req.params.id})
+module.exports.getOne = (req, res) => {
+    Language.findOne({_id: req.params.id})
         .then(result => {
             if (!result) {
                 res.status(404).json({
                     success: false,
-                    msg: "Setting not found with id " + req.params.id
+                    msg: "Language not found with id " + req.params.id
                 })
             } else {
                 res.status(200).json({
                     success: false,
-                    setting: result
+                    language: result
                 })
             }
         })

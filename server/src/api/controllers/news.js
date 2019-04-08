@@ -1,41 +1,37 @@
-import Setting from '../../admin/models/Setting';
+import News from '../../admin/models/News';
 
 module.exports.getAll = (req, res) => {
-    Setting.find({})
+    News.find({})
         .then(result => {
             res.status(200).json({
                 success: true,
                 data: result
             })
         })
-        .catch(err => {
-            return res.status(500).send({
-                success: false,
-                error: err.message,
-            });
-        })
+        .catch(e => console.log(e))
 };
 
-module.exports.getOne = async (req, res) => {
-    Setting.findOne({_id: req.params.id})
+module.exports.getOne = (req, res) => {
+    News.findOne({_id: req.params.id})
         .then(result => {
             if (!result) {
                 res.status(404).json({
                     success: false,
-                    msg: "Setting not found with id " + req.params.id
+                    msg: "News not found with id " + req.params.id
                 })
             } else {
                 res.status(200).json({
                     success: false,
-                    setting: result
+                    news: result
                 })
             }
         })
-        .catch(err => {
+        .catch(e => {
             return res.status(500).send({
                 success: false,
                 error: err.message,
             });
         });
 };
+
 

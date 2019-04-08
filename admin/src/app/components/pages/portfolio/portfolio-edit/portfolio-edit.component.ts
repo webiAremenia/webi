@@ -58,7 +58,7 @@ export class PortfolioEditComponent implements OnInit {
     fd.append('description', JSON.stringify(description));
 
     this.dataService.updateData(fd, 'portfolio', this.portfolio._id).subscribe(data => {
-      console.log('DAta ', data);
+
       if (data['success']) {
         this.router.navigate(['admin/portfolio']);
       }
