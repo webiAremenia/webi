@@ -1,19 +1,19 @@
-const Page = require('../models/Page');
+// const Page = require('../models/Page');
 const fs = require('fs');
-const jwt = require('jsonwebtoken');
+import Page from '../models/Page'
 
 module.exports.getAll = (req, res) => {
     const pages = Page.find({})
         .then(result => {
             res.status(200).json({
                 success: true,
-                pages: result
+                data: result
             })
         })
         .catch(e => console.log(e))
 };
 
-module.exports.getOne =  (req, res) => {
+module.exports.getOne = (req, res) => {
     Page.findOne({_id: req.params.id})
         .then(result => {
             if (!result) {
@@ -36,16 +36,12 @@ module.exports.getOne =  (req, res) => {
         });
 };
 
-module.exports.create =  (req, res) => {
-    // console.log(req.file)
-    // console.log('content',JSON.parse(req.body.content));
-    // console.log('description',JSON.parse(req.body.description));
-    // console.log('title',JSON.parse(req.body.title));
+module.exports.create = (req, res) => {
 
     if (!req.file) {
         return res.status(500).json({
-            success : false,
-            msg : "error"
+            success: false,
+            msg: "error"
         })
     }
     const page = new Page({
@@ -56,7 +52,7 @@ module.exports.create =  (req, res) => {
     });
     page.save()
         .then(result => {
-            res.status(200).json({
+            res.status(201).json({
                 success: true,
                 page: result
             })
@@ -126,43 +122,34 @@ module.exports.update = async (req, res) => {
 };
 
 module.exports.delete = (req, res) => {
-    const token = req.headers.authorization.replace('Bearer ', '');
-    jwt.verify(token, 'secret', function (err, decoded) {
-        if (decoded.role == 'superadmin') {
-            Page.findByIdAndRemove({_id: req.params.id})
-                .then(result => {
-                    if (!result) {
+    Page.findByIdAndRemove({_id: req.params.id})
+        .then(result => {
+            if (!result) {
 
-                        res.status(404).json({
-                            success: false,
-                            msg: "Page not found with id " + req.params.id
-                        })
-                    } else {
-                        fs.unlink(__dirname + `/../../_uploads/page/${result.banner}`, (err) => {
-                            if (err) {
-                                console.log(err)
-                            }
-                        });
-                        res.status(200).json({
-                            success: true,
-                            msg: "Page deleted successfully!",
-                            result : result
-                        });
-                    }
+                res.status(404).json({
+                    success: false,
+                    msg: "Page not found with id " + req.params.id
                 })
-                .catch(err => {
-                    return res.status(500).send({
-                        success: false,
-                        error: err.message,
-                    });
+            } else {
+                fs.unlink(__dirname + `/../../_uploads/page/${result.banner}`, (err) => {
+                    if (err) {
+                        console.log(err)
+                    }
                 });
-        } else {
-            res.status(200).json({
+                res.status(200).json({
+                    success: true,
+                    msg: "Page deleted successfully!",
+                    result: result
+                });
+            }
+        })
+        .catch(err => {
+            return res.status(500).send({
                 success: false,
-                msg: "You are not admin"
-            })
-        }
-    });
+                error: err.message,
+            });
+        });
+
 
 };
 

@@ -27,7 +27,6 @@ export class PageEditComponent implements OnInit {
   ngOnInit() {
     this.page = this.itemService.page;
     this.done = true;
-    console.log('page ', this.page);
     this.pageForm = this.formBuilder.group({
       amTitle: [this.page['title'].am],
       ruTitle: [this.page['title'].ru],
@@ -67,18 +66,17 @@ export class PageEditComponent implements OnInit {
 
 
     this.dataService.updateData(fd, 'page', this.page._id).subscribe(data => {
-      console.log('DAta ', data);
       if (data['success']) {
         this.router.navigate(['admin/page']);
       }
+    },(err)=>{
+      console.log(err);
     });
-    console.log('Form ', this.pageForm.value);
   }
 
 
   changeLanguage(language) {
     this.language = language;
-    console.log('Language ', this.language);
   }
 
 

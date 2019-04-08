@@ -23,12 +23,7 @@ export class SettingViewComponent implements OnInit {
   }
 
   ngOnInit() {
-    // this.dataService.getOne('setting', localStorage.getItem('settingItem')).subscribe(data => {
-    //   console.log('Data ', data);
-    //   this.setting = data['setting'];
-    //   this.done = true;
-    //   console.log('Setting ', this.setting);
-    // });
+
     this.setting = this.itemService.setting;
     this.done = true;
   }
@@ -38,18 +33,9 @@ export class SettingViewComponent implements OnInit {
     this.router.navigate(['admin/setting/edit']);
   }
 
-  deteSetting(setting, i) {
-    this.delete = confirm('Are you want to delete?');
-    if (this.delete == true) {
-      this.dataService.delete('setting', setting._id).subscribe(data => {
-
-        if (data['success']) {
-          this.router.navigate(['admin/setting']);
-        } else {
-          console.log('DAta ', data);
-        }
-      });
-    }
+  ok() {
+    this.router.navigate(['admin/setting']);
   }
+
 
 }

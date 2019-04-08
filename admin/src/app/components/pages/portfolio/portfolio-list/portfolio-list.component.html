@@ -21,7 +21,7 @@
   </tr>
   </thead>
   <tbody>
-  <tr *ngFor="let portfolio of portfolios | titleFilter: searchTerm; let i = index">
+  <tr *ngFor="let portfolio of portfolios | titleDescriptionFilter: searchTerm; let i = index">
 
     <td>{{portfolio._id}}</td>
     <td>{{portfolio.title.en}}</td>
@@ -30,7 +30,8 @@
     <td>{{portfolio.url}}</td>
 
     <td>
-      <button  [routerLink]="['/admin/portfolio', portfolio._id]" (click)="viewPortfolio(portfolio)" class="btn btn-info"><i class="fas fa-eye"></i></button>
+      <button [routerLink]="['/admin/portfolio', portfolio._id]" (click)="viewPortfolio(portfolio)"
+              class="btn btn-info"><i class="fas fa-eye"></i></button>
 
       <button (click)="updatePortfolio(portfolio)" style="margin-left: 20px;" class="btn btn-primary"><i
         class="far fa-edit"></i></button>

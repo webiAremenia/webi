@@ -2,6 +2,9 @@ import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms';
 import {AuthService} from '../../../_services/auth.service';
 import {Router} from '@angular/router';
+import * as decode from 'jwt-decode';
+
+
 
 @Component({
   selector: 'app-login',
@@ -26,16 +29,19 @@ export class LoginComponent implements OnInit {
 
   myLogin() {
     this.authService.login(this.loginForm.value).subscribe(data => {
-      console.log('Data ', data);
       this.msg = data['msg'];
-
       if (data['success']) {
+        const token = data['token'];
+        const tokenPayload = decode(token);
         localStorage.setItem('jwt_token', data['token']);
-        localStorage.setItem('email', data['email']);
+        localStorage.setItem('email',tokenPayload.email);
         this.router.navigate(['admin/portfolio']);
       } else {
         this.router.navigate(['login']);
       }
+    }, (err)=>{
+      localStorage.clear();
+      this.router.navigate(['login']);
     });
     this.loginForm.reset()
   }

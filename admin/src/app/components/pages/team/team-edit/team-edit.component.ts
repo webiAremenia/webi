@@ -69,12 +69,11 @@ export class TeamEditComponent implements OnInit {
 
 
     this.dataService.updateData(fd, 'team', this.team._id).subscribe(data => {
-      console.log('DAta ', data);
-      if (data['success']) {
-        this.router.navigate(['admin/team']);
-      }
+      this.router.navigate(['admin/team']);
+    },(err)=>{
+      console.log(err);
     });
-    console.log('Form ', this.teamForm.value);
+
   }
 
 

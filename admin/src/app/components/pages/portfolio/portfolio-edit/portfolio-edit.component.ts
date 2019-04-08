@@ -27,7 +27,6 @@ export class PortfolioEditComponent implements OnInit {
   ngOnInit() {
     this.portfolio = this.itemService.portfolio;
     this.done = true;
-    console.log(this.portfolio);
     this.porfolioForm = this.formBuilder.group({
       url: [this.portfolio.url, Validators.required],
       amTitle: [this.portfolio['title'].am],
@@ -63,19 +62,16 @@ export class PortfolioEditComponent implements OnInit {
       if (data['success']) {
         this.router.navigate(['admin/portfolio']);
       }
+    },(err)=>{
+      console.log(err);
     });
-    console.log('Form ', this.porfolioForm.value);
   }
-
 
   changeLanguage(language) {
     this.language = language;
-    console.log('Language ', this.language);
   }
 
-
   onFileChange(event) {
-
     if (event.target.files.length > 0) {
       let file = event.target.files[0];
       this.porfolioForm.get('img').setValue(file);
