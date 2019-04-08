@@ -48,6 +48,7 @@ const roots = [
     },
 ];
 
+import  upload from './admin/middleware/multer';
 // app.use( "/connector", elFinder( roots ) );
 app.use( "/connector", (req, res , next) => {
     console.log(req)

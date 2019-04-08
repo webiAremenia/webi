@@ -6,11 +6,11 @@
 
 body {
   background-color: #3966ae;
-  max-width: 1440px;
+
 }
 
 body, html {
-  overflow-x: hidden;
+  /*overflow-x: hidden;*/
 }
 
 #slider .owl-next, #slider .owl-prev{

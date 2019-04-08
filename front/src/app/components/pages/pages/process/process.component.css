@@ -1,8 +1,7 @@
-.container{
+.container-fluid{
   height: 100vh;
   color:white;
   font-family: Arial;
-  margin-left: 180px;
 }
 .col-5{
   padding-top: 100px;

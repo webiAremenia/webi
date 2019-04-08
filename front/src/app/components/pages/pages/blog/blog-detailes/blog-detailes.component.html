@@ -1,30 +1,36 @@
-<div class="container">
-  <div class="menu">
-    <ul>
-      <li><a href="">Activity</a></li>
-      <li><a href="">Discover</a></li>
-      <li><a href="">Job</a></li>
-    </ul>
-  </div>
-  <div class="sectionOne">
-    <div class="box">
-      <h5>{{blog.title}}</h5>
-      <p>{{blog.text}}</p>
-    </div>
-    <div class="box">
-      <img src="{{blog.img}}" alt="">
+<div class="container-fluid one">
+  <div class="row">
+    <div class="col-lg-12 menu">
+      <ul>
+        <li><a href="">Activity</a></li>
+        <li><a href="">Discover</a></li>
+        <li><a href="">Job</a></li>
+      </ul>
     </div>
   </div>
-  <div class="sectionTwo">
-    <div class="cardBox" *ngFor="let new of fourNews">
-        <a href="">
-      <img src='{{new.img}}' class="card-img-top" alt="..."></a>
-      <div class="card-body">
+      <div class="row sectionOne">
+        <div class="col-lg-6 box">
+          <h5>{{blog.title}}</h5>
+          <p>{{blog.text}}</p>
+          <p>{{blog.text}}</p>
+        </div>
+        <div class="col-lg-6 ImageBox">
+          <img src="{{blog.img}}" alt="">
+        </div>
+  </div>
+</div>
+<div class="container-fluid two">
+  <div class="row">
+    <div class="cardBox col-lg-3" *ngFor="let new of fourNews" (click)="onVisible()">
+      <a routerLink="/blog/{{new.id}}">
+      <img src='{{new.img}}' class="card-img-top" alt="...">
+        <div class="card-body">
         <h5 class="card-title">{{new.title}}</h5>
         <p class="card-text">{{new.text}}</p>
+          <p class="card-text">{{new.text}}</p>
       </div>
+      </a>
     </div>
-
   </div>
-
 </div>
+

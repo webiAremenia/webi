@@ -1,17 +1,13 @@
-.sectionOne{
-  display: grid;
-  grid-template-columns: repeat(2, 560px);
-  grid-template-rows: repeat(1, 478px);
-  grid-gap: 20px;
+.one{
+  color: white;
+  padding-left: 175px;
 }
-.sectionTwo{
-  display: grid;
-  grid-template-columns: repeat(4, 250px);
-  grid-template-rows: repeat(1, 450px);
-  grid-gap: 20px;
+.two{
+  color: white;
+  padding: 175px;
 }
 .menu{
-  margin-left: 400px;
+ text-align: center;
 }
 .menu li{
   display: inline-block;
@@ -30,19 +26,32 @@
 .box{
   color:white;
 }
-.sectionOne img{
+.ImageBox{
+  padding: 0;
+}
+.sectionOne .ImageBox img{
+  height: 630px;
   width: 100%;
-  height: 100%;
+}
+.sectionOne {
+  padding-bottom: 160px;
+
+}
+.card-body{
+  color: white;
 }
 .sectionTwo{
- margin: 160px 50px;
+  margin: 160px 50px;
   color: white;
 }
 .cardBox img{
-  border-radius: 5px;
-  height: 150px;
+  border-radius: 3px;
+  height: 30%;
   width: 100%;
 }
 .card-body{
-  height: 180px;
+  width: 100%;
+  height: 70%;
+  padding: 0;
+  padding-top: 12px;
 }
