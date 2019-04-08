@@ -31,6 +31,32 @@ app.use('/admin', adminRoutes);
 app.use('/api', api);
 
 
+const elFinder = require("elfinder-node");
+
+const roots = [
+    {
+        driver: elFinder.LocalFileStorage,
+        URL: '/images/', //Required
+        path: 'http://localhost:3000/uploads' ,   //Required
+        permissions: { read:1, write: 1, lock: 0 }
+    },
+    {
+        driver: elFinder.LocalFileStorage,
+        URL: "/404/",       //Required
+        path: "private",    //Required
+        permissions: { read:1, write: 0, lock: 1 }
+    },
+];
+
+// app.use( "/connector", elFinder( roots ) );
+app.use( "/connector", (req, res , next) => {
+    console.log(req)
+} );
+
+
+
+
+
 //----------- Connect to Angular client
 
 app.use('/admin-panel', express.static(__dirname + '/../../admin/dist/Client'));
