@@ -21,8 +21,8 @@ module.exports.getOne = (req, res) => {
                 })
             } else {
                 res.status(200).json({
-                    success: false,
-                    news: result
+                    success: true,
+                    data: result
                 })
             }
         })

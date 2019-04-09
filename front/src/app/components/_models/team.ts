@@ -1,19 +1,20 @@
-export class Page {
+export class Team {
   id: string;
-  title: {
+  fullName: {
     en: string,
     ru: string,
     am: string
   };
-  description: {
+  position: {
     en: string,
     ru: string,
     am: string
   };
-  content: {
+  info: {
     en: string,
     ru: string,
     am: string
   };
-  banner : string;
+  avatar : string;
+  sort : number;
 }

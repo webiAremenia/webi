@@ -26,8 +26,8 @@ module.exports.getOne = async (req, res) => {
                 })
             } else {
                 res.status(200).json({
-                    success: false,
-                    setting: result
+                    success: true,
+                    data: result
                 })
             }
         })

@@ -1,6 +1,5 @@
-export class Portfolio {
-  id : string;
-  url: string;
+export class News {
+  id: string;
   title: {
     en: string,
     ru: string,
@@ -11,5 +10,10 @@ export class Portfolio {
     ru: string,
     am: string
   };
-  image : string;
+  content: {
+    en: string,
+    ru: string,
+    am: string
+  };
+  banner : string;
 }
