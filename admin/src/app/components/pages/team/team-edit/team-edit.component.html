@@ -1,13 +1,13 @@
 
   <div class="row">
     <div class="col-md-10 offset-1" *ngIf="done">
-      <h2 class="text-center">Edit {{team.fullName.en}}</h2>
+      <h2 class="text-center"><span translate>Edit</span> {{team.fullName.en}}</h2>
       <form [formGroup]="teamForm">
         <div>
           <img src='http://localhost:3000/uploads/team/{{team.avatar}}' class="img-fluid max" alt="">
         </div>
         <div class="form-group">
-          <label for="image">Avatar: <span class="invalid">(required) </span> </label>
+          <label for="image" translate>Avatar<span class="invalid">(required) </span> </label>
           <br>
           <input type="file" id="image" (change)="onFileChange($event)" #fileInput>
           <p *ngIf="teamForm.get('img').invalid && teamForm.get('img').touched" class="invalid">Type true
@@ -20,7 +20,7 @@
         <br>
 
         <div class="form-group">
-          <label>Full Name: </label>
+          <label translate>Full Name</label>
           <input type="text" placeholder="en" class="form-control" formControlName="enFullName" *ngIf="language=='en'">
           <input type="text" placeholder="ru" class="form-control" formControlName="ruFullName" *ngIf="language=='ru'">
           <input type="text" placeholder="am" class="form-control" formControlName="amFullName" *ngIf="language=='am'">
@@ -31,7 +31,7 @@
 
 
         <div class="form-group">
-          <label>Position: </label>
+          <label translate>Position</label>
           <input type="text" placeholder="en" class="form-control" formControlName="enPosition" *ngIf="language=='en'">
           <input type="text" placeholder="ru" class="form-control" formControlName="ruPosition" *ngIf="language=='ru'">
           <input type="text" placeholder="am" class="form-control" formControlName="amPosition" *ngIf="language=='am'">
@@ -41,7 +41,7 @@
         </div>
 
         <div class="form-group">
-          <label>Info: </label>
+          <label translate>Info</label>
 
           <ckeditor *ngIf="language=='en'" tagName="input" formControlName="enInfo" [editor]="Editor"></ckeditor>
           <ckeditor *ngIf="language=='ru'" tagName="input" formControlName="ruInfo" [editor]="Editor"></ckeditor>
@@ -53,13 +53,13 @@
         </div>
 
         <div class="form-group">
-          <label>Sort:</label>
+          <label translate>Sort</label>
           <input type="number" placeholder="sort" class="form-control" formControlName="sort">
           <p *ngIf="teamForm.get('sort').invalid && teamForm.get('sort').touched"  class="invalid">Type true english Value</p>
         </div>
 
 
-        <button type="button" class="btn btn-info" (click)="myPage()" [disabled]="!teamForm.valid">Create <i
+        <button type="button" class="btn btn-info" (click)="myPage()" [disabled]="!teamForm.valid" translate>Create<i
           class="fa fa-check"></i></button>
       </form>
     </div>

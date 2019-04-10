@@ -1,10 +1,10 @@
 <div class="row">
   <div class="col-md-10 offset-1">
-    <h2 class="text-center">Create Page</h2>
+    <h2 class="text-center" translate>Create</h2>
     <form [formGroup]="pageForm">
 
       <div class="form-group">
-        <label for="image">Image: <span class="invalid">(required) </span> </label>
+        <label for="image" translate>Image<span class="invalid">(required) </span> </label>
         <br>
         <input type="file" id="image" (change)="onFileChange($event)" #fileInput>
         <p *ngIf="pageForm.get('img').invalid && pageForm.get('img').touched" class="invalid">Type true
@@ -17,7 +17,7 @@
       <br>
 
       <div class="form-group">
-        <label>Title: </label>
+        <label translate>Title</label>
         <input type="text" placeholder="en" class="form-control" formControlName="enTitle" *ngIf="language=='en'">
         <input type="text" placeholder="ru" class="form-control" formControlName="ruTitle" *ngIf="language=='ru'">
         <input type="text" placeholder="am" class="form-control" formControlName="amTitle" *ngIf="language=='am'">
@@ -28,7 +28,7 @@
 
 
       <div class="form-group">
-        <label>Description: </label>
+        <label translate>Description</label>
 
         <ckeditor *ngIf="language=='en'" tagName="input" formControlName="enDescription" [editor]="Editor"></ckeditor>
         <ckeditor *ngIf="language=='ru'" tagName="input" formControlName="ruDescription" [editor]="Editor"></ckeditor>
@@ -40,7 +40,7 @@
       </div>
 
       <div class="form-group">
-        <label>Content: </label>
+        <label translate>Content</label>
 
         <ckeditor *ngIf="language=='en'" tagName="input" formControlName="enContent" [editor]="Editor"></ckeditor>
         <ckeditor *ngIf="language=='ru'" tagName="input" formControlName="ruContent" [editor]="Editor"></ckeditor>
@@ -51,7 +51,7 @@
       </div>
 
 
-      <button type="button" class="btn btn-info" (click)="myPage()" [disabled]="!pageForm.valid">Create <i
+      <button type="button" class="btn btn-info" (click)="myPage()" [disabled]="!pageForm.valid" translate>Create<i
         class="fa fa-check"></i></button>
     </form>
   </div>

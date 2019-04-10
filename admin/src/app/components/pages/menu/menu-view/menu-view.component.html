@@ -5,9 +5,9 @@
     <table class="table table-dark table-hover table-striped">
       <thead class="thead-light">
       <tr>
-        <th>Type</th>
-        <th>TypeId</th>
-        <th>Order</th>
+        <th translate>Type</th>
+        <th translate>TypeId</th>
+        <th translate>Order</th>
         <th *ngIf="menu.parent">ParentId</th>
       </tr>
       </thead>
@@ -20,7 +20,7 @@
       </tr>
       </tbody>
     </table>
-    <h2>Title </h2>
+    <h2 translate>Title</h2>
     <table class="table table-dark table-hover table-striped">
       <thead class="thead-light">
       <tr>
@@ -40,7 +40,7 @@
     <button type="button" class="btn btn-success" (click)="ok()"><i
       class="fa fa-check" aria-hidden="true"></i>
     </button>
-    <button type="button" class="btn btn-info" (click)="updateMedia(menu)" style="margin-left: 20px;">Edit <i
+    <button type="button" class="btn btn-info" (click)="updateMedia(menu)" style="margin-left: 20px;" translate>Edit<i
       class="far fa-edit"></i></button>
     <button (click)="deleteMedia(menu,i)" style="margin-left: 20px;" class="btn btn-danger"><i
       class="fa fa-times"></i>

@@ -1,13 +1,13 @@
 
 <div class="row">
   <div class="col-md-10 offset-1" *ngIf="done">
-    <h2 class="text-center">Edit {{news.title.en}}</h2>
+    <h2 class="text-center"><span translate>Edit</span> {{news.title.en}}</h2>
     <form [formGroup]="newsForm">
       <div>
         <img src='http://localhost:3000/uploads/news/{{news.banner}}' class="img-fluid max" alt="">
       </div>
       <div class="form-group">
-        <label for="image">Image: <span class="invalid">(required) </span> </label>
+        <label for="image" translate>Image<span class="invalid">(required) </span> </label>
         <br>
         <input type="file" id="image" (change)="onFileChange($event)" #fileInput>
         <p *ngIf="newsForm.get('img').invalid && newsForm.get('img').touched" class="invalid">Type true
@@ -20,7 +20,7 @@
       <br>
 
       <div class="form-group">
-        <label>Title: </label>
+        <label translate>Title</label>
         <input type="text" placeholder="en" class="form-control" formControlName="enTitle" *ngIf="language=='en'">
         <input type="text" placeholder="ru" class="form-control" formControlName="ruTitle" *ngIf="language=='ru'">
         <input type="text" placeholder="am" class="form-control" formControlName="amTitle" *ngIf="language=='am'">
@@ -31,7 +31,7 @@
 
 
       <div class="form-group">
-        <label>Description: </label>
+        <label translate>Description</label>
 
         <ckeditor *ngIf="language=='en'" tagName="input" formControlName="enDescription" [editor]="Editor"></ckeditor>
         <ckeditor *ngIf="language=='ru'" tagName="input" formControlName="ruDescription" [editor]="Editor"></ckeditor>
@@ -43,19 +43,19 @@
       </div>
 
       <div class="form-group">
-        <label>Content: </label>
+        <label translate>Content</label>
 
         <ckeditor *ngIf="language=='en'" tagName="input" formControlName="enContent" [editor]="Editor"></ckeditor>
         <ckeditor *ngIf="language=='ru'" tagName="input" formControlName="ruContent" [editor]="Editor"></ckeditor>
         <ckeditor *ngIf="language=='am'" tagName="input" formControlName="amContent" [editor]="Editor"></ckeditor>
 
         <p *ngIf="newsForm.get('enContent').invalid && newsForm.get('enContent').touched"
-           class="invalid">Type en Description</p>
+           class="invalid" >Type en Description</p>
 
       </div>
 
 
-      <button type="button" class="btn btn-info" (click)="myNews()"  [disabled]="!newsForm.valid">Create <i
+      <button type="button" class="btn btn-info" (click)="myNews()"  [disabled]="!newsForm.valid" translate>Create <i
         class="fa fa-check"></i></button>
     </form>
   </div>
