@@ -27,7 +27,6 @@ export class TeamEditComponent implements OnInit {
   ngOnInit() {
     this.team = this.itemService.team;
     this.done = true;
-    console.log('team ', this.team);
     this.teamForm = this.formBuilder.group({
       amFullName: [this.team['fullName'].am],
       ruFullName: [this.team['fullName'].ru],
@@ -79,7 +78,6 @@ export class TeamEditComponent implements OnInit {
 
   changeLanguage(language) {
     this.language = language;
-    console.log('Language ', this.language);
   }
 
 

@@ -44,7 +44,6 @@ export class LanguageEditComponent implements OnInit {
     }, (err) => {
       console.log(err);
     });
-    console.log('FOrm ', form);
   }
 
 

@@ -74,7 +74,6 @@ export class TeamListComponent implements OnInit {
       },(err)=>{
         console.log(err);
       });
-      console.log(this.personsArr);
       this.personsArr.length = 0;
     }
   }

@@ -1,9 +1,6 @@
 <div class="mr-auto">
-  <button class="btn btn-primary"  (click)="myCreate()">Create Menu</button>
-  <button class="btn btn-primary ml-2"  (click)="mySort()" [disabled]="!button">Sort Menu</button>
-</div>
-<div class="alert alert-danger" role="alert" *ngIf="msg">
-  {{msg}}
+  <button class="btn btn-primary"  (click)="myCreate()" translate>Create Menu</button>
+  <button class="btn btn-primary ml-2"  (click)="mySort()" [disabled]="!button" translate>Sort Menu</button>
 </div>
 
 <br>
@@ -11,8 +8,8 @@
   <thead class="thead-light">
   <tr>
     <th>_id</th>
-    <th>Title</th>
-    <th>Order</th>
+    <th translate>Title</th>
+    <th translate>Order</th>
     <th></th>
   </tr>
   </thead>

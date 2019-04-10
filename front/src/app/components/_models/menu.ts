@@ -5,7 +5,8 @@ export interface Menu {
     ru: string,
     am: string
   };
+  type : string;
+  typeId : string;
   parent: number;
-  position: number;
-  url: string;
+  order: number;
 }

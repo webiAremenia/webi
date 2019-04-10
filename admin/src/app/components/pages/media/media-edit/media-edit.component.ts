@@ -42,7 +42,6 @@ export class MediaEditComponent implements OnInit {
 
   changeLanguage(language) {
     this.language = language;
-    console.log('Language ', this.language);
   }
 
   myMedia() {

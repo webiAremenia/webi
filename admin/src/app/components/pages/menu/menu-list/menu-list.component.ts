@@ -25,7 +25,6 @@ export class MenuListComponent implements OnInit {
       if(this.menus.length !== 0){
         this.button = true;
       }
-      console.log(this.menus)
     }, (err)=>{
       console.log(err);
     });

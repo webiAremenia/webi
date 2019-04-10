@@ -43,7 +43,6 @@ export class LanguageCreateComponent implements OnInit {
     }, (err) => {
       console.log(err);
     });
-    console.log('FOrm ', form);
   }
 
   changeLanguage(language) {
