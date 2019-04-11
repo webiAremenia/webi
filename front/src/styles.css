@@ -10,9 +10,11 @@ body {
 }
 
 body, html {
-  /*overflow-x: hidden;*/
+  overflow-x: hidden;
 }
-
+.owl-nav {
+  margin-bottom: 0;
+}
 #slider .owl-next, #slider .owl-prev{
   position: absolute;
   width: 30px;
@@ -30,9 +32,7 @@ body, html {
   background: white;
 }
 
-/*.modal-content{*/
-/*transform: scale(.3);*/
-/*}*/
+
 .modal-content{
   -webkit-animation-name: zoom;
   -webkit-animation-duration: 0.6s;
