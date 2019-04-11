@@ -71,7 +71,6 @@ export class NewsCreateComponent implements OnInit {
     },(err)=>{
       console.log(err);
     });
-    console.log(this.newsForm.value)
   }
 
   changeLanguage(language) {

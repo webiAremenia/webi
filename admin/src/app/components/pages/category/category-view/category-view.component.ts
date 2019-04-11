@@ -38,7 +38,7 @@ export class CategoryViewComponent implements OnInit {
     this.router.navigate(['admin/category/edit']);
   }
 
-  deteCategory(category, i) {
+  deleteCategory(category, i) {
     this.delete = confirm('Are you want to delete?');
     if (this.delete == true) {
       this.dataService.delete('category', category._id).subscribe(data => {

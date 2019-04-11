@@ -1,4 +1,4 @@
-.container-fluid {
+#slider {
   font-family: Arial;
   color: white;
 }
@@ -15,7 +15,7 @@ button{
   border: 0;
   background: none;
   display: block;
-  margin-left: 270px;
+  margin-left: 300px;
 
 }
 button img{
@@ -25,11 +25,11 @@ button img{
 .col-12{
   height: 200px;
 }
-.one, .two, .three{
+.one, .two, .three, .four{
   width: 100%;
-  height: 200px;
+  height: calc(100vw/8);
   color: black;
-  padding: 10px 20px;
+  padding: 20px 30px;
 }
 .one{
   background: white;
@@ -39,4 +39,42 @@ button img{
 }
 .three{
   background: #2a2a2a;
+}
+@media (min-width: 1900px) {
+  .one, .two, .three, .four{
+    font-size: 40px;
+    padding: 10px 20px;
+  }
+  h5{
+    font-size: 40px;
+    font-weight: 600;
+  }
+  .one p, .two p, .three p, .four p{
+    font-size: 35px;
+  }
+  button{
+    width: 50px;
+    height: 50px;
+    margin-left: 400px;
+    margin-bottom: 30px;
+  }
+}
+@media (min-width: 1500px) {
+  .one, .two, .three, .four{
+    font-size: 30px;
+    padding: 10px 20px;
+  }
+  h5{
+    font-size: 20px;
+    font-weight: 500;
+  }
+  .one p, .two p, .three p, .four p{
+    font-size: 15px;
+  }
+  button{
+    width: 40px;
+    height: 40px;
+    margin-left: 300px;
+    margin-bottom: 30px;
+  }
 }

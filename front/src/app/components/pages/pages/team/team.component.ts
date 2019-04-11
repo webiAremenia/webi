@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-team',
@@ -6,10 +6,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./team.component.css']
 })
 export class TeamComponent implements OnInit {
-
-  constructor() { }
+    visible=true;
+  constructor() {
+  }
 
   ngOnInit() {
   }
-
+  onClick()
+  {
+   this.visible = !this.visible;
+  }
 }
+
+

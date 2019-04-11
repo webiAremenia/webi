@@ -1,16 +1,19 @@
-.container-fluid{
+.team{
   height: auto;
   color:white;
   font-family: Arial;
+  padding-left: 20px;
+}
+.teamMain{
+  padding-top: 115px;
+}
 
-}
-.col-5 p a{
-  text-decoration: none;
-  color: white;
-  transition: 2ms ease;
-}
-.col-5 p a:hover{
-  color:grey;
+.col-5  button{
+  color:white;
+  border: none;
+  border: 0;
+  background: none;
+  outline-style: none;
 }
 .line{
   width: 100px;
@@ -33,19 +36,51 @@ h6{
   margin: 10px;
 }
 .one a img{
-  width: 50px;
-  height: 30px;
-  margin-left: 180px;
-  margin-top: 100px;
+  width: 32px;
+  height: 16px;
+  float: right;
+}
+
+.image{
+ text-align: center;
+
 }
 .second{
-  height: 148px;
+  height: 20%;
+  text-align: right;
+  padding: 50px;
+  position: relative;
 }
-.second a img{
-  width: 65px;
-  height: 40px;
-  margin-top: 50px;
+/*.second a img{*/
+  /*width: 32px;*/
+  /*height: 16px;*/
+  /*margin: 20px;*/
+/*}*/
+/*.secondImage{*/
+  /*transform: rotateY(180deg);*/
+/*}*/
+.second button{
+  box-sizing: border-box;
+  border-radius: 50%;
+  width: 66px;
+  height: 66px;
+  background-color: #5582CA;
+  text-align: center;
+  padding-left: 3px;
+  padding-top: 3px;
+  border:0;
+  outline: none;
+  position: absolute;
+  right: 50px;
+  bottom: 20px;
 }
-.secongImage{
-  transform: rotateY(180deg);
+.second button:hover{
+  border:0;
+  background-color: #1c488e;
+}
+.second button:active{
+  border:1px solid blue;
+}
+.second button img{
+  width: 40px;
 }

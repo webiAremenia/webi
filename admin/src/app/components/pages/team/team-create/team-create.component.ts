@@ -74,7 +74,6 @@ export class TeamCreateComponent implements OnInit {
     }, (err) => {
       console.log(err);
     });
-    console.log('FOrm ', this.teamForm.value);
   }
 
   changeLanguage(language) {

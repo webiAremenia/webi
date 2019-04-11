@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-md-10 offset-1" *ngIf="done">
-    <h2 class="text-center">Edit Menu</h2>
+    <h2 class="text-center" translate>Edit</h2>
     <form [formGroup]="menuForm">
 
       <h2 class="text-center">{{menu.title.en}}</h2>
@@ -13,7 +13,7 @@
         <br>
 
         <div class="form-group">
-          <label>Title:</label>
+          <label translate>Title</label>
           <input type="text" placeholder="en" class="form-control" formControlName="enTitle" *ngIf="language=='en'">
           <input type="text" placeholder="ru" class="form-control" formControlName="ruTitle" *ngIf="language=='ru'">
           <input type="text" placeholder="am" class="form-control" formControlName="amTitle" *ngIf="language=='am'">
@@ -24,20 +24,20 @@
         </div>
       </div>
 
-      <p>Type:</p>
+      <p translate>Type</p>
       <select class="form-control" formControlName="type" (change)="mySelect($event)">
         <option value="{{i}}" *ngFor="let category of categories; let i = index">{{category}}</option>
       </select>
       <br>
       <div *ngIf="value == 'category'">
-        <p>TypeId:</p>
+        <p translate>TypeId</p>
         <select class="form-control" formControlName="typeId">
           <option value="{{item._id}}" *ngFor="let item of categoriesArr; let i = index">{{item.name.en}}</option>
         </select>
       </div>
 
       <div *ngIf="value == 'page'">
-        <p>TypeId:</p>
+        <p translate>TypeId</p>
         <select class="form-control" formControlName="typeId">
           <option value="{{item._id}}" *ngFor="let item of pagesArr; let i = index">{{item.title.en}}</option>
         </select>
@@ -45,14 +45,14 @@
 
       <div *ngIf="value == 'url'">
         <div class="form-group">
-          <label>URL: </label>
+          <label translate>url</label>
           <input type="text" class="form-control" formControlName="typeId">
           <p *ngIf="menuForm.get('typeId').invalid  && menuForm.get('typeId').touched" class="invalid">Type true URL</p>
         </div>
       </div>
 
       <br>
-      <p>Parent:</p>
+      <p translate>Parent:</p>
       <div class="form-group">
         <select class="form-control" formControlName="parent">
           <option value="">No Parent</option>
@@ -61,7 +61,7 @@
       </div>
       <br>
       <div class="form-group">
-        <label>Order: </label>
+        <label translate>Order</label>
         <input type="number"  class="form-control" formControlName="order">
 
         <p *ngIf="menuForm.get('order').invalid  && menuForm.get('order').touched"  class="invalid">Type true Order</p>
@@ -72,7 +72,7 @@
 
 
 
-      <button type="button" class="btn btn-info" (click)="myMedia()" [disabled]="!menuForm.valid">Edit <i
+      <button type="button" class="btn btn-info" (click)="myMedia()" [disabled]="!menuForm.valid" translate>Edit<i
         class="fa fa-check"></i></button>
     </form>
   </div>

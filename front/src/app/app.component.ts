@@ -11,6 +11,7 @@ export class AppComponent {
   title = 'webiFront';
 
   constructor(private translate: TranslateService) {
+
     translate.setDefaultLang('en');
     this.translate.currentLang = 'en';
   }

@@ -1,9 +1,13 @@
-.container-fluid {
+.suggest {
   height: 100vh;
   color: white;
   font-family: Arial;
+  padding-bottom: 100px;
+  padding-left: 20px;
 }
-
+.mainCol{
+  padding-bottom: 115px;
+}
 .line {
   width: 100px;
   border: 1px solid lightgrey;
@@ -20,10 +24,12 @@ h2 {
   font-size: 60px;
   font-weight: 600;
 }
-
+/*ol{*/
+  /*margin-left: 30px;*/
+/*}*/
 li {
   list-style-type: decimal-leading-zero;
-  margin-left: 20px;
+  margin-left: 30px;
   font-size: 24px;
 }
 
@@ -66,5 +72,4 @@ button img{
 .imgBlock{
   height: 100vh;
   padding: 0;
-
 }
