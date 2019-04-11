@@ -1,6 +1,6 @@
 <div class="d-flex">
   <div class="mr-auto p-2">
-    <button class="btn btn-primary" routerLink="/admin/team/create">Create Team</button>
+    <button class="btn btn-primary" routerLink="/admin/team/create" translate>Create Team</button>
 
   </div>
   <div class="p-2">
@@ -13,9 +13,9 @@
   <thead class="thead-light">
   <tr>
     <th>_id</th>
-    <th>FullName</th>
-    <th>Position</th>
-    <th>Sort</th>
+    <th translate>Full Name</th>
+    <th translate>Position</th>
+    <th translate>Sort</th>
     <th></th>
   </tr>
   </thead>
@@ -43,6 +43,6 @@
   </tbody>
 </table>
 <div class="d-flex flex-row-reverse">
-  <button class="btn btn-success" (click)="save()">Save</button>
+  <button class="btn btn-success" (click)="save()" translate>Save</button>
 </div>
 

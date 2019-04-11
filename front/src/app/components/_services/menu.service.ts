@@ -17,20 +17,21 @@ export class MenuService {
 
   query = this.global.query_url;
 
-  getMenus(): Observable<Menu[]> {
+  getAll(): Observable<Menu[]> {
     return this.http.get<any[]>(`${this.query}menu`)
       .pipe(map(data => {
-          return data.map(item => {
+          return data['data'].map(item => {
             return {
-              id: item.id,
+              id: item._id,
               title: {
-                en: item.title_en,
-                ru: item.title_ru,
-                am: item.title_am
+                en: item.tite.en,
+                ru: item.tite.ru,
+                am: item.tite.am
               },
               parent: item.parent,
-              position: item.position,
-              url: item.url
+              order: item.order,
+              type : item.type,
+              typeId : item.typeId
             };
           });
         }),
@@ -40,4 +41,12 @@ export class MenuService {
         }));
   }
 
+  getOne(id) : Observable<Menu>{
+    return this.http.get(`${this.query}menu/${id}`)
+      .pipe(map(data=>{
+        return data['data']
+      }))
+  }
+
 }
+

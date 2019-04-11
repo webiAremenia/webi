@@ -82,7 +82,6 @@ export class PortfolioCreateComponent implements OnInit {
     },(err)=>{
       console.log(err);
     });
-    console.log('FOrm ', this.portfolioForm.value);
   }
 
   changeLanguage(language) {
