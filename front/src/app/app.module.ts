@@ -32,6 +32,8 @@ import { BlogDetailesComponent } from './components/pages/pages/blog/blog-detail
 import { ProcessComponent } from './components/pages/pages/process/process.component';
 import { SuggestComponent } from './components/pages/pages/suggest/suggest.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import { MultyTeamComponent } from './components/pages/pages/team/multy-team/multy-team.component';
+import { MultySuggestComponent } from './components/pages/pages/suggest/multy-suggest/multy-suggest.component';
 
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -59,7 +61,9 @@ export function HttpLoaderFactory(http: HttpClient) {
     BlogComponent,
     BlogDetailesComponent,
     ProcessComponent,
-    SuggestComponent
+    SuggestComponent,
+    MultyTeamComponent,
+    MultySuggestComponent
   ],
   imports: [
     BrowserAnimationsModule,

@@ -1,14 +1,10 @@
 body, html {
   overflow: hidden;
 }
-.container-fluid{
-  padding: 170px;
-}
+
 #parentDiv{
   height: 100vh;
   overflow-y: auto;
   overflow-x: hidden;
 }
-#section7{
-  height: 100vh;
-}
+

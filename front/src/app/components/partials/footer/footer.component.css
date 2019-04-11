@@ -1,11 +1,25 @@
-*>row{
+.footer{
+  font-family: Arial;
+  color: white;
+  background-color: #1c488e;
+  padding-left: 20px;
+}
+
+.content{
   background-color: #1c488e;
   color: #fff;
+  padding: 100px 0;
+}
+.contact{
+  font-size: 18px;
 }
 .line{
   width: 80px;
   margin: 30px 0;
   border: 1px solid white;
+}
+.formDiv{
+padding: 0 0 0 150px;
 }
 input, textarea, button{
   display: block;
@@ -31,13 +45,7 @@ button{
   height: 38px;
   margin-left:315px;
 }
-.one{
-  height: 90%;
-  padding-left: 150px;
-  padding-top: 90px;
-  background-color: #1c488e;
-  color:#fff;
-}
+
 .two{
   height: 10%;
   text-align: center;
@@ -57,9 +65,4 @@ button{
 
 
 
-/*.page-footer{*/
-  /*background: dimgray;*/
-  /*position: fixed;*/
-  /*width: 100%;*/
-  /*bottom: 0;*/
-/*}*/
+

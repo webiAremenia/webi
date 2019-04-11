@@ -4,20 +4,18 @@
   box-sizing: border-box;
   background-color: #3966ae;
 }
-#logo img{
-  margin:36px 0;
+
+#logo{
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
 }
 .logoCol{
-  padding: 0;
-  width:100%;
-}
-#logo{
-  width: 170px;
-  height: 160px;
-  background: #3966be;
   text-align: center;
-  padding-left: 0;
+  height: calc(100vw/12);
+  background: #3966be;
 }
+
 #about {
   font-size: 17px;
 }
@@ -27,9 +25,7 @@
   cursor: pointer;
   text-decoration: none;
 }
-/*.navbar-brand a:active{*/
-  /*color: white;*/
-/*}*/
+
 #navbarNav{
     margin-left: 100px;
 }

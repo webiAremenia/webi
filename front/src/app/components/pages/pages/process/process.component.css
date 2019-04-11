@@ -1,7 +1,8 @@
-.container-fluid{
+.process{
   height: 100vh;
   color:white;
   font-family: Arial;
+  padding-left: 20px;
 }
 .col-5{
   padding-top: 100px;
