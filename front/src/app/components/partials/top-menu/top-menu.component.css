@@ -1,6 +1,6 @@
 .navbar {
   height: 160px;
-  font-family: Arial sans-serif;
+  font-family: 'Poppins', sans-serif;
   box-sizing: border-box;
   background-color: #3966ae;
 }
@@ -26,13 +26,11 @@
 }
 
 .nav-item {
-  /*padding-right: 100px ;*/
-  cursor: pointer;
+    cursor: pointer;
 }
 
 .nav-link {
   opacity: 0.61;
-  font-family: Poppins sans-serif;
   font-size: 18px;
   line-height: 1.5;
   color: #ffffff !important;
@@ -46,8 +44,4 @@
 }
 
 
-/*.nav-item{*/
-/*-webkit-border-radius: 5px;*/
-/*-moz-border-radius: 5px;*/
-/*border-radius: 5px;*/
-/*}*/
+

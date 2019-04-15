@@ -1,14 +1,14 @@
 import {Injectable} from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root'
 })
 export class ContactService {
 
-  constructor() {
-  }
+    constructor() {
+    }
 
-  getData() {
-
-  }
+    sendEmail(data) {
+        console.log(data);
+    }
 }
