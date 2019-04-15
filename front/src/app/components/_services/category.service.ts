@@ -13,7 +13,7 @@ export class CategoryService {
     constructor(private http: HttpClient, private global: Globals) {
     }
 
-    query = this.global.query_url;
+    query = this.global.queryUrl;
 
     getAll(): Observable<Category[]> {
         return this.http.get(`${this.query}category`)

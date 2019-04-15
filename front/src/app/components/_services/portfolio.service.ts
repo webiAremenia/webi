@@ -13,7 +13,7 @@ export class PortfolioService {
     constructor(private http: HttpClient, private global: Globals) {
     }
 
-    query = this.global.query_url;
+    query = this.global.queryUrl;
 
     getAll(): Observable<Portfolio[]> {
         return this.http.get(`${this.query}portfolio`)

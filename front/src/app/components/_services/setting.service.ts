@@ -13,7 +13,7 @@ export class SettingService {
     constructor(private http: HttpClient, private global: Globals) {
     }
 
-    query = this.global.query_url;
+    query = this.global.queryUrl;
 
     getAll(): Observable<Setting[]> {
         return this.http.get(`${this.query}setting`)

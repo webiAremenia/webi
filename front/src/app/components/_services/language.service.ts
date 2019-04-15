@@ -13,7 +13,7 @@ export class LanguageService {
     constructor(private http: HttpClient, private global: Globals) {
     }
 
-    query = this.global.query_url;
+    query = this.global.queryUrl;
 
     getAll(): Observable<Language[]> {
         return this.http.get(`${this.query}language`)

@@ -119,7 +119,7 @@ export class TeamService {
 
   constructor(private http: HttpClient, private global: Globals) { }
 
-  query = this.global.query_url;
+  query = this.global.queryUrl;
 
   getAll(): Observable<Team[]> {
     return this.http.get(`${this.query}team`)
