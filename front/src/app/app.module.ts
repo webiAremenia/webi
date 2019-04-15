@@ -2,6 +2,8 @@ import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { CarouselModule } from 'ngx-owl-carousel-o';
+import { FormsModule }   from '@angular/forms';
+import {ReactiveFormsModule} from '@angular/forms';
 
 import {HttpClientModule, HttpClient} from '@angular/common/http';
 import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
@@ -70,6 +72,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     HttpClientModule,
     AppRoutingModule,
     CarouselModule,
+    FormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot([]),
     TranslateModule.forRoot({
       loader: {

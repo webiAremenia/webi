@@ -4,26 +4,44 @@
 }
 
 .lorem {
-  font-size: 13px;
-  margin-right: 10px;
+    opacity: 0.73;
+    font-size: 13px;
+    font-weight: 300;
+    line-height: 1.54;
 }
-
+.carouselSlide{
+    padding: 15px;
+}
+.carouselSlide h5{
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.53;
+    letter-spacing: normal;
+    text-align: left;
+    color: #331414;
+    position: relative;
+}
+.number{
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.53;
+}
 button {
   width: 30px;
-  height: 30px;
+  height: 20px;
   border-radius: 50%;
   text-align: center;
   border-style: none;
   border: 0;
   background: none;
-  display: block;
-  margin-left: 300px;
-
+  position: absolute;
+  bottom: 35px;
+  right: 35px;
 }
 
 button img {
   width: 30px;
-  height: 30px;
+  height: 20px;
 }
 
 .col-12 {
@@ -49,10 +67,12 @@ button img {
 
 .two {
   background: #5582CA;
+    color: #ffffff;
 }
 
 .three {
   background: #2a2a2a;
+    color: #ffffff;
 }
 
 @media (min-width: 1900px) {
@@ -88,8 +108,8 @@ button img {
     font-size: 15px;
   }
   button {
-    width: 40px;
-    height: 40px;
+    width: 42px;
+    height: 42px;
     margin-left: 300px;
     margin-bottom: 30px;
   }

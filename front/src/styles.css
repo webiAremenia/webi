@@ -23,9 +23,7 @@ div[class^="col-"] {
   padding-right: 72px;
 }
 
-.owl-nav {
-  margin-bottom: 0;
-}
+
 #slider .owl-next, #slider .owl-prev{
   position: absolute;
   width: 30px;
@@ -42,7 +40,9 @@ div[class^="col-"] {
   top: 85px;
   background: white;
 }
-
+.owl-theme .owl-nav{
+    margin-top: 0 !important;
+}
 
 .modal-content{
   -webkit-animation-name: zoom;
