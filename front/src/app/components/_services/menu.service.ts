@@ -24,9 +24,9 @@ export class MenuService {
             return {
               id: item._id,
               title: {
-                en: item.tite.en,
-                ru: item.tite.ru,
-                am: item.tite.am
+                en: item.title.en,
+                ru: item.title.ru,
+                am: item.title.am
               },
               parent: item.parent,
               order: item.order,
