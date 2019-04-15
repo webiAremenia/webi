@@ -56,8 +56,13 @@ button{
 }
 .one p{
   margin-bottom: 15px;
-}
 
+}
+.errr{
+    display: inline-block;
+    color: red;
+    margin-left: 20px;
+}
 .errorr{
     width: 415px;
     position: absolute;

@@ -13,9 +13,9 @@ export class FooterComponent implements OnInit {
     constructor(private formBuilder: FormBuilder, private contact: ContactService) {
         this.myForm = formBuilder.group({
 
-            "firstName": ["", [Validators.required]],
-            "email": ["", [Validators.required, Validators.email]],
-            "message": ["", [Validators.required, Validators.minLength(10)]],
+            firstName: ['', [Validators.required]],
+            email: ['', [Validators.required, Validators.email]],
+            message: ['', [Validators.required, Validators.minLength(10)]],
 
         });
     }
@@ -27,5 +27,6 @@ export class FooterComponent implements OnInit {
     submit() {
         this.contact.sendEmail(this.myForm.value);
         // console.log(this.myForm);
+
     }
 }

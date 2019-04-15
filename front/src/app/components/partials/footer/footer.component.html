@@ -18,18 +18,20 @@
         <form [formGroup]="myForm" novalidate (ngSubmit)="submit()">
             <div class="form-group">
                 <label>First name</label>
+                <p class="errr" *ngIf="myForm.controls['firstName'].invalid && myForm.controls['firstName'].touched">
+                    *Enter your name</p>
                 <input type="text" placeholder="Enter your first name" class="form-control" formControlName="firstName">
-                <div class="alert alert-danger errorr"
-                     *ngIf="myForm.controls['firstName'].invalid && myForm.controls['firstName'].touched">
-                    Не указано имя
-                </div>
+                <!--<div class="alert alert-danger errorr"-->
+                     <!--*ngIf="myForm.controls['firstName'].invalid && myForm.controls['firstName'].touched">-->
+                    <!--Enter your name-->
+                <!--</div>-->
             </div>
             <div class="form-group">
                 <label>Email</label>
                 <input type="text" placeholder="Enter your email" class="form-control" formControlName="email">
                 <div class="alert alert-danger errorr"
                      *ngIf="myForm.controls['email'].invalid && myForm.controls['email'].touched">
-                    Не указано имя
+                    Incorrect Email
                 </div>
             </div>
             <div class="form-group">
