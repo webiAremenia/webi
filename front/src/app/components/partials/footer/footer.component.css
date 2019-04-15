@@ -1,10 +1,12 @@
 .footer{
   font-family: Arial;
   color: white;
-  background-color: #1c488e;
-  padding-left: 20px;
+  /*background-color: #1c488e;*/
+  /*padding-left: 20px;*/
 }
-
+.first{
+    background: #1c488e;
+}
 .content{
   background-color: #1c488e;
   color: #fff;
@@ -56,7 +58,12 @@ button{
   margin-bottom: 15px;
 }
 
-
+.errorr{
+    width: 415px;
+    position: absolute;
+    left: 200px;
+    opacity: 0.8;
+}
 
 
 

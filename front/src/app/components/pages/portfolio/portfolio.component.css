@@ -1,22 +1,29 @@
 .portfolio {
   height: auto;
-  color: white;
-  font-family: Arial;
   padding-top: 50px;
   padding-left: 20px;
+  color:#ffffff;
+  font-family: 'Poppins', sans-serif;
 }
 
 .portfolio h6 a {
   text-decoration: none;
-  color:#fff;
+    color:#ffffff;
+   opacity: 0.78;
+   /*font-family: SegoeUI;*/
+   font-size: 20px;
+   font-weight: 600;
+   line-height: 1.35;
 }
-h1{
+h2{
   font-size: 60px;
+  font-weight: 600;
+  line-height: 1.17;
 }
 .line {
-  width: 100px;
-  border: 1px solid lightgrey;
-  margin: 20px 0;
+  width: 80px;
+  border: 1px solid #ffffff;
+  margin: 28px 0;
 }
 
 .title {
