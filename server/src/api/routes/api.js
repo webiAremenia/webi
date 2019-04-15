@@ -1,4 +1,5 @@
 import express from 'express';
+import contactController from '../controllers/contact'
 const router = express.Router();
 
 import media from './crud/media';
@@ -22,6 +23,9 @@ router.use('/news', news);
 router.use('/menu', menu);
 router.use('/language', language);
 router.use('/category', category);
+
+
+router.post('/contact', contactController.sendMail);
 
 
 module.exports = router;
