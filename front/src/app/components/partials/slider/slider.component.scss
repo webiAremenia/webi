@@ -2,11 +2,13 @@
   font-family: Arial;
   color: white;
 }
+
 .lorem {
   font-size: 13px;
   margin-right: 10px;
 }
-button{
+
+button {
   width: 30px;
   height: 30px;
   border-radius: 50%;
@@ -18,60 +20,76 @@ button{
   margin-left: 300px;
 
 }
-button img{
+
+button img {
   width: 30px;
   height: 30px;
 }
-.col-12{
+
+.col-12 {
   height: 200px;
 }
-.one, .two, .three, .four{
+
+.one, .two, .three, .four {
   width: 100%;
-  height: calc(100vw/8);
+  height: calc(((100vw - 144px) / 12)*10/3*0.55 );
   color: black;
   padding: 20px 30px;
+
+
 }
-.one{
+
+.one {
   background: white;
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.53;
+  color: #331414;
+
 }
-.two{
-  background:#5582CA;
+
+.two {
+  background: #5582CA;
 }
-.three{
+
+.three {
   background: #2a2a2a;
 }
+
 @media (min-width: 1900px) {
-  .one, .two, .three, .four{
+  .one, .two, .three, .four {
     font-size: 40px;
     padding: 10px 20px;
   }
-  h5{
+  h5 {
     font-size: 40px;
     font-weight: 600;
   }
-  .one p, .two p, .three p, .four p{
+  .one p, .two p, .three p, .four p {
     font-size: 35px;
   }
-  button{
+  button {
     width: 50px;
     height: 50px;
     margin-left: 400px;
     margin-bottom: 30px;
   }
 }
+
 @media (min-width: 1500px) {
-  .one, .two, .three, .four{
+  .one, .two, .three, .four {
     font-size: 30px;
     padding: 10px 20px;
   }
-  h5{
+  h5 {
     font-size: 20px;
     font-weight: 500;
   }
-  .one p, .two p, .three p, .four p{
+  .one p, .two p, .three p, .four p {
     font-size: 15px;
   }
-  button{
+  button {
     width: 40px;
     height: 40px;
     margin-left: 300px;

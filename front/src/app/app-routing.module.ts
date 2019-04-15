@@ -4,12 +4,12 @@ import {RouterModule, Routes} from '@angular/router';
 
 
 import {HomeComponent} from './components/pages/home/home.component';
-import { AllTeamComponent } from './components/pages/pages/team/all-team/all-team.component';
-import { BlogComponent } from './components/pages/pages/blog/blog.component';
-import { BlogDetailesComponent } from './components/pages/pages/blog/blog-detailes/blog-detailes.component';
+import { AllTeamComponent } from './components/pages/home/team/all-team/all-team.component';
+import { BlogComponent } from './components/pages/blog/blog.component';
+import { BlogDetailesComponent } from './components/pages/blog/blog-detailes/blog-detailes.component';
 import { AllPortfoliosComponent } from './components/pages/portfolio/all-portfolios/all-portfolios.component';
 
-// import {ContactComponent} from './pages/contact/contact.component';
+// import {ContactComponent} from './_components/contact/contact.component';
 
 
 

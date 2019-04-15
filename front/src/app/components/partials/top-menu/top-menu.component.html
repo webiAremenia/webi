@@ -1,90 +1,75 @@
-<div class="container-fluid">
+<div class="my-container">
   <div class="row">
-    <div class="col-lg-1 logoCol">
-      <div id="logo">
-        <a routerLink=""><img src="./assets/images/logo.png"  alt=""></a>
+    <div class="col-lg-1">
+      <div class="logo-wrapper">
+        <div id="logo">
+          <a routerLink=""><img src="./assets/images/logo.png" alt=""></a>
+        </div>
       </div>
     </div>
     <div class="col-lg-10">
-  <nav class="navbar navbar-expand-lg navbar-light">
-  <a class="navbar-brand" routerLink="">WEBI</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" id="about" href="#">About <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="allPortfolios">allPortfolios</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="blog">Blog</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" routerLink="contact">Contact</a>
-      </li>
-    </ul>
-  </div>
-</nav>
+      <nav class="navbar navbar-expand-lg px-0">
+        <a class="navbar-brand" routerLink="">WEBI</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav w-100">
+            <li class="nav-item offset-1 col-lg-2">
+              <a class="nav-link" id="about" routerLink="about" routerLinkActive="active">About </a>
+            </li>
+            <li class="nav-item col-lg-2">
+              <a class="nav-link" routerLink="allPortfolios" routerLinkActive="active">Portfolio</a>
+            </li>
+            <li class="nav-item col-lg-2">
+              <a class="nav-link" routerLink="blog" routerLinkActive="active">Blog</a>
+            </li>
+            <li class="nav-item col-lg-2">
+              <a class="nav-link" routerLink="contact" routerLinkActive="active">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
     </div>
   </div>
 </div>
 
 
-
-
-
-
-
-
-
-
-
-
-  <!--<div class="menu">-->
-  <!--<h1>WEBI</h1>-->
-  <!--<ul>-->
-  <!--<li><a href="#" id="about">About</a></li>-->
-  <!--<li><a routerLink="allPortfolios">Portfolio</a></li>-->
-  <!--<li><a routerLink="blog">Blog</a></li>-->
-  <!--<li><a routerLink="contact">Contact</a></li>-->
-  <!--</ul>-->
-  <!--</div>-->
-  <!--</div>-->
-
-
-
-
-
-
-
-
+<!--<div class="menu">-->
+<!--<h1>WEBI</h1>-->
+<!--<ul>-->
+<!--<li><a href="#" id="about">About</a></li>-->
+<!--<li><a routerLink="allPortfolios">Portfolio</a></li>-->
+<!--<li><a routerLink="blog">Blog</a></li>-->
+<!--<li><a routerLink="contact">Contact</a></li>-->
+<!--</ul>-->
+<!--</div>-->
+<!--</div>-->
 
 
 <!--<nav class="navbar navbar-expand-lg navbar-light bg-light">-->
-  <!--<div class="container">-->
-    <!--<a class="navbar-brand" href="#">Navbar</a>-->
-    <!--<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"-->
-            <!--aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">-->
-      <!--<span class="navbar-toggler-icon"></span>-->
-    <!--</button>-->
+<!--<div class="container">-->
+<!--<a class="navbar-brand" href="#">Navbar</a>-->
+<!--<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"-->
+<!--aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">-->
+<!--<span class="navbar-toggler-icon"></span>-->
+<!--</button>-->
 
-    <!--<div class="collapse navbar-collapse" id="navbarSupportedContent">-->
-      <!--<ul *ngIf="done" class="navbar-nav mr-auto">-->
-        <!--<li *ngFor="let menu of menuList" class="nav-item">-->
-          <!--<a class="nav-link" routerLink="{{ menu.url }}"-->
-             <!--routerLinkActive="active-link">{{ menu.title[language] | uppercase }}</a>-->
-        <!--</li>-->
-      <!--</ul>-->
-      <!--<ul  class="navbar-nav ">-->
-        <!--<li class="nav-item"><button class="nav-link" (click)="switchLanguage('en')">en</button></li>-->
-        <!--<li class="nav-item"><button class="nav-link" (click)="switchLanguage('ru')">ru</button></li>-->
-        <!--<li class="nav-item"><p class="nav-link" translate>language</p></li>-->
-      <!--</ul>-->
-    <!--</div>-->
-  <!--</div>-->
+<!--<div class="collapse navbar-collapse" id="navbarSupportedContent">-->
+<!--<ul *ngIf="done" class="navbar-nav mr-auto">-->
+<!--<li *ngFor="let menu of menuList" class="nav-item">-->
+<!--<a class="nav-link" routerLink="{{ menu.url }}"-->
+<!--routerLinkActive="active-link">{{ menu.title[language] | uppercase }}</a>-->
+<!--</li>-->
+<!--</ul>-->
+<!--<ul  class="navbar-nav ">-->
+<!--<li class="nav-item"><button class="nav-link" (click)="switchLanguage('en')">en</button></li>-->
+<!--<li class="nav-item"><button class="nav-link" (click)="switchLanguage('ru')">ru</button></li>-->
+<!--<li class="nav-item"><p class="nav-link" translate>language</p></li>-->
+<!--</ul>-->
+<!--</div>-->
+<!--</div>-->
 <!--</nav>-->
 
 

@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
 import {Subscription} from 'rxjs';
-import {BlogDetailesService} from '../../../../_services/blog-detailes.service';
+import {BlogDetailesService} from '../../../_services/blog-detailes.service';
 
 @Component({
   selector: 'app-blog-detailes',

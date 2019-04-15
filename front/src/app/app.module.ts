@@ -18,22 +18,21 @@ import {FooterComponent} from './components/partials/footer/footer.component';
 import {PortfolioComponent} from './components/pages/portfolio/portfolio.component';
 import {Globals} from './app.globals';
 import {MessageComponent} from './components/partials/message/message.component';
-import {PagesComponent} from './components/pages/pages/pages.component';
-import {RouterModule, RouterStateSnapshot} from '@angular/router';
+import {RouterModule} from '@angular/router';
 import { AllPortfoliosComponent } from './components/pages/portfolio/all-portfolios/all-portfolios.component';
 import { ScrollSpyDirective } from './components/_directives/scroll-spy.directive';
-import { IntroductionComponent } from './components/pages/pages/introduction/introduction.component';
+import { IntroductionComponent } from './components/pages/home/introduction/introduction.component';
 import { SidebarComponent } from './components/partials/sidebar/sidebar.component';
 import { SliderComponent } from './components/partials/slider/slider.component';
-import { TeamComponent } from './components/pages/pages/team/team.component';
-import { AllTeamComponent } from './components/pages/pages/team/all-team/all-team.component';
-import { BlogComponent } from './components/pages/pages/blog/blog.component';
-import { BlogDetailesComponent } from './components/pages/pages/blog/blog-detailes/blog-detailes.component';
-import { ProcessComponent } from './components/pages/pages/process/process.component';
-import { SuggestComponent } from './components/pages/pages/suggest/suggest.component';
+import { TeamComponent } from './components/pages/home/team/team.component';
+import { AllTeamComponent } from './components/pages/home/team/all-team/all-team.component';
+import { BlogComponent } from './components/pages/blog/blog.component';
+import { BlogDetailesComponent } from './components/pages/blog/blog-detailes/blog-detailes.component';
+import { ProcessComponent } from './components/pages/home/process/process.component';
+import { SuggestComponent } from './components/pages/home/suggest/suggest.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import { MultyTeamComponent } from './components/pages/pages/team/multy-team/multy-team.component';
-import { MultySuggestComponent } from './components/pages/pages/suggest/multy-suggest/multy-suggest.component';
+import { MultyTeamComponent } from './components/pages/home/team/multy-team/multy-team.component';
+import { MultySuggestComponent } from './components/pages/home/suggest/multy-suggest/multy-suggest.component';
 
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -50,7 +49,6 @@ export function HttpLoaderFactory(http: HttpClient) {
     FooterComponent,
     PortfolioComponent,
     MessageComponent,
-    PagesComponent,
     AllPortfoliosComponent,
     ScrollSpyDirective,
     IntroductionComponent,

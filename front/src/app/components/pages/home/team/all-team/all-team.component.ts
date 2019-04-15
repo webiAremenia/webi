@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {TeamService} from './../../../../_services/team.service';
+import {TeamService} from '../../../../_services/team.service';
 
 import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 
