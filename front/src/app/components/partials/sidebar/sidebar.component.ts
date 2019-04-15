@@ -16,7 +16,7 @@ export class SidebarComponent implements OnInit {
       .scrollIntoView();
     this.currentSection = section;
 
-    console.log(this.currentSection);
+    // console.log(this.currentSection);
   }
 
 }
