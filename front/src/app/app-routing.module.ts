@@ -8,6 +8,7 @@ import { AllTeamComponent } from './components/pages/home/team/all-team/all-team
 import { BlogComponent } from './components/pages/blog/blog.component';
 import { BlogDetailesComponent } from './components/pages/blog/blog-detailes/blog-detailes.component';
 import { AllPortfoliosComponent } from './components/pages/portfolio/all-portfolios/all-portfolios.component';
+import {CabinetComponent} from "./components/pages/cabinet/cabinet.component";
 
 // import {ContactComponent} from './_components/contact/contact.component';
 
@@ -20,7 +21,7 @@ const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: 'allTeam', component: AllTeamComponent},
   {path: 'blog', component: BlogComponent},
-  // {path: 'contact', component: ContactComponent},
+  // {path: 'contact', component: CabinetComponent},
   {path: 'allPortfolios', component: AllPortfoliosComponent},
   {path: 'blog/:id', component: BlogDetailesComponent}
 ];

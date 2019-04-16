@@ -41,6 +41,10 @@ textarea{
   padding: 10px;
   resize: none;
 }
+textarea:focus, input:focus{
+    background-color: #3966ae;
+    color: #ffffff;
+}
 button{
   color: white;
   width: 100px;
@@ -60,16 +64,12 @@ button{
 }
 .error{
     display: inline-block;
-    color: red;
+    color: #f16060;
+    font-size: 12px;
     margin-left: 20px;
-    transition: 1s ease;
+    -webkit-transition: all 1s ease-in-out;
 }
-.errorr{
-    width: 415px;
-    position: absolute;
-    left: 200px;
-    opacity: 0.8;
-}
+
 
 
 
