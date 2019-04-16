@@ -1,41 +1,55 @@
 <div class="my-container">
-<div class="row team">
-  <div class="col-lg-11 offset-1">
-  <div class="row teamMain">
-    <div class="col-5">
-      <button (click)="onClick()">Our team</button>
-      <div class="line"></div>
-      <h1>Lorem ispus sit<br>a met dollar</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae, deserunt earum illum laudantium velit veritatis voluptatum? Assumenda blanditiis dicta dolore incidunt maiores nihil officiis perferendis saepe sequi, sunt, veniam . Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad, amet cum ducimus eaque error hic illum nisi nobis provident suscipit. Adipisci assumenda distinctio libero maiores modi nobis porro quaerat vel.</p>
+    <div class="row team">
+        <div class="row teamMain">
+
+            <div class="col-5 offset-1 cont-heading">
+                <div (click)="onClick()">Our team</div>
+                <div class="line"></div>
+                <h2>Lorem ispus sit<br>a met dollar</h2>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae, deserunt earum illum laudantium
+                    velit veritatis voluptatum? Assumenda blanditiis dicta dolore incidunt maiores nihil officiis
+                    perferendis saepe sequi, sunt, veniam . Lorem ipsum dolor sit amet, consectetur adipisicing
+                    elit. Ad, amet cum ducimus eaque error hic illum nisi nobis provident suscipit. Adipisci
+                    assumenda distinctio libero maiores modi nobis porro quaerat vel.</p>
+            </div>
+
+            <div class="col-3 one">
+                <div class="image">
+                    <img src="./assets/images/Mask Group 9.png" alt="">
+                </div>
+                <h6><b>EDUARD</b></h6>
+                <h6>CEO</h6>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus impedit labore possimus
+                    praesentium quas repellendus voluptates voluptatum. Accusantium consequuntur culpa deserunt,
+                    dolorem dolores earum eveniet molestiae numquam, saepe sunt tenetur!</p>
+                <a><img src="./assets/images/Group 1620.png" alt=""></a>
+            </div>
+
+            <div class="col-3 two">
+                <div class="image">
+                    <img src="./assets/images/Mask Group 8.png" alt="">
+                </div>
+                <h6><b>FARAZ</b></h6>
+                <h6>CTO</h6>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus impedit labore possimus
+                    praesentium quas repellendus voluptates voluptatum. Accusantium consequuntur culpa deserunt,
+                    dolorem dolores earum eveniet molestiae numquam, saepe sunt tenetur!</p>
+            </div>
+
+        </div>
+
     </div>
-    <div class="col-3 one">
-      <div class="image">
-      <img src="./assets/images/Mask Group 9.png" alt="">
-      </div>
-      <h6><b>EDUARD</b></h6>
-      <h6>CEO</h6>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus impedit labore possimus praesentium quas repellendus voluptates voluptatum. Accusantium consequuntur culpa deserunt, dolorem dolores earum eveniet molestiae numquam, saepe sunt tenetur!</p>
-      <a><img src="./assets/images/Group 1620.png" alt=""></a>
+    <div class="row">
+        <div class="col-12 custom-button">
+            <button class="btn btn-secondary">
+                <img src="./assets/images/Group 1620.png">
+            </button>
+        </div>
     </div>
-    <div class="col-3 two">
-      <div class="image">
-      <img src="./assets/images/Mask Group 8.png" alt="">
-      </div>
-      <h6><b>FARAZ</b></h6>
-      <h6>CTO</h6>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus impedit labore possimus praesentium quas repellendus voluptates voluptatum. Accusantium consequuntur culpa deserunt, dolorem dolores earum eveniet molestiae numquam, saepe sunt tenetur!</p>
-    </div>
-  </div>
-  <div class="row">
-      <div class="col-lg-12 second">
-        <button class="btn btn-secondary"><img src="./assets/images/Group 1620.png" alt="" width="25px" height="15px"></button>
-      </div>
-  </div>
-</div>
-</div>
+
 </div>
 
 
-<ng-template  [ngIf]="!visible">
-  <app-multy-team></app-multy-team>
+<ng-template [ngIf]="!visible">
+    <app-multy-team></app-multy-team>
 </ng-template>

@@ -1,65 +1,60 @@
-.process{
-  height: 100vh;
-  color:#ffffff;
-  font-family: 'Poppins', sans-serif;
+.process {
+    height: 100vh;
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+}
 
-}
-.col-6{
-  padding-top: 175px;
-}
-.col-6>p{
+p {
     opacity: 0.78;
-    /*font-family: SegoeUI;*/
     font-size: 20px;
     font-weight: 600;
     line-height: 1.35;
 }
-.title{
+
+.title {
+    font-family: 'Poppins', sans-serif;
     font-size: 60px;
     font-weight: 600;
     line-height: 1.17;
-    letter-spacing: normal;
 }
 
-.lineTitle{
-  width: 80px;
-  border: 1px solid #ffffff;
-  margin: 20px 0;
+.lineTitle {
+    width: 80px;
+    border: 1px solid #ffffff;
+    margin: 20px 0;
 }
-.line{
-  width: 30px;
-  border: 1px solid #ffffff;
-  margin-bottom: 15px;
+
+.line {
+    width: 30px;
+    border: 1px solid #ffffff;
+    margin-bottom: 15px;
 }
-.one{
-  height: 80%;
-  padding-top: 175px;
-  padding-left: 24px;
-  padding-bottom: 100px;
-  background-color:#4076cc;
+
+.one {
+    background-color: #4076cc;
 }
-.number{
+.one-content{
+    padding: 0 12px;
+}
+.number {
     font-size: 15px;
     font-weight: 600;
     line-height: 1.53;
 }
-.text{
+
+.text {
     font-size: 18px;
-    font-weight: normal;
-    font-style: normal;
     line-height: 1.5;
-    letter-spacing: normal;
-    text-align: left;
     padding-top: 45px;
 }
-.two{
-    height: 740px;
-    padding-top: 175px;
+
+.two-content, .one-content, .heading{
+    position: relative;
+    top: 30%;
 }
 
-h6{
+h6 {
     opacity: 0.78;
-    /*font-family: SegoeUI;*/
     font-size: 24px;
     font-weight: 600;
     line-height: 1.33;
