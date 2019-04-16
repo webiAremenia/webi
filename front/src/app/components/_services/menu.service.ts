@@ -15,7 +15,7 @@ export class MenuService {
   constructor(private global: Globals, private  http: HttpClient) {
   }
 
-  query = this.global.query_url;
+  query = this.global.queryUrl;
 
   getAll(): Observable<Menu[]> {
     return this.http.get<any[]>(`${this.query}menu`)

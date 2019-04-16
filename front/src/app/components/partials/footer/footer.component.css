@@ -58,10 +58,11 @@ button{
   margin-bottom: 15px;
 
 }
-.errr{
+.error{
     display: inline-block;
     color: red;
     margin-left: 20px;
+    transition: 1s ease;
 }
 .errorr{
     width: 415px;

@@ -1,4 +1,4 @@
 export class Test {
-  name: string;
-  hayes: boolean;
+    name: string;
+    hayes: boolean;
 }
