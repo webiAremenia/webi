@@ -24,9 +24,9 @@ module.exports = {
                         }
                     });
                     let mailOptions = {
-                        from: from, // sender address
+                        from: '', // sender address
                         to: set.value.en, // list of receivers
-                        subject: 'WEBI contact form', // Subject line
+                        subject: 'WEBI contact form "' + from + '"', // Subject line
                         // text: content, // plain text body
                         html: html // html body
                     };
