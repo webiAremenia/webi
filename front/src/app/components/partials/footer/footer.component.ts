@@ -25,9 +25,20 @@ export class FooterComponent implements OnInit {
     }
 
     submit() {
+        this.contact.sendEmail(this.myForm.value);
+        console.log(this.myForm.value);
+
         this.contact.sendEmail(this.myForm.value).subscribe(
-            data => console.log(data.success),
+            data => {
+                if(data.success){
+                    this.resetForm();
+                }
+
+            },
             e => console.log(e)
         );
+    }
+    resetForm(){
+        this.myForm.reset();
     }
 }
