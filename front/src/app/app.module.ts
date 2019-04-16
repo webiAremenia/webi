@@ -35,6 +35,7 @@ import { SuggestComponent } from './components/pages/home/suggest/suggest.compon
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { MultyTeamComponent } from './components/pages/home/team/multy-team/multy-team.component';
 import { MultySuggestComponent } from './components/pages/home/suggest/multy-suggest/multy-suggest.component';
+import { CabinetComponent } from './components/pages/cabinet/cabinet.component';
 
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -63,7 +64,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     ProcessComponent,
     SuggestComponent,
     MultyTeamComponent,
-    MultySuggestComponent
+    MultySuggestComponent,
+    CabinetComponent
   ],
   imports: [
     BrowserAnimationsModule,
