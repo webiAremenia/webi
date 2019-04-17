@@ -7,6 +7,7 @@ import cors from 'cors';
 
 import api from './api/routes/api';
 import adminRoutes from './admin/routes/admin';
+import clientRoutes from './client/routes/client';
 
 const app = express();
 
@@ -29,6 +30,7 @@ app.use(cors());
 app.use('/uploads', express.static(__dirname + '/_uploads'));
 app.use('/admin', adminRoutes);
 app.use('/api', api);
+app.use('/client', clientRoutes);
 
 
 const elFinder = require("elfinder-node");

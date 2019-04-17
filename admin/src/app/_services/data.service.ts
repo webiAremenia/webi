@@ -14,7 +14,7 @@ export class DataService {
     return this.http.get(`${this.baseUrl}/${url}`);
   }
 
-  getPagesAndCategories(url){
+  getPagesAndCategories(url) {
     return this.http.get(`${this.baseUrl}/menu/${url}`);
   }
 
@@ -22,23 +22,23 @@ export class DataService {
     return this.http.post(`${this.baseUrl}/${url}`, data);
   }
 
-  updateData(data,url,id){
+  updateData(data, url, id) {
     return this.http.put(`${this.baseUrl}/${url}/${id}`, data);
   }
 
-  getOne(url,id) {
+  getOne(url, id) {
     return this.http.get(`${this.baseUrl}/${url}/${id}`);
   }
 
-  delete(url,id){
+  delete(url, id) {
     return this.http.delete(`${this.baseUrl}/${url}/${id}`);
   }
 
-  teamUpdate(data,url){
+  teamUpdate(data, url) {
     return this.http.put(`${this.baseUrl}/${url}/`, data);
   }
 
-  menuUpdate(data,url){
+  menuUpdate(data, url) {
     return this.http.put(`${this.baseUrl}/${url}/`, data);
   }
 

@@ -1,5 +1,5 @@
 .process {
-    height: 100vh;
+    height: 85vh;
     color: #ffffff;
     font-family: 'Poppins', sans-serif;
 }
@@ -50,7 +50,7 @@ p {
 
 .two-content, .one-content, .heading{
     position: relative;
-    top: 30%;
+    top: 25%;
 }
 
 h6 {

@@ -18,9 +18,11 @@
     line-height: 1.33;
     color: #ffffff;
 }
-.button-wrapper{
+
+.button-wrapper {
     text-align: right;
 }
+
 button {
     box-sizing: border-box;
     border-radius: 50%;
@@ -46,9 +48,11 @@ button:active {
 button img {
     width: 40px;
 }
-.h-10{
+
+.h-10 {
     height: 10%;
 }
-.h-90{
+
+.h-90 {
     height: 90%;
 }
