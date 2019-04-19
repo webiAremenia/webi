@@ -20,7 +20,7 @@
   </tr>
   </thead>
   <tbody>
-  <tr *ngFor="let setting of settings | keyFilter: searchTerm ; let i = index">
+  <tr *ngFor="let setting of settings; let i = index">
 
     <td>{{setting._id}}</td>
     <td>{{setting.key}}</td>

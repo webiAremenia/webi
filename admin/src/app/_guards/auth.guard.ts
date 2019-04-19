@@ -13,8 +13,10 @@ export class AuthGuard implements CanActivate {
     next: ActivatedRouteSnapshot,
     state: RouterStateSnapshot): Observable<boolean> | Promise<boolean> | boolean {
     if (localStorage.getItem('jwt_token')) {
+      console.log('Guard');
       return true;
     }
+    console.log("False");
     this.router.navigate(['login']);
   }
 }
