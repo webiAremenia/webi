@@ -45,7 +45,7 @@ import {MenuCreateComponent} from './components/pages/menu/menu-create/menu-crea
 import {MenuEditComponent} from './components/pages/menu/menu-edit/menu-edit.component';
 import {MenuViewComponent} from './components/pages/menu/menu-view/menu-view.component';
 import {MenuSortComponent} from './components/pages/menu/menu-sort/menu-sort.component';
-import {NgxTreeDndModule} from "ngx-tree-dnd";
+import {NgxTreeDndModule} from 'ngx-tree-dnd';
 import {LanguageListComponent} from './components/pages/language/language-list/language-list.component';
 import {LanguageCreateComponent} from './components/pages/language/language-create/language-create.component';
 import {LanguageViewComponent} from './components/pages/language/language-view/language-view.component';
@@ -54,9 +54,11 @@ import {NewsListComponent} from './components/pages/news/news-list/news-list.com
 import {NewsCreateComponent} from './components/pages/news/news-create/news-create.component';
 import {NewsEditComponent} from './components/pages/news/news-edit/news-edit.component';
 import {NewsViewComponent} from './components/pages/news/news-view/news-view.component';
-import {TranslateLoader, TranslateModule} from "@ngx-translate/core";
+import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
-import {NgSelectModule} from "@ng-select/ng-select";
+import {NgSelectModule} from '@ng-select/ng-select';
+import { ClientComponent } from './components/pages/client/client.component';
+import { CreateAccountComponent } from './components/pages/client/create-account/create-account.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);
@@ -110,6 +112,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     NewsCreateComponent,
     NewsEditComponent,
     NewsViewComponent,
+    ClientComponent,
+    CreateAccountComponent,
 
 
   ],

@@ -10,12 +10,17 @@
 }
 
 .currant-content p {
+    height: fit-content;
     position: relative;
     top: 50%;
     transform: translateY(-50%);
     font-size: 18px;
     line-height: 1.33;
     color: #ffffff;
+}
+
+.button-wrapper {
+    text-align: right;
 }
 
 button {
@@ -29,9 +34,6 @@ button {
     padding-top: 3px;
     border: 0;
     outline: none;
-    position: absolute;
-    right: 150px;
-    bottom: 0;
 }
 
 button:hover {
@@ -45,4 +47,12 @@ button:active {
 
 button img {
     width: 40px;
+}
+
+.h-10 {
+    height: 10%;
+}
+
+.h-90 {
+    height: 90%;
 }

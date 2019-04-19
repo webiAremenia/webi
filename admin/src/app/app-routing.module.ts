@@ -23,23 +23,25 @@ import {TeamListComponent} from './components/pages/team/team-list/team-list.com
 import {TeamCreateComponent} from './components/pages/team/team-create/team-create.component';
 import {TeamEditComponent} from './components/pages/team/team-edit/team-edit.component';
 import {TeamViewComponent} from './components/pages/team/team-view/team-view.component';
-import {CategoryListComponent} from "./components/pages/category/category-list/category-list.component";
-import {CategoryCreateComponent} from "./components/pages/category/category-create/category-create.component";
-import {CategoryEditComponent} from "./components/pages/category/category-edit/category-edit.component";
-import {CategoryViewComponent} from "./components/pages/category/category-view/category-view.component";
-import {MenuListComponent} from "./components/pages/menu/menu-list/menu-list.component";
-import {MenuCreateComponent} from "./components/pages/menu/menu-create/menu-create.component";
-import {MenuEditComponent} from "./components/pages/menu/menu-edit/menu-edit.component";
-import {MenuViewComponent} from "./components/pages/menu/menu-view/menu-view.component";
-import {MenuSortComponent} from "./components/pages/menu/menu-sort/menu-sort.component";
-import {LanguageListComponent} from "./components/pages/language/language-list/language-list.component";
-import {LanguageCreateComponent} from "./components/pages/language/language-create/language-create.component";
-import {LanguageEditComponent} from "./components/pages/language/language-edit/language-edit.component";
-import {LanguageViewComponent} from "./components/pages/language/language-view/language-view.component";
-import {NewsListComponent} from "./components/pages/news/news-list/news-list.component";
-import {NewsCreateComponent} from "./components/pages/news/news-create/news-create.component";
-import {NewsEditComponent} from "./components/pages/news/news-edit/news-edit.component";
-import {NewsViewComponent} from "./components/pages/news/news-view/news-view.component";
+import {CategoryListComponent} from './components/pages/category/category-list/category-list.component';
+import {CategoryCreateComponent} from './components/pages/category/category-create/category-create.component';
+import {CategoryEditComponent} from './components/pages/category/category-edit/category-edit.component';
+import {CategoryViewComponent} from './components/pages/category/category-view/category-view.component';
+import {MenuListComponent} from './components/pages/menu/menu-list/menu-list.component';
+import {MenuCreateComponent} from './components/pages/menu/menu-create/menu-create.component';
+import {MenuEditComponent} from './components/pages/menu/menu-edit/menu-edit.component';
+import {MenuViewComponent} from './components/pages/menu/menu-view/menu-view.component';
+import {MenuSortComponent} from './components/pages/menu/menu-sort/menu-sort.component';
+import {LanguageListComponent} from './components/pages/language/language-list/language-list.component';
+import {LanguageCreateComponent} from './components/pages/language/language-create/language-create.component';
+import {LanguageEditComponent} from './components/pages/language/language-edit/language-edit.component';
+import {LanguageViewComponent} from './components/pages/language/language-view/language-view.component';
+import {NewsListComponent} from './components/pages/news/news-list/news-list.component';
+import {NewsCreateComponent} from './components/pages/news/news-create/news-create.component';
+import {NewsEditComponent} from './components/pages/news/news-edit/news-edit.component';
+import {NewsViewComponent} from './components/pages/news/news-view/news-view.component';
+import {ClientComponent} from './components/pages/client/client.component';
+import {CreateAccountComponent} from "./components/pages/client/create-account/create-account.component";
 
 
 const dashboardRoutes: Routes = [
@@ -88,6 +90,9 @@ const dashboardRoutes: Routes = [
   {path: 'news/create', component: NewsCreateComponent},
   {path: 'news/edit', component: NewsEditComponent},
   {path: 'news/:id', component: NewsViewComponent},
+
+  {path: 'client', component: ClientComponent},
+  {path: 'client/create', component: CreateAccountComponent},
 
 ];
 
