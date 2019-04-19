@@ -60,46 +60,11 @@ const dashboardRoutes: Routes = [
   {path: 'setting/edit', component: SettingEditComponent},
   {path: 'setting/:id', component: SettingViewComponent},
 
-  {path: 'page', component: PageListComponent},
-  {path: 'page/create', component: PageCreateComponent},
-  {path: 'page/edit', component: PageEditComponent},
-  {path: 'page/:id', component: PageViewComponent},
-
-  {path: 'team', component: TeamListComponent},
-  {path: 'team/create', component: TeamCreateComponent},
-  {path: 'team/edit', component: TeamEditComponent},
-  {path: 'team/:id', component: TeamViewComponent},
-
-  {path: 'category', component: CategoryListComponent},
-  {path: 'category/create', component: CategoryCreateComponent},
-  {path: 'category/edit', component: CategoryEditComponent},
-  {path: 'category/:id', component: CategoryViewComponent},
-
-  {path: 'menu', component: MenuListComponent},
-  {path: 'menu/create', component: MenuCreateComponent},
-  {path: 'menu/sort', component: MenuSortComponent},
-  {path: 'menu/edit', component: MenuEditComponent},
-  {path: 'menu/:id', component: MenuViewComponent},
-
-  {path: 'language', component: LanguageListComponent},
-  {path: 'language/create', component: LanguageCreateComponent},
-  {path: 'language/edit', component: LanguageEditComponent},
-  {path: 'language/:id', component: LanguageViewComponent},
-
-  {path: 'news', component: NewsListComponent},
-  {path: 'news/create', component: NewsCreateComponent},
-  {path: 'news/edit', component: NewsEditComponent},
-  {path: 'news/:id', component: NewsViewComponent},
-
-  {path: 'client', component: ClientComponent},
-  {path: 'client/create', component: CreateAccountComponent},
-
-];
 
 
 const routes: Routes = [
   {path: 'login', component: LoginComponent},
-  {path: 'admin', canActivate: [AuthGuard], component: DashboardComponent, children: dashboardRoutes},
+
   {path: '', redirectTo: '/admin/portfolio', pathMatch: 'full'},
   // {path: '**', component: LoginComponent}
 ];

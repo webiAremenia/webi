@@ -20,7 +20,8 @@
   </tr>
   </thead>
   <tbody>
-  <tr *ngFor="let page of pages | titleDescriptionFilter : searchTerm; let i = index">
+  <!--<tr *ngFor="let page of pages | titleDescriptionFilter : searchTerm; let i = index">-->
+  <tr *ngFor="let page of pages ; let i = index">
 
     <td>{{page._id}}</td>
     <td>{{page.title.en}}</td>

@@ -1,6 +1,10 @@
+.container-fluid{
+    background-color: #3966ae;
+}
 .one{
   color: white;
   padding-left: 175px;
+
 }
 .two{
   color: white;
@@ -48,6 +52,9 @@
   border-radius: 3px;
   height: 30%;
   width: 100%;
+}
+.cardBox a{
+    text-decoration: none;
 }
 .card-body{
   width: 100%;

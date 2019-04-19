@@ -68,9 +68,13 @@ button{
     font-size: 12px;
     margin-left: 20px;
     -webkit-transition: all 1s ease-in-out;
+    margin-bottom: unset !important;
+
 }
 
-
+.footer_end{
+    background-color: #3966ae;
+}
 
 
 
