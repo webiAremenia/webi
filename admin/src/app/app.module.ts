@@ -57,8 +57,8 @@ import {NewsViewComponent} from './components/pages/news/news-view/news-view.com
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 import {NgSelectModule} from '@ng-select/ng-select';
-import { ClientComponent } from './components/pages/client/client.component';
-import { CreateAccountComponent } from './components/pages/client/create-account/create-account.component';
+import { ClientComponent } from './components/client/client.component';
+import { CreateAccountComponent } from './components/client/create-account/create-account.component';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http);

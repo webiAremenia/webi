@@ -40,8 +40,8 @@ import {NewsListComponent} from './components/pages/news/news-list/news-list.com
 import {NewsCreateComponent} from './components/pages/news/news-create/news-create.component';
 import {NewsEditComponent} from './components/pages/news/news-edit/news-edit.component';
 import {NewsViewComponent} from './components/pages/news/news-view/news-view.component';
-import {ClientComponent} from './components/pages/client/client.component';
-import {CreateAccountComponent} from "./components/pages/client/create-account/create-account.component";
+import {ClientComponent} from './components/client/client.component';
+import {CreateAccountComponent} from "./components/client/create-account/create-account.component";
 
 
 const dashboardRoutes: Routes = [
