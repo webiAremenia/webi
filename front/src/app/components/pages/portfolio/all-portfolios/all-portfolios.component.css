@@ -1,5 +1,6 @@
 .container-fluid{
   height: auto;
+    background-color: #3966ae;
 }
 .section1, .section3{
   display: grid;

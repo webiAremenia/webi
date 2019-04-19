@@ -4,10 +4,10 @@
   padding: 0;
 }
 
-body {
-  background-color: #3966ae;
+/*body {*/
+  /*background-color: #3966ae;*/
 
-}
+/*}*/
 
 body, html {
   overflow-x: hidden;
@@ -59,3 +59,28 @@ div[class^="col-"] {
   from {transform: scale(0.1)}
   to {transform: scale(1)}
 }
+
+//==================================================================================
+//===============================  scroll styles  ==================================
+//==================================================================================
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+    background: #3966ae;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #73a0ff;
+}
+//::-webkit-scrollbar-corner {
+//    background: red;
+//}
+
+/* Handle on hover */
+//::-webkit-scrollbar-thumb:hover {
+//    background: #555;
+//}
+
