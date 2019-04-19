@@ -1,0 +1,40 @@
+<div class="login-container">
+    <div class="loged">
+        <div class="brand">
+            <a href=""><img src="./assets/images/logo.png" alt=""></a>
+            <p id="webi">WEBI</p>
+        </div>
+        <div class="formDiv">
+            <div class="row">
+            <form [formGroup]="myForm" novalidate (ngSubmit)="submit()">
+                <div class="col-10">
+                <div class="form-group one">
+                    <input type="email" class="form-control" id="inputEmail"
+                                           placeholder="uxlead@gmail.com"
+                                           formControlName="email">
+                </div>
+                <div class="form-group two">
+                    <input type="password" class="form-control" id="inputPassword"
+                                           placeholder="Password"
+                                           formControlName="password">
+                </div>
+                </div>
+                <div class="col-2">
+                <div class="form-group but">
+                    <button type="submit" [disabled]="myForm.invalid">Submit</button>
+
+                </div>
+                </div>
+            </form>
+            </div>
+        </div>
+            <div class="check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <p>Forgot Password</p>
+            </div>
+
+    </div>
+</div>
+
+
+

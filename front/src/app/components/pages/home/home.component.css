@@ -1,10 +1,16 @@
 body, html {
   overflow: hidden;
+
 }
 
+*{
+    background-color: #3966ae;
+}
 #parentDiv{
   height: 100vh;
   overflow-y: auto;
   overflow-x: hidden;
 }
+
+
 

@@ -1,0 +1,158 @@
+.cabinet{
+    height: auto;
+    font-family: 'Poppins', sans-serif;
+    color: #ffffff;
+    margin:0;
+    box-sizing: border-box;
+    padding-bottom: 80px;
+}
+.header{
+    height: 111px;
+    background-color: #3966ae;
+    padding:  0 44px;
+}
+.brand{
+    font-size: 60px;
+    font-weight: 600;
+    color: #ffffff;
+    text-decoration: none;
+    /*padding-left:44px !important;*/
+    margin-top: 50%;
+    /*transform: translateY(50%);*/
+}
+.dropMenu{
+    position: absolute;
+    top: 100px;
+    right: 50px;
+    width: 200px;
+    height: 100px;
+    color: black;
+    background-color: #3966be;
+    opacity: 0.7;
+    z-index: 100;
+    box-sizing: border-box;
+    border-radius: 5px;
+    transition: width 1s ease;
+}
+.dropMenu li{
+    font-size: 15px;
+    list-style: none;
+    color: white;
+    padding: 10px;
+}
+.rightPart{
+    float: right;
+    padding-top: 20px;
+}
+.rightPart button{
+    border: none;
+    background: none;
+    display: inline-block;
+}
+.rightPart p{
+    display: inline-block;
+    padding-right: 50px;
+}
+.card{
+    background-color: #5582CA;
+    border-radius: 10px;
+    height: 320px;
+    margin: 48px 0 55px 25px;
+    padding: 50px;
+    position: relative;
+    overflow: hidden;
+}
+.card h2{
+    font-size: 40px;
+}
+.card span{
+    opacity: 0.4;
+}
+.money{
+    font-weight: 500;
+    font-size: 40px;
+}
+.cardSale{
+    position: absolute;
+    bottom: 30px;
+}
+.cardDate{
+    position: absolute;
+    right: 50px;
+    bottom: 30px;
+}
+.oneCircle{
+    width: 200px;
+    height: 180px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    opacity: 0.1;
+    position: absolute;
+    top: 20px;
+    right: -50px;
+    transform: rotateZ(20deg);
+}
+.twoCircle{
+    width: 200px;
+    height: 180px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    opacity: 0.1;
+    position: absolute;
+    top: 140px;
+    right: -30px;
+    transform: rotateZ(30deg);
+}
+.table-list{
+    color:#707070;
+    margin-left: 23px;
+    border-radius: 10px;
+    padding: 30px 60px;
+    box-sizing: border-box;
+    box-shadow: 0 3px 18px 0 rgba(157, 206, 255, 0.39);
+}
+table{
+    margin-left: 25px;
+    padding-left: 60px;
+    padding-top: 30px;
+    width: 100%;
+    height: 415px;
+
+}
+
+tr{
+    height: 70px;
+    width: 100%;
+    border-bottom: 1px solid #d2d2d2;
+}
+td, th{
+
+    width: 30%;
+
+}
+
+.tableTitle{
+    /*font-family: Montserrat;*/
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 2.5;
+    color: #707070;
+    display:block ;
+}
+.list li{
+    font-size: 22px;
+    letter-spacing: 0.2px;
+    color: #3966ae;
+    padding-top: 18px;
+    padding-left: 44px;
+    text-decoration: none;
+}
+.list ul{
+    padding-top: 45px;
+}
+.list{
+
+    height: 100%;
+    border-radius: 10px;
+    box-shadow: 0 3px 18px 0 rgba(157, 206, 255, 0.39);
+}

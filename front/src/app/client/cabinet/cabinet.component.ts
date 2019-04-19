@@ -8,8 +8,11 @@ import { Component, OnInit } from '@angular/core';
 export class CabinetComponent implements OnInit {
 
   constructor() { }
-
+    dropMenu=true;
   ngOnInit() {
   }
+    addMenu(){
+        this.dropMenu = !this.dropMenu;
+    }
 
 }

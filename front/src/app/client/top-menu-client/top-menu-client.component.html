@@ -1,0 +1,13 @@
+<div class="menu">
+<div class="header">
+    <a class="brand" routerLink="">WEBI</a>
+    <div class="rightPart">
+        <p>Angelina-Doe</p>
+        <button (click)="addMenu()"><img src="../../../assets/images/menuToggle.png" alt=""></button>
+    </div>
+    <ul *ngIf="!dropMenu" class="dropMenu">
+        <li>Log in</li>
+        <li>Log out</li>
+    </ul>
+</div>
+</div>
