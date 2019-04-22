@@ -64,3 +64,26 @@ img {
 .bottom-line, .top-line{
     padding: 12px 0;
 }
+@media(max-width: 360px){
+    img{
+        width: 100%;
+    }
+    .portfolio h6{
+        font-size: 14px;
+        line-height: 1.5;
+    }
+    .content h2{
+        font-size: 36px;
+        line-height: 1.11;
+
+    }
+    .content p{
+
+        opacity: 0.73;
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 1.5;
+        letter-spacing: -0.2px;
+        text-align: left;
+    }
+}

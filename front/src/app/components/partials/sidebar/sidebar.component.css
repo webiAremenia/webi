@@ -2,6 +2,7 @@
   height: 100vh;
   width: calc(72px + (100vw - 144px)/12);
   position: fixed;
+    display: block;
   top:160px;
   left: 0;
   z-index: 1000;
@@ -20,4 +21,9 @@
 .active{
   width: 40px;
   border: 1px solid white;
+}
+@media (max-width: 1200px ) {
+    .sidebar{
+        display: none;
+    }
 }
