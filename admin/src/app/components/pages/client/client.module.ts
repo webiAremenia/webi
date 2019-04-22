@@ -7,11 +7,13 @@ import {CKEditorModule} from "@ckeditor/ckeditor5-angular";
 import {ClientRoutingModule} from "./client-routing.module";
 import {ClientComponent} from "./client.component";
 import {CreateAccountComponent} from "./create-account/create-account.component";
+import { EditAccountComponent } from './edit-account/edit-account.component';
 
 @NgModule({
   declarations: [
     ClientComponent,
-    CreateAccountComponent
+    CreateAccountComponent,
+    EditAccountComponent
 
   ],
   imports: [

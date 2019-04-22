@@ -1,0 +1,41 @@
+<div class="row">
+  <div class="col-md-10 offset-1">
+    <h2 class="text-center" translate>Edit Account</h2>
+
+    <form [formGroup]="accountForm">
+      <div class="form-group">
+        <div class="form-group">
+          <label for="firstName">Client Name</label>
+          <input id="firstName" type="text" class="form-control" formControlName="firstName">
+          <!--<p *ngIf="menuForm.get('order').invalid  && menuForm.get('order').touched" class="invalid">Type true-->
+          <!--Order</p>-->
+
+          <label for="lastName">Client Surname</label>
+          <input id="lastName" type="text" class="form-control" formControlName="lastName">
+
+          <label for="nikName">nik-name for 'url'</label>
+          <input id="nikName" type="text" class="form-control" formControlName="nikName">
+
+          <label for="email">Client Email</label>
+          <input id="email" type="text" class="form-control" formControlName="email">
+
+          <label for="status">Client Status</label>
+          <input id="status" type="text" class="form-control" formControlName="status">
+
+        </div>
+        <button type="button" class="btn btn-primary"
+                (click)="updateClient()"
+        >Update
+          <i class="fa fa-check"></i>
+        </button>
+
+        <button type="button" class="btn btn-success"
+                (click)="sendPass()"
+        >Send Password
+          <i class="fa fa-check"></i>
+        </button>
+      </div>
+    </form>
+  </div>
+
+</div>

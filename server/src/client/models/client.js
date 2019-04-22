@@ -12,9 +12,9 @@ const client = new Schema({
     },
     firstName: {type: String, required: true},
     lastName: {type: String, required: true},
-    nikName: {type: String, required: true},
+    nikName: {type: String, required: true, unique: true},
     status: {type: String, default: null},
-    password: {type: String, required: true}
+    password: {type: String, default: null}
 });
 
 module.exports = mongoose.model('Client', client);

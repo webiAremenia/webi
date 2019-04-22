@@ -1,10 +1,10 @@
 import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
 
-import {MediaListComponent} from "./media-list/media-list.component";
-import {MediaCreateComponent} from "./media-create/media-create.component";
-import {MediaEditComponent} from "./media-edit/media-edit.component";
-import {MediaViewComponent} from "./media-view/media-view.component";
+import {MediaListComponent} from './media-list/media-list.component';
+import {MediaCreateComponent} from './media-create/media-create.component';
+import {MediaEditComponent} from './media-edit/media-edit.component';
+import {MediaViewComponent} from './media-view/media-view.component';
 
 
  const routes: Routes = [
