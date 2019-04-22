@@ -16,38 +16,64 @@ module.exports = {
                         error: 'email address already exist !!!'
                     })
                 } else {
-                    const password = randomsPass.generate({
-                        length: 12,
-                        charset: 'hex'
-                    });
-                    bcrypt.hash(password, 10, (err, hash) => {
-                        if (err) {
-                            res.status(500).json({error: err});
-                        } else {
-                            const client = new Client({
-                                firstName: req.body.name,
-                                lastName: req.body.lastName,
-                                nikName: req.body.nikName,
-                                email: req.body.email,
-                                password: hash,
-                            });
-                            client.save()
-                                .then(result => {
-                                    let html = `<a href="http://localhost:3000/cabinet/${req.body.nikName}">Your cabinet here</a> <br> <p>your Password is: ${password}</p>`;
-                                    helper.sendAccount(res, html, result.email);
-                                })
-                                .catch(e => {
-                                    helper.errorHandler(res, e)
-                                });
-                        }
-                    })
+                    new Client({
+                        firstName: req.body.firstName,
+                        lastName: req.body.lastName,
+                        nikName: req.body.nikName,
+                        email: req.body.email,
+                        status: req.body.status
+                    }).save()
+                        .then(result => {
+                            res.status(201).json({success: true, message: 'Created'})
+                        })
+                        .catch(e => {
+                            helper.errorHandler(res, e)
+                        });
                 }
             })
             .catch(e => helper.errorHandler(res, e))
     },
 
+    updateClient(req, res, next) {
+        Client.findOneAndUpdate({_id : req.params.id},req.body)
+            .exec()
+            .then(client => {
+                res.status(200).json({
+                    success: true
+                })
+            })
+            .catch(e => helper.errorHandler(res, e))
+    },
+
+    createPasswordAndSend(req, res, next) {
+        const password = randomsPass.generate({
+            length: 12,
+            charset: 'hex'
+        });
+        console.log('password', password);
+        bcrypt.hash(password, 10, (err, hash) => {
+            if (err) {
+                res.status(500).json({error: err});
+            } else {
+                Client.findOneAndUpdate({_id: req.params.id}, {password: hash})
+                    .exec()
+                    .then(r => {
+                        console.log('client', r);
+                        if (r) {
+                            let html = `<a href="http://localhost:3000/cabinet/${r.nikName}">Your cabinet here</a> <br> <p>your Password is: ${password}</p>`;
+                            helper.sendAccount(res, html, r.email);
+                        } else {
+                            res.status(404).json({success: false, error: 'Not found !!!'})
+                        }
+                    })
+                    .catch(e => helper.errorHandler(res, e))
+
+            }
+        })
+    },
+
     login(req, res, next) {
-        Client.findOne({email: req.body.email})
+        Client.findOne({email: req.body.email, nikName: req.body.nikName})
             .exec()
             .then(client => {
                 if (!client) {
@@ -78,7 +104,6 @@ module.exports = {
             .exec()
             .then(client => {
                 if (client) {
-
                     bcrypt.compare(req.body.oldPassword, client.password, (err, result) => {
                         if (err) {
                             return res.status(401).json({
@@ -87,7 +112,7 @@ module.exports = {
                         }
                         if (result) {
                             console.log(55);
-                            bcrypt.hash(req.body.newPassword, 10, (err, hash) => {
+                            bcrypt.hash(req.body.password, 10, (err, hash) => {
                                 if (err) {
                                     res.status(500).json({error: err});
                                 } else {

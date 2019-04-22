@@ -20,7 +20,8 @@
   </tr>
   </thead>
   <tbody>
-  <tr *ngFor="let news of newses | titleDescriptionFilter : searchTerm; let i = index">
+  <!--<tr *ngFor="let news of newses | titleDescriptionFilter : searchTerm; let i = index">-->
+  <tr *ngFor="let news of newses ; let i = index">
 
     <td>{{news._id}}</td>
     <td>{{news.title.en}}</td>

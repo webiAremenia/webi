@@ -1,6 +1,6 @@
 <div class="d-flex">
   <div class="mr-auto p-2">
-    <button class="btn btn-primary" routerLink="/admin/team/create" translate>Create Team</button>
+    <button class="btn btn-primary" routerLink="create" translate>Create Team</button>
 
   </div>
   <div class="p-2">
@@ -21,7 +21,8 @@
   </thead>
   <tbody [sortablejs]="teams" [sortablejsOptions]="options">
 
-  <tr *ngFor="let team of teams | fullNameFilter : searchTerm; let i = index">
+  <!--<tr *ngFor="let team of teams | fullNameFilter : searchTerm; let i = index">-->
+  <tr *ngFor="let team of teams ; let i = index">
 
     <td>{{team._id}}</td>
     <td>{{team.fullName.en}}</td>
@@ -46,3 +47,4 @@
   <button class="btn btn-success" (click)="save()" translate>Save</button>
 </div>
 
+<router-outlet></router-outlet>

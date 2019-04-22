@@ -1,17 +1,19 @@
-.menu{
+.menu {
     height: auto;
     font-family: 'Poppins', sans-serif;
     color: #ffffff;
-    margin:0;
+    margin: 0;
     box-sizing: border-box;
     padding-bottom: 80px;
 }
-.header{
+
+.header {
     height: 111px;
     background-color: #3966ae;
-    padding:  0 44px;
+    padding: 0 44px;
 }
-.brand{
+
+.brand {
     font-size: 60px;
     font-weight: 600;
     color: #ffffff;
@@ -20,36 +22,59 @@
     margin-top: 50%;
     /*transform: translateY(50%);*/
 }
-.dropMenu{
+
+.dropMenu {
     position: absolute;
-    top: 100px;
-    right: 50px;
+    top: 50px;
+    right: 0px;
     width: 200px;
-    height: 100px;
     color: black;
     background-color: #3966be;
-    opacity: 0.7;
+    opacity: 0.8;
     z-index: 100;
     box-sizing: border-box;
     border-radius: 5px;
     transition: width 1s ease;
 }
-.dropMenu li{
+
+.dropMenu li {
     font-size: 15px;
     list-style: none;
     color: white;
     padding: 10px;
 }
-.rightPart{
+
+.rightPart {
     float: right;
     padding-top: 20px;
 }
-.rightPart button{
+
+.rightPart button {
     border: none;
     background: none;
     display: inline-block;
 }
-.rightPart p{
+
+.rightPart p {
     display: inline-block;
     padding-right: 50px;
+}
+
+.menu-items {
+    cursor: pointer;
+}
+
+.menu-items:hover {
+    background-color: #4976ae;
+}
+
+.change-pass-wrapper {
+    width: 500px;
+    position: absolute;
+    background: #3966ae;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%);
+    z-index: 10;
+    padding: 50px;
 }

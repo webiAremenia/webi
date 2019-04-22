@@ -1,13 +1,43 @@
 <div class="menu">
-<div class="header">
-    <a class="brand" routerLink="">WEBI</a>
-    <div class="rightPart">
-        <p>Angelina-Doe</p>
-        <button (click)="addMenu()"><img src="../../../assets/images/menuToggle.png" alt=""></button>
+    <div class="header">
+        <a class="brand" routerLink="">WEBI</a>
+        <div class="rightPart">
+            <p>{{ client }}</p>
+            <button (click)="addMenu()"><img src="../../../assets/images/menuToggle.png" alt=""></button>
+        </div>
+        <ul *ngIf="!dropMenu" class="dropMenu">
+            <li class="menu-items" (click)="logout()">Log out</li>
+
+            <li class="menu-items" (click)="openForm()">Change Password</li>
+        </ul>
     </div>
-    <ul *ngIf="!dropMenu" class="dropMenu">
-        <li>Log in</li>
-        <li>Log out</li>
-    </ul>
 </div>
+
+<div *ngIf="!passHidden" class="change-pass-wrapper">
+    <form [formGroup]="myForm" novalidate (ngSubmit)="changePass()">
+        <div class="col-12">
+            <div class="form-group one">
+                <input type="password" class="form-control" id="oldPassword"
+                       placeholder="Old password"
+                       formControlName="oldPassword">
+            </div>
+            <div class="form-group two">
+                <input type="password" class="form-control" id="inputPassword"
+                       placeholder="New Password"
+                       formControlName="password">
+            </div>
+        </div>
+        <div class="col-12 row">
+            <div class="col-2 ">
+                <div class="form-group but">
+                    <button class="btn btn-danger" type="submit" [disabled]="myForm.invalid">Submit</button>
+                </div>
+            </div>
+            <div class="col-2 offset-2">
+                <div class="form-group but">
+                    <button class="btn btn-primary" (click)="openForm()">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </form>
 </div>

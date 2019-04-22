@@ -5,7 +5,7 @@ import {CarouselModule} from 'ngx-owl-carousel-o';
 import {FormsModule} from '@angular/forms';
 import {ReactiveFormsModule} from '@angular/forms';
 
-import {HttpClientModule, HttpClient} from '@angular/common/http';
+import {HttpClientModule, HttpClient, HTTP_INTERCEPTORS} from '@angular/common/http';
 import {TranslateModule, TranslateLoader} from '@ngx-translate/core';
 import {TranslateHttpLoader} from '@ngx-translate/http-loader';
 
@@ -37,8 +37,9 @@ import {MultyTeamComponent} from './components/pages/home/team/multy-team/multy-
 import {MultySuggestComponent} from './components/pages/home/suggest/multy-suggest/multy-suggest.component';
 import {CabinetComponent} from './client/cabinet/cabinet.component';
 import {LoginComponent} from './client/login/login.component';
-import { TopMenuClientComponent } from './client/top-menu-client/top-menu-client.component';
+import {TopMenuClientComponent} from './client/top-menu-client/top-menu-client.component';
 import {ClientModule} from './client/client.module';
+import {InterceptorService} from "./client/_services/interceptor.service";
 
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -91,7 +92,13 @@ export function HttpLoaderFactory(http: HttpClient) {
             }
         })
     ],
-    providers: [Globals],
+    providers: [Globals,
+        {
+            provide: HTTP_INTERCEPTORS,
+            useClass: InterceptorService,
+            multi: true
+        }
+    ],
     bootstrap: [AppComponent]
 })
 export class AppModule {
