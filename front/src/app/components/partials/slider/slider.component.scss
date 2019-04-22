@@ -77,7 +77,7 @@ button img {
 
 @media (min-width: 1900px) {
   .one, .two, .three, .four {
-    font-size: 40px;
+
     padding: 10px 20px;
   }
   h5 {
@@ -95,14 +95,19 @@ button img {
   }
 }
 
-@media (min-width: 1500px) {
+@media (max-width: 360px) {
   .one, .two, .three, .four {
     font-size: 30px;
     padding: 10px 20px;
+
+      width:336px;
+      height: 150px;
+      display:block;
   }
+
   h5 {
     font-size: 20px;
-    font-weight: 500;
+    font-weight: 600;
   }
   .one p, .two p, .three p, .four p {
     font-size: 15px;
@@ -111,6 +116,6 @@ button img {
     width: 42px;
     height: 42px;
     margin-left: 300px;
-    margin-bottom: 30px;
+    margin-bottom: -30px;
   }
 }

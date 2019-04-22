@@ -6,7 +6,7 @@
         </div>
         <div class="formDiv">
             <div class="row">
-            <form [formGroup]="myForm" novalidate (ngSubmit)="submit()">
+            <form [formGroup]="myForm" novalidate (ngSubmit)="submit()" class="form-inline">
                 <div class="col-10">
                 <div class="form-group one">
                     <input type="email" class="form-control" id="inputEmail"
@@ -18,6 +18,10 @@
                                            placeholder="Password"
                                            formControlName="password">
                 </div>
+                    <div class="check">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <p>Forgot Password</p>
+                    </div>
                 </div>
                 <div class="col-2">
                 <div class="form-group but">
@@ -25,13 +29,11 @@
 
                 </div>
                 </div>
+
             </form>
             </div>
         </div>
-            <div class="check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                <p>Forgot Password</p>
-            </div>
+
 
     </div>
 </div>
