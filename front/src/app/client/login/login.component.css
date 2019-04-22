@@ -57,6 +57,9 @@ img{
     margin: 0;
     border: 0;
 }
+.form-group{
+    margin-right: 0;
+}
 button{
     width: 100%;
 }

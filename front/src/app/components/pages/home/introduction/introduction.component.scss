@@ -6,6 +6,7 @@
 
 .circle {
   text-align: right;
+    display:inline-block;
 }
 
 .circle img {
@@ -55,4 +56,21 @@ button:hover {
 
 button:active {
   border: 1px solid blue;
+}
+@media (max-width: 360px) {
+    .title {  position: relative;
+
+        h1 {
+            font-size: 36px;
+            line-height: 1.11;
+            font-weight: 600;
+        }
+
+        p {
+
+            font-size: 14px;
+            line-height: 1.5;
+
+        }
+    }
 }

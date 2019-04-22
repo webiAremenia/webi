@@ -1,4 +1,4 @@
-<div class="row multy">
+<div class="row multy d-none d-sm-block">
     <div class="col-11 offset-1">
       <div class="row">
     <div class="col-lg-3 one">
@@ -49,3 +49,14 @@
   </div>
 </div>
   </div>
+
+
+
+
+<div class="row">
+    <div class="col-sm-12 three" *ngFor='let team of teams'>
+        <img src="./assets/images/{{team.img}}" alt="">
+           <h6><b>{{team.name}}</b></h6>
+
+    </div>
+</div>

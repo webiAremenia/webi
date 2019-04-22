@@ -4,8 +4,15 @@
   /*background-color: #1c488e;*/
   /*padding-left: 20px;*/
 }
+@media(max-width: 360px){
+    .footer{
+       margin: 0 13px;
+    }
+}
 .first{
     background: #1c488e;
+    margin-right: 0;
+    padding-right: 0;
 }
 .content{
   background-color: #1c488e;
@@ -22,6 +29,11 @@
 }
 .formDiv{
 padding: 0 0 0 150px;
+}
+@media(max-width: 360px){
+    .formDiv{
+        padding: 0;
+    }
 }
 input, textarea, button{
   display: block;

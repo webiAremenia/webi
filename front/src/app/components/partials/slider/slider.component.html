@@ -1,7 +1,7 @@
 <div id="slider" class="my-container">
-    <div class="col-lg-10 offset-1">
+    <div class="col-lg-10 offset-lg-1 col-md-10 offset-md-1 col-sm-12">
         <div class="row px-0 m-0 h-auto">
-            <div class="col-12 p-0 m-0 h-auto">
+            <div class="col-12 p-0 m-0 h-auto d-none d-sm-block">
                 <owl-carousel-o [options]="customOptions" class="m-0 p-0">
 
                     <ng-template carouselSlide>
@@ -47,6 +47,33 @@
 
                 </owl-carousel-o>
             </div>
+
+            <div class="col-12 p-0 h-auto d-block d-sm-none">
+                        <div class="row">
+                        <div class="col-12 one">
+                            <p class="number">01</p>
+                            <h5>Web Development</h5>
+                            <p class="lorem">Lorem ipsum dolor sit amet</p>
+                            <button><img src="./assets/images/right-black.png" alt=""></button>
+                        </div>
+                        </div>
+                <div class="row">
+                        <div class="col-12 two">
+                            <p class="number">02</p>
+                            <h5>Mobil Development</h5>
+                            <p class="lorem">Lorem ipsum dolor sit amet.</p>
+                            <button><img src="./assets/images/right-filled.png" alt=""></button>
+                        </div>
+                </div>
+                    <div class="row">
+                        <div class="col-12 three">
+                            <p>03</p>
+                            <h5>Agile Peocess</h5>
+                            <p class="lorem">Lorem ipsum dolor sit amet.</p>
+                        </div>
+                    </div>
+            </div>
+
         </div>
     </div>
 </div>

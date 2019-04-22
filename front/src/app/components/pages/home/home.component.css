@@ -11,6 +11,9 @@ body, html {
   overflow-y: auto;
   overflow-x: hidden;
 }
-
+#section2{
+    margin-right: 0;
+    padding-right: 0;
+}
 
 

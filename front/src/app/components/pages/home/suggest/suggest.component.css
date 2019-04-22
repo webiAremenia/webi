@@ -65,6 +65,7 @@ button:active {
 
 button img {
     width: 40px;
+    height: 15px;
 }
 
 .image-wrapper img {
@@ -76,4 +77,46 @@ button img {
 .image-wrapper {
     height: 100vh;
     padding: 0;
+    display: inline-block;
+}
+@media(max-width: 360px){
+    button {
+        right: 24px;
+        bottom: 26px;
+        width: 31px;
+        height:31px;
+    }
+    button img {
+        width: 20px;
+        height: 10px;
+    }
+    .image-wrapper{
+        display: none;
+    }
+    .component-heading p {
+
+        font-size: 14px;
+    }
+    .line{
+        width: 80px;
+
+    }
+    .component-title h2{
+
+        font-size: 36px;
+        font-weight: 600;
+        line-height: 1.11;
+    }
+    .service-list{
+        height: 332px;
+        background-color: #1c488e ;
+        padding: 30px 20px;
+    }
+    .service-item{
+
+        font-size: 18px;
+        font-weight: 600;
+        line-height: 2.78;
+
+    }
 }
