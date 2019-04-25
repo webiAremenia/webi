@@ -1,14 +1,14 @@
 .menu {
-    height: auto;
+    height: 112px;
+    line-height: 112px;
     font-family: 'Poppins', sans-serif;
     color: #ffffff;
     margin: 0;
     box-sizing: border-box;
-    padding-bottom: 80px;
 }
 
 .header {
-    height: 111px;
+    height: 112px;
     background-color: #3966ae;
     padding: 0 44px;
 }
@@ -26,7 +26,7 @@
 .dropMenu {
     position: absolute;
     top: 50px;
-    right: 0px;
+    right: 0;
     width: 200px;
     color: black;
     background-color: #3966be;
@@ -46,7 +46,6 @@
 
 .rightPart {
     float: right;
-    padding-top: 20px;
 }
 
 .rightPart button {
