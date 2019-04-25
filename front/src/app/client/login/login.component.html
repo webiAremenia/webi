@@ -1,35 +1,28 @@
 <div class="login-container">
     <div class="loged">
-        <div class="brand">
+      <div class="row">
+        <div class="col-lg-12 col-sm-12 mx-auto">
             <a href=""><img src="./assets/images/logo.png" alt=""></a>
             <p id="webi">WEBI</p>
         </div>
-        <div class="formDiv">
-            <div class="row">
-            <form [formGroup]="myForm" novalidate (ngSubmit)="submit()" class="form-inline">
-                <div class="col-10">
-                <div class="form-group one">
-                    <input type="email" class="form-control" id="inputEmail"
+      </div>
+        <div class="row ml-sm-3 mr-sm-3">
+            <div class="col-lg-12 col-sm-10 ml-sm-2 mr-sm-2">
+            <form [formGroup]="myForm" novalidate (ngSubmit)="submit()" class="form-inline row p-0">
+
+                    <div class="col-lg-9  col-md-9 col-sm-8 col-xs-6 p-0">
+                    <input type="email" class="form-control firstInput border-0" id="inputEmail"
                                            placeholder="uxlead@gmail.com"
                                            formControlName="email">
-                </div>
-                <div class="form-group two">
-                    <input type="password" class="form-control" id="inputPassword"
+
+                    <input type="password" class="form-control secondInput border-0" id="inputPassword"
                                            placeholder="Password"
                                            formControlName="password">
-                </div>
-                    <div class="check">
-                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                        <p>Forgot Password</p>
                     </div>
-                </div>
-                <div class="col-2">
-                <div class="form-group but">
-                    <button type="submit" [disabled]="myForm.invalid">Submit</button>
+              <div class="col-lg-3 col-md-3 col-sm-3 col-xs-2 p-0">
+                    <button type="submit" [disabled]="myForm.invalid" class="buttonInput">Submit</button>
 
-                </div>
-                </div>
-
+              </div>
             </form>
             </div>
         </div>

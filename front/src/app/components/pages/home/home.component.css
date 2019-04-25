@@ -15,5 +15,7 @@ body, html {
     margin-right: 0;
     padding-right: 0;
 }
-
+.container-fluid{
+    padding-right: 5px;
+}
 
