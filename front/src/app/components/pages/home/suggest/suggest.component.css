@@ -14,6 +14,7 @@
     color: #ffffff;
 }
 
+
 .line {
     width: 100px;
     border: 1px solid lightgrey;
@@ -38,7 +39,7 @@ h2 {
 }
 
 
-button {
+.rightButton {
     box-sizing: border-box;
     border-radius: 50%;
     width: 66px;
@@ -54,16 +55,16 @@ button {
     bottom: 210px;
 }
 
-button:hover {
+.rightButton:hover {
     border: 0;
     background-color: #1c488e;
 }
 
-button:active {
+.rightButton:active {
     border: 1px solid blue;
 }
 
-button img {
+.rightButton img {
     width: 40px;
     height: 15px;
 }
@@ -79,22 +80,46 @@ button img {
     padding: 0;
     display: inline-block;
 }
+.btn-link{
+    text-decoration: none;
+    color: white;
+    cursor:pointer;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 2.78;
+}
+.card-body{
+    opacity: 0.73;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.5;
+    letter-spacing: -0.2px;
+    text-align: left;
+    color: #ffffff;
+}
 @media(max-width: 360px){
-    button {
+    .rightButton {
         right: 24px;
         bottom: 26px;
         width: 31px;
         height:31px;
     }
-    button img {
+    .rightButton img {
         width: 20px;
         height: 10px;
     }
     .image-wrapper{
         display: none;
     }
+    .component-heading, .component-title{
+        /*padding: 29px 13px;*/
+    }
+    .title{
+        padding-bottom: 60px;
+        padding-left: 12px !important;
+    }
     .component-heading p {
-
+        line-height: 1.5;
         font-size: 14px;
     }
     .line{
@@ -102,13 +127,13 @@ button img {
 
     }
     .component-title h2{
-
+        margin: 0;
         font-size: 36px;
         font-weight: 600;
         line-height: 1.11;
     }
     .service-list{
-        height: 332px;
+        height: auto;
         background-color: #1c488e ;
         padding: 30px 20px;
     }

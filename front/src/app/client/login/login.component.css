@@ -1,35 +1,25 @@
-body, html{
-    margin: 0;
-    padding: 0;
-}
 .login-container{
     height: 100vh;
     background-color: #F1F4F8;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-.loged{
-    padding-left: 400px;
-    padding-top: 200px;
-}
-.brand{
-    width: 423px;
     text-align: center;
 }
-form{
-    width: 100%;
-    margin: 0 auto;
+.loged{
+  width: 550px;
+  height: 200px;
+  margin: auto;
+  padding-top: 100px;
 }
-.formDiv{
-    width: 700px;
+.brand{
+  text-align: center;
 }
 
-.one, .two
+.firstInput, .secondInput
 {
-    width: 423px;
+    width: 100%;
     height: 60px;
-    margin-bottom: 1px;
+}
+.firstInput{
+  margin-bottom: 2px;
 }
 img{
     background-color:#3966ae;
@@ -39,38 +29,18 @@ img{
     font-weight: 600;
     color: #3966ae;
 }
-.but{
-    float:right;
+.form-inline{
+  align-items: start;
 }
-.but button{
+
+.buttonInput{
     height: 120px;
-    width: 100px;
-    float:right;
+    width: 100%;
     background-color: #3966ae;
     color: white;
     border: 0;
 }
 
-.form-group input{
-    width: 423px;
-    height: 60px;
-    margin: 0;
-    border: 0;
-}
-.form-group{
-    margin-right: 0;
-}
-button{
-    width: 100%;
-}
-.check{
-    width:600px;
-}
-.check p{
-    display: inline-block;
-    float:right;
-    /*font-family: AktivGrotesk;*/
-    font-size: 14px;
-    text-align: right;
-    color: #4a90e2;
-}
+
+
+

@@ -1,14 +1,9 @@
 .footer{
   font-family: Arial;
   color: white;
-  /*background-color: #1c488e;*/
-  /*padding-left: 20px;*/
+  padding-left: 5px;
 }
-@media(max-width: 360px){
-    .footer{
-       margin: 0 13px;
-    }
-}
+
 .first{
     background: #1c488e;
     margin-right: 0;
@@ -27,14 +22,8 @@
   margin: 30px 0;
   border: 1px solid white;
 }
-.formDiv{
-padding: 0 0 0 150px;
-}
-@media(max-width: 360px){
-    .formDiv{
-        padding: 0;
-    }
-}
+
+
 input, textarea, button{
   display: block;
   background-color: #1c488e;
@@ -64,16 +53,13 @@ button{
   margin-left:315px;
 }
 
-.two{
+.copyRight{
   height: 10%;
   text-align: center;
   padding: 24px 0;
   color:#fff;
 }
-.one p{
-  margin-bottom: 15px;
 
-}
 .error{
     display: inline-block;
     color: #f16060;
@@ -88,7 +74,18 @@ button{
     background-color: #3966ae;
 }
 
+@media(max-width: 360px){
 
+    input, textarea, button{
+        width: 330px;
+    }
+  button{
+
+    margin-left:180px;
+    width: 150px;
+  }
+
+}
 
 
 

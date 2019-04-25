@@ -31,6 +31,7 @@ export class LoginComponent implements OnInit {
     }
 
     submit() {
+
         this.service.login(this.myForm.value).subscribe(
             data => {
                 if (data['success']) {
