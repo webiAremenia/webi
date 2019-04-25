@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {TeamService} from "../../../../_services/team.service";
-import {NgbModal} from "@ng-bootstrap/ng-bootstrap";
+import {TeamService} from '../../../../_services/team.service';
+import {NgbModal} from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
     selector: 'app-multy-team',

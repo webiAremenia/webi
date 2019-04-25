@@ -82,3 +82,25 @@ h6{
     border:0;
     background-color: #1c488e;
 }
+@media (max-width: 360px) {
+    .cont-heading p{
+        opacity: 0.73;
+        font-size: 14px;
+        font-weight: 300;
+        line-height: 1.5;
+        letter-spacing: -0.2px;
+
+    }
+
+    .cont-heading h2{
+
+        font-size: 36px;
+        font-weight: 600;
+        line-height: 1.11;
+
+    }
+    .one{
+        height: auto;
+    }
+    }
+
