@@ -23,12 +23,7 @@ div[class^="col-"] {
   padding-right: 72px;
 }
 
-@media(max-width: 1200px)  {
-    .my-container{
-        padding-left: 12px;
-        padding-right: 12px;
-    }
-}
+
 #slider .owl-next, #slider .owl-prev{
   position: absolute;
   width: 30px;
@@ -48,7 +43,16 @@ div[class^="col-"] {
 .owl-theme .owl-nav{
     margin-top: 0 !important;
 }
+@media(max-width: 1200px)  {
+    .my-container{
+        padding-left: 20px;
+        padding-right: 20px;
 
+    }
+    #slider .owl-next, #slider .owl-prev{
+        margin: 15px;
+    }
+}
 
 .modal-content{
   -webkit-animation-name: zoom;
@@ -90,3 +94,6 @@ div[class^="col-"] {
 /*//    background: #555;*/
 /*//}*/
 
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

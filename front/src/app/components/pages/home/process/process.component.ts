@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {SettingService} from '../../../_services/setting.service';
 
 @Component({
   selector: 'app-process',
@@ -6,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./process.component.css']
 })
 export class ProcessComponent implements OnInit {
-
-  constructor() { }
+    title;
+    text;
+  constructor(private  settingsService: SettingService) { }
 
   ngOnInit() {
+      this.title = this.settingsService.getValueByKeyLanguage('home-process-title', 'en');
+      this.text = this.settingsService.getValueByKeyLanguage('home-process-text', 'en');
   }
 
 }

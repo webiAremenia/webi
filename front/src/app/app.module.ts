@@ -39,7 +39,7 @@ import {CabinetComponent} from './client/cabinet/cabinet.component';
 import {LoginComponent} from './client/login/login.component';
 import {TopMenuClientComponent} from './client/top-menu-client/top-menu-client.component';
 import {ClientModule} from './client/client.module';
-import {InterceptorService} from "./client/_services/interceptor.service";
+import {InterceptorService} from './client/_services/interceptor.service';
 
 
 export function HttpLoaderFactory(http: HttpClient) {

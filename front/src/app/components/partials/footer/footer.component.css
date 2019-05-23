@@ -74,7 +74,7 @@ button{
     background-color: #3966ae;
 }
 
-@media(max-width: 360px){
+@media(max-width: 768px){
 
     input, textarea, button{
         width: 330px;

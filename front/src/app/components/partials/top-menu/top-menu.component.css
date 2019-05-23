@@ -1,14 +1,22 @@
+.topNav{
+     position: fixed;
+     z-index: 1000;
+     width: 100%;
+
+ }
+
 .my-container {
     background-color: #3966ae;
 }
 
 .navbar {
-    height: 160px;
+    height: 100%;
     font-family: 'Poppins', sans-serif;
     box-sizing: border-box;
     background: none;
     position: relative;
     color: white;
+    padding-left: 0;
 }
 
 #logo {
@@ -16,8 +24,14 @@
     line-height: calc(72px - 12px + (100vw - 144px) / 12);
 
 }
-#logo a{
-  opacity: 1;
+#logo img{
+    width: 50%;
+    height: 50%;
+    object-fit: contain;
+}
+
+#logo a {
+    opacity: 1;
 }
 
 .navbar-brand {
@@ -33,7 +47,7 @@
 li {
     cursor: pointer;
     display: inline-block;
-  color: white;
+    color: white;
 }
 
 a {
@@ -50,6 +64,7 @@ a {
     line-height: 2.4;
     color: #ffffff !important;
 }
+
 button {
     border-style: none;
 
@@ -63,22 +78,79 @@ button {
     background: #3966be;
 }
 
-@media (max-width: 360px) {
-    .logo-wrapper {
-        background: none;
-        left:0;
-      width: 100%;
-      bottom: 10px;
+
+@media (max-width: 768px) {
+    #logo{
+        margin: 15px auto;
+        padding-top:5px;
+    }
+}
+
+
+
+@media (max-width: 990px) {
+    .topNav{
+        height: 10%;
+    }
+    .navbar-expand-lg .navbar-collapse {
+        /*display: none !important;*/
+        /*flex-basis: auto;*/
+        background-color: white;
+        color: #3966ae !important;
+        height: 302px;
+        width: 186px;
+        position: absolute;
+        right: -40px;
+        top: 0;
+        z-index: 99;
     }
 
-    .navbar-brand {
 
-        font-size: 20px;
+    .collapse li a {
+        color: #3966be;
         font-weight: 400;
-
-
     }
 
+    ul {
+        position: relative;
+        top: 90px;
+        left: 0;
+    }
+
+    li {
+        display: block;
+    }
+
+    .navbar {
+        text-align: left;
+        height: auto;
+    }
+    .navbar-brand{
+        font-size: 40px !important;
+    }
+
+    .logo-wrapper {
+        height: 80px;
+        left: -5px;
+        width: 80px;
+        bottom: 20px;
+        text-align: center;
+        padding: 0;
+        background-color: transparent;
+    }
+    #logo{
+        margin:15px auto;
+    }
+    #logo img {
+        width: 50%;
+        height: 50%;
+        padding-left: 10px;
+        padding-top: 10px;
+    }
+    .navbar-toggler {
+        padding: 0;
+
+    }
     .navbar-toggler-icon {
         width: 15px;
         height: 12px;
@@ -90,58 +162,104 @@ button {
 
         outline-style: none;
     }
-    .navbar, .logo-wrapper, #logo {
-        height: 50px;
+    .active {
+        color: darkslateblue !important;
+
     }
 
-.navbar-toggler{
-  padding: 0;
+    .blueToggle {
+        float: right;
+        position: absolute;
+        right: 5px;
+        z-index: 300;
 
+    }
+    .whiteToggle{
+        z-index: 200;
+        position: absolute;
+        right: -15px;
+    }
 }
+
+@media only screen and (max-width: 1201px){
+        .topNav{
+            height: 10%;
+            padding: 0;
+        }
+    .navbar{
+        height: auto;
+        padding-left: 20px;
+    }
+    .navbar-brand{
+        font-size: 50px;
+    }
+
+    .logo-wrapper {
+        height: 120px;
+        left: -5px;
+        width: 100px;
+        bottom: 30px;
+        text-align: center;
+        padding: 0;
+    }
+    #logo{
+        margin:5px auto;
+    }
+    #logo img {
+        width: 50%;
+        height: 50%;
+        padding-left: 10px;
+    }
+}
+
+
+@media (max-width: 650px) {
+    #logo{
+        width: 100%;
+        height: 100%;
+        padding: 5px 10px 0 0;
+
+    }
 
     #logo img {
-        width: 20px;
-        height: 24px;
-    }
-    .active{
-      color: darkslateblue !important;
+        width: 50%;
+        height: 50%;
 
     }
-
-    .blueToggle{
-      float:right;
-
+    .navbar{
+        margin-left: 15px;
+        height: 20%;
     }
+    .navbar-brand{
+        font-size: 35px !important;
+    }
+
 }
-@media (max-width: 992px) {
-    .navbar-expand-lg .navbar-collapse {
-        /*display: none !important;*/
-        /*!*flex-basis: auto;*!*/
-    background-color: white;
-    color: #3966ae !important;
-    height: 302px;
-    width: 186px;
-    position: absolute;
-    right: -40px;
-    top: 0;
-    z-index: 99;
+@media (max-width: 500px) {
+    #logo{
+        width: 100%;
+        height: 100%;
+        padding: 15px 15px 0 0;
 
     }
 
+    #logo img {
+        width: 50%;
+        height: 50%;
 
-  .collapse li a{
-    color: #3966be;
-    font-weight: 400;
-  }
-  ul{
-    position: relative;
-    top: 40px;
-    left: 0;
-  }
-  li{
-    display: block;
-  }
-  .navbar{
-    text-align: left;
-  }
+    }
+    .navbar{
+        margin-left: 20px;
+        height: 20%;
+    }
+    .navbar-brand{
+        font-size: 30px !important;
+    }
+    .blueToggle{
+        bottom: -20px;
+    }
+    .whiteToggle{
+        bottom: -20px;
+    }
+
 }

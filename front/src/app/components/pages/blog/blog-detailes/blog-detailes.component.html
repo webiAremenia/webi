@@ -9,26 +9,26 @@
       </ul>
     </div>
   </div>
-      <div class="row sectionOne">
+      <div class="row sectionOne" *ngIf="blog != undefined">
         <div class="col-lg-6 box">
-          <h5>{{blog.title}}</h5>
-          <p>{{blog.text}}</p>
-          <p>{{blog.text}}</p>
+          <h5>{{blog.title.en}}</h5>
+          <p>{{blog.description.en}}</p>
+          <p>{{blog.content.en}}</p>
         </div>
         <div class="col-lg-6 ImageBox">
-          <img src="{{blog.img}}" alt="">
+          <img [src]="imageUrl+blog.banner" alt="">
         </div>
   </div>
 </div>
-<div class="container-fluid two">
+<div class="container-fluid two" *ngIf="fourNews != undefined">
   <div class="row">
     <div class="cardBox col-lg-3" *ngFor="let new of fourNews" (click)="onVisible()">
       <a routerLink="/blog/{{new.id}}">
-      <img src='{{new.img}}' class="card-img-top" alt="...">
+      <img [src]='imageUrl+ new.banner' class="card-img-top" alt="...">
         <div class="card-body">
-        <h5 class="card-title">{{new.title}}</h5>
-        <p class="card-text">{{new.text}}</p>
-          <p class="card-text">{{new.text}}</p>
+        <h5 class="card-title">{{new.title.en}}</h5>
+        <div [innerHTML]="new.description.en"></div>
+          <p class="card-text">{{new.content.en}}</p>
       </div>
       </a>
     </div>

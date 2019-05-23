@@ -29,6 +29,7 @@
   color: #3966ae;
   border-radius: 5px;
   height: calc((100vw - 400px ) / 2);
+  padding: 0;
 }
 .card-body{
   height: 50%;

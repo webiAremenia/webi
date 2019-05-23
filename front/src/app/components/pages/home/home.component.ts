@@ -18,7 +18,7 @@ export class HomeComponent implements OnInit {
 
     onSectionChange(sectionId: string) {
         this.currentSection = sectionId;
-        // console.log(this.currentSection);
+
     }
 
 }

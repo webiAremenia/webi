@@ -2,6 +2,7 @@
     height: 85vh;
     color: #ffffff;
     font-family: 'Poppins', sans-serif;
+
 }
 
 p {
@@ -59,7 +60,7 @@ h6 {
     font-weight: 600;
     line-height: 1.33;
 }
-@media (max-width: 360px) {
+@media (max-width: 1010px) {
     .one, .two{
         height: auto !important;
         width: 100%;
@@ -102,3 +103,11 @@ h6 {
     }
     }
 
+@media (max-width: 768px) {
+    .process{
+        padding:0;
+    }
+    .one-content, .two-content{
+        padding: 0 20px;
+    }
+}

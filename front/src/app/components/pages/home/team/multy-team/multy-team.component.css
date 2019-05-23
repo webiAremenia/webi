@@ -11,9 +11,10 @@ body, html {
 .one, .two{
   background-color:#1c488e;
   width: 100%;
+  text-align: center;
 }
 .three{
-  margin: 10px;
+  text-align: center;
   cursor: pointer;
 }
 .desc{
@@ -24,7 +25,7 @@ body, html {
   color: white;
 }
 .three h6{
-  margin-left: 55px;
+  margin: 20px 0;
 }
 h6{
   text-align: center;

@@ -62,27 +62,48 @@ h6{
     color: #ffffff;
 }
 .custom-button{
-    padding: 50px 0;
+    padding: 50px;
     text-align: right;
 }
+
 .custom-button button{
     box-sizing: border-box;
     border-radius: 50%;
+    border: 0;
     width: 66px;
     height: 66px;
     background-color: #5582CA;
     text-align: center;
     padding-left: 3px;
     padding-top: 3px;
-    border:0;
+    border:none;
     outline: none;
+    transition: 0.5ms;
+    cursor: pointer;
 }
 
 .custom-button button:hover{
     border:0;
-    background-color: #1c488e;
+    background-color: #1c488e !important;
 }
-@media (max-width: 360px) {
+.custom-button button:active{
+    border:0;
+    background-color: #1c488e !important;
+}
+.custom-button button:focus{
+    border:0;
+    background-color: #1c488e !important;
+}
+@media (max-width: 768px) {
+    .teamCont{
+        padding: 0;
+    }
+    .teamMain{
+        padding-top: 70px;
+    }
+    .cont-heading{
+        padding: 0 20px;
+    }
     .cont-heading p{
         opacity: 0.73;
         font-size: 14px;
@@ -101,6 +122,10 @@ h6{
     }
     .one{
         height: auto;
+        padding: 30px;
+    }
+    .two{
+        padding: 30px;
     }
     }
 

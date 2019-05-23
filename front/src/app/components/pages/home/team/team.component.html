@@ -1,19 +1,15 @@
-<div class="my-container">
+<div class="my-container teamCont">
     <div class="row team">
         <div class="row teamMain">
 
-            <div class="col-lg-5 offset-lg-1 cont-heading">
-                <div (click)="onClick()">Our team</div>
+            <div class="col-12 col-sm-12 col-md-11 offset-md-1 col-lg-5 offset-lg-1  cont-heading">
+                <div>Our team</div>
                 <div class="line"></div>
-                <h2>Lorem ispus sit<br>a met dollar</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae, deserunt earum illum laudantium
-                    velit veritatis voluptatum? Assumenda blanditiis dicta dolore incidunt maiores nihil officiis
-                    perferendis saepe sequi, sunt, veniam . Lorem ipsum dolor sit amet, consectetur adipisicing
-                    elit. Ad, amet cum ducimus eaque error hic illum nisi nobis provident suscipit. Adipisci
-                    assumenda distinctio libero maiores modi nobis porro quaerat vel.</p>
+                <h2 [innerHTML]="title"></h2>
+                <p>{{text}}</p>
             </div>
 
-            <div class="col-lg-3 one">
+            <div class="col-12 col-sm-12 col-md-5 offset-md-1 col-lg-3 offset-lg-0 one">
                 <div class="image">
                     <img src="./assets/images/Mask Group 9.png" alt="">
                 </div>
@@ -25,7 +21,7 @@
                 <a class=" d-none d-sm-block"><img src="./assets/images/Group 1620.png" alt=""></a>
             </div>
 
-            <div class="col-lg-3 two d-none d-sm-block">
+            <div class="col-12 col-sm-12 col-md-6 col-lg-3 two d-none d-sm-block">
                 <div class="image">
                     <img src="./assets/images/Mask Group 8.png" alt="">
                 </div>
@@ -41,7 +37,7 @@
     </div>
     <div class="row">
         <div class="col-12 custom-button d-none d-sm-block">
-            <button class="btn btn-secondary">
+            <button class="btn btn-link" (click)="onClick()">
                 <img src="./assets/images/Group 1620.png">
             </button>
         </div>

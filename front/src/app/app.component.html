@@ -1,7 +1,7 @@
-<!--<app-top-menu-client></app-top-menu-client>-->
-<router-outlet></router-outlet>
-
-<!--<router-outlet name ="Out2"></router-outlet>-->
+<div *ngIf="!done">loading ..... </div>
+<div *ngIf="done">
+    <router-outlet></router-outlet>
+</div>
 
 
 

@@ -10,15 +10,18 @@ import {Setting} from '../_models/setting';
 })
 export class SettingService {
 
+    settings;
+
     constructor(private http: HttpClient, private global: Globals) {
+        this.getAll();
     }
 
     query = this.global.queryUrl;
 
-    getAll(): Observable<Setting[]> {
+    getAll(): Observable<void> {
         return this.http.get(`${this.query}setting`)
             .pipe(map(data => {
-                    return data['data'].map(item => {
+                    this.settings = data['data'].map(item => {
                         return {
                             id: item._id,
                             value: {
@@ -35,6 +38,11 @@ export class SettingService {
                     console.log(err);
                     return throwError(err);
                 }));
+    }
+
+    getValueByKeyLanguage(key, language) {
+        const el = this.settings.filter(r => r.key === key)[0]['value'];
+        return el[language] !== '' ? el[language] : el['en'];
     }
 
     getOne(id): Observable<Setting> {

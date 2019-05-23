@@ -1,39 +1,36 @@
 <div class="my-container">
 
     <div class="portfolio row">
-        <div class="col-lg-11 col-sm-12 offset-lg-1">
-            <h6><a routerLink="allPortfolios">Our works</a></h6>
+        <div class="col-12 col-sm-12 col-md-11 offset-md-1 col-lg-11 offset-lg-1">
+            <h6>Our works</h6>
             <div class="line"></div>
         </div>
-        <div class="col-lg-5 col-sm-12 offset-lg-1 content">
-            <h2>Lorem ipsum sit <br>amet dolor.</h2>
+        <div class="col-12 col-sm-12 col-md-11 offset-md-1 col-lg-5 offset-lg-1 content">
+            <h2 [innerHTML]="title"></h2>
         </div>
-        <div class="col-lg-5 col-sm-12">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium architecto,
-                delectus dicta dolorem excepturi facere id ipsum iure magni, numquam quas temporibus ut,
-                voluptatibus! Dignissimos esse modi nihil quod tempora.
-            </p>
+        <div class="col-12 col-sm-12 col-md-11 offset-md-1 col-lg-5">
+            <p>{{text}}</p>
         </div>
     </div>
 
 
-    <div class="project-wrapper">
+    <div *ngIf="done" class="project-wrapper">
 
         <div class="row top-line">
-            <div class="col-lg-3 offset-lg-1 col-xs-12 one"><img src="./assets/images/portfolio1.PNG" alt=""></div>
-            <div class="col-lg-3  col-xs-12 two"><img src="./assets/images/portfolio2.PNG" alt=""></div>
-            <div class="col-lg-4 col-xs-12 three"><img src="./assets/images/portfolio3.PNG" alt=""></div>
+            <div class="col-12 col-sm-4 col-md-3 offset-md-1 one"><img [src]="imageUrl + arr[0]" alt=""></div>
+            <div class="col-12 col-sm-4 col-md-3  two"><img [src]="imageUrl + arr[1]" alt=""></div>
+            <div class="col-12 col-sm-4 col-md-4 three"><img [src]="imageUrl + arr[2]" alt=""></div>
         </div>
 
         <div class="row bottom-line">
-            <div class="col-6 offset-1 five  d-none d-sm-block"><img src="./assets/images/portfollio4.PNG" alt=""></div>
-            <div class="col-4 six  d-none d-sm-block"><img src="./assets/images/portfolio5.PNG" alt=""></div>
+            <div class="col-6 offset-1 five d-none d-sm-none d-md-block d-xl-block"><img [src]="imageUrl + arr[3]" alt=""></div>
+            <div class="col-4 six d-sm-none d-none d-md-block d-xl-block"><img [src]="imageUrl + arr[4]" alt=""></div>
         </div>
-
+        <a routerLink="allPortfolios">
         <div class="col-12 bottomBtn">
             <button class="btn btn-link">More works</button>
         </div>
-
+        </a>
 
     </div>
 </div>

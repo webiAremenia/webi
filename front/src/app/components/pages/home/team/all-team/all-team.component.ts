@@ -17,7 +17,7 @@ export class AllTeamComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.teams = this.service.getTeam();
+    this.teams = this.service.getAll();
   }
 
   onClick(team: any, modal) {
