@@ -16,8 +16,7 @@ export class PortfolioComponent implements OnInit {
     imageUrl;
     portfolio: Portfolio[];
     done = false;
-
-    arr: any [] = [];
+    arr = [];
 
     constructor(
         private portfolioService: PortfolioService,
@@ -38,7 +37,6 @@ export class PortfolioComponent implements OnInit {
             data => {
                 this.portfolio = data;
                 this.done = true;
-                console.log(this.portfolio);
                 this.loadPortfolio();
             },
             err => console.log(err)
@@ -54,10 +52,7 @@ export class PortfolioComponent implements OnInit {
             if (i >= this.portfolio.length) {
                 i = 0;
             }
-
         }
-
-        console.log(this.arr);
     }
 }
 

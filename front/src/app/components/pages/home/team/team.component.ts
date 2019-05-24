@@ -34,7 +34,6 @@ export class TeamComponent implements OnInit {
             data => {
                 this.team = data;
                 this.done = true;
-                console.log(data);
             },
             err => console.log(err)
         );

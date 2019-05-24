@@ -11,7 +11,6 @@ import {Menu} from '../../_models/menu';
 export class TopMenuComponent implements OnInit {
     menuList: Menu[];
     done = false;
-    public isCollapsed = false;
 
     constructor(private menuService: MenuService) {
 
@@ -26,7 +25,6 @@ export class TopMenuComponent implements OnInit {
             data => {
                 this.menuList = data;
                 this.done = true;
-                console.log(data);
             },
             err => console.log(err)
         );

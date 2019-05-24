@@ -4,7 +4,6 @@ import Setting from '../admin/models/Setting';
 module.exports = {
     errorHandler(res, e) {
         res.status(500).json({
-            success: false,
             error: e.message
         });
     },
@@ -39,7 +38,7 @@ module.exports = {
                         res.status(200).json({success: true});
                     });
                 } else {
-                    return res.status(500).json({success: false, message: 'Cant find email for send !!!'});
+                    return res.status(500).json({success: false, error: 'Cant find email for send !!!'});
                 }
             })
             .catch(e => this.errorHandler(res, e));
@@ -65,7 +64,7 @@ module.exports = {
         transporter.sendMail(mailOptions, (error, info) => {
             if (error) {
                 console.log(error);
-                return res.status(500).json({success: false, message: error.message});
+                return res.status(500).json({success: false, error: error.message});
             }
             console.log('Message %s sent: %s', info.messageId, info.response);
             res.status(200).json({success: true});

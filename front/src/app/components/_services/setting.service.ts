@@ -10,7 +10,7 @@ import {Setting} from '../_models/setting';
 })
 export class SettingService {
 
-    settings;
+    settings = null;
 
     constructor(private http: HttpClient, private global: Globals) {
         this.getAll();
@@ -21,18 +21,20 @@ export class SettingService {
     getAll(): Observable<void> {
         return this.http.get(`${this.query}setting`)
             .pipe(map(data => {
-                    this.settings = data['data'].map(item => {
-                        return {
-                            id: item._id,
-                            value: {
-                                en: item.value.en,
-                                ru: item.value.ru,
-                                am: item.value.am
-                            },
-                            key: item.key,
-                            image: item.image,
-                        };
-                    });
+                    if (data) {
+                        this.settings = data['data'].map(item => {
+                            return {
+                                id: item._id,
+                                value: {
+                                    en: item.value.en,
+                                    ru: item.value.ru,
+                                    am: item.value.am
+                                },
+                                key: item.key,
+                                image: item.image,
+                            };
+                        });
+                    }
                 }),
                 catchError(err => {
                     console.log(err);
@@ -41,8 +43,13 @@ export class SettingService {
     }
 
     getValueByKeyLanguage(key, language) {
-        const el = this.settings.filter(r => r.key === key)[0]['value'];
-        return el[language] !== '' ? el[language] : el['en'];
+        console.log();
+        if (this.settings.filter(r => r.key === key).length > 0) {
+            const el = this.settings.filter(r => r.key === key)[0]['value'];
+            return el[language] !== '' ? el[language] : el['en'];
+        } else {
+            return '';
+        }
     }
 
     getOne(id): Observable<Setting> {

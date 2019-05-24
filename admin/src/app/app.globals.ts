@@ -1,9 +1,10 @@
 import {Injectable} from '@angular/core';
+import { environment } from './../environments/environment';
 
 Injectable();
 
 export class Globals {
-  queryUrl = 'http://localhost:3000/';
+  queryUrl = environment.apiUrl;
 }
 
 

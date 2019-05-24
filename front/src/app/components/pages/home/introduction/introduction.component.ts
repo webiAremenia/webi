@@ -8,8 +8,8 @@ import {SettingService} from '../../../_services/setting.service';
 })
 export class IntroductionComponent implements OnInit {
 
-    title;
-    text;
+    title = '';
+    text = '';
     constructor(private  settingsService: SettingService) {
     }
 

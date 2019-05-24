@@ -1,11 +1,12 @@
 import {Injectable} from '@angular/core';
+import {environment} from '../environments/environment';
 
 Injectable();
 
 export class Globals {
-    queryUrl = 'http://localhost:3000/api/';
-    clientUrl = 'http://localhost:3000/client/';
-    imageUrl = 'http://localhost:3000/uploads/';
+    queryUrl = environment.apiUrl;
+    clientUrl = environment.clientUrl;
+    imageUrl = environment.imageUrl;
 }
 
 
