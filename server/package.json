@@ -1,6 +1,6 @@
 {
-  "name": "eventrize",
-  "version": "2.0.0",
+  "name": "webi-armenia",
+  "version": "1.0.0",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -11,7 +11,8 @@
   "author": "Artur Hayrapetyan",
   "license": "ISC",
   "dependencies": {
-    "bcrypt": "^3.0.4",
+    "app-root-path": "^2.2.1",
+    "bcrypt": "^3.0.6",
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "dotenv": "^7.0.0",
@@ -23,7 +24,8 @@
     "multer": "^1.4.1",
     "nodemailer": "^6.1.1",
     "randomstring": "^1.1.5",
-    "sharp": "^0.22.1"
+    "sharp": "^0.22.1",
+    "winston": "^3.2.1"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
@@ -36,12 +38,12 @@
     "es2015"
   ],
   "repository": {
-    "type": "git",
-    "url": "git+https://github.com/edavet/evetrise-back-end.git"
+    "type": "git"
   },
-  "bugs": {
-    "url": "https://github.com/edavet/evetrise-back-end/issues"
-  },
-  "homepage": "https://github.com/edavet/evetrise-back-end#readme",
-  "description": ""
+  "description": "webi web site",
+  "keywords": [
+    "webi",
+    "armenia",
+    "development"
+  ]
 }

@@ -42,13 +42,13 @@ exports.login = function (req, res, next) {
         .then(admin => {
             if (admin.length < 1) {
                 return res.status(401).json({
-                    message: 'Auth failed'
+                    error: 'Auth failed'
                 });
             }
             bcrypt.compare(req.body.password, admin[0].password, (err, result) => {
                 if (err) {
                     return res.status(401).json({
-                        message: 'Auth failed'
+                        error: 'Auth failed'
                     });
                 }
                 if (result) {
@@ -56,7 +56,7 @@ exports.login = function (req, res, next) {
                     return res.status(200).json({success: true, token: token});
                 }
                 res.status(401).json({
-                    message: 'Auth failed'
+                    error: 'Auth failed'
                 });
             })
         })
@@ -77,7 +77,7 @@ exports.update = (req, res, next) => {
                 }
             } else {
                 res.status(404).json({
-                    message: 'Admin not found'
+                    error: 'Not found'
                 })
             }
         })
