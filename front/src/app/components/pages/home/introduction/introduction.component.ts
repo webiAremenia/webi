@@ -10,13 +10,16 @@ export class IntroductionComponent implements OnInit {
 
     title = '';
     text = '';
+
     constructor(private  settingsService: SettingService) {
     }
 
     ngOnInit() {
         this.title = this.settingsService.getValueByKeyLanguage('home-introduction-title', 'en');
         this.text = this.settingsService.getValueByKeyLanguage('home-introduction-text', 'en');
+
     }
+
 
 }
 

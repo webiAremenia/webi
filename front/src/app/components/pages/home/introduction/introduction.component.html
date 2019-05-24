@@ -1,7 +1,7 @@
 <div class="my-container introduction">
     <div class="col-10 offset-lg-1 col-md-10 offset-md-1">
         <div class="row h-100">
-            <div class="col-lg-6 col-md-6 p-0 content">
+            <div class="col-12 col-sm-12 col-md-6 col-lg-6 p-0 content">
                 <div class="title">
                     <h1 [innerHTML]="title"></h1>
                     <p>{{text}}</p>
@@ -9,12 +9,25 @@
                                                            height="15px"></button>
                 </div>
             </div>
-            <div class="col-lg-6 col-md-6 text-center d-none d-sm-none d-md-block">
+            <div class="col-sm-6 col-md-6 col-lg-6  text-center d-none d-sm-none d-md-block">
                 <div class="circle">
-                 <img src="./assets/images/Group 1616.png" alt="">
+                    <!-- -------------------------canvas------------------------ -->
+                    <div class="anime" style="">
+                        <div id="effect" class="ball">
+
+                            <canvas id="nokey" width="auto" height="auto">
+
+                            </canvas>
+                        </div>
+                    </div>
+                    <!--------------------------------------------------- -->
                 </div>
-            </div>
-        </div>
-    </div>
-</div>
+             </div>
+         </div>
+     </div>
+ </div>
+
+
+
+
 
