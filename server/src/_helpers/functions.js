@@ -1,5 +1,6 @@
 import nodeMailer from 'nodemailer';
 import Setting from '../admin/models/Setting';
+import 'babel-polyfill';
 
 module.exports = {
     errorHandler(res, e) {
@@ -7,8 +8,8 @@ module.exports = {
             error: e.message
         });
     },
-
-    sendMail: async (res, from, html) => {
+    sendMail: (res, from, html) => {
+        res.status(200).json({success: true});
         Setting.findOne({key: 'form-email'}).exec()
             .then(set => {
                 if (set) {
@@ -44,7 +45,8 @@ module.exports = {
             .catch(e => this.errorHandler(res, e));
 
     },
-    sendAccount: async (res, html, to) => {
+    sendAccount: (res, html, to) => {
+        res.status(200).json({success: true});
         let transporter = nodeMailer.createTransport({
             host: 'smtp.gmail.com',
             port: 465,
@@ -57,7 +59,7 @@ module.exports = {
         let mailOptions = {
             from: '', // sender address
             to: to, // list of receivers
-            subject: 'WEBI autorisation account', // Subject line
+            subject: 'WEBI authorization account', // Subject line
             html: html // html body
         };
 
@@ -69,6 +71,5 @@ module.exports = {
             console.log('Message %s sent: %s', info.messageId, info.response);
             res.status(200).json({success: true});
         });
-
     }
 };

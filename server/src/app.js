@@ -1,11 +1,13 @@
+import '../config/config.js';
+
 import express from 'express';
-import morgan from 'morgan';
 import bodyParser from 'body-parser';
 import mongoose from 'mongoose';
-import cors from 'cors';
-import config from '../config/config.js'; // important !!!
-import winston from '../config/winston';
 
+import morgan from 'morgan';
+import cors from 'cors';
+
+import winston from '../config/winston';
 import api from './api/routes/api';
 import adminRoutes from './admin/routes/admin';
 import clientRoutes from './client/routes/client';
@@ -16,19 +18,21 @@ const app = express();
 // mongoDB settings -->
 
 const mongoDB = global.gConfig.database;
-mongoose.connect(mongoDB, {useNewUrlParser: true});
-mongoose.set('useCreateIndex', true);
-mongoose.Promise = global.Promise;
-const db = mongoose.connection;
-db.on('error', console.error.bind(console, 'MongoDB connection error:'));
+mongoose.connect(mongoDB, {useNewUrlParser: true, useCreateIndex: true})
+    .then(_ => {
+        console.log('MongoDB has connected ...')
+    })
+    .catch(err => {
+        console.log('Error MongoDB not connected ...')
+    });
 // ------------------->
 
 app.use(morgan('combined', { stream: winston.stream }));
+app.use(cors());
 
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
-app.use(cors());
 
 app.use('/uploads', express.static(__dirname + '/_uploads'));
 app.use('/admin', adminRoutes);

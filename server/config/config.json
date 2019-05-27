@@ -19,7 +19,7 @@
   },
   "production": {
     "config_id": "production",
-    "node_port": 5000,
+    "node_port": 4000,
     "jwt_key": "secret",
     "database": "../mongodb://localhost:27017/webi"
   }
