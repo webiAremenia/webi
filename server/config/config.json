@@ -6,21 +6,21 @@
     "node_port": 3000,
     "json_indentation": 4,
     "jwt_key": "secret",
-    "database": "../mongodb://localhost:27017/webi"
+    "database": "mongodb://localhost:27017/webi"
   },
   "testing": {
     "config_id": "testing",
-    "database": "../mongodb://localhost:27017/webi"
+    "database": "mongodb://localhost:27017/webi"
   },
   "staging": {
     "config_id": "staging",
     "node_port": 3000,
-    "database": "../mongodb://localhost:27017/webi"
+    "database": "mongodb://localhost:27017/webi"
   },
   "production": {
     "config_id": "production",
     "node_port": 4000,
     "jwt_key": "secret",
-    "database": "../mongodb://localhost:27017/webi"
+    "database": "mongodb://localhost:27017/webi"
   }
 }

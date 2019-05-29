@@ -12,12 +12,14 @@ import api from './api/routes/api';
 import adminRoutes from './admin/routes/admin';
 import clientRoutes from './client/routes/client';
 
+require('./seed').createDef(); //Creat default tables
 
 const app = express();
 
 // mongoDB settings -->
 
 const mongoDB = global.gConfig.database;
+console.log(mongoDB);
 mongoose.connect(mongoDB, {useNewUrlParser: true, useCreateIndex: true})
     .then(_ => {
         console.log('MongoDB has connected ...')

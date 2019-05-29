@@ -7,9 +7,9 @@ window.onload = function () {
                 can_h = parseInt(canvas.getAttribute('height')),
                 ctx = canvas.getContext('2d');
 
-            console.log(can_w, can_h, ctx);
-
-            console.log(typeof can_w);
+            // console.log(can_w, can_h, ctx);
+            //
+            // console.log(typeof can_w);
 
             let ball = {
                     tuchX: false,
@@ -258,7 +258,7 @@ window.onload = function () {
 
 // Init Canvas
 
-console.log( $('#effect').innerWidth());
+// console.log( $('#effect').innerWidth());
 
             function initCanvas() {
                 canvas.setAttribute('width', $('#effect').innerWidth());

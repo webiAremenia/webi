@@ -6,7 +6,7 @@ import winston from 'winston';
 
 const options = {
     file: {
-        level: 'info',
+        level: 'warn',
         filename: `${appRoot}/logs/app.log`,
         handleExceptions: true,
         json: true,
@@ -15,7 +15,7 @@ const options = {
         colorize: false,
     },
     console: {
-        level: 'info',
+        level: 'warn',
         handleExceptions: true,
         json: false,
         colorize: true,

@@ -1,15 +1,18 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
+import {Globals} from '../app.globals';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  constructor(private http: HttpClient) {
+  url;
+  constructor(private http: HttpClient, private global: Globals ) {
+    this.url = global.queryUrl + 'admin/login';
   }
 
   login(user) {
-    return this.http.post('http://localhost:3000/admin/login', user);
+    return this.http.post(this.url, user);
   }
 }

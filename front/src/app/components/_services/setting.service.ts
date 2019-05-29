@@ -43,8 +43,8 @@ export class SettingService {
     }
 
     getValueByKeyLanguage(key, language) {
-        console.log();
-        if (this.settings.filter(r => r.key === key).length > 0) {
+        // console.log();
+        if (this.settings && this.settings.filter(r => r.key === key).length > 0) {
             const el = this.settings.filter(r => r.key === key)[0]['value'];
             return el[language] !== '' ? el[language] : el['en'];
         } else {

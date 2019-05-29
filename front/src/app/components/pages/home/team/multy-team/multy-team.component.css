@@ -63,6 +63,8 @@ ng-template p{
   height: 160px;
   margin:43px 50px;
   padding: 0;
+  border-radius: 50%;
+  object-fit: cover;
 }
 
 .two{

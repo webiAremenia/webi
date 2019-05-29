@@ -97,3 +97,6 @@ img {
         margin-bottom: 13px;
     }
 }
+.project-wrapper img{
+    object-fit: cover;
+}

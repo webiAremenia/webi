@@ -1,13 +1,15 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
+import {Globals} from '../app.globals';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
-  baseUrl: String = 'http://localhost:3000/admin';
+  baseUrl;
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient, global: Globals) {
+    this.baseUrl = global.queryUrl + 'admin';
   }
 
   getData(url) {
