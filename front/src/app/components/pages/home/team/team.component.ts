@@ -1,7 +1,8 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {TeamService} from '../../../_services/team.service';
 import {Team} from '../../../_models/team';
 import {SettingService} from '../../../_services/setting.service';
+import {Globals} from '../../../../app.globals';
 
 @Component({
     selector: 'app-team',
@@ -14,19 +15,30 @@ export class TeamComponent implements OnInit {
     team: Team[];
     title;
     text;
+    imageUrl;
+    @ViewChild('btnImg') btnImg: ElementRef;
+
     constructor(private teamService: TeamService,
-                private  settingsService: SettingService
-                ) {
+                private  settingsService: SettingService, global: Globals
+    ) {
+        this.imageUrl = global.imageUrl + 'team/';
     }
 
     ngOnInit() {
         this.getTeam();
         this.title = this.settingsService.getValueByKeyLanguage('home-team-title', 'en');
         this.text = this.settingsService.getValueByKeyLanguage('home-team-text', 'en');
+
     }
 
     onClick() {
         this.visible = !this.visible;
+        if (!this.visible) {
+            this.btnImg.nativeElement.classList.add('btnImg');
+        } else {
+            this.btnImg.nativeElement.classList.remove('btnImg');
+        }
+
     }
 
     getTeam() {
