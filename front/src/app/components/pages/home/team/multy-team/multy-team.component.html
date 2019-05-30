@@ -39,7 +39,7 @@
                                     <img [src]="imageUrl + team.avatar" alt="">
                                 </div>
                                 <p class="job"> {{team.position.en}}</p>
-                                <p>{{team.info.en}}</p>
+                                <p [innerHTML]="team.info.en"></p>
                             </div>
                             <div class="modal-footer">
                             </div>
