@@ -22,7 +22,7 @@ export class MultyTeamComponent implements OnInit {
         this.service.getAll().subscribe(data => {
             this.teams = data;
             console.log(this.teams);
-            this.teams = this.teams.slice(0, 6);
+            this.teams = this.teams.slice(2, 8);
         });
 
 

@@ -31,6 +31,8 @@ input, textarea, button{
   border: 1px solid #3966be;
   border-radius: 5px;
   margin-bottom: 15px;
+    color: white;
+    opacity: 0.6;
 }
 input{
   height: 38px;
@@ -41,6 +43,10 @@ textarea{
   height: 120px;
   padding: 10px;
   resize: none;
+  color: #fff;
+  font-size: 12px;
+  opacity: 0.6;
+    font-weight: 100;
 }
 textarea:focus, input:focus{
     background-color: #3966ae;
@@ -90,19 +96,19 @@ button{
 
 ::-webkit-input-placeholder {
     color: #fff;
-    opacity: 0.8;
+    opacity: 0.6;
 }
 ::-moz-placeholder {
     color: #fff;
-    opacity: 0.8;
+    opacity: 0.6;
 }
 :-ms-input-placeholder {
     color: #fff;
-    opacity: 0.8;
+    opacity: 0.6;
 }
 :-moz-placeholder {
     color: #fff;
-    opacity: 0.8;
+    opacity: 0.6;
 }
 
 
