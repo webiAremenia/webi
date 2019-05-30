@@ -81,7 +81,11 @@ h6{
     transition: 0.5ms;
     cursor: pointer;
 }
-
+.btnImg{
+    transform: rotate(90deg);
+    padding-bottom: 8px;
+    transition: all 1s;
+}
 .custom-button button:hover{
     border:0;
     background-color: #1c488e !important;

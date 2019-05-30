@@ -38,7 +38,6 @@ export class TopMenuComponent implements OnInit {
     changeColor() {
         this.parent.onscroll = e => {
             const scrollTop = e.target.scrollTop;
-            console.log( e);
             if (scrollTop > 50) {
                 this.hed.classList.add('scroll-change-height');
             } else {
