@@ -47,11 +47,15 @@ p {
     font-size: 18px;
     line-height: 1.5;
     padding-top: 45px;
+    padding-left: 10px;
+}
+.two-content .text{
+    padding-left: 20px;
 }
 
 .two-content, .one-content, .heading{
     position: relative;
-    top: 25%;
+    top: 20%;
 }
 
 h6 {

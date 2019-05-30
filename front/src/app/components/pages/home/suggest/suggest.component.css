@@ -1,3 +1,17 @@
+.accordion{
+    height: 60vh;
+}
+.about-text{
+    height: fit-content;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    line-height: 1.5;
+    /*color: #ffffff;*/
+    padding-right: 150px;
+}
+
 .suggest {
     height: auto;
     color: white;
@@ -71,8 +85,9 @@ h2 {
 
 .image-wrapper img {
     width: 100%;
-    height: auto;
+    height: 90vh;
     padding: 0;
+    object-fit: cover;
 }
 
 .image-wrapper {
