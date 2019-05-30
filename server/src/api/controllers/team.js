@@ -2,6 +2,7 @@ import Team from '../../admin/models/Team';
 
 module.exports.getAll = (req, res) => {
     Team.find({})
+        .sort('sort')
         .then(result => {
             res.status(200).json({
                 success: true,
