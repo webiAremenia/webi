@@ -1,6 +1,6 @@
 <div class="my-container topNav pr-sm-5">
-    <div class="row">
-        <div class="col-1 h-10 col-xs-2">
+    <div class="row" id="headerScroll">
+        <div class="col-1 h-100 col-xs-2">
             <div class="logo-wrapper">
                 <div id="logo">
                     <a routerLink=""><img src="./assets/images/logo.png" alt=""></a>
@@ -22,17 +22,20 @@
               <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav w-100 h-auto">
                     <li class="nav-item offset-lg-1 col-lg-2">
-                        <a class="nav-link" id="about" routerLink="/about" routerLinkActive="active">About </a>
+                        <a class="nav-link" id="about" href='#section5'>About </a>
+<!--                        routerLink="/about" routerLinkActive="active"-->
                     </li>
                     <li class="nav-item col-lg-2">
-                        <a class="nav-link" routerLink="/allPortfolios" routerLinkActive="active">Portfolio</a>
+                        <a class="nav-link" href="#section4">Portfolio</a>
+<!--                        routerLink="/allPortfolios" routerLinkActive="active"-->
+                    </li>
+                    <li class="nav-item col-lg-2" >
+                        <a class="nav-link" href="#section6">Team</a>
+<!--                        routerLink="/blog" routerLinkActive="active"-->
                     </li>
                     <li class="nav-item col-lg-2">
-                        <a class="nav-link" routerLink="/blog" routerLinkActive="active">Blog</a>
-                    </li>
-                    <li class="nav-item col-lg-2">
-                        <a class="nav-link" routerLink=""
-                           routerLinkActive="active">Contact</a>
+                        <a class="nav-link" href="#section7">Contact</a>
+<!--                        routerLink="" routerLinkActive="active"-->
                     </li>
                 </ul>
               </div>

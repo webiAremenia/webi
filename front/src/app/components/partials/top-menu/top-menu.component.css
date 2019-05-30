@@ -4,7 +4,9 @@
      width: 100%;
 
  }
-
+.scroll-change-height{
+    height: 100px;
+}
 .my-container {
     background-color: #3966ae;
 }

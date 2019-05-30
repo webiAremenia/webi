@@ -88,7 +88,22 @@ button{
 }
 
 
-
+::-webkit-input-placeholder {
+    color: #fff;
+    opacity: 0.8;
+}
+::-moz-placeholder {
+    color: #fff;
+    opacity: 0.8;
+}
+:-ms-input-placeholder {
+    color: #fff;
+    opacity: 0.8;
+}
+:-moz-placeholder {
+    color: #fff;
+    opacity: 0.8;
+}
 
 
 

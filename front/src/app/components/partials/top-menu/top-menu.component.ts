@@ -11,13 +11,18 @@ import {Menu} from '../../_models/menu';
 export class TopMenuComponent implements OnInit {
     menuList: Menu[];
     done = false;
+    hed;
+    parent;
 
     constructor(private menuService: MenuService) {
 
     }
 
     ngOnInit() {
+        this.hed = document.getElementById('headerScroll');
+        this.parent = document.getElementById('parentDiv');
         this.getMenuList();
+        this.changeColor();
     }
 
     getMenuList() {
@@ -28,6 +33,18 @@ export class TopMenuComponent implements OnInit {
             },
             err => console.log(err)
         );
+    }
+
+    changeColor() {
+        this.parent.onscroll = e => {
+            const scrollTop = e.target.scrollTop;
+            console.log( e);
+            if (scrollTop > 50) {
+                this.hed.classList.add('scroll-change-height');
+            } else {
+                this.hed.classList.remove('scroll-change-height');
+            }
+        };
     }
 
 }
