@@ -17,6 +17,7 @@ export class PortfolioComponent implements OnInit {
     portfolio: Portfolio[];
     done = false;
     arr = [];
+    arrId = [];
 
     constructor(
         private portfolioService: PortfolioService,
@@ -30,6 +31,7 @@ export class PortfolioComponent implements OnInit {
         this.getPortfolio();
         this.title = this.settingsService.getValueByKeyLanguage('home-portfolio-title', 'en');
         this.text = this.settingsService.getValueByKeyLanguage('home-portfolio-text', 'en');
+
     }
 
     getPortfolio() {
@@ -38,6 +40,8 @@ export class PortfolioComponent implements OnInit {
                 this.portfolio = data;
                 this.done = true;
                 this.loadPortfolio();
+                this.loadPortfolioId();
+                console.log(this.arrId);
             },
             err => console.log(err)
         );
@@ -54,6 +58,19 @@ export class PortfolioComponent implements OnInit {
             }
         }
     }
+
+    loadPortfolioId() {
+        this.arrId = [];
+        let i = 0;
+        while (this.arrId.length < 5) {
+            this.arrId.push(this.portfolio[i].id);
+            i++;
+            if (i >= this.portfolio.length) {
+                i = 0;
+            }
+        }
+    }
+
 }
 
 
