@@ -7,6 +7,7 @@ import {AllTeamComponent} from './components/pages/home/team/all-team/all-team.c
 import {BlogComponent} from './components/pages/blog/blog.component';
 import {BlogDetailesComponent} from './components/pages/blog/blog-detailes/blog-detailes.component';
 import {AllPortfoliosComponent} from './components/pages/portfolio/all-portfolios/all-portfolios.component';
+import {PortfolioDetailesComponent} from "./components/pages/portfolio/portfolio-detailes/portfolio-detailes.component";
 
 
 
@@ -17,7 +18,8 @@ const routes: Routes = [
     {path: 'allTeam', component: AllTeamComponent},
     {path: 'blog', component: BlogComponent, pathMatch: 'full'},
     {path: 'allPortfolios', component: AllPortfoliosComponent, pathMatch: 'full'},
-    {path: 'blog/:id', component: BlogDetailesComponent}
+    {path: 'blog/:id', component: BlogDetailesComponent},
+    {path: 'portfolio/:id', component: PortfolioDetailesComponent}
 ];
 
 

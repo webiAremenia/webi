@@ -40,6 +40,7 @@ import {LoginComponent} from './client/login/login.component';
 import {TopMenuClientComponent} from './client/top-menu-client/top-menu-client.component';
 import {ClientModule} from './client/client.module';
 import {InterceptorService} from './client/_services/interceptor.service';
+import { PortfolioDetailesComponent } from './components/pages/portfolio/portfolio-detailes/portfolio-detailes.component';
 
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -71,7 +72,8 @@ export function HttpLoaderFactory(http: HttpClient) {
         MultySuggestComponent,
         CabinetComponent,
         LoginComponent,
-        TopMenuClientComponent
+        TopMenuClientComponent,
+        PortfolioDetailesComponent
     ],
     imports: [
         BrowserAnimationsModule,

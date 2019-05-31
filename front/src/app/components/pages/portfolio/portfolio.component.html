@@ -17,20 +17,20 @@
     <div *ngIf="done" class="project-wrapper">
 
         <div class="row top-line">
-            <div class="col-12 col-sm-4 col-md-3 offset-md-1 one"><img [src]="imageUrl + arr[0]" alt=""></div>
-            <div class="col-12 col-sm-4 col-md-3  two"><img [src]="imageUrl + arr[1]" alt=""></div>
-            <div class="col-12 col-sm-4 col-md-4 three"><img [src]="imageUrl + arr[2]" alt=""></div>
+             <div class="col-12 col-sm-4 col-md-3 offset-md-1 one"><a routerLink="/portfolio/{{arrId[0]}}"><img [src]="imageUrl + arr[0]" alt=""></a></div>
+            <div class="col-12 col-sm-4 col-md-3  two"><a routerLink="/portfolio/{{arrId[1]}}"><img [src]="imageUrl + arr[1]" alt=""></a></div>
+            <div class="col-12 col-sm-4 col-md-4 three"><a routerLink="/portfolio/{{arrId[2]}}"><img [src]="imageUrl + arr[2]" alt=""></a></div>
         </div>
 
         <div class="row bottom-line">
-            <div class="col-6 offset-1 five d-none d-sm-none d-md-block d-xl-block"><img [src]="imageUrl + arr[3]" alt=""></div>
-            <div class="col-4 six d-sm-none d-none d-md-block d-xl-block"><img [src]="imageUrl + arr[4]" alt=""></div>
+            <div class="col-6 offset-1 five d-none d-sm-none d-md-block d-xl-block"><a routerLink="/portfolio/{{arrId[3]}}"><img [src]="imageUrl + arr[3]" alt=""></a></div>
+            <div class="col-4 six d-sm-none d-none d-md-block d-xl-block"><a routerLink="/portfolio/{{arrId[4]}}"><img [src]="imageUrl + arr[4]" alt=""></a></div>
         </div>
-        <a routerLink="allPortfolios">
-        <div class="col-12 bottomBtn">
-            <button class="btn btn-link">More works</button>
-        </div>
-        </a>
+<!--        <a routerLink="allPortfolios">-->
+<!--        <div class="col-12 bottomBtn">-->
+<!--            <button class="btn btn-link">More works</button>-->
+<!--        </div>-->
+<!--        </a>-->
 
     </div>
 </div>

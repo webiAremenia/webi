@@ -1,0 +1,67 @@
+.container-fluid{
+    background-color: #3966ae;
+    padding-top: 250px;
+}
+.one{
+    color: white;
+    padding-left: 175px;
+}
+.two{
+    color: white;
+    padding: 175px;
+}
+.menu{
+    text-align: center;
+}
+.menu li{
+    display: inline-block;
+    font-size: 18px;
+    padding: 50px;
+}
+.menu li a{
+    color: #B2C3DF;
+}
+.menu li a:focus{
+    color: #ffffff;
+}
+.menu li a:active{
+    color: #ffffff;
+}
+.box{
+    color:white;
+}
+.title{
+    font-size: 36px;
+}
+.ImageBox{
+    padding: 0;
+}
+.sectionOne .ImageBox img{
+    height: 630px;
+    width: 100%;
+}
+.sectionOne {
+    padding-bottom: 160px;
+
+}
+.card-body{
+    color: white;
+}
+.sectionTwo{
+    margin: 160px 50px;
+    color: white;
+}
+.cardBox img{
+    border-radius: 3px;
+    height: 30%;
+    width: 100%;
+}
+.cardBox a{
+    text-decoration: none;
+}
+.card-body{
+    width: 100%;
+    height: 70%;
+    padding: 0;
+    padding-top: 12px;
+}
