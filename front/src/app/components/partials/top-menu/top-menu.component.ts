@@ -22,7 +22,7 @@ export class TopMenuComponent implements OnInit {
         this.hed = document.getElementById('headerScroll');
         this.parent = document.getElementById('parentDiv');
         this.getMenuList();
-        this.changeColor();
+        this.changeMenuHeight();
     }
 
     getMenuList() {
@@ -35,7 +35,7 @@ export class TopMenuComponent implements OnInit {
         );
     }
 
-    changeColor() {
+    changeMenuHeight() {
         this.parent.onscroll = e => {
             const scrollTop = e.target.scrollTop;
             if (scrollTop > 50) {

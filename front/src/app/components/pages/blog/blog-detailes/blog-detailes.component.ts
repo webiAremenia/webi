@@ -13,6 +13,8 @@ export class BlogDetailesComponent implements OnInit {
     news: any[];
     blog;
     id;
+    title;
+    text;
     fourNews: any[] = [];
     imageUrl;
     private routeSubscription: Subscription;
