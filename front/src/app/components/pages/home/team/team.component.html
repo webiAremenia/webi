@@ -6,7 +6,7 @@
                 <div>Our team</div>
                 <div class="line"></div>
                 <h2 [innerHTML]="title"></h2>
-                <p>{{text}}</p>
+                <p>{{text ? text : ''}}</p>
             </div>
 
             <div class="col-12 col-sm-12 col-md-5 offset-md-1 col-lg-3 offset-lg-0 one">
