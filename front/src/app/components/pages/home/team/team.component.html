@@ -1,12 +1,12 @@
-<div class="my-container teamCont">
+<div class="my-container teamCont" *ngIf="team">
     <div class="row team">
         <div class="row teamMain">
 
             <div class="col-12 col-sm-12 col-md-11 offset-md-1 col-lg-5 offset-lg-1  cont-heading">
-                <div>Our team</div>
+                <div>Meet our team</div>
                 <div class="line"></div>
                 <h2 [innerHTML]="title"></h2>
-                <p>{{text ? text : ''}}</p>
+                <p>{{text}}</p>
             </div>
 
             <div class="col-12 col-sm-12 col-md-5 offset-md-1 col-lg-3 offset-lg-0 one">

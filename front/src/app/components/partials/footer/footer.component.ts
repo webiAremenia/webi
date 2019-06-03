@@ -33,12 +33,12 @@ export class FooterComponent implements OnInit {
     }
 
     submit() {
+        console.log(this.myForm.value);
         this.contact.sendEmail(this.myForm.value).subscribe(
             data => {
                 if (data.success) {
                     this.resetForm();
                 }
-
             },
             e => console.log(e)
         );
