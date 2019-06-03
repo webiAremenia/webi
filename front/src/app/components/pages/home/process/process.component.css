@@ -1,5 +1,5 @@
 .process {
-    height: 85vh;
+    height: 100vh;
     color: #ffffff;
     font-family: 'Poppins', sans-serif;
 
@@ -55,8 +55,9 @@ p {
 
 .two-content, .one-content, .heading{
     position: relative;
-    top: 20%;
+    top: 20% !important;
 }
+
 
 h6 {
     opacity: 0.78;
@@ -64,14 +65,46 @@ h6 {
     font-weight: 600;
     line-height: 1.33;
 }
+@media (max-width: 1700px) and (min-width: 1011px){
+    .process {
+        height: auto;
+    }
+    .one, .two{
+        /*height: auto !important;*/
+        width: 100%;
+    }
+    .two-content, .one-content, .heading{
+        position: relative;
+        top: 5%;
+        padding-bottom: 20px;
+    }
+    .title{
+        font-size: 48px;
+        font-weight: 500;
+    }
+    h6{
+        font-soze: 20px;
+    }
+    li{
+        font-size: 18px;
+    }
+    ul{
+        padding-bottom: 20px;
+    }
+}
+@media (max-width: 1300px) {
+    li{
+        font-size: 14px !important;
+    }
+}
 @media (max-width: 1010px) {
     .one, .two{
-        height: auto !important;
+        height: auto;
         width: 100%;
     }
     .row{
         width: 100%;
-      margin: auto;
+
     }
     .two-content, .one-content{
         height: 100%;
@@ -89,21 +122,20 @@ h6 {
 
     .heading .title {
 
-        font-size: 36px;
-        font-weight: 600;
+        font-size: 30px;
+        font-weight: 500;
         line-height: 1.11;
 
     }
     .one, .two{
-
         padding: 24px 0;
     }
     .text{
         opacity: 0.73;
-        font-size: 14px;
+        font-size: 12px;
         font-weight: 300;
         line-height: 1.5;
-        padding-top: 17px;
+        padding-top: 10px;
     }
     }
 
@@ -111,6 +143,12 @@ h6 {
     .process{
         padding:0;
     }
+    .one, .two{
+        margin: auto;
+        height: auto;
+        width: 100%;
+    }
+
     .one-content, .two-content{
         padding: 0 20px;
     }

@@ -4,7 +4,7 @@
 .about-text{
     height: fit-content;
     position: relative;
-    top: 50%;
+    top: 40%;
     transform: translateY(-50%);
     font-size: 20px;
     line-height: 1.5;
@@ -161,23 +161,46 @@ h2 {
         line-height: 2.78;
 
     }
+    .about-text{
+        font-size: 10px;
+    }
 }
 @media(max-width: 992px){
  .suggest{
      height: 50vh;
  }
+    .about-text{
+        font-size: 12px;
+        padding-top: 30%;
+    }
 }
-@media(max-width: 1200px){
+@media(max-width: 1700px){
     .suggest{
         height: 50vh;
     }
     .component-title h2{
-        font-size: 40px;
+        font-size: 35px;
         font-weight: 500;
-        line-height: 1.4;
+        line-height: 1.3;
     }
     .component-heading p {
         line-height: 0.7;
         font-size: 14px;
+    }
+    .about-text{
+        font-size: 14px;
+    }
+    .rightButton {
+        right: 30px;
+        bottom: 20px;
+        width: 50px;
+        height:50px;
+        text-align: center;
+        padding:0;
+    }
+    .rightButton img {
+        width: 30px;
+        height: 20px;
+        margin-bottom: 5px;
     }
 }
