@@ -22,6 +22,9 @@
     line-height: 1.5;
     padding-right: 60px;
 }
+.project-wrapper{
+    padding-bottom: 50px;
+}
 
 h2 {
     font-size: 60px;
@@ -64,25 +67,49 @@ img {
 .bottom-line, .top-line{
     padding: 12px 0;
 }
-@media(max-width: 768px){
-    .portfolio{
+
+
+
+
+
+
+
+
+.project-wrapper img{
+    object-fit: cover;
+}
+@media (max-width: 1700px){
+    .content h2{
+        font-size: 48px;
+        line-height: 1.11;
+        text-align: left;
+        font-weight: 400;
+    }
+}
+@media(max-width: 768px) {
+    .portfolio {
         height: 100%;
         padding-bottom: 0;
         margin-top: 180px;
     }
-    img{
+
+    img {
         width: 100%;
     }
-    .portfolio h6{
+
+    .portfolio h6 {
         font-size: 14px;
         line-height: 1.5;
     }
-    .content h2{
+
+    .content h2 {
         font-size: 36px;
         line-height: 1.11;
         text-align: left;
+        font-weight: 400;
     }
-    .portfolio p{
+
+    .portfolio p {
         opacity: 0.73;
         font-size: 14px;
         font-weight: 300;
@@ -90,13 +117,31 @@ img {
         letter-spacing: -0.2px;
         text-align: left;
     }
-    .project-wrapper{
+
+    .project-wrapper {
         margin-top: 30px;
     }
-    .one, .two, .three{
+
+    .one, .two, .three {
         margin-bottom: 13px;
     }
 }
-.project-wrapper img{
-    object-fit: cover;
+@media(max-width: 450px) {
+    .portfolio {
+        padding-top: 300px;
+        margin-top: 250px;
+
+    }
+}
+@media(max-width: 380px) {
+    .portfolio {
+        margin-top: 330px;
+        padding-top: 350px;
+    }
+}
+@media(max-width: 300px) {
+    .portfolio {
+        margin-top: 350px;
+        padding-top: 350px;
+    }
 }

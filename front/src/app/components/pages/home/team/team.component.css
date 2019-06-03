@@ -110,6 +110,11 @@ h6 {
     border: 0;
     background-color: #1c488e !important;
 }
+@media (max-width: 1200px) {
+    .cont-heading h2{
+        font-size: 48px;
+    }
+}
 
 @media (max-width: 768px) {
     .teamCont {

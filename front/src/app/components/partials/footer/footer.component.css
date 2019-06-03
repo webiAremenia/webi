@@ -12,7 +12,7 @@
 .content{
   background-color: #1c488e;
   color: #fff;
-  padding: 100px 0;
+  padding: 50px 0;
 }
 .contact{
   font-size: 18px;
@@ -46,7 +46,7 @@ textarea{
   color: #fff;
   font-size: 12px;
   opacity: 0.6;
-    font-weight: 100;
+  font-weight: 100;
 }
 textarea:focus, input:focus{
     background-color: #3966ae;
@@ -57,8 +57,12 @@ button{
   width: 100px;
   height: 38px;
   margin-left:315px;
+  cursor: pointer;
 }
+button:hover{
+    background-color: #3966ae;
 
+}
 .copyRight{
   height: 10%;
   text-align: center;
@@ -92,7 +96,24 @@ button{
   }
 
 }
+@media(max-width: 370px){
+    .footer{
+        font-size: 10px;
+    }
+    .contact{
+        font-size: 12px;
+    }
 
+    input, textarea, button{
+        width: 280px;
+    }
+    button{
+
+        margin-left:180px;
+        width: 100px;
+    }
+
+}
 
 ::-webkit-input-placeholder {
     color: #fff;

@@ -9,7 +9,7 @@ export class SliderComponent implements OnInit {
     customOptions: any = {
         loop: true,
         mouseDrag: true,
-        touchDrag: false,
+        touchDrag: true,
         pullDrag: false,
         dots: false,
         navSpeed: 700,
