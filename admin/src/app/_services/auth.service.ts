@@ -8,7 +8,8 @@ import {Globals} from '../app.globals';
 export class AuthService {
 
   url;
-  constructor(private http: HttpClient, private global: Globals ) {
+
+  constructor(private http: HttpClient, private global: Globals) {
     this.url = global.queryUrl + 'admin/login';
   }
 

@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {DataService} from "../../../../_services/data.service";
-import {Router} from "@angular/router";
+import {Component, OnInit} from '@angular/core';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {DataService} from '../../../../_services/data.service';
+import {Router} from '@angular/router';
 import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
 @Component({
@@ -29,7 +29,7 @@ export class CategoryCreateComponent implements OnInit {
 
 
   myCategory() {
-    let form = {
+    const form = {
       name: {
         am: this.categoryForm.get('amName').value,
         ru: this.categoryForm.get('ruName').value,
@@ -43,7 +43,7 @@ export class CategoryCreateComponent implements OnInit {
       } else {
         this.res = data['msg'];
       }
-    },(err)=>{
+    }, (err) => {
       console.log(err);
     });
   }

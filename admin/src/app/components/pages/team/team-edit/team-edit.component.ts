@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {DataService} from '../../../../_services/data.service';
 import {Router} from '@angular/router';
@@ -12,7 +12,7 @@ import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
   styleUrls: ['./team-edit.component.css']
 })
 export class TeamEditComponent implements OnInit {
-  team : Team;
+  team: Team;
   teamForm: FormGroup;
   language: String = 'en';
   done: boolean;
@@ -69,7 +69,7 @@ export class TeamEditComponent implements OnInit {
 
     this.dataService.updateData(fd, 'team', this.team._id).subscribe(data => {
       this.router.navigate(['admin/team']);
-    },(err)=>{
+    }, (err) => {
       console.log(err);
     });
 

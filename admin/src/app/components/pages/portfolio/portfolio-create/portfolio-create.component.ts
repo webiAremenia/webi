@@ -32,6 +32,7 @@ export class PortfolioCreateComponent implements OnInit {
       }
     }
   };
+
   constructor(private formBuilder: FormBuilder, private dataService: DataService, private router: Router) {
   }
 
@@ -79,7 +80,7 @@ export class PortfolioCreateComponent implements OnInit {
       if (data['success']) {
         this.router.navigate(['admin/portfolio']);
       }
-    },(err)=>{
+    }, (err) => {
       console.log(err);
     });
   }

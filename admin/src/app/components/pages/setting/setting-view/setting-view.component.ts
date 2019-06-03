@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormBuilder} from '@angular/forms';
 import {DataService} from '../../../../_services/data.service';
 import {Router} from '@angular/router';
@@ -11,12 +11,12 @@ import {ItemService} from '../../../../_services/item.service';
   styleUrls: ['./setting-view.component.css']
 })
 export class SettingViewComponent implements OnInit {
-  setting : Setting;
+  setting: Setting;
   language: String = 'en';
   done: boolean;
   delete: any;
 
-  constructor(private formBuilder: FormBuilder, private dataService: DataService, private router: Router, private itemService : ItemService) {
+  constructor(private formBuilder: FormBuilder, private dataService: DataService, private router: Router, private itemService: ItemService) {
     if (!this.itemService.setting) {
       this.router.navigate(['admin/setting']);
     }

@@ -3,31 +3,31 @@ import {HttpClient} from '@angular/common/http';
 import {Globals} from '../app.globals';
 
 @Injectable({
-    providedIn: 'root'
+  providedIn: 'root'
 })
 export class ClientService {
 
-    url;
-    updateClient;
+  url;
+  updateClient;
 
-    constructor(private http: HttpClient, globals: Globals) {
-        this.url = globals.queryUrl + 'client';
-    }
+  constructor(private http: HttpClient, globals: Globals) {
+    this.url = globals.queryUrl + 'client';
+  }
 
-    getClients() {
-        return this.http.get(this.url);
-    }
+  getClients() {
+    return this.http.get(this.url);
+  }
 
-    addAccount(client) {
-        return this.http.post(this.url, client);
-    }
+  addAccount(client) {
+    return this.http.post(this.url, client);
+  }
 
-    updateAccount(id, client) {
-        console.log(id);
-        return this.http.put(this.url + '/' + id, client);
-    }
+  updateAccount(id, client) {
+    console.log(id);
+    return this.http.put(this.url + '/' + id, client);
+  }
 
-    sendPass(id) {
-        return this.http.get(this.url + '/password/' + id);
-    }
+  sendPass(id) {
+    return this.http.get(this.url + '/password/' + id);
+  }
 }

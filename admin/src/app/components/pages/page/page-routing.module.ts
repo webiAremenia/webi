@@ -1,9 +1,9 @@
 import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
-import {PageListComponent} from "./page-list/page-list.component";
-import {PageCreateComponent} from "./page-create/page-create.component";
-import {PageEditComponent} from "./page-edit/page-edit.component";
-import {PageViewComponent} from "./page-view/page-view.component";
+import {PageListComponent} from './page-list/page-list.component';
+import {PageCreateComponent} from './page-create/page-create.component';
+import {PageEditComponent} from './page-edit/page-edit.component';
+import {PageViewComponent} from './page-view/page-view.component';
 
 
 

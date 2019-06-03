@@ -1,37 +1,36 @@
-
-  <div class="row">
-    <div class="col-md-10 offset-1" *ngIf="done">
-      <h2 class="text-center">{{media.alt.en}}</h2>
-      <div>
-        <img src='http://localhost:3000/uploads/media/{{media.image}}' class="img-fluid max" alt="">
-      </div>
-      <h2 translate>Category</h2>
-      <h5>{{optionVal}}</h5>
-      <h2 translate>Alt</h2>
-      <table class="table table-dark table-hover table-striped">
-        <thead class="thead-light">
-        <tr>
-          <th>am</th>
-          <th>ru</th>
-          <th>en</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-          <td>{{media.alt.am}}</td>
-          <td>{{media.alt.ru}}</td>
-          <td>{{media.alt.en}}</td>
-        </tr>
-        </tbody>
-      </table>
-      <button type="button" class="btn btn-success" (click)="ok()"><i
-        class="fa fa-check" aria-hidden="true"></i>
-      </button>
-      <button type="button" class="btn btn-info" (click)="updateMedia(media)" style="margin-left: 20px;" translate>Edit<i
-        class="far fa-edit"></i></button>
-      <button (click)="deleteMedia(media,i)" style="margin-left: 20px;" class="btn btn-danger"><i
-        class="fa fa-times"></i>
-      </button>
+<div class="row">
+  <div class="col-md-10 offset-1" *ngIf="done">
+    <h2 class="text-center">{{media.alt.en}}</h2>
+    <div>
+      <img src='http://localhost:3000/uploads/media/{{media.image}}' class="img-fluid max" alt="">
     </div>
+    <h2 translate>Category</h2>
+    <h5>{{optionVal}}</h5>
+    <h2 translate>Alt</h2>
+    <table class="table table-dark table-hover table-striped">
+      <thead class="thead-light">
+      <tr>
+        <th>am</th>
+        <th>ru</th>
+        <th>en</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>{{media.alt.am}}</td>
+        <td>{{media.alt.ru}}</td>
+        <td>{{media.alt.en}}</td>
+      </tr>
+      </tbody>
+    </table>
+    <button type="button" class="btn btn-success" (click)="ok()"><i
+      class="fa fa-check" aria-hidden="true"></i>
+    </button>
+    <button type="button" class="btn btn-info" (click)="updateMedia(media)" style="margin-left: 20px;" translate>Edit<i
+      class="far fa-edit"></i></button>
+    <button (click)="deleteMedia(media,i)" style="margin-left: 20px;" class="btn btn-danger"><i
+      class="fa fa-times"></i>
+    </button>
   </div>
+</div>
 

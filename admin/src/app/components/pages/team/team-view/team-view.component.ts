@@ -39,14 +39,14 @@ export class TeamViewComponent implements OnInit {
 
   deleteTeam(team, i) {
     this.delete = confirm('Are you want to delete?');
-    if (this.delete == true) {
+    if (this.delete === true) {
       this.dataService.delete('team', team._id).subscribe(data => {
         if (data['success']) {
           this.router.navigate(['admin/team']);
         } else {
           console.log('DAta ', data);
         }
-      }, (err)=>{
+      }, (err) => {
         console.log(err);
       });
     }

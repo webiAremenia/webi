@@ -1,11 +1,11 @@
 import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
 
-import {MenuListComponent} from "./menu-list/menu-list.component";
-import {MenuCreateComponent} from "./menu-create/menu-create.component";
-import {MenuEditComponent} from "./menu-edit/menu-edit.component";
-import {MenuViewComponent} from "./menu-view/menu-view.component";
-import {MenuSortComponent} from "./menu-sort/menu-sort.component";
+import {MenuListComponent} from './menu-list/menu-list.component';
+import {MenuCreateComponent} from './menu-create/menu-create.component';
+import {MenuEditComponent} from './menu-edit/menu-edit.component';
+import {MenuViewComponent} from './menu-view/menu-view.component';
+import {MenuSortComponent} from './menu-sort/menu-sort.component';
 
 
  const routes: Routes = [

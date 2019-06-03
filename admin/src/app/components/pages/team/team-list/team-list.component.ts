@@ -22,7 +22,7 @@ export class TeamListComponent implements OnInit {
   ngOnInit() {
     this.dataService.getData('team').subscribe(data => {
       this.teams = data['teams'];
-    },(err)=>{
+    }, (err) => {
       console.log(err);
     });
     let arr = [];
@@ -31,7 +31,7 @@ export class TeamListComponent implements OnInit {
     this.options = {
       onUpdate: (event: any) => {
         arr = [];
-        this.teams.forEach(person=>{
+        this.teams.forEach(person => {
           arr.push(person._id)
         });
 
@@ -44,14 +44,14 @@ export class TeamListComponent implements OnInit {
 
   deleteTeam(team, i) {
     this.delete = confirm('Are you want to delete?');
-    if (this.delete == true) {
+    if (this.delete === true) {
       this.dataService.delete('team', team._id).subscribe(data => {
         if (data['success']) {
           this.teams.splice(i, 1);
         } else {
           this.router.navigate(['login']);
         }
-      },(err)=>{
+      }, (err) => {
         console.log(err);
       });
     }
@@ -71,7 +71,7 @@ export class TeamListComponent implements OnInit {
     if (this.personsArr) {
       this.dataService.teamUpdate(this.personsArr, 'team').subscribe(data => {
         console.log(data);
-      },(err)=>{
+      }, (err) => {
         console.log(err);
       });
       this.personsArr.length = 0;

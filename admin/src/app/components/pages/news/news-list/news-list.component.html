@@ -20,13 +20,10 @@
   </tr>
   </thead>
   <tbody>
-  <!--<tr *ngFor="let news of newses | titleDescriptionFilter : searchTerm; let i = index">-->
   <tr *ngFor="let news of newses ; let i = index">
-
     <td>{{news._id}}</td>
     <td>{{news.title.en}}</td>
     <td [innerHTML]="news.description.en"></td>
-
     <td>
       <button [routerLink]="['/admin/news', news._id]" (click)="viewNews(news)" class="btn btn-info"><i
         class="fas fa-eye"></i></button>

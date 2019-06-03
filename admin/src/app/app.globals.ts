@@ -4,7 +4,7 @@ import {environment} from '../environments/environment';
 Injectable();
 
 export class Globals {
-    queryUrl = environment.apiUrl;
+  queryUrl = environment.apiUrl;
 }
 
 
