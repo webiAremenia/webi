@@ -39,7 +39,6 @@ export class FooterComponent implements OnInit {
                 if (data.success) {
                     this.resetForm();
                 }
-
             },
             e => console.log(e)
         );

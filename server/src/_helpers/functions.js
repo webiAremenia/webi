@@ -12,6 +12,7 @@ module.exports = {
         res.status(200).json({success: true});
         Setting.findOne({key: 'form-email'}).exec()
             .then(set => {
+                console.log(set);
                 if (set) {
                     let transporter = nodeMailer.createTransport({
                         host: 'smtp.gmail.com',

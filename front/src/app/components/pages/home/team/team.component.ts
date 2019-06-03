@@ -18,8 +18,10 @@ export class TeamComponent implements OnInit {
     imageUrl;
     @ViewChild('btnImg') btnImg: ElementRef;
 
-    constructor(private teamService: TeamService,
-                private  settingsService: SettingService, global: Globals
+    constructor(
+        private teamService: TeamService,
+        private  settingsService: SettingService,
+        global: Globals
     ) {
         this.imageUrl = global.imageUrl + 'team/';
     }
