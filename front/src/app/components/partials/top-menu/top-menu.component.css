@@ -1,16 +1,19 @@
-.topNav{
-     position: fixed;
-     z-index: 1000;
-     width: 100%;
+.topNav {
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
 
- }
-.scroll-change-height{
+}
+
+.scroll-change-height {
     height: 100px;
 }
-.navbar{
+
+.navbar {
     padding-top: unset !important;
     padding-bottom: unset !important;
 }
+
 .my-container {
     background-color: #3966ae;
 }
@@ -30,7 +33,8 @@
     line-height: calc(72px - 12px + (100vw - 144px) / 12);
 
 }
-#logo img{
+
+#logo img {
     width: 50%;
     height: 50%;
     object-fit: contain;
@@ -85,16 +89,18 @@ button {
 }
 
 
-@media only screen and (max-width: 1201px){
-    .topNav{
+@media only screen and (max-width: 1201px) {
+    .topNav {
         height: 10%;
         padding: 0;
     }
-    .navbar{
+
+    .navbar {
         height: auto;
         padding-left: 20px;
     }
-    .navbar-brand{
+
+    .navbar-brand {
         font-size: 50px;
     }
 
@@ -106,9 +112,11 @@ button {
         text-align: center;
         padding: 0;
     }
-    #logo{
-        margin:5px auto;
+
+    #logo {
+        margin: 5px auto;
     }
+
     #logo img {
         width: 50%;
         height: 50%;
@@ -117,11 +125,11 @@ button {
 }
 
 
-
 @media (max-width: 990px) {
-    .topNav{
+    .topNav {
         height: 10%;
     }
+
     .navbar-expand-lg .navbar-collapse {
         /*display: none !important;*/
         /*flex-basis: auto;*/
@@ -156,7 +164,8 @@ button {
         height: auto;
         margin-top: 10px;
     }
-    .navbar-brand{
+
+    .navbar-brand {
         font-size: 40px !important;
     }
 
@@ -167,19 +176,23 @@ button {
         padding: 0;
         background-color: transparent;
     }
-    #logo{
-        margin:15px auto;
+
+    #logo {
+        margin: 15px auto;
     }
+
     #logo img {
         width: 50%;
         height: 50%;
         padding-left: 10px;
         padding-top: 10px;
     }
+
     .navbar-toggler {
         padding: 0;
 
     }
+
     .navbar-toggler-icon {
         width: 15px;
         height: 12px;
@@ -190,6 +203,7 @@ button {
         z-index: 105;
         outline-style: none;
     }
+
     .active {
         color: darkslateblue !important;
 
@@ -202,12 +216,14 @@ button {
         z-index: 300;
 
     }
-    .whiteToggle{
+
+    .whiteToggle {
         z-index: 200;
         position: absolute;
         right: -15px;
     }
 }
+
 @media (max-width: 768px) {
     #logo {
         margin: 15px auto;
@@ -219,7 +235,7 @@ button {
 
 
 @media (max-width: 650px) {
-    #logo{
+    #logo {
 
         padding: 5px 10px 0 0;
 
@@ -230,17 +246,20 @@ button {
         height: 50%;
 
     }
-    .navbar{
+
+    .navbar {
         margin-left: 15px;
         height: 20%;
     }
-    .navbar-brand{
+
+    .navbar-brand {
         font-size: 35px !important;
     }
 
 }
+
 @media (max-width: 500px) {
-    #logo{
+    #logo {
 
         padding: 0;
 
@@ -252,22 +271,27 @@ button {
         height: 50%;
 
     }
-    .navbar{
+
+    .navbar {
         margin-left: 20px;
         height: 20%;
         margin-top: 10px;
     }
-    .navbar-brand{
+
+    .navbar-brand {
         font-size: 30px !important;
     }
-    .blueToggle{
+
+    .blueToggle {
         bottom: -20px;
     }
-    .whiteToggle{
+
+    .whiteToggle {
         bottom: -20px;
     }
 
 }
+
 @media (max-width: 500px) {
     #logo {
 
@@ -275,3 +299,5 @@ button {
 
     }
 }
+
+

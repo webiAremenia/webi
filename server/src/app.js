@@ -19,7 +19,6 @@ const app = express();
 // mongoDB settings -->
 
 const mongoDB = global.gConfig.database;
-console.log(mongoDB);
 mongoose.connect(mongoDB, {useNewUrlParser: true, useCreateIndex: true})
     .then(_ => {
         console.log('MongoDB has connected ...')

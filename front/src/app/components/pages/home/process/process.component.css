@@ -49,6 +49,9 @@ p {
     padding-top: 45px;
     padding-left: 10px;
 }
+.text li{
+    margin-bottom: 0;
+}
 .two-content .text{
     padding-left: 20px;
 }
