@@ -1,72 +1,80 @@
-.team{
-  height: auto;
-  color:white;
-  font-family: Arial;
-  padding-left: 20px;
-}
-.teamMain{
-  padding-top: 115px;
+.team {
+    height: auto;
+    color: white;
+    font-family: Arial;
+    padding-left: 20px;
 }
 
-.col-5  button{
-  color:white;
-  border: none;
-  border: 0;
-  background: none;
-  outline-style: none;
-}
-.line{
-  width: 100px;
-  border: 1px solid lightgrey;
-  margin: 20px 0 30px 0;
-}
-.one{
-  height: 676px;
-  background-color:#1c488e;
-}
-h6{
-  text-align: center;
-}
-.one img, .two img{
-  width: 160px;
-  height: 160px;
-  margin:30px 50px;
+.teamMain {
+    padding-top: 115px;
 }
 
-.one a img{
-  width: 32px;
-  height: 16px;
-  float: right;
+.col-5 button {
+    color: white;
+    border: none;
+    border: 0;
+    background: none;
+    outline-style: none;
 }
 
-.image{
- text-align: center;
+.line {
+    width: 100px;
+    border: 1px solid lightgrey;
+    margin: 20px 0 30px 0;
 }
 
+.one {
+    height: 676px;
+    background-color: #1c488e;
+}
+
+h6 {
+    text-align: center;
+}
+
+.one img, .two img {
+    width: 160px;
+    height: 160px;
+    margin: 30px 50px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: top;
+}
+
+.one a img {
+    width: 32px;
+    height: 16px;
+    float: right;
+}
+
+.image {
+    text-align: center;
+}
 
 
 /*======================================================*/
 
-.cont-heading p{
+.cont-heading p {
     font-family: 'Poppins', sans-serif;
     font-size: 18px;
     line-height: 1.5;
     color: #ffffff;
 }
 
-.cont-heading h2{
+.cont-heading h2 {
     font-family: 'Poppins', sans-serif;
     font-size: 60px;
     font-weight: 600;
     line-height: 1.17;
     color: #ffffff;
 }
-.custom-button{
+
+.custom-button {
     padding: 50px;
     text-align: right;
 }
 
-.custom-button button{
+.custom-button button {
     box-sizing: border-box;
     border-radius: 50%;
     border: 0;
@@ -76,26 +84,30 @@ h6{
     text-align: center;
     padding-left: 3px;
     padding-top: 3px;
-    border:none;
+    border: none;
     outline: none;
     transition: 0.5ms;
     cursor: pointer;
 }
-.btnImg{
+
+.btnImg {
     transform: rotate(90deg);
     padding-bottom: 8px;
     transition: all 1s;
 }
-.custom-button button:hover{
-    border:0;
+
+.custom-button button:hover {
+    border: 0;
     background-color: #1c488e !important;
 }
-.custom-button button:active{
-    border:0;
+
+.custom-button button:active {
+    border: 0;
     background-color: #1c488e !important;
 }
-.custom-button button:focus{
-    border:0;
+
+.custom-button button:focus {
+    border: 0;
     background-color: #1c488e !important;
 }
 @media (max-width: 1200px) {
@@ -103,17 +115,21 @@ h6{
         font-size: 48px;
     }
 }
+
 @media (max-width: 768px) {
-    .teamCont{
+    .teamCont {
         padding: 0;
     }
-    .teamMain{
+
+    .teamMain {
         padding-top: 70px;
     }
-    .cont-heading{
+
+    .cont-heading {
         padding: 0 20px;
     }
-    .cont-heading p{
+
+    .cont-heading p {
         opacity: 0.73;
         font-size: 14px;
         font-weight: 300;
@@ -122,19 +138,21 @@ h6{
 
     }
 
-    .cont-heading h2{
+    .cont-heading h2 {
 
         font-size: 36px;
         font-weight: 600;
         line-height: 1.11;
 
     }
-    .one{
+
+    .one {
         height: auto;
         padding: 30px;
     }
-    .two{
+
+    .two {
         padding: 30px;
     }
-    }
+}
 
