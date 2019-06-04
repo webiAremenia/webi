@@ -2,16 +2,16 @@ import {Injectable} from '@angular/core';
 import {Router} from '@angular/router';
 
 @Injectable({
-    providedIn: 'root'
+  providedIn: 'root'
 })
 export class MainService {
 
-    constructor(public router: Router) {
-    }
+  constructor(public router: Router) {
+  }
 
-    errorHandler(e): void {
-        if (e.statusCode === 401) {
-            this.router.navigate(['login']);
-        }
+  errorHandler(e): void {
+    if (e.statusCode === 401) {
+      this.router.navigate(['login']);
     }
+  }
 }

@@ -33,7 +33,7 @@ export class MediaCreateComponent implements OnInit {
   onFileChange(event) {
 
     if (event.target.files.length > 0) {
-      let file = event.target.files[0];
+      const file = event.target.files[0];
       this.mediaForm.get('img').setValue(file);
     }
   }
@@ -55,7 +55,7 @@ export class MediaCreateComponent implements OnInit {
       if (data['success']) {
         this.router.navigate(['admin/media']);
       }
-    }, (err)=>{
+    }, (err) => {
       console.log(err);
     });
   }
@@ -63,7 +63,6 @@ export class MediaCreateComponent implements OnInit {
   changeLanguage(language) {
     this.language = language;
   }
-
 
 
 }

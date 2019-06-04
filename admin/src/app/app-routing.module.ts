@@ -3,12 +3,10 @@ import {Routes, RouterModule} from '@angular/router';
 import {LoginComponent} from './components/pages/login/login.component';
 
 
-
 const routes: Routes = [
   {path: 'login', component: LoginComponent},
 
   {path: '', redirectTo: '/admin/portfolio', pathMatch: 'full'},
-  // {path: '**', component: LoginComponent}
 ];
 
 @NgModule({

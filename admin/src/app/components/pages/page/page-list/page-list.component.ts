@@ -20,7 +20,7 @@ export class PageListComponent implements OnInit {
   ngOnInit() {
     this.dataService.getData('page').subscribe(data => {
       this.pages = data['data'];
-    },(err)=>{
+    }, (err) => {
       console.log(err);
     });
   }
@@ -28,14 +28,14 @@ export class PageListComponent implements OnInit {
 
   deletePage(page, i) {
     this.delete = confirm('Are you want to delete?');
-    if (this.delete == true) {
+    if (this.delete === true) {
       this.dataService.delete('page', page._id).subscribe(data => {
         if (data['success']) {
           this.pages.splice(i, 1);
         } else {
           this.router.navigate(['login']);
         }
-      },(err)=>{
+      }, (err) => {
         console.log(err);
       });
     }

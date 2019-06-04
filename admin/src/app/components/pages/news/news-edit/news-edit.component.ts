@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {Page} from "../../../../_models/Page";
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {DataService} from "../../../../_services/data.service";
-import {Router} from "@angular/router";
-import {ItemService} from "../../../../_services/item.service";
+import {Page} from '../../../../_models/Page';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {DataService} from '../../../../_services/data.service';
+import {Router} from '@angular/router';
+import {ItemService} from '../../../../_services/item.service';
 import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
 @Component({
@@ -69,7 +69,7 @@ export class NewsEditComponent implements OnInit {
       if (data['success']) {
         this.router.navigate(['admin/news']);
       }
-    },(err)=>{
+    }, (err) => {
       console.log(err);
     });
   }
@@ -83,7 +83,7 @@ export class NewsEditComponent implements OnInit {
   onFileChange(event) {
 
     if (event.target.files.length > 0) {
-      let file = event.target.files[0];
+      const file = event.target.files[0];
       this.newsForm.get('img').setValue(file);
     }
   }

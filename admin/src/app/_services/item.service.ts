@@ -10,20 +10,20 @@ import {Language} from '../_models/Language';
 import {News} from '../_models/News';
 
 @Injectable({
-    providedIn: 'root'
+  providedIn: 'root'
 })
 export class ItemService {
-    media: Media;
-    portfolio: Portfolio;
-    setting: Setting;
-    page: Page;
-    team: Team;
-    category: Category;
-    menu: Menu;
-    menus: Menu[];
-    language: Language;
-    news: News;
+  media: Media;
+  portfolio: Portfolio;
+  setting: Setting;
+  page: Page;
+  team: Team;
+  category: Category;
+  menu: Menu;
+  menus: Menu[];
+  language: Language;
+  news: News;
 
-    constructor() {
-    }
+  constructor() {
+  }
 }

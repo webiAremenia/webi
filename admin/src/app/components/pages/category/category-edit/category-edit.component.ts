@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {DataService} from "../../../../_services/data.service";
-import {Router} from "@angular/router";
-import {ItemService} from "../../../../_services/item.service";
-import {Category} from "../../../../_models/Category";
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {DataService} from '../../../../_services/data.service';
+import {Router} from '@angular/router';
+import {ItemService} from '../../../../_services/item.service';
+import {Category} from '../../../../_models/Category';
 
 @Component({
   selector: 'app-category-edit',
@@ -40,7 +40,7 @@ export class CategoryEditComponent implements OnInit {
   }
 
   myCategory() {
-    let form = {
+    const form = {
       name: {
         am: this.categoryForm.controls.amName.value,
         ru: this.categoryForm.controls.ruName.value,
@@ -51,11 +51,10 @@ export class CategoryEditComponent implements OnInit {
       if (data['success']) {
         this.router.navigate(['admin/category']);
       }
-    },(err)=>{
+    }, (err) => {
       console.log(err);
     });
   }
-
 
 
 }

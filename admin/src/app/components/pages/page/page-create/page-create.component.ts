@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {DataService} from '../../../../_services/data.service';
 import {Router} from '@angular/router';
@@ -69,7 +69,7 @@ export class PageCreateComponent implements OnInit {
       if (data['success']) {
         this.router.navigate(['admin/page']);
       }
-    },(err)=>{
+    }, (err) => {
       console.log(err);
     });
   }

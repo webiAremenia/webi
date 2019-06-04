@@ -1,10 +1,10 @@
 import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
 
-import {SettingListComponent} from "./setting-list/setting-list.component";
-import {SettingCreateComponent} from "./setting-create/setting-create.component";
-import {SettingEditComponent} from "./setting-edit/setting-edit.component";
-import {SettingViewComponent} from "./setting-view/setting-view.component";
+import {SettingListComponent} from './setting-list/setting-list.component';
+import {SettingCreateComponent} from './setting-create/setting-create.component';
+import {SettingEditComponent} from './setting-edit/setting-edit.component';
+import {SettingViewComponent} from './setting-view/setting-view.component';
 
 
  const routes: Routes = [

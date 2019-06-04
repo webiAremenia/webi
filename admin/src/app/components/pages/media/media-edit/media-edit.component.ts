@@ -60,7 +60,7 @@ export class MediaEditComponent implements OnInit {
       if (data['success']) {
         this.router.navigate(['admin/media']);
       }
-    }, (err)=>{
+    }, (err) => {
       console.log(err);
     });
   }

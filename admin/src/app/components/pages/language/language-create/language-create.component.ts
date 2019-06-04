@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {DataService} from "../../../../_services/data.service";
-import {Router} from "@angular/router";
+import {Component, OnInit} from '@angular/core';
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {DataService} from '../../../../_services/data.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-language-create',
@@ -28,10 +28,10 @@ export class LanguageCreateComponent implements OnInit {
 
 
   mySetting() {
-    let form = {
-      value : this.languageForm.get('value').value,
-      slug : this.languageForm.get('slug').value,
-      status : this.languageForm.get('status').value,
+    const form = {
+      value: this.languageForm.get('value').value,
+      slug: this.languageForm.get('slug').value,
+      status: this.languageForm.get('status').value,
     };
 
     this.dataService.sendData(form, 'language').subscribe(data => {

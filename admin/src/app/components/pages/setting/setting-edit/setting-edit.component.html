@@ -1,32 +1,33 @@
+<div class="row">
+  <div class="col-md-10 offset-1" *ngIf="done">
+    <h2 class="text-center" translate>Edit</h2>
+    <form [formGroup]="settingForm">
 
-  <div class="row">
-    <div class="col-md-10 offset-1"  *ngIf="done">
-      <h2 class="text-center" translate>Edit</h2>
-      <form [formGroup]="settingForm">
+      <br>
+      <div class="form-group">
+        <label translate>Key</label>
+        <h5>{{setting.key}}</h5>
+      </div>
 
+      <div class="form-group">
+
+        <button class="btn btn-primary" (click)="changeLanguage('en')">en</button>
+        <button class="btn btn-primary ml-1" (click)="changeLanguage('ru')">ru</button>
+        <button class="btn btn-primary ml-1" (click)="changeLanguage('am')">am</button>
         <br>
-        <div class="form-group">
-          <label translate>Key</label>
-          <h5>{{setting.key}}</h5>
-        </div>
-
-        <div class="form-group">
-
-          <button class="btn btn-primary" (click)="changeLanguage('en')">en</button>
-          <button class="btn btn-primary ml-1" (click)="changeLanguage('ru')">ru</button>
-          <button class="btn btn-primary ml-1" (click)="changeLanguage('am')">am</button>
-          <br>
-          <label translate>Value</label>
-          <input type="text" placeholder="en" class="form-control" formControlName="enValue" *ngIf="language=='en'">
-          <input type="text" placeholder="ru" class="form-control" formControlName="ruValue" *ngIf="language=='ru'">
-          <input type="text" placeholder="am" class="form-control" formControlName="amValue" *ngIf="language=='am'">
-          <p *ngIf="settingForm.get('enValue').invalid && settingForm.get('enValue').touched"  class="invalid">Type true english Value</p>
-        </div>
+        <label translate>Value</label>
+        <input type="text" placeholder="en" class="form-control" formControlName="enValue" *ngIf="language=='en'">
+        <input type="text" placeholder="ru" class="form-control" formControlName="ruValue" *ngIf="language=='ru'">
+        <input type="text" placeholder="am" class="form-control" formControlName="amValue" *ngIf="language=='am'">
+        <p *ngIf="settingForm.get('enValue').invalid && settingForm.get('enValue').touched" class="invalid">Type true
+          english Value</p>
+      </div>
 
 
-        <button type="button" class="btn btn-info" (click)="mySetting()" [disabled]="!settingForm.valid" translate>Edit<i class="fa fa-check"></i></button>
-      </form>
-    </div>
-
+      <button type="button" class="btn btn-info" (click)="mySetting()" [disabled]="!settingForm.valid" translate>Edit<i
+        class="fa fa-check"></i></button>
+    </form>
   </div>
+
+</div>
 

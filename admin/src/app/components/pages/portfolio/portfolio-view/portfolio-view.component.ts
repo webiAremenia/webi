@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup} from '@angular/forms';
+import {FormBuilder} from '@angular/forms';
 import {Portfolio} from '../../../../_models/Portfolio';
 import {DataService} from '../../../../_services/data.service';
 import {Router} from '@angular/router';
@@ -16,7 +16,7 @@ export class PortfolioViewComponent implements OnInit {
   done: boolean;
   delete: any;
 
-  constructor(private formBuilder: FormBuilder, private dataService: DataService, private router: Router, private itemService : ItemService) {
+  constructor(private formBuilder: FormBuilder, private dataService: DataService, private router: Router, private itemService: ItemService) {
     if (!this.itemService.portfolio) {
       this.router.navigate(['admin/portfolio']);
     }

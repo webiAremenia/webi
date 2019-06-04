@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Media} from '../../../../_models/Media';
 import {Router} from '@angular/router';
 import {DataService} from '../../../../_services/data.service';
@@ -13,7 +13,7 @@ export class MediaListComponent implements OnInit {
   medias: Media[];
   delete: any;
 
-  constructor(private router : Router, private dataService: DataService, private itemService : ItemService) {
+  constructor(private router: Router, private dataService: DataService, private itemService: ItemService) {
   }
 
   ngOnInit() {
@@ -22,15 +22,15 @@ export class MediaListComponent implements OnInit {
     this.dataService.getData('media').subscribe(data => {
       this.medias = data['medias'];
 
-    }, (err)=>{
+    }, (err) => {
       console.log(err);
     });
 
   }
 
-  deleteMedia(media,i) {
+  deleteMedia(media, i) {
     this.delete = confirm('Are you want to delete?');
-    if (this.delete == true) {
+    if (this.delete === true) {
       this.dataService.delete('media', media._id).subscribe(data => {
         if (data['success']) {
           this.medias.splice(i, 1);
