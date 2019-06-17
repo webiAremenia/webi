@@ -3,15 +3,15 @@
         <div class="row teamMain">
 
 
-            <div class="col-12 col-sm-12 col-md-11 offset-md-1 col-lg-5 offset-lg-1 pr-4 cont-heading">
-                <div>Meet our team</div>
+            <div class="col-12 col-sm-12 col-md-11 offset-md-1 col-lg-5 offset-lg-1  pr-xs-5 pr-sm-5 cont-heading">
+                <p class="subTitle">Meet our team</p>
 
                 <div class="line"></div>
                 <h2 [innerHTML]="title"></h2>
                 <p>{{text}}</p>
             </div>
 
-            <div class="col-12 col-sm-12 col-md-5 offset-md-1 col-lg-3 offset-lg-0 pr-4 one">
+            <div class="col-12 col-sm-12 col-md-5 offset-md-1 col-lg-3 offset-lg-0 pr-xs-5 pr-sm-5 one">
                 <div class="image">
 
                     <img [src]="imageUrl + team[0].avatar" alt="">
@@ -19,10 +19,10 @@
                 <h6><b>{{team[0].fullName.en}}</b></h6>
                 <h6>{{team[0].position.en}}</h6>
                 <p [innerHTML]='team[0].info.en'></p>
-                <a class=" d-none d-sm-block"><img src="./assets/images/Group 1620.png" alt=""></a>
+<!--                <a class=" d-none d-sm-block"><img src="./assets/images/Group 1620.png" alt=""></a>-->
             </div>
 
-            <div class="col-12 col-sm-12 col-md-6 col-lg-3 two pr-4 d-none d-sm-block">
+            <div class="col-12 col-sm-12 col-md-6 col-lg-3 two pr-sm-5 pr-xs-5 d-none d-sm-block">
                 <div class="image">
                     <img [src]="imageUrl + team[1].avatar" alt="">
                 </div>
