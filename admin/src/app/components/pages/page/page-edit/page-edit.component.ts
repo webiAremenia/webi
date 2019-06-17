@@ -69,7 +69,7 @@ export class PageEditComponent implements OnInit {
       if (data['success']) {
         this.router.navigate(['admin/page']);
       }
-    },(err)=>{
+    }, (err) => {
       console.log(err);
     });
   }

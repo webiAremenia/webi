@@ -31,13 +31,13 @@ export class SettingCreateComponent implements OnInit {
 
   mySetting() {
     let form = {
-      key : this.settingForm.get('key').value,
+      key: this.settingForm.get('key').value,
       value: {
         am: this.settingForm.get('amValue').value,
         ru: this.settingForm.get('ruValue').value,
         en: this.settingForm.get('enValue').value
       },
-  };
+    };
     this.dataService.sendData(form, 'setting').subscribe(data => {
       if (data['success']) {
         this.router.navigate(['admin/setting']);

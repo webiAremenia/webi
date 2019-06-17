@@ -51,7 +51,7 @@ export class SettingEditComponent implements OnInit {
       if (data['success']) {
         this.router.navigate(['admin/setting']);
       }
-    },(err)=>{
+    }, (err) => {
       console.log(err);
     });
     console.log('FOrm ', form);

@@ -1,4 +1,4 @@
-import { Pipe, PipeTransform } from '@angular/core';
+import {Pipe, PipeTransform} from '@angular/core';
 
 @Pipe({
   name: 'titleDescriptionFilter'
@@ -13,7 +13,7 @@ export class TitleDescriptionFilterPipe implements PipeTransform {
 
     return array.filter(item => (
       item.title.en.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1
-      ||  item.description.en.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1 ));
+      || item.description.en.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1));
   }
 
 }

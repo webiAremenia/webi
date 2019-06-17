@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import {FormBuilder} from "@angular/forms";
-import {DataService} from "../../../../_services/data.service";
-import {Router} from "@angular/router";
-import {ItemService} from "../../../../_services/item.service";
-import {Menu} from "../../../../../../../front/src/app/components/_models/menu";
+import {Component, OnInit} from '@angular/core';
+import {FormBuilder} from '@angular/forms';
+import {DataService} from '../../../../_services/data.service';
+import {Router} from '@angular/router';
+import {ItemService} from '../../../../_services/item.service';
+import {Menu} from '../../../../../../../front/src/app/components/_models/menu';
 
 @Component({
   selector: 'app-menu-view',
@@ -11,7 +11,7 @@ import {Menu} from "../../../../../../../front/src/app/components/_models/menu";
   styleUrls: ['./menu-view.component.css']
 })
 export class MenuViewComponent implements OnInit {
-  menu : Menu;
+  menu: Menu;
   language: String = 'en';
   done: boolean;
   delete: any;
@@ -45,7 +45,7 @@ export class MenuViewComponent implements OnInit {
         } else {
           console.log('DAta ', data);
         }
-      },(err)=>{
+      }, (err) => {
         console.log(err);
       });
     }

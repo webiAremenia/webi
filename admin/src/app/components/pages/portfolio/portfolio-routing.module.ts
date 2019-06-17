@@ -1,9 +1,9 @@
 import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
-import {PortfolioListComponent} from "./portfolio-list/portfolio-list.component";
-import {PortfolioCreateComponent} from "./portfolio-create/portfolio-create.component";
-import {PortfolioEditComponent} from "./portfolio-edit/portfolio-edit.component";
-import {PortfolioViewComponent} from "./portfolio-view/portfolio-view.component";
+import {PortfolioListComponent} from './portfolio-list/portfolio-list.component';
+import {PortfolioCreateComponent} from './portfolio-create/portfolio-create.component';
+import {PortfolioEditComponent} from './portfolio-edit/portfolio-edit.component';
+import {PortfolioViewComponent} from './portfolio-view/portfolio-view.component';
 
 
 

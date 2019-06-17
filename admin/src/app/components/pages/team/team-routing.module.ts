@@ -1,9 +1,9 @@
 import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from '@angular/router';
-import {TeamListComponent} from "./team-list/team-list.component";
-import {TeamCreateComponent} from "./team-create/team-create.component";
-import {TeamEditComponent} from "./team-edit/team-edit.component";
-import {TeamViewComponent} from "./team-view/team-view.component";
+import {TeamListComponent} from './team-list/team-list.component';
+import {TeamCreateComponent} from './team-create/team-create.component';
+import {TeamEditComponent} from './team-edit/team-edit.component';
+import {TeamViewComponent} from './team-view/team-view.component';
 
 
 

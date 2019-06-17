@@ -1,77 +1,78 @@
+<div class="row">
+  <div class="col-md-10 offset-1" *ngIf="done">
+    <h2 class="text-center"><span translate>Edit</span> {{portfolio.title.en}}</h2>
+    <form [formGroup]="porfolioForm">
+      <div>
+        <img src='http://localhost:3000/uploads/portfolio/{{portfolio.image}}' class="img-fluid max" alt="">
+      </div>
+      <div class="form-group">
+        <label for="image" translate>Image</label>
+        <input type="file" id="image" (change)="onFileChange($event)" #fileInput>
+        <!--<button type="button" class="btn btn-sm btn-default" (click)="clearFile()">clear file</button>-->
+      </div>
 
-  <div class="row">
-    <div class="col-md-10 offset-1" *ngIf="done">
-      <h2 class="text-center"><span translate>Edit</span> {{portfolio.title.en}}</h2>
-      <form [formGroup]="porfolioForm">
-        <div>
-          <img src='http://localhost:3000/uploads/portfolio/{{portfolio.image}}' class="img-fluid max" alt="">
-        </div>
-        <div class="form-group">
-          <label for="image" translate>Image</label>
-          <input type="file" id="image" (change)="onFileChange($event)" #fileInput>
-          <!--<button type="button" class="btn btn-sm btn-default" (click)="clearFile()">clear file</button>-->
-        </div>
+      <div class="form-group">
+        <label translate>url</label>
+        <input type="text" placeholder="Url" class="form-control" formControlName="url" value="{{portfolio.url}}">
+        <p *ngIf="porfolioForm.get('url').invalid && porfolioForm.get('url').touched" class="invalid">Type true Url</p>
 
-        <div class="form-group">
-          <label translate>url</label>
-          <input type="text" placeholder="Url" class="form-control" formControlName="url" value="{{portfolio.url}}">
-          <p *ngIf="porfolioForm.get('url').invalid && porfolioForm.get('url').touched" class="invalid">Type true Url</p>
+      </div>
 
-        </div>
+      <div class="form-group">
+        <button class="btn btn-primary" (click)="changeLanguage('en')">en</button>
+        <button class="btn btn-primary ml-1" (click)="changeLanguage('ru')">ru</button>
+        <button class="btn btn-primary ml-1" (click)="changeLanguage('am')">am</button>
+        <br>
+        <label translate>Title</label>
+        <input type="text" placeholder="en" class="form-control" formControlName="enTitle"
+               value="{{portfolio.title.en}}" *ngIf="language=='en'">
+        <input type="text" placeholder="ru" class="form-control" formControlName="ruTitle"
+               value="{{portfolio.title.ru}}" *ngIf="language=='ru'">
+        <input type="text" placeholder="am" class="form-control" formControlName="amTitle"
+               value="{{portfolio.title.am}}" *ngIf="language=='am'">
+        <p *ngIf="porfolioForm.get('enTitle').invalid && porfolioForm.get('enTitle').touched" class="invalid">Type en
+          Title</p>
 
-        <div class="form-group">
-          <button class="btn btn-primary" (click)="changeLanguage('en')">en</button>
-          <button class="btn btn-primary ml-1" (click)="changeLanguage('ru')">ru</button>
-          <button class="btn btn-primary ml-1" (click)="changeLanguage('am')">am</button>
-          <br>
-          <label translate>Title</label>
-          <input type="text" placeholder="en" class="form-control" formControlName="enTitle"
-                 value="{{portfolio.title.en}}" *ngIf="language=='en'">
-          <input type="text" placeholder="ru" class="form-control" formControlName="ruTitle"
-                 value="{{portfolio.title.ru}}" *ngIf="language=='ru'">
-          <input type="text" placeholder="am" class="form-control" formControlName="amTitle"
-                 value="{{portfolio.title.am}}" *ngIf="language=='am'">
-          <p *ngIf="porfolioForm.get('enTitle').invalid && porfolioForm.get('enTitle').touched" class="invalid">Type en Title</p>
-
-        </div>
-
-
-        <div class="form-group">
-          <label translate>Description</label>
-
-          <ckeditor *ngIf="language=='en'" tagName="input" formControlName="enDescription" [editor]="Editor"></ckeditor>
-          <ckeditor *ngIf="language=='ru'" tagName="input" formControlName="ruDescription" [editor]="Editor"></ckeditor>
-          <ckeditor *ngIf="language=='am'" tagName="input" formControlName="amDescription" [editor]="Editor"></ckeditor>
-
-          <p *ngIf="porfolioForm.get('enDescription').invalid && porfolioForm.get('enDescription').touched"
-             class="invalid">Type en Description</p>
+      </div>
 
 
-          <!--<input type="text" placeholder="en" class="form-control" formControlName="enDescription"-->
-          <!--*ngIf="language=='en'">-->
-          <!--<input type="text" placeholder="ru" class="form-control" formControlName="ruDescription"-->
-          <!--*ngIf="language=='ru'">-->
-          <!--<input type="text" placeholder="am" class="form-control" formControlName="amDescription"-->
-          <!--*ngIf="language=='am'">-->
-        </div>
+      <div class="form-group">
+        <label translate>Description</label>
 
-        <!--<ckeditor [editor]="Editor" data="<p>Hello, world!</p>"></ckeditor>-->
-        <!--<div class="form-group">-->
-          <!--<label>Description:</label>-->
-          <!--<input type="text" placeholder="en" class="form-control" formControlName="enDescription"-->
-                 <!--*ngIf="language=='en'" value="{{portfolio.description.en}}">-->
-          <!--<input type="text" placeholder="ru" class="form-control" formControlName="ruDescription"-->
-                 <!--*ngIf="language=='ru'" value="{{portfolio.description.ru}}">-->
-          <!--<input type="text" placeholder="am" class="form-control" formControlName="amDescription"-->
-                 <!--*ngIf="language=='am'" value="{{portfolio.description.am}}">-->
-        <!--</div>-->
+        <ckeditor *ngIf="language=='en'" tagName="input" formControlName="enDescription" [editor]="Editor"></ckeditor>
+        <ckeditor *ngIf="language=='ru'" tagName="input" formControlName="ruDescription" [editor]="Editor"></ckeditor>
+        <ckeditor *ngIf="language=='am'" tagName="input" formControlName="amDescription" [editor]="Editor"></ckeditor>
 
-        <!--<p *ngIf="porfolioForm.get('enDescription').invalid && porfolioForm.get('enDescription').touched"-->
-           <!--class="invalid">Type en Description</p>-->
+        <p *ngIf="porfolioForm.get('enDescription').invalid && porfolioForm.get('enDescription').touched"
+           class="invalid">Type en Description</p>
 
 
-        <button type="button" class="btn btn-info" (click)="myPortfolio()" [disabled]="!porfolioForm.valid" translate>Edit<i class="fa fa-check"></i></button>
-      </form>
-    </div>
+        <!--<input type="text" placeholder="en" class="form-control" formControlName="enDescription"-->
+        <!--*ngIf="language=='en'">-->
+        <!--<input type="text" placeholder="ru" class="form-control" formControlName="ruDescription"-->
+        <!--*ngIf="language=='ru'">-->
+        <!--<input type="text" placeholder="am" class="form-control" formControlName="amDescription"-->
+        <!--*ngIf="language=='am'">-->
+      </div>
 
+      <!--<ckeditor [editor]="Editor" data="<p>Hello, world!</p>"></ckeditor>-->
+      <!--<div class="form-group">-->
+      <!--<label>Description:</label>-->
+      <!--<input type="text" placeholder="en" class="form-control" formControlName="enDescription"-->
+      <!--*ngIf="language=='en'" value="{{portfolio.description.en}}">-->
+      <!--<input type="text" placeholder="ru" class="form-control" formControlName="ruDescription"-->
+      <!--*ngIf="language=='ru'" value="{{portfolio.description.ru}}">-->
+      <!--<input type="text" placeholder="am" class="form-control" formControlName="amDescription"-->
+      <!--*ngIf="language=='am'" value="{{portfolio.description.am}}">-->
+      <!--</div>-->
+
+      <!--<p *ngIf="porfolioForm.get('enDescription').invalid && porfolioForm.get('enDescription').touched"-->
+      <!--class="invalid">Type en Description</p>-->
+
+
+      <button type="button" class="btn btn-info" (click)="myPortfolio()" [disabled]="!porfolioForm.valid" translate>Edit<i
+        class="fa fa-check"></i></button>
+    </form>
   </div>
+
+</div>

@@ -62,15 +62,12 @@
       <br>
       <div class="form-group">
         <label translate>Order</label>
-        <input type="number"  class="form-control" formControlName="order">
+        <input type="number" class="form-control" formControlName="order">
 
-        <p *ngIf="menuForm.get('order').invalid  && menuForm.get('order').touched"  class="invalid">Type true Order</p>
+        <p *ngIf="menuForm.get('order').invalid  && menuForm.get('order').touched" class="invalid">Type true Order</p>
 
       </div>
-
       <br>
-
-
 
       <button type="button" class="btn btn-info" (click)="myMedia()" [disabled]="!menuForm.valid" translate>Edit<i
         class="fa fa-check"></i></button>

@@ -1,9 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import {FormBuilder} from "@angular/forms";
-import {DataService} from "../../../../_services/data.service";
-import {Router} from "@angular/router";
-import {ItemService} from "../../../../_services/item.service";
-import {News} from "../../../../_models/News";
+import {Component, OnInit} from '@angular/core';
+import {FormBuilder} from '@angular/forms';
+import {DataService} from '../../../../_services/data.service';
+import {Router} from '@angular/router';
+import {ItemService} from '../../../../_services/item.service';
+import {News} from '../../../../_models/News';
 
 @Component({
   selector: 'app-news-view',
@@ -12,12 +12,12 @@ import {News} from "../../../../_models/News";
 })
 export class NewsViewComponent implements OnInit {
 
-  news : News;
+  news: News;
   language: String = 'en';
   done: boolean;
   delete: any;
 
-  constructor(private formBuilder: FormBuilder, private dataService: DataService, private router: Router, private itemService : ItemService) {
+  constructor(private formBuilder: FormBuilder, private dataService: DataService, private router: Router, private itemService: ItemService) {
     if (!this.itemService.news) {
       this.router.navigate(['admin/news']);
     }
@@ -40,14 +40,14 @@ export class NewsViewComponent implements OnInit {
 
   deleteNews(news, i) {
     this.delete = confirm('Are you want to delete?');
-    if (this.delete == true) {
+    if (this.delete === true) {
       this.dataService.delete('news', news._id).subscribe(data => {
         if (data['success']) {
           this.router.navigate(['admin/news']);
         } else {
           console.log('DAta ', data);
         }
-      },(err)=>{
+      }, (err) => {
         console.log(err);
       });
     }

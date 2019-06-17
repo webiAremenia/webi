@@ -1,29 +1,30 @@
-
 <div class="row">
   <div class="col-md-10 offset-1">
     <h2 class="text-center" translate>Edit</h2>
-      <br>
+    <br>
     <form [formGroup]="languageForm">
-    <table class="table table-dark table-hover table-striped">
-      <tbody>
-      <tr>
-        <td>{{language.value}}</td>
-        <td>{{language.slug}}</td>
-        <td><div class="form-group">
-            <label><input type="radio" formControlName="status" value="active" translate>Active</label>
-        </div>
-        </td>
-        <td>
-          <div class="form-group">
-            <label><input type="radio" formControlName="status" value="passive" translate>Passive</label>
-          </div>
-        </td>
-      </tr>
-      </tbody>
-    </table>
+      <table class="table table-dark table-hover table-striped">
+        <tbody>
+        <tr>
+          <td>{{language.value}}</td>
+          <td>{{language.slug}}</td>
+          <td>
+            <div class="form-group">
+              <label><input type="radio" formControlName="status" value="active" translate>Active</label>
+            </div>
+          </td>
+          <td>
+            <div class="form-group">
+              <label><input type="radio" formControlName="status" value="passive" translate>Passive</label>
+            </div>
+          </td>
+        </tr>
+        </tbody>
+      </table>
 
 
-      <button type="button" class="btn btn-info" (click)="myLanguage()" [disabled]="!languageForm.valid" translate>Edit <i class="fa fa-check"></i></button>
+      <button type="button" class="btn btn-info" (click)="myLanguage()" [disabled]="!languageForm.valid" translate>Edit
+        <i class="fa fa-check"></i></button>
     </form>
   </div>
 

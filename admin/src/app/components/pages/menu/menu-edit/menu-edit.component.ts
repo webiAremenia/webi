@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {DataService} from "../../../../_services/data.service";
-import {Router} from "@angular/router";
-import {ItemService} from "../../../../_services/item.service";
-import {Menu} from "../../../../../../../front/src/app/components/_models/menu";
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {DataService} from '../../../../_services/data.service';
+import {Router} from '@angular/router';
+import {ItemService} from '../../../../_services/item.service';
+import {Menu} from '../../../../../../../front/src/app/components/_models/menu';
 
 @Component({
   selector: 'app-menu-edit',
@@ -20,10 +20,7 @@ export class MenuEditComponent implements OnInit {
   value: String;
   categoriesArr;
   pagesArr;
-  typeIdArr;
-  typeValue: String;
   menus: Menu[];
-  parentArr;
 
   constructor(private formBuilder: FormBuilder, private dataService: DataService, private router: Router, private itemService: ItemService) {
     if (!this.itemService.menu) {
@@ -46,8 +43,8 @@ export class MenuEditComponent implements OnInit {
 
     this.dataService.getData('menu').subscribe(data => {
       this.menus = data['menus'].filter((item) => {
-        return item.title.en !== this.menu.title.en && !item.parent
-      })
+        return item.title.en !== this.menu.title.en && !item.parent;
+      });
     });
 
 
@@ -71,7 +68,7 @@ export class MenuEditComponent implements OnInit {
 
   myMedia() {
 
-    let form = {
+    const form = {
       title: {
         am: this.menuForm.get('amTitle').value,
         ru: this.menuForm.get('ruTitle').value,
@@ -94,7 +91,7 @@ export class MenuEditComponent implements OnInit {
   mySelect(e) {
     this.value = this.categories[e.target.value];
 
-    if (this.value == 'url') {
+    if (this.value === 'url') {
       this.menuForm.get('typeId').setValue('');
       this.done = true;
     }

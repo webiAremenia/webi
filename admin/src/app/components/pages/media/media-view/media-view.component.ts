@@ -2,7 +2,6 @@ import {Component, OnInit} from '@angular/core';
 import {FormBuilder} from '@angular/forms';
 import {DataService} from '../../../../_services/data.service';
 import {Router} from '@angular/router';
-import {Portfolio} from '../../../../_models/Portfolio';
 import {Media} from '../../../../_models/Media';
 import {ItemService} from '../../../../_services/item.service';
 
@@ -46,7 +45,7 @@ export class MediaViewComponent implements OnInit {
         } else {
           console.log('DAta ', data);
         }
-      },(err)=>{
+      }, (err) => {
         console.log(err);
       });
     }

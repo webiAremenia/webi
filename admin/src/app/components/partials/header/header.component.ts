@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {TranslateService} from '@ngx-translate/core';
-import {NgSelectConfig} from "@ng-select/ng-select";
+import {NgSelectConfig} from '@ng-select/ng-select';
 
 
 @Component({
@@ -26,10 +26,9 @@ export class HeaderComponent implements OnInit {
     }
   ];
   final;
-  // languages = ['am','en','ru'];
   lan = {
-    image : '../../../../assets/images/language/en.png',
-    name : ''
+    image: '../../../../assets/images/language/en.png',
+    name: ''
   };
 
   constructor(private router: Router, private translate: TranslateService, private config: NgSelectConfig) {
@@ -39,8 +38,8 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
     this.email = localStorage.getItem('email');
-    this.final = this.languages.filter(item=>{
-      return item.name !== 'en'
+    this.final = this.languages.filter(item => {
+      return item.name !== 'en';
     });
   }
 
@@ -50,8 +49,8 @@ export class HeaderComponent implements OnInit {
     this.translate.use(l.name);
     this.lan = l;
 
-    this.final = this.languages.filter(item=>{
-      return item.name !== l.name
+    this.final = this.languages.filter(item => {
+      return item.name !== l.name;
     });
   }
 

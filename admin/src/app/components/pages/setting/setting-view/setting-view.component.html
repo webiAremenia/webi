@@ -1,31 +1,30 @@
-
-  <div class="row">
-    <div class="col-md-10 offset-1" *ngIf="done">
-      <h2 class="text-center">{{setting.value.en}}</h2>
-      <h2 translate>Key</h2>
-      <h5>{{setting.key}}</h5>
-      <h2 translate>Value</h2>
-      <table class="table table-dark table-hover table-striped">
-        <thead class="thead-light">
-        <tr>
-          <th>am</th>
-          <th>ru</th>
-          <th>en</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr>
-          <td>{{setting.value.am}}</td>
-          <td>{{setting.value.ru}}</td>
-          <td>{{setting.value.en}}</td>
-        </tr>
-        </tbody>
-      </table>
-      <button type="button" class="btn btn-success" (click)="ok()"><i
-        class="fa fa-check" aria-hidden="true"></i>
-      </button>
-      <button type="button" class="btn btn-info" (click)="updateSetting(setting)" style="margin-left: 20px" translate>Edit<i
-        class="far fa-edit"></i></button>
-    </div>
+<div class="row">
+  <div class="col-md-10 offset-1" *ngIf="done">
+    <h2 class="text-center">{{setting.value.en}}</h2>
+    <h2 translate>Key</h2>
+    <h5>{{setting.key}}</h5>
+    <h2 translate>Value</h2>
+    <table class="table table-dark table-hover table-striped">
+      <thead class="thead-light">
+      <tr>
+        <th>am</th>
+        <th>ru</th>
+        <th>en</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td>{{setting.value.am}}</td>
+        <td>{{setting.value.ru}}</td>
+        <td>{{setting.value.en}}</td>
+      </tr>
+      </tbody>
+    </table>
+    <button type="button" class="btn btn-success" (click)="ok()"><i
+      class="fa fa-check" aria-hidden="true"></i>
+    </button>
+    <button type="button" class="btn btn-info" (click)="updateSetting(setting)" style="margin-left: 20px" translate>Edit<i
+      class="far fa-edit"></i></button>
   </div>
+</div>
 

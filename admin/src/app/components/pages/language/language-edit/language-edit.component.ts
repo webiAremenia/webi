@@ -1,9 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {DataService} from "../../../../_services/data.service";
-import {Router} from "@angular/router";
-import {ItemService} from "../../../../_services/item.service";
-import {Language} from "../../../../_models/Language";
+import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {DataService} from '../../../../_services/data.service';
+import {Router} from '@angular/router';
+import {ItemService} from '../../../../_services/item.service';
+import {Language} from '../../../../_models/Language';
 
 @Component({
   selector: 'app-language-edit',
@@ -34,7 +34,7 @@ export class LanguageEditComponent implements OnInit {
 
 
   myLanguage() {
-    let form = {
+    const form = {
       status: this.languageForm.controls.status.value,
     };
     this.dataService.updateData(form, 'language', this.language._id).subscribe(data => {

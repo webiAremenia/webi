@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpEvent, HttpHandler, HttpRequest} from '@angular/common/http';
 import {Observable} from 'rxjs';
 
@@ -7,14 +7,16 @@ import {Observable} from 'rxjs';
 })
 export class InterceptorService {
 
-  constructor() { }
+  constructor() {
+  }
+
   intercept(req: HttpRequest<any>,
             next: HttpHandler): Observable<HttpEvent<any>> {
 
     const idToken = localStorage.getItem('jwt_token');
     if (idToken) {
       const cloned = req.clone({
-        headers : req.headers.set('Authorization', 'Bearer ' + idToken)
+        headers: req.headers.set('Authorization', 'Bearer ' + idToken)
       });
       return next.handle(cloned);
     } else {

@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import {Router} from "@angular/router";
-import {DataService} from "../../../../_services/data.service";
-import {ItemService} from "../../../../_services/item.service";
-import {Menu} from "../../../../../../../front/src/app/components/_models/menu";
+import {Component, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
+import {DataService} from '../../../../_services/data.service';
+import {ItemService} from '../../../../_services/item.service';
+import {Menu} from '../../../../../../../front/src/app/components/_models/menu';
 
 @Component({
   selector: 'app-menu-list',
@@ -10,35 +10,35 @@ import {Menu} from "../../../../../../../front/src/app/components/_models/menu";
   styleUrls: ['./menu-list.component.css']
 })
 export class MenuListComponent implements OnInit {
-  menus : Menu[];
+  menus: Menu[];
   delete: any;
-  done : boolean = false;
-  button : boolean = false;
+  done = false;
+  button = false;
 
-  constructor(private router : Router, private dataService: DataService, private itemService : ItemService) {
+  constructor(private router: Router, private dataService: DataService, private itemService: ItemService) {
   }
 
   ngOnInit() {
 
     this.dataService.getData('menu').subscribe(data => {
       this.menus = data['menus'];
-      if(this.menus.length !== 0){
+      if (this.menus.length !== 0) {
         this.button = true;
       }
-    }, (err)=>{
+    }, (err) => {
       console.log(err);
     });
 
   }
 
-  deleteMenu(menu,i) {
+  deleteMenu(menu, i) {
     this.button = false;
     this.delete = confirm('Are you want to delete?');
-    if (this.delete == true) {
+    if (this.delete === true) {
       this.dataService.delete('menu', menu._id).subscribe(data => {
         if (data['success']) {
           this.menus.splice(i, 1);
-          if(this.menus.length !== 0){
+          if (this.menus.length !== 0) {
             this.button = true;
           }
         } else {
@@ -60,11 +60,12 @@ export class MenuListComponent implements OnInit {
 
   }
 
-  myCreate(){
+  myCreate() {
     this.itemService.menus = this.menus;
     this.router.navigate(['admin/menu/create']);
   }
-  mySort(){
+
+  mySort() {
     this.router.navigate(['admin/menu/sort']);
   }
 

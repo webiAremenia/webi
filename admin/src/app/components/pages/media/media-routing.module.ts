@@ -7,7 +7,7 @@ import {MediaEditComponent} from './media-edit/media-edit.component';
 import {MediaViewComponent} from './media-view/media-view.component';
 
 
- const routes: Routes = [
+const routes: Routes = [
   {path: '', component: MediaListComponent},
   {path: 'create', component: MediaCreateComponent},
   {path: 'edit', component: MediaEditComponent},

@@ -1,9 +1,8 @@
-
 <div class="row">
   <div class="col-md-10 offset-1">
     <h2 class="text-center" translate>Create</h2>
     <form [formGroup]="categoryForm">
-      <p *ngIf="res"  class="invalid">{{res}}</p>
+      <p *ngIf="res" class="invalid">{{res}}</p>
 
       <br>
       <button class="btn btn-primary" (click)="changeLanguage('en')">en</button>
@@ -16,11 +15,13 @@
         <input type="text" placeholder="en" class="form-control" formControlName="enName" *ngIf="language=='en'">
         <input type="text" placeholder="ru" class="form-control" formControlName="ruName" *ngIf="language=='ru'">
         <input type="text" placeholder="am" class="form-control" formControlName="amName" *ngIf="language=='am'">
-        <p *ngIf="categoryForm.get('enName').invalid && categoryForm.get('enName').touched"  class="invalid">Type true english Name</p>
+        <p *ngIf="categoryForm.get('enName').invalid && categoryForm.get('enName').touched" class="invalid">Type true
+          english Name</p>
       </div>
 
 
-      <button type="button" class="btn btn-info" (click)="myCategory()" [disabled]="!categoryForm.valid" translate>Create<i class="fa fa-check"></i></button>
+      <button type="button" class="btn btn-info" (click)="myCategory()" [disabled]="!categoryForm.valid" translate>
+        Create<i class="fa fa-check"></i></button>
     </form>
   </div>
 
