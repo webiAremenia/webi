@@ -1,51 +1,51 @@
-<!--<div class="my-container teamCont" *ngIf="team">-->
-<!--    <div class="row team">-->
-<!--        <div class="row teamMain">-->
+<div class="my-container teamCont" *ngIf="team">
+    <div class="row team">
+        <div class="row teamMain">
 
 
-<!--            <div class="col-12 col-sm-12 col-md-11 offset-md-1 col-lg-5 offset-lg-1 pr-4 cont-heading">-->
-<!--                <div>Meet our team</div>-->
+            <div class="col-12 col-sm-12 col-md-11 offset-md-1 col-lg-5 offset-lg-1 pr-4 cont-heading">
+                <div>Meet our team</div>
 
-<!--                <div class="line"></div>-->
-<!--                <h2 [innerHTML]="title"></h2>-->
-<!--                <p>{{text}}</p>-->
-<!--            </div>-->
+                <div class="line"></div>
+                <h2 [innerHTML]="title"></h2>
+                <p>{{text}}</p>
+            </div>
 
-<!--            <div class="col-12 col-sm-12 col-md-5 offset-md-1 col-lg-3 offset-lg-0 pr-4 one">-->
-<!--                <div class="image">-->
+            <div class="col-12 col-sm-12 col-md-5 offset-md-1 col-lg-3 offset-lg-0 pr-4 one">
+                <div class="image">
 
-<!--                    <img [src]="imageUrl + team[0].avatar" alt="">-->
-<!--                </div>-->
-<!--                <h6><b>{{team[0].fullName.en}}</b></h6>-->
-<!--                <h6>{{team[0].position.en}}</h6>-->
-<!--                <p [innerHTML]='team[0].info.en'></p>-->
-<!--                <a class=" d-none d-sm-block"><img src="./assets/images/Group 1620.png" alt=""></a>-->
-<!--            </div>-->
+                    <img [src]="imageUrl + team[0].avatar" alt="">
+                </div>
+                <h6><b>{{team[0].fullName.en}}</b></h6>
+                <h6>{{team[0].position.en}}</h6>
+                <p [innerHTML]='team[0].info.en'></p>
+                <a class=" d-none d-sm-block"><img src="./assets/images/Group 1620.png" alt=""></a>
+            </div>
 
-<!--            <div class="col-12 col-sm-12 col-md-6 col-lg-3 two pr-4 d-none d-sm-block">-->
-<!--                <div class="image">-->
-<!--                    <img [src]="imageUrl + team[1].avatar" alt="">-->
-<!--                </div>-->
-<!--                <h6><b>{{team[1].fullName.en}}</b></h6>-->
-<!--                <h6>{{ team[1].position.en}}</h6>-->
-<!--                <p [innerHTML]='team[1].info.en'></p>-->
-<!--            </div>-->
+            <div class="col-12 col-sm-12 col-md-6 col-lg-3 two pr-4 d-none d-sm-block">
+                <div class="image">
+                    <img [src]="imageUrl + team[1].avatar" alt="">
+                </div>
+                <h6><b>{{team[1].fullName.en}}</b></h6>
+                <h6>{{ team[1].position.en}}</h6>
+                <p [innerHTML]='team[1].info.en'></p>
+            </div>
 
-<!--        </div>-->
+        </div>
 
-<!--    </div>-->
-<!--    <div class="row">-->
-<!--        <div class="col-12 custom-button d-none d-sm-block">-->
-<!--            <button class="btn btn-link" (click)="onClick()">-->
-<!--                <img #btnImg src="./assets/images/Group 1620.png">-->
-<!--            </button>-->
-<!--        </div>-->
-<!--    </div>-->
+    </div>
+    <div class="row">
+        <div class="col-12 custom-button d-none d-sm-block">
+            <button class="btn btn-link" (click)="onClick()">
+                <img #btnImg src="./assets/images/Group 1620.png">
+            </button>
+        </div>
+    </div>
 
-<!--</div>-->
+</div>
 
 
-<!--<ng-template [ngIf]="!visible">-->
-<!--    <app-multy-team></app-multy-team>-->
-<!--</ng-template>-->
+<ng-template [ngIf]="!visible">
+    <app-multy-team></app-multy-team>
+</ng-template>
 
