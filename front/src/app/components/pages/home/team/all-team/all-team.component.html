@@ -1,57 +1,57 @@
-<div class="container-fluid">
-  <div class="row">
-    <div class="col-2">
-      <p>Our team</p>
-      <div class="line"></div>
-    </div>
-    <div class="col-3 one">
-      <img src="./assets/images/Mask Group 9.png" alt="">
-      <h6><b>EDUARD</b></h6>
-      <h6>CEO</h6>
-    </div>
-    <div class="col-3 two">
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus impedit labore possimus praesentium quas
-        repellendus voluptates voluptatum. Accusantium consequuntur culpa deserunt, dolorem dolores earum eveniet
-        molestiae numquam, saepe sunt tenetur!</p>
-    </div>
-    <div class="col-3 three">
-      <img src="./assets/images/Mask Group 9.png" alt="">
-      <h6><b>EDUARD</b></h6>
-      <h6>CEO</h6>
-    </div>
-  </div>
-  <div class="row offset-2">
-    <div class="col-3 three" *ngFor='let team of teams' (click)="onClick(team, customModal)">
-      <img src="./assets/images/{{team.img}}" alt="">
-      <h6><b>{{team.name}}</b></h6>
+<!--<div class="container-fluid">-->
+<!--  <div class="row">-->
+<!--    <div class="col-2">-->
+<!--      <p>Our team</p>-->
+<!--      <div class="line"></div>-->
+<!--    </div>-->
+<!--    <div class="col-3 one">-->
+<!--      <img src="./assets/images/Mask Group 9.png" alt="">-->
+<!--      <h6><b>EDUARD</b></h6>-->
+<!--      <h6>CEO</h6>-->
+<!--    </div>-->
+<!--    <div class="col-3 two">-->
+<!--      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus impedit labore possimus praesentium quas-->
+<!--        repellendus voluptates voluptatum. Accusantium consequuntur culpa deserunt, dolorem dolores earum eveniet-->
+<!--        molestiae numquam, saepe sunt tenetur!</p>-->
+<!--    </div>-->
+<!--    <div class="col-3 three">-->
+<!--      <img src="./assets/images/Mask Group 9.png" alt="">-->
+<!--      <h6><b>EDUARD</b></h6>-->
+<!--      <h6>CEO</h6>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--  <div class="row offset-2">-->
+<!--    <div class="col-3 three" *ngFor='let team of teams' (click)="onClick(team, customModal)">-->
+<!--      <img src="./assets/images/{{team.img}}" alt="">-->
+<!--      <h6><b>{{team.name}}</b></h6>-->
 
-      <ng-template #customModal let-modal>
-        <div class="fff">
-          <div class="modal-header">
-            <h5 class="modal-title name">{{team.name}}</h5>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"
-                    (click)="modal.close('Close click')">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <div class="modal-body">
-            <div class="cover">
-              <img src="./assets/images/{{team.img}}" alt="">
-            </div>
-            <p class="job"> {{team.job}}</p>
-            <p>{{team.description}}</p>
-          </div>
-          <div class="modal-footer">
-          </div>
-        </div>
-      </ng-template>
+<!--      <ng-template #customModal let-modal>-->
+<!--        <div class="fff">-->
+<!--          <div class="modal-header">-->
+<!--            <h5 class="modal-title name">{{team.name}}</h5>-->
+<!--            <button type="button" class="close" data-dismiss="modal" aria-label="Close"-->
+<!--                    (click)="modal.close('Close click')">-->
+<!--              <span aria-hidden="true">&times;</span>-->
+<!--            </button>-->
+<!--          </div>-->
+<!--          <div class="modal-body">-->
+<!--            <div class="cover">-->
+<!--              <img src="./assets/images/{{team.img}}" alt="">-->
+<!--            </div>-->
+<!--            <p class="job"> {{team.job}}</p>-->
+<!--            <p>{{team.description}}</p>-->
+<!--          </div>-->
+<!--          <div class="modal-footer">-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </ng-template>-->
 
 
-      <h6>{{team.job}}</h6>
-    </div>
-  </div>
-</div>
-<app-footer></app-footer>
+<!--      <h6>{{team.job}}</h6>-->
+<!--    </div>-->
+<!--  </div>-->
+<!--</div>-->
+<!--<app-footer></app-footer>-->
 
 
 
