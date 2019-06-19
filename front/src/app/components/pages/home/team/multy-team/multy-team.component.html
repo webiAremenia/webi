@@ -1,64 +1,64 @@
-<!--<div class="my-container">-->
-<!--    <div class="row multy d-none d-sm-block">-->
-<!--        <div class="col-10 offset-1">-->
-<!--&lt;!&ndash;            <div class="row">&ndash;&gt;-->
-<!--&lt;!&ndash;                <div class="col-lg-3 one">&ndash;&gt;-->
-<!--&lt;!&ndash;                    <img src="./assets/images/Mask Group 9.png" alt="">&ndash;&gt;-->
-<!--&lt;!&ndash;                    <h6><b>EDUARD</b></h6>&ndash;&gt;-->
-<!--&lt;!&ndash;                    <h6>CEO</h6>&ndash;&gt;-->
-<!--&lt;!&ndash;                </div>&ndash;&gt;-->
-<!--&lt;!&ndash;                <div class="col-lg-3 two">&ndash;&gt;-->
-<!--&lt;!&ndash;                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus impedit labore possimus&ndash;&gt;-->
-<!--&lt;!&ndash;                        praesentium quas&ndash;&gt;-->
-<!--&lt;!&ndash;                        repellendus voluptates voluptatum. Accusantium consequuntur culpa deserunt, dolorem dolores&ndash;&gt;-->
-<!--&lt;!&ndash;                        earum eveniet&ndash;&gt;-->
-<!--&lt;!&ndash;                        molestiae numquam, saepe sunt tenetur!</p>&ndash;&gt;-->
-<!--&lt;!&ndash;                </div>&ndash;&gt;-->
-<!--&lt;!&ndash;                <div class="col-lg-3 three">&ndash;&gt;-->
-<!--&lt;!&ndash;                    <img src="./assets/images/Mask Group 9.png" alt="">&ndash;&gt;-->
-<!--&lt;!&ndash;                    <h6><b>EDUARD</b></h6>&ndash;&gt;-->
-<!--&lt;!&ndash;                    <h6>CEO</h6>&ndash;&gt;-->
-<!--&lt;!&ndash;                </div>&ndash;&gt;-->
-<!--&lt;!&ndash;            </div>&ndash;&gt;-->
+<div class="my-container">
+    <div class="row multy d-none d-sm-block">
+        <div class="col-10 offset-1">
 <!--            <div class="row">-->
-<!--                <div class="col-4 three" *ngFor='let team of teams' (click)="onClick(team, customModal)">-->
-<!--                    <img [src]="imageUrl + team.avatar" alt="">-->
-<!--                    <h6><b>{{team.fullName.en}}</b></h6>-->
-
-<!--                    <ng-template #customModal let-modal>-->
-<!--                        <div class="fff">-->
-<!--                            <div class="modal-header">-->
-<!--                                <h5 class="modal-title name">{{team.fullName.en}}</h5>-->
-<!--                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"-->
-<!--                                        (click)="modal.close('Close click')">-->
-<!--                                    <span aria-hidden="true">&times;</span>-->
-<!--                                </button>-->
-<!--                            </div>-->
-<!--                            <div class="modal-body">-->
-<!--                                <div class="cover">-->
-<!--                                    <img [src]="imageUrl + team.avatar" alt="">-->
-<!--                                </div>-->
-<!--                                <p class="job"> {{team.position.en}}</p>-->
-<!--                                <p [innerHTML]="team.info.en"></p>-->
-<!--                            </div>-->
-<!--                            <div class="modal-footer">-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                    </ng-template>-->
-
-<!--                    <h6>{{team.position.en}}</h6>-->
+<!--                <div class="col-lg-3 one">-->
+<!--                    <img src="./assets/images/Mask Group 9.png" alt="">-->
+<!--                    <h6><b>EDUARD</b></h6>-->
+<!--                    <h6>CEO</h6>-->
+<!--                </div>-->
+<!--                <div class="col-lg-3 two">-->
+<!--                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus impedit labore possimus-->
+<!--                        praesentium quas-->
+<!--                        repellendus voluptates voluptatum. Accusantium consequuntur culpa deserunt, dolorem dolores-->
+<!--                        earum eveniet-->
+<!--                        molestiae numquam, saepe sunt tenetur!</p>-->
+<!--                </div>-->
+<!--                <div class="col-lg-3 three">-->
+<!--                    <img src="./assets/images/Mask Group 9.png" alt="">-->
+<!--                    <h6><b>EDUARD</b></h6>-->
+<!--                    <h6>CEO</h6>-->
 <!--                </div>-->
 <!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
+            <div class="row">
+                <div class="col-4 three" *ngFor='let team of teams' (click)="onClick(team, customModal)">
+                    <img [src]="imageUrl + team.avatar" alt="">
+                    <h6><b>{{team.fullName.en}}</b></h6>
 
-<!--</div>-->
-<!--<div class="row d-sm-block d-md-none">-->
-<!--    <div class="col-sm-12 mobil-team" *ngFor='let team of teams'>-->
-<!--        <img [src]="imageUrl + team.avatar" alt="" class="m-auto">-->
-<!--        <h6><b>{{team.fullName.en}}</b></h6>-->
+                    <ng-template #customModal let-modal>
+                        <div class="fff">
+                            <div class="modal-header">
+                                <h5 class="modal-title name">{{team.fullName.en}}</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"
+                                        (click)="modal.close('Close click')">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <div class="cover">
+                                    <img [src]="imageUrl + team.avatar" alt="">
+                                </div>
+                                <p class="job"> {{team.position.en}}</p>
+                                <p [innerHTML]="team.info.en"></p>
+                            </div>
+                            <div class="modal-footer">
+                            </div>
+                        </div>
+                    </ng-template>
 
-<!--    </div>-->
-<!--</div>-->
+                    <h6>{{team.position.en}}</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<div class="row d-sm-block d-md-none">
+    <div class="col-sm-12 mobil-team" *ngFor='let team of teams'>
+        <img [src]="imageUrl + team.avatar" alt="" class="m-auto">
+        <h6><b>{{team.fullName.en}}</b></h6>
+
+    </div>
+</div>
 
 
