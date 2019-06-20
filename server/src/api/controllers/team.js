@@ -1,4 +1,4 @@
-import Team from '../../admin/models/Team';
+import Team from '@admin/models/Team';
 
 module.exports.getAll = (req, res) => {
     Team.find({})

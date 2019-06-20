@@ -1,5 +1,5 @@
 import Client from '../models/client';
-import helper from '../../_helpers/functions';
+import helper from '@helpers/functions';
 import bcrypt from 'bcrypt';
 import randomsPass from 'randomstring';
 

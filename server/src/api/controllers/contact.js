@@ -1,4 +1,4 @@
-import helper from '../../_helpers/functions'
+import helper from '@helpers/functions'
 
 module.exports = {
     sendMail(req, res, next) {

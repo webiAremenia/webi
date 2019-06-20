@@ -3,7 +3,7 @@
 // const category = require('../../controllers/category');
 
 import express from 'express';
-import category from '../../controllers/category';
+import category from '@admin/controllers/category';
 
 
 const router = express.Router();
