@@ -1,8 +1,9 @@
 .process {
-    height: 100vh;
     color: #ffffff;
     font-family: 'Poppins', sans-serif;
-
+    @media (max-width: 750px){
+        height: 80vh;
+    }
 }
 
 p {

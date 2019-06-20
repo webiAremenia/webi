@@ -16,10 +16,12 @@ export class FooterComponent implements OnInit {
     address;
     emailPattern = '^[a-z0-9._%+-]{5,15}@[a-z0-9.-]+\.[a-z]{2,4}$';
 
-    constructor(private formBuilder: FormBuilder, private contact: ContactService,
-                private  settingsService: SettingService) {
+    constructor(
+        private formBuilder: FormBuilder,
+        private contact: ContactService,
+        private  settingsService: SettingService
+    ) {
         this.myForm = formBuilder.group({
-
             firstName: ['', [Validators.required]],
             email: ['', [Validators.required, Validators.pattern(this.emailPattern)]],
             message: ['', [Validators.required, Validators.minLength(10)]],
@@ -33,7 +35,6 @@ export class FooterComponent implements OnInit {
     }
 
     submit() {
-        console.log(this.myForm.value);
         this.contact.sendEmail(this.myForm.value).subscribe(
             data => {
                 if (data.success) {
