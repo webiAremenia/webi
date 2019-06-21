@@ -13,7 +13,7 @@ export class SliderComponent implements OnInit {
         pullDrag: false,
         dots: false,
         navSpeed: 700,
-        navText: ['<img src="./assets/images/Path 2926.png"/>', '<img src="./assets/images/Path 2927.png"/>'],
+        navText: ['<img src="./assets/images/prew-button.png" alt=""/>', '<img src="./assets/images/next-button.png" alt=""/>'],
         navClass: ['', ''],
         responsive: {
             0: {

@@ -29,7 +29,8 @@ p {
     font-family: 'Poppins', sans-serif ;
     font-size: 45px;
     color: #ffffff;
-    line-height: 4.5;
+    line-height: 1.6;
+    margin-top: 50px;
   }
 }
 .ball{
@@ -62,7 +63,10 @@ button:active {
 .anime {
     width: 100%;
 }
-#effect{
+#myCanvas{
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
 }
 .ball {
     background-color: transparent;

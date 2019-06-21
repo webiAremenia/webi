@@ -16,11 +16,18 @@
     background: none;
     outline-style: none;
 }
+.subTitle{
+    opacity: 0.78;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.35;
+    margin-bottom: 1rem;
 
+}
 .line {
-    width: 100px;
-    border: 1px solid lightgrey;
-    margin: 20px 0 30px 0;
+    width: 80px;
+    border: 1px solid #ffffff;
+    margin: 20px 0;
 }
 
 .one {
@@ -93,7 +100,7 @@ h6 {
 .btnImg {
     transform: rotate(90deg);
     padding-bottom: 8px;
-    transition: all 1s;
+    /*transition: all 1s;*/
 }
 
 .custom-button button:hover {
