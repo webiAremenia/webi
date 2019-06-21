@@ -102,7 +102,7 @@ module.exports.update = (req, res) => {
                 })
             } else {
                 if (req.file) {
-                    fs.unlink(__dirname + `/../../_uploads/team/${result.avatar}`, (err) => {
+                    fs.unlink(__dirname + `/../../../_uploads/team/${result.avatar}`, (err) => {
                         if (err) {
                             console.log(err)
                         }
@@ -151,7 +151,7 @@ module.exports.delete = (req, res) => {
                     msg: "Team not found with id " + req.params.id
                 })
             } else {
-                fs.unlink(__dirname + `/../../_uploads/team/${result.avatar}`, (err) => {
+                fs.unlink(__dirname + `/../../../_uploads/team/${result.avatar}`, (err) => {
                     if (err) {
                         console.log(err)
                     }

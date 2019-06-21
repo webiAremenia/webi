@@ -103,7 +103,7 @@ module.exports.update = async (req, res) => {
                 })
             } else {
                 if (req.file) {
-                    fs.unlink(__dirname + `/../../_uploads/news/${result.banner}`, (err) => {
+                    fs.unlink(__dirname + `/../../../_uploads/news/${result.banner}`, (err) => {
                         if (err) {
                             console.log(err)
                         }
@@ -133,12 +133,12 @@ module.exports.delete = (req, res) => {
                     msg: "News not found with id " + req.params.id
                 })
             } else {
-                fs.unlink(__dirname + `/../../_uploads/news/${result.banner}`, (err) => {
+                fs.unlink(__dirname + `/../../../_uploads/news/${result.banner}`, (err) => {
                     if (err) {
                         console.log(err)
                     }
                 });
-                rimraf.sync(__dirname + `/../../_uploads/news/ckeditor/${result.random}`);
+                rimraf.sync(__dirname + `/../../../_uploads/news/ckeditor/${result.random}`);
 
 
                 res.status(200).json({
@@ -165,12 +165,12 @@ module.exports.ckEditorAddImage = (req, res) => {
 
 module.exports.ckEditorDeleteImage = (req, res) => {
     let name = req.query.name;
-    fs.unlinkSync(__dirname + `/../../_uploads/news/ckeditor/${name}`);
+    fs.unlinkSync(__dirname + `/../../../_uploads/news/ckeditor/${name}`);
     res.status(201).json({
         msg: 'CkImage has been removed'
     })
 };
 module.exports.deleteNoEmptyDir = (req, res) => {
     console.log(1111111111111)
-    rimraf.sync(__dirname + `/../../_uploads/news/ckeditor/${req.params.dir}`);
-}
+    rimraf.sync(__dirname + `/../../../_uploads/news/ckeditor/${req.params.dir}`);
+};

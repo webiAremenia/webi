@@ -56,7 +56,7 @@ export class SettingService {
     getOne(id): Observable<Setting> {
         return this.http.get(`${this.query}setting/${id}`)
             .pipe(map(data => {
-                return data.data;
+                return data['data'];
             }));
     }
 }

@@ -114,7 +114,7 @@ module.exports.update = (req, res) => {
                 })
             } else {
                 if (req.file) {
-                    fs.unlink(__dirname + `/../../_uploads/portfolio/${result.image}`, (err) => {
+                    fs.unlink(__dirname + `/../../../_uploads/portfolio/${result.image}`, (err) => {
                         if (err) {
                             console.log(err)
                         }
@@ -144,12 +144,12 @@ module.exports.delete = (req, res) => {
                     msg: "Portfolio not found with id " + req.params.id
                 })
             } else {
-                fs.unlink(__dirname + `/../../_uploads/portfolio/${result.image}`, (err) => {
+                fs.unlink(__dirname + `/../../../_uploads/portfolio/${result.image}`, (err) => {
                     if (err) {
                         console.log(err)
                     }
                 });
-                rimraf.sync(__dirname + `/../../_uploads/portfolio/ckeditor/${result.random}`);
+                rimraf.sync(__dirname + `/../../../_uploads/portfolio/ckeditor/${result.random}`);
                 res.status(200).json({
                     success: true,
                     msg: "Portfolio deleted successfully!",
@@ -176,12 +176,12 @@ module.exports.ckEditorAddImage = (req, res) => {
 
 module.exports.ckEditorDeleteImage = (req, res) => {
     let name = req.query.name;
-    fs.unlinkSync(__dirname + `/../../_uploads/portfolio/ckeditor/${name}`);
+    fs.unlinkSync(__dirname + `/../../../_uploads/portfolio/ckeditor/${name}`);
     res.status(201).json({
         msg: 'CkImage has been removed'
     })
 };
 module.exports.deleteNoEmptyDir = (req, res) => {
-    rimraf.sync(__dirname + `/../../_uploads/portfolio/ckeditor/${req.params.dir}`);
+    rimraf.sync(__dirname + `/../../../_uploads/portfolio/ckeditor/${req.params.dir}`);
 }
 
