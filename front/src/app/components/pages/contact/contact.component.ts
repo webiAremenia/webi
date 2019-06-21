@@ -1,9 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 
-import {Test} from '../../_models/tets';
-import {ContactService} from '../../_services/contact.service';
-
-
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
