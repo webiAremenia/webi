@@ -1,4 +1,5 @@
 import nodeMailer from 'nodemailer';
+import smtpTransport from  'nodemailer-smtp-transport';
 import Setting from '../admin/models/Setting';
 import 'babel-polyfill';
 
@@ -9,23 +10,20 @@ module.exports = {
         });
     },
     sendMail: (res, from, html) => {
-        res.status(200).json({success: true});
         Setting.findOne({key: 'form-email'}).exec()
             .then(set => {
-                console.log(set);
                 if (set) {
-                    let transporter = nodeMailer.createTransport({
+                    let transporter = nodeMailer.createTransport(smtpTransport({
+                        service: 'gmail',
                         host: 'smtp.gmail.com',
-                        port: 465,
-                        secure: true,
                         auth: {
-                            user: 'hayrapet2013@gmail.com',
-                            pass: '392175art'
+                            user: 'webi.contact.mail@gmail.com',
+                            pass: 'Armenia19'
                         }
-                    });
+                    }));
                     let mailOptions = {
-                        from: '', // sender address
-                        to: set.value.en, // list of receivers
+                        from: from, // sender address
+                        to: set.value['en'], // list of receivers
                         subject: 'WEBI contact form "' + from + '"', // Subject line
                         // text: content, // plain text body
                         html: html // html body
@@ -46,17 +44,17 @@ module.exports = {
             .catch(e => this.errorHandler(res, e));
 
     },
+
+
     sendAccount: (res, html, to) => {
-        res.status(200).json({success: true});
-        let transporter = nodeMailer.createTransport({
+        let transporter = nodeMailer.createTransport(smtpTransport({
+            service: 'gmail',
             host: 'smtp.gmail.com',
-            port: 465,
-            secure: true,
             auth: {
-                user: 'hayrapet2013@gmail.com',
-                pass: '392175art'
+                user: 'webi.contact.mail@gmail.com',
+                pass: 'Armenia19'
             }
-        });
+        }));
         let mailOptions = {
             from: '', // sender address
             to: to, // list of receivers
