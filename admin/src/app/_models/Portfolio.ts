@@ -7,5 +7,6 @@ export class Portfolio {
   enTitle: String;
   ruTitle: String;
   amTitle: String;
-  img : String;
+  img: String;
+  random: String;
 }

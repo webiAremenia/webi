@@ -33,15 +33,38 @@
         <p *ngIf="porfolioForm.get('enTitle').invalid && porfolioForm.get('enTitle').touched" class="invalid">Type en
           Title</p>
 
+        <label translate>Hover</label>
+        <textarea class="form-control" placeholder="en" rows="3" formControlName="enHover"
+                  *ngIf="language=='en'"></textarea>
+        <textarea class="form-control" placeholder="ru" rows="3" formControlName="ruHover"
+                  *ngIf="language=='ru'"></textarea>
+        <textarea class="form-control" placeholder="am" rows="3" formControlName="amHover"
+                  *ngIf="language=='am'"></textarea>
+
+
+        <label translate>Short Description</label>
+        <textarea class="form-control" placeholder="en" rows="3" formControlName="enShortDescription"
+                  *ngIf="language=='en'"></textarea>
+        <textarea class="form-control" placeholder="ru" rows="3" formControlName="ruShortDescription"
+                  *ngIf="language=='ru'"></textarea>
+        <textarea class="form-control" placeholder="am" rows="3" formControlName="amShortDescription"
+                  *ngIf="language=='am'"></textarea>
+        <p *ngIf="porfolioForm.get('enShortDescription').invalid && porfolioForm.get('enShortDescription').touched"
+           class="invalid">Type en
+          Title</p>
+
       </div>
 
 
       <div class="form-group">
         <label translate>Description</label>
 
-        <ckeditor *ngIf="language=='en'" tagName="input" formControlName="enDescription" [editor]="Editor"></ckeditor>
-        <ckeditor *ngIf="language=='ru'" tagName="input" formControlName="ruDescription" [editor]="Editor"></ckeditor>
-        <ckeditor *ngIf="language=='am'" tagName="input" formControlName="amDescription" [editor]="Editor"></ckeditor>
+        <ckeditor *ngIf="language=='en'" [editor]="Editor" [config]="ckconfig" tagName="input"
+                  formControlName="enDescription"></ckeditor>
+        <ckeditor *ngIf="language=='ru'" [editor]="Editor" [config]="ckconfig" tagName="input"
+                  formControlName="ruDescription"></ckeditor>
+        <ckeditor *ngIf="language=='am'" [editor]="Editor" [config]="ckconfig" tagName="input"
+                  formControlName="amDescription"></ckeditor>
 
         <p *ngIf="porfolioForm.get('enDescription').invalid && porfolioForm.get('enDescription').touched"
            class="invalid">Type en Description</p>

@@ -2,7 +2,6 @@ import {Component, OnInit} from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {DataService} from '../../../../_services/data.service';
 import {Router} from '@angular/router';
-import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
 @Component({
   selector: 'app-team-create',
@@ -12,7 +11,6 @@ import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 export class TeamCreateComponent implements OnInit {
   teamForm: FormGroup;
   language: String = 'en';
-  public Editor = ClassicEditor;
 
   constructor(private formBuilder: FormBuilder, private dataService: DataService, private router: Router) {
   }
