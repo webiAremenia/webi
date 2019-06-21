@@ -1,4 +1,4 @@
-import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {TeamService} from '../../../_services/team.service';
 import {Team} from '../../../_models/team';
 import {SettingService} from '../../../_services/setting.service';
@@ -9,7 +9,7 @@ import {Globals} from '../../../../app.globals';
     templateUrl: './team.component.html',
     styleUrls: ['./team.component.css']
 })
-export class TeamComponent implements OnInit {
+export class TeamComponent implements OnInit, AfterViewInit {
     visible = true;
     done = false;
     team: Team[];
@@ -30,7 +30,7 @@ export class TeamComponent implements OnInit {
         this.getTeam();
         this.title = this.settingsService.getValueByKeyLanguage('home-team-title', 'en');
         this.text = this.settingsService.getValueByKeyLanguage('home-team-text', 'en');
-
+        this.visible = true;
     }
 
     onClick() {
@@ -51,6 +51,9 @@ export class TeamComponent implements OnInit {
             },
             err => console.log(err)
         );
+    }
+    ngAfterViewInit(): void {
+        this.visible = true;
     }
 }
 

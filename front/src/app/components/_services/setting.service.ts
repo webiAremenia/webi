@@ -37,14 +37,11 @@ export class SettingService {
                     }
                 }),
                 catchError(err => {
-                    console.log(err);
                     return throwError(err);
                 }));
     }
 
     getValueByKeyLanguage(key, language) {
-        alert(key);
-        // console.log();
         if (this.settings && this.settings.filter(r => r.key === key).length > 0) {
             const el = this.settings.filter(r => r.key === key)[0].value;
             return el[language] !== '' ? el[language] : el.en;
