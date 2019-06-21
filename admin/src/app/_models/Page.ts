@@ -10,4 +10,5 @@ export class Page {
   ruContent: String;
   amContent: String;
   banner: String;
+  random: String;
 }

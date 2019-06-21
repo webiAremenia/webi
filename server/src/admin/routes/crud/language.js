@@ -1,5 +1,5 @@
 import express from 'express';
-import language from '../../controllers/language';
+import language from '@admin/controllers/language';
 
 const router = express.Router();
 

@@ -100,7 +100,7 @@ h6 {
 .btnImg {
     transform: rotate(90deg);
     padding-bottom: 8px;
-    transition: all 1s;
+    /*transition: all 1s;*/
 }
 
 .custom-button button:hover {

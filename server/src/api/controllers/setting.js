@@ -1,4 +1,4 @@
-import Setting from '../../admin/models/Setting';
+import Setting from '@admin/models/Setting';
 
 module.exports.getAll = (req, res) => {
     Setting.find({})

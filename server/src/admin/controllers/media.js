@@ -97,7 +97,7 @@ module.exports.update = async (req, res) => {
                 })
             } else {
                 if (req.file) {
-                    fs.unlink(__dirname + `/../../_uploads/media/${result.image}`, (err) => {
+                    fs.unlink(__dirname + `/../../../_uploads/media/${result.image}`, (err) => {
                         if (err) {
                             console.log(err)
                         }
@@ -127,7 +127,7 @@ module.exports.delete = (req, res) => {
                     msg: "Media not found with id " + req.params.id
                 })
             } else {
-                fs.unlink(__dirname + `/../../_uploads/media/${result.image}`, (err) => {
+                fs.unlink(__dirname + `/../../../_uploads/media/${result.image}`, (err) => {
                     if (err) {
                         console.log(err)
                     }

@@ -1,6 +1,6 @@
 import Admin from '../models/admin';
 import bcrypt from 'bcrypt';
-import helper from '../../_helpers/functions';
+import helper from '@helpers/functions';
 
 
 exports.create = (req, res, next) => {

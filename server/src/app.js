@@ -35,7 +35,7 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
 
-app.use('/uploads', express.static(__dirname + '/_uploads'));
+app.use('/uploads', express.static(__dirname + '/../_uploads'));
 app.use('/admin', adminRoutes);
 app.use('/api', api);
 app.use('/client', clientRoutes);

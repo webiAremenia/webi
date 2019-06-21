@@ -5,6 +5,61 @@ import {Router} from '@angular/router';
 import {ItemService} from '../../../../_services/item.service';
 import {Page} from '../../../../_models/Page';
 import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import {Globals} from "../../../../app.globals";
+import {CkeditorService} from "../../../../_services/ckeditor.service";
+
+class UploadAdapter {
+  loader;  // your adapter communicates to CKEditor through this
+  url;
+  service;
+  imageName;
+  dir;
+  random;
+
+  constructor(loader, service, dir, random, url) {
+    this.random = random;
+    this.dir = dir;
+    this.service = service;
+    this.loader = loader;
+    this.url = url + 'uploads/page/ckeditor/' + this.dir + '/';
+  }
+
+  upload() {
+    return new Promise((resolve, reject) => {
+      // console.log('UploadAdapter upload called', this.loader, this.url);
+      console.log('uploading');
+      this.loader.file.then(f => {
+        const form = new FormData();
+        form.append('random', this.random);
+        form.append('dirName', this.dir);
+        form.append('image', f);
+        this.imageName = this.random + f.name;
+
+        // console.log('random ', this.random);
+        // console.log('dirName ', this.dir);
+        // console.log('image ', f);
+        this.service.ckEditorSaveImage(form, 'page').subscribe(d => {
+            resolve({default: this.url + this.random + f.name});
+          },
+          e => console.log(e)
+        );
+      });
+    });
+  }
+
+  // Aborts the upload process.
+  abort() {
+    console.log('Abort');
+    this.service.ckEditorDeletePortfolioImage(this.dir + '/' + this.imageName).subscribe(d => {
+        console.log('22222');
+        console.log(d);
+      },
+      e => console.log(e)
+    );
+  }
+
+}
+
 
 @Component({
   selector: 'app-page-edit',
@@ -16,12 +71,26 @@ export class PageEditComponent implements OnInit {
   pageForm: FormGroup;
   language: String = 'en';
   done: boolean;
+  public ckconfig: any;
   public Editor = ClassicEditor;
+  randomString;
+  dirName;
+  url;
+  saved = false;
 
-  constructor(private formBuilder: FormBuilder, private dataService: DataService, private router: Router, private itemService: ItemService) {
+  constructor(
+    private formBuilder: FormBuilder,
+    private dataService: DataService,
+    private router: Router,
+    private itemService: ItemService,
+    private globals: Globals,
+    private ckService: CkeditorService
+  ) {
     if (!this.itemService.page) {
       this.router.navigate(['admin/page']);
     }
+    this.url = this.globals.queryUrl;
+    this.initEditor();
   }
 
   ngOnInit() {
@@ -39,7 +108,21 @@ export class PageEditComponent implements OnInit {
       enContent: [this.page['content'].en, Validators.required],
       img: [this.page['banner']],
     });
+    this.randomString = this.page.random;
+    this.dirName = this.page.random;
 
+  }
+
+  theUploadAdapterPlugin = (editor) => {
+    editor.plugins.get('FileRepository').createUploadAdapter = (loader) => {
+      return new UploadAdapter(loader, this.ckService, this.dirName, this.randomString += 's', this.url);
+    };
+  }
+
+  public initEditor() {
+    this.ckconfig = {
+      extraPlugins: [this.theUploadAdapterPlugin]
+    };
   }
 
   myPage() {

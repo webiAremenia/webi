@@ -1,4 +1,4 @@
-import Language from '../../admin/models/Language';
+import Language from '@admin/models/Language';
 
 module.exports.getAll = (req, res) => {
     Language.find({})

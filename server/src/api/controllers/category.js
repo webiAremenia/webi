@@ -1,4 +1,4 @@
-import Category from '../../admin/models/Category';
+import Category from '@admin/models/Category';
 
 module.exports.getAll = (req, res) => {
     Category.find({})

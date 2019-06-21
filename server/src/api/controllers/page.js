@@ -1,4 +1,4 @@
-import Page from '../../admin/models/Page';
+import Page from '@admin/models/Page';
 
 module.exports.getAll = (req, res) => {
     Page.find({})

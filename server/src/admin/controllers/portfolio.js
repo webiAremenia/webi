@@ -2,6 +2,9 @@
 const fs = require('fs');
 import Portfolio from '../models/Portfolio'
 
+const rimraf = require("rimraf");
+
+
 module.exports.getAll = (req, res) => {
     const portfolios = Portfolio.find({})
         .then(result => {
@@ -50,7 +53,10 @@ module.exports.create = (req, res) => {
         url: req.body.url,
         image: req.file.filename,
         title: JSON.parse(req.body.title),
-        description: JSON.parse(req.body.description)
+        description: JSON.parse(req.body.description),
+        hover: JSON.parse(req.body.hover),
+        shortDescription: JSON.parse(req.body.shortDescription),
+        random: req.body.random
     });
     portfolio.save()
         .then(result => {
@@ -87,7 +93,17 @@ module.exports.update = (req, res) => {
             // console.log(3)
             update.title = JSON.parse(req.body.title)
         }
+        if (req.body.hover) {
+            // console.log(3)
+            update.hover = JSON.parse(req.body.hover)
+        }
+        if (req.body.shortDescription) {
+            // console.log(3)
+            update.shortDescription = JSON.parse(req.body.shortDescription)
+        }
+
     }
+
 
     Portfolio.findByIdAndUpdate({_id: req.params.id}, update)
         .then(result => {
@@ -98,7 +114,7 @@ module.exports.update = (req, res) => {
                 })
             } else {
                 if (req.file) {
-                    fs.unlink(__dirname + `/../../_uploads/portfolio/${result.image}`, (err) => {
+                    fs.unlink(__dirname + `/../../../_uploads/portfolio/${result.image}`, (err) => {
                         if (err) {
                             console.log(err)
                         }
@@ -128,11 +144,12 @@ module.exports.delete = (req, res) => {
                     msg: "Portfolio not found with id " + req.params.id
                 })
             } else {
-                fs.unlink(__dirname + `/../../_uploads/portfolio/${result.image}`, (err) => {
+                fs.unlink(__dirname + `/../../../_uploads/portfolio/${result.image}`, (err) => {
                     if (err) {
                         console.log(err)
                     }
                 });
+                rimraf.sync(__dirname + `/../../../_uploads/portfolio/ckeditor/${result.random}`);
                 res.status(200).json({
                     success: true,
                     msg: "Portfolio deleted successfully!",
@@ -149,4 +166,22 @@ module.exports.delete = (req, res) => {
 
 
 };
+
+module.exports.ckEditorAddImage = (req, res) => {
+    // console.log('eeeeeeeeeeeeeee' + req.file.filename)
+    res.status(201).json({
+        filename: req.file.filename
+    })
+}
+
+module.exports.ckEditorDeleteImage = (req, res) => {
+    let name = req.query.name;
+    fs.unlinkSync(__dirname + `/../../../_uploads/portfolio/ckeditor/${name}`);
+    res.status(201).json({
+        msg: 'CkImage has been removed'
+    })
+};
+module.exports.deleteNoEmptyDir = (req, res) => {
+    rimraf.sync(__dirname + `/../../../_uploads/portfolio/ckeditor/${req.params.dir}`);
+}
 

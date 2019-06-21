@@ -2,6 +2,8 @@
 const fs = require('fs');
 import News from '../models/News'
 
+const rimraf = require("rimraf");
+
 module.exports.getAll = (req, res) => {
     News.find({})
         .then(result => {
@@ -37,8 +39,6 @@ module.exports.getOne = (req, res) => {
 };
 
 module.exports.create = (req, res) => {
-    console.log(req.body)
-
     if (!req.file) {
         return res.status(500).json({
             success: false,
@@ -49,7 +49,8 @@ module.exports.create = (req, res) => {
         title: JSON.parse(req.body.title),
         description: JSON.parse(req.body.description),
         content: JSON.parse(req.body.content),
-        banner: req.file.filename
+        banner: req.file.filename,
+        random: req.body.random
     });
     news.save()
         .then(result => {
@@ -102,7 +103,7 @@ module.exports.update = async (req, res) => {
                 })
             } else {
                 if (req.file) {
-                    fs.unlink(__dirname + `/../../_uploads/news/${result.banner}`, (err) => {
+                    fs.unlink(__dirname + `/../../../_uploads/news/${result.banner}`, (err) => {
                         if (err) {
                             console.log(err)
                         }
@@ -132,11 +133,14 @@ module.exports.delete = (req, res) => {
                     msg: "News not found with id " + req.params.id
                 })
             } else {
-                fs.unlink(__dirname + `/../../_uploads/news/${result.banner}`, (err) => {
+                fs.unlink(__dirname + `/../../../_uploads/news/${result.banner}`, (err) => {
                     if (err) {
                         console.log(err)
                     }
                 });
+                rimraf.sync(__dirname + `/../../../_uploads/news/ckeditor/${result.random}`);
+
+
                 res.status(200).json({
                     success: true,
                     msg: "News deleted successfully!",
@@ -153,4 +157,20 @@ module.exports.delete = (req, res) => {
 
 
 };
+module.exports.ckEditorAddImage = (req, res) => {
+    res.status(201).json({
+        filename: req.file.filename
+    })
+}
 
+module.exports.ckEditorDeleteImage = (req, res) => {
+    let name = req.query.name;
+    fs.unlinkSync(__dirname + `/../../../_uploads/news/ckeditor/${name}`);
+    res.status(201).json({
+        msg: 'CkImage has been removed'
+    })
+};
+module.exports.deleteNoEmptyDir = (req, res) => {
+    console.log(1111111111111)
+    rimraf.sync(__dirname + `/../../../_uploads/news/ckeditor/${req.params.dir}`);
+};

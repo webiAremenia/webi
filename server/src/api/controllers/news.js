@@ -1,4 +1,4 @@
-import News from '../../admin/models/News';
+import News from '@admin/models/News';
 
 module.exports.getAll = (req, res) => {
     News.find({})
