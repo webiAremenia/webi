@@ -1,11 +1,6 @@
-// const express = require('express');
-// const router = express.Router();
-// const upload = require('../../middleware/multer');
-// const page = require('../../controllers/page');
-
 import express from 'express';
-import page from '../../controllers/page';
-import upload from '../../middleware/multer';
+import page from '@admin/controllers/page';
+import upload from '@admin/middleware/multer';
 
 
 const router = express.Router();
@@ -13,12 +8,9 @@ const router = express.Router();
 
 router.get('/', page.getAll);
 router.get('/:id', page.getOne);
-router.post('/',upload.single('img'), page.create);
-router.put('/:id',upload.single('img'), page.update);
+router.post('/', upload.single('img'), page.create);
+router.put('/:id', upload.single('img'), page.update);
 router.delete('/:id', page.delete);
-
-
-
 
 
 module.exports = router;

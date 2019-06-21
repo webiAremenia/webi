@@ -1,4 +1,4 @@
-import Media from '../../admin/models/Media';
+import Media from '@admin/models/Media';
 
 module.exports.getAll = (req, res) => {
     Media.find({})

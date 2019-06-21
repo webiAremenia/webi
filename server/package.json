@@ -19,6 +19,7 @@
     "express": "^4.16.3",
     "jsonwebtoken": "^8.5.1",
     "migrate-mongo": "^5.0.1",
+    "module-alias": "^2.2.0",
     "mongoose": "^5.5.6",
     "morgan": "^1.9.1",
     "multer": "^1.4.1",
@@ -46,5 +47,10 @@
     "webi",
     "armenia",
     "development"
-  ]
+  ],
+  "_moduleAliases": {
+    "@admin": "./src/admin",
+    "@api": "./src/api",
+    "@helpers": "./src/_helpers"
+  }
 }

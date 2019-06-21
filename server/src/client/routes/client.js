@@ -1,7 +1,7 @@
 import express from 'express';
 import controller from '../controllers/client';
 import invoice from '../controllers/invoice';
-import isAdmin from '../../admin/middleware/check-auth';
+import isAdmin from '@admin/middleware/check-auth';
 import checkAuth from '../_middleware/client-check-auth';
 
 const router = express.Router();

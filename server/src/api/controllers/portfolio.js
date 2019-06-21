@@ -1,4 +1,4 @@
-import Portfolio from '../../admin/models/Portfolio';
+import Portfolio from '@admin/models/Portfolio';
 
 module.exports.getAll = (req, res) => {
     Portfolio.find({})

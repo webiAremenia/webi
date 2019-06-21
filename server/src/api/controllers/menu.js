@@ -1,4 +1,4 @@
-import Menu from '../../admin/models/Menu';
+import Menu from '@admin/models/Menu';
 
 module.exports.getAll = (req, res) => {
     Menu.find()
