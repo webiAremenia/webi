@@ -43,9 +43,12 @@
         <div class="form-group">
           <label translate>Info</label>
 
-          <ckeditor *ngIf="language=='en'" tagName="input" formControlName="enInfo" [editor]="Editor"></ckeditor>
-          <ckeditor *ngIf="language=='ru'" tagName="input" formControlName="ruInfo" [editor]="Editor"></ckeditor>
-          <ckeditor *ngIf="language=='am'" tagName="input" formControlName="amInfo" [editor]="Editor"></ckeditor>
+          <textarea class="form-control" placeholder="en" rows="3" formControlName="enInfo"
+                    *ngIf="language=='en'"></textarea>
+          <textarea class="form-control" placeholder="ru" rows="3" formControlName="ruInfo"
+                    *ngIf="language=='ru'"></textarea>
+          <textarea class="form-control" placeholder="am" rows="3" formControlName="amInfo"
+                    *ngIf="language=='am'"></textarea>
 
           <p *ngIf="teamForm.get('enInfo').invalid && teamForm.get('enInfo').touched"
              class="invalid">Type en Description</p>

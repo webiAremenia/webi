@@ -10,4 +10,5 @@ export class News {
   ruContent: String;
   amContent: String;
   banner: String;
+  random: String;
 }

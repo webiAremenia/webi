@@ -32,9 +32,12 @@
       <div class="form-group">
         <label translate>Description</label>
 
-        <ckeditor *ngIf="language=='en'" tagName="input" formControlName="enDescription" [editor]="Editor"></ckeditor>
-        <ckeditor *ngIf="language=='ru'" tagName="input" formControlName="ruDescription" [editor]="Editor"></ckeditor>
-        <ckeditor *ngIf="language=='am'" tagName="input" formControlName="amDescription" [editor]="Editor"></ckeditor>
+        <textarea class="form-control" placeholder="en" rows="3" formControlName="enDescription"
+                  *ngIf="language=='en'"></textarea>
+        <textarea class="form-control" placeholder="ru" rows="3" formControlName="ruDescription"
+                  *ngIf="language=='ru'"></textarea>
+        <textarea class="form-control" placeholder="am" rows="3" formControlName="amDescription"
+                  *ngIf="language=='am'"></textarea>
 
         <p *ngIf="pageForm.get('enDescription').invalid && pageForm.get('enDescription').touched"
            class="invalid">Type en Description</p>

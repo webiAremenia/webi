@@ -43,10 +43,11 @@ export class SettingService {
     }
 
     getValueByKeyLanguage(key, language) {
+        alert(key);
         // console.log();
         if (this.settings && this.settings.filter(r => r.key === key).length > 0) {
-            const el = this.settings.filter(r => r.key === key)[0]['value'];
-            return el[language] !== '' ? el[language] : el['en'];
+            const el = this.settings.filter(r => r.key === key)[0].value;
+            return el[language] !== '' ? el[language] : el.en;
         } else {
             return '';
         }
@@ -55,7 +56,7 @@ export class SettingService {
     getOne(id): Observable<Setting> {
         return this.http.get(`${this.query}setting/${id}`)
             .pipe(map(data => {
-                return data['data'];
+                return data.data;
             }));
     }
 }
