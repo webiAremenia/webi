@@ -1,5 +1,5 @@
 <div class="my-container teamCont" *ngIf="team">
-    <div class="row team">
+    <div class="team">
         <div class="row teamMain">
 
 
@@ -13,12 +13,11 @@
 
             <div class="col-12 col-sm-12 col-md-5 offset-md-1 col-lg-3 offset-lg-0 pr-xs-5 pr-sm-5 one">
                 <div class="image">
-
                     <img [src]="imageUrl + team[0].avatar" alt="">
                 </div>
                 <h6><b>{{team[0].fullName.en}}</b></h6>
                 <h6>{{team[0].position.en}}</h6>
-                <p [innerHTML]='team[0].info.en'></p>
+<!--                <p [innerHTML]='team[0].info.en'></p>-->
 <!--                <a class=" d-none d-sm-block"><img src="./assets/images/Group 1620.png" alt=""></a>-->
             </div>
 
@@ -28,7 +27,7 @@
                 </div>
                 <h6><b>{{team[1].fullName.en}}</b></h6>
                 <h6>{{ team[1].position.en}}</h6>
-                <p [innerHTML]='team[1].info.en'></p>
+<!--                <p [innerHTML]='team[1].info.en'></p>-->
             </div>
 
         </div>
@@ -37,7 +36,7 @@
     <div class="row">
         <div class="col-12 custom-button d-none d-sm-block">
             <button class="btn btn-link" (click)="onClick()">
-                <img #btnImg src="./assets/images/Group 1620.png">
+                <img #btnImg src="./assets/images/Group 1620.png" alt="">
             </button>
         </div>
     </div>
