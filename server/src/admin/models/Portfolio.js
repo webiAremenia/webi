@@ -28,6 +28,15 @@ const portfolioSchema = new Schema({
         type: Object,
         default: {en: '', ru: '', am: ''}
     },
+    shortDescription: {
+        type: Object,
+        default: {en: '', ru: '', am: ''}
+    },
+    hover: {
+        type: Object,
+        default: null
+    },
+    random: String
 });
 
 

@@ -26,6 +26,7 @@
     "nodemailer": "^6.1.1",
     "nodemailer-smtp-transport": "^2.7.4",
     "randomstring": "^1.1.5",
+    "rimraf": "^2.6.3",
     "sharp": "^0.22.1",
     "winston": "^3.2.1"
   },

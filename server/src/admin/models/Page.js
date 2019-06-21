@@ -27,7 +27,8 @@ const pageSchema = new Schema({
         type: Date,
         required: true,
         default: new Date()
-    }
+    },
+    random : String
 });
 
 

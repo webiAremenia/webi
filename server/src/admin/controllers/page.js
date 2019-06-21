@@ -1,6 +1,7 @@
 // const Page = require('../models/Page');
 const fs = require('fs');
 import Page from '../models/Page'
+const rimraf = require("rimraf");
 
 module.exports.getAll = (req, res) => {
     const pages = Page.find({})
@@ -48,7 +49,8 @@ module.exports.create = (req, res) => {
         title: JSON.parse(req.body.title),
         description: JSON.parse(req.body.description),
         content: JSON.parse(req.body.content),
-        banner: req.file.filename
+        banner: req.file.filename,
+        random : req.body.random
     });
     page.save()
         .then(result => {
@@ -136,6 +138,8 @@ module.exports.delete = (req, res) => {
                         console.log(err)
                     }
                 });
+                rimraf.sync(__dirname + `/../../_uploads/page/ckeditor/${result.random}`);
+
                 res.status(200).json({
                     success: true,
                     msg: "Page deleted successfully!",
@@ -152,4 +156,22 @@ module.exports.delete = (req, res) => {
 
 
 };
+
+module.exports.ckEditorAddImage = (req, res) => {
+    // console.log('eeeeeeeeeeeeeee' + req.file.filename)
+    res.status(201).json({
+        filename: req.file.filename
+    })
+}
+
+module.exports.ckEditorDeleteImage = (req, res) => {
+    let name = req.query.name;
+    fs.unlinkSync(__dirname + `/../../_uploads/page/ckeditor/${name}`);
+    res.status(201).json({
+        msg: 'CkImage has been removed'
+    })
+};
+module.exports.deleteNoEmptyDir = (req, res) => {
+    rimraf.sync(__dirname + `/../../_uploads/page/ckeditor/${req.params.dir}`);
+}
 
