@@ -18,6 +18,7 @@ export class PortfolioComponent implements OnInit {
     done = false;
     arr = [];
     arrId = [];
+    arrHover = [];
 
     constructor(
         private portfolioService: PortfolioService,
@@ -41,7 +42,8 @@ export class PortfolioComponent implements OnInit {
                 this.done = true;
                 this.loadPortfolio();
                 this.loadPortfolioId();
-                console.log(this.arrId);
+                this.loadPortfolioHover();
+                console.log(data);
             },
             err => console.log(err)
         );
@@ -57,6 +59,7 @@ export class PortfolioComponent implements OnInit {
                 i = 0;
             }
         }
+
     }
 
     loadPortfolioId() {
@@ -64,6 +67,17 @@ export class PortfolioComponent implements OnInit {
         let i = 0;
         while (this.arrId.length < 5) {
             this.arrId.push(this.portfolio[i].id);
+            i++;
+            if (i >= this.portfolio.length) {
+                i = 0;
+            }
+        }
+    }
+    loadPortfolioHover() {
+        this.arrHover = [];
+        let i = 0;
+        while (this.arrHover.length < 5) {
+            this.arrHover.push(this.portfolio[i].hover);
             i++;
             if (i >= this.portfolio.length) {
                 i = 0;
