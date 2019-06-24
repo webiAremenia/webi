@@ -37,7 +37,6 @@ export class SettingService {
                     }
                 }),
                 catchError(err => {
-                    console.log(err);
                     return throwError(err);
                 }));
     }

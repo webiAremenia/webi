@@ -1,5 +1,5 @@
-<div *ngIf="!done">loading ..... </div>
-<div *ngIf="done">
+<div *ngIf="!done && !done2">loading ..... </div>
+<div *ngIf="done && done2">
     <router-outlet></router-outlet>
 </div>
 

@@ -19,13 +19,15 @@ export class MultyTeamComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.service.getAll().subscribe(data => {
-            this.teams = data;
-            console.log(this.teams);
+        if (this.service.allTeem) {
+            this.teams = this.service.allTeem;
             this.teams = this.teams.slice(2, 8);
-        });
-
-
+        } else {
+            this.service.getAll().subscribe(data => {
+                this.teams = data;
+                this.teams = this.teams.slice(2, 8);
+            });
+        }
     }
 
     onClick(team: any, modal) {

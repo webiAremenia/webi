@@ -31,6 +31,16 @@ export class PortfolioService {
                                 ru: item.description.ru,
                                 am: item.description.am
                             },
+                            shortDescription: {
+                                en: item.shortDescription.en,
+                                ru: item.shortDescription.ru,
+                                am: item.shortDescription.am
+                            },
+                            hover: {
+                                en: item.hover.en,
+                                ru: item.hover.ru,
+                                am: item.hover.am
+                            },
                             url: item.url,
                             image: item.image,
                         };

@@ -11,5 +11,15 @@ export class Portfolio {
         ru: string,
         am: string
     };
+    shortDescription: {
+        en: string,
+        ru: string,
+        am: string
+    };
+    hover: {
+        en: string,
+        ru: string,
+        am: string
+    };
     image: string;
 }
