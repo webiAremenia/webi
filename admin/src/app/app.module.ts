@@ -13,32 +13,35 @@ import {Globals} from './app.globals';
 import {FullNameFilterPipe} from './_pipes/full-name-filter.pipe';
 import {TitleDescriptionFilterPipe} from './_pipes/title-description-filter.pipe';
 
+import {ColorPickerModule} from 'ngx-color-picker';
+
 
 @NgModule({
-  declarations: [
-    FullNameFilterPipe,
-    TitleDescriptionFilterPipe,
-    AppComponent,
-    LoginComponent,
-  ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    DashboardModule,
-    FormsModule,
-    ReactiveFormsModule,
-    HttpClientModule,
-    NgSelectModule
-  ],
-  providers: [
-    Globals,
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: InterceptorService,
-      multi: true
-    }
-  ],
-  bootstrap: [AppComponent]
+    declarations: [
+        FullNameFilterPipe,
+        TitleDescriptionFilterPipe,
+        AppComponent,
+        LoginComponent,
+    ],
+    imports: [
+        BrowserModule,
+        AppRoutingModule,
+        DashboardModule,
+        FormsModule,
+        ReactiveFormsModule,
+        HttpClientModule,
+        NgSelectModule,
+        ColorPickerModule
+    ],
+    providers: [
+        Globals,
+        {
+            provide: HTTP_INTERCEPTORS,
+            useClass: InterceptorService,
+            multi: true
+        }
+    ],
+    bootstrap: [AppComponent]
 })
 export class AppModule {
 }

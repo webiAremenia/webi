@@ -1,0 +1,32 @@
+<div class="row">
+    <div class="col-md-10 offset-1" *ngIf="done">
+        <h2 class="text-center">{{card.title.en}}</h2>
+        <h2 translate>Name</h2>
+        <table class="table table-dark table-hover table-striped">
+            <thead class="thead-light">
+            <tr>
+                <th>Title</th>
+                <th>Description</th>
+                <th>Background</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>{{card.title.en}}</td>
+                <td style="width: 65%;">{{card.description.en}}</td>
+                <td [style.background]="card.background"></td>
+            </tr>
+            </tbody>
+        </table>
+        <button type="button" class="btn btn-success" (click)="ok()"><i
+                class="fa fa-check" aria-hidden="true"></i>
+        </button>
+        <button type="button" class="btn btn-info" (click)="updateCard(card)" style="margin-left: 20px;" translate>
+            Edit<i
+                class="far fa-edit"></i></button>
+        <button (click)="deleteCategory(card)" style="margin-left: 20px;" class="btn btn-danger"><i
+                class="fa fa-times"></i>
+        </button>
+    </div>
+</div>
+

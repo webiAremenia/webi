@@ -6,55 +6,59 @@ import {ItemService} from '../../../../_services/item.service';
 import {Category} from '../../../../_models/Category';
 
 @Component({
-  selector: 'app-category-edit',
-  templateUrl: './category-edit.component.html',
-  styleUrls: ['./category-edit.component.css']
+    selector: 'app-category-edit',
+    templateUrl: './category-edit.component.html',
+    styleUrls: ['./category-edit.component.css']
 })
 export class CategoryEditComponent implements OnInit {
-  category: Category;
-  categoryForm: FormGroup;
-  language: String = 'en';
-  done: boolean;
+    category: Category;
+    categoryForm: FormGroup;
+    language: String = 'en';
+    done: boolean;
 
-  constructor(private formBuilder: FormBuilder, private dataService: DataService, private router: Router, private itemService: ItemService) {
-    if (!this.itemService.category) {
-      this.router.navigate(['admin/category']);
+    constructor(
+        private formBuilder: FormBuilder,
+        private dataService: DataService,
+        private router: Router,
+        private itemService: ItemService) {
+        if (!this.itemService.category) {
+            this.router.navigate(['admin/category']);
+        }
     }
-  }
 
-  ngOnInit() {
+    ngOnInit() {
 
-    this.category = this.itemService.category;
-    this.done = true;
+        this.category = this.itemService.category;
+        this.done = true;
 
-    this.categoryForm = this.formBuilder.group({
-      amName: [this.category['name'].am],
-      ruName: [this.category['name'].ru],
-      enName: [this.category['name'].en, Validators.required]
-    });
-  }
+        this.categoryForm = this.formBuilder.group({
+            amName: [this.category['name'].am],
+            ruName: [this.category['name'].ru],
+            enName: [this.category['name'].en, Validators.required]
+        });
+    }
 
 
-  changeLanguage(language) {
-    this.language = language;
-  }
+    changeLanguage(language) {
+        this.language = language;
+    }
 
-  myCategory() {
-    const form = {
-      name: {
-        am: this.categoryForm.controls.amName.value,
-        ru: this.categoryForm.controls.ruName.value,
-        en: this.categoryForm.controls.enName.value,
-      }
-    };
-    this.dataService.updateData(form, 'category', this.category._id).subscribe(data => {
-      if (data['success']) {
-        this.router.navigate(['admin/category']);
-      }
-    }, (err) => {
-      console.log(err);
-    });
-  }
+    myCategory() {
+        const form = {
+            name: {
+                am: this.categoryForm.controls.amName.value,
+                ru: this.categoryForm.controls.ruName.value,
+                en: this.categoryForm.controls.enName.value,
+            }
+        };
+        this.dataService.updateData(form, 'category', this.category._id).subscribe(data => {
+            if (data['success']) {
+                this.router.navigate(['admin/category']);
+            }
+        }, (err) => {
+            console.log(err);
+        });
+    }
 
 
 }

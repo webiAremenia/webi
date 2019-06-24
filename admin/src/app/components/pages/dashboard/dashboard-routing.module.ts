@@ -16,6 +16,7 @@ const routes: Routes = [
       {path: 'news', loadChildren: '../news/news.module#NewsModule'},
       {path: 'team', loadChildren: '../team/team.module#TeamModule'},
       {path: 'client', loadChildren: '../client/client.module#ClientModule'},
+      {path: 'card', loadChildren: '../card/card.module#CardModule'},
     ]
   },
 
