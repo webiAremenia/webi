@@ -80,6 +80,70 @@ img {
     object-fit: cover;
 }
 
+.hover {
+    width: 20%;
+    height: 20%;
+    background: #3966be;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    color: white;
+    text-align: center;
+    margin: 0 auto;
+    transition: width 0.5s, height 0.8s;
+
+}
+
+.textHover {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+.textHover p {
+    font-size: 0.5em;
+     transition: font-size 1s;
+     -webkit-animation-name: w;
+    -webkit-animation-duration: 2s;
+}
+@-webkit-keyframes w {
+    0% {
+        opacity:0;
+    }
+    25% {
+        opacity:0.3;
+    }
+    50% {
+        opacity:0.5;
+    }
+    75% {
+        opacity:0.7;
+    }
+    100% {
+        opacity:1;
+    }
+}
+.textHover a {
+    font-weight: bold;
+    color: white;
+
+}
+
+.addHover:hover .hover {
+    width: 100%;
+    height: 100%;
+    opacity: 0.8;
+
+}
+
+
+.addHover:hover p {
+    font-size: 1em;
+
+}
+
 @media (max-width: 1700px) {
     .content h2 {
         font-size: 48px;

@@ -18,20 +18,60 @@
     <div *ngIf="done" class="project-wrapper">
 
         <div class="row top-line">
-             <div class="col-12 col-sm-4 col-md-3 offset-md-1 one"><a routerLink="/portfolio/{{arrId[0]}}"><img [src]="imageUrl + arr[0]" alt=""></a></div>
-            <div class="col-12 col-sm-4 col-md-3  two"><a routerLink="/portfolio/{{arrId[1]}}"><img [src]="imageUrl + arr[1]" alt=""></a></div>
-            <div class="col-12 col-sm-4 col-md-4 three"><a routerLink="/portfolio/{{arrId[2]}}"><img [src]="imageUrl + arr[2]" alt=""></a></div>
+            <div class="col-12 col-sm-4 col-md-3 offset-md-1 one addHover"><a routerLink="/portfolio/{{arrId[0]}}"><img
+                [src]="imageUrl + arr[0]" alt=""></a>
+                <div class="hover">
+                    <div class="textHover ">
+                        <p class="animated infinite bounceInUp">{{arrHover[0].en}}</p>
+                        <a routerLink="/portfolio/{{arrId[0]}}">View project</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-4 col-md-3  two addHover"><a routerLink="/portfolio/{{arrId[1]}}"><img
+                [src]="imageUrl + arr[1]" alt=""></a>
+                <div class="hover">
+                    <div class="textHover">
+                    <p>{{arrHover[1].en}}</p>
+                    <a routerLink="/portfolio/{{arrId[1]}}">View project</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-sm-4 col-md-4 three addHover"><a routerLink="/portfolio/{{arrId[2]}}"><img
+                [src]="imageUrl + arr[2]" alt=""></a>
+                <div class="hover">
+                    <div class="textHover">
+                        <p>{{arrHover[2].en}}</p>
+                        <a routerLink="/portfolio/{{arrId[2]}}">View project</a>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div class="row bottom-line">
-            <div class="col-6 offset-1 five d-none d-sm-none d-md-block d-xl-block"><a routerLink="/portfolio/{{arrId[3]}}"><img [src]="imageUrl + arr[3]" alt=""></a></div>
-            <div class="col-4 six d-sm-none d-none d-md-block d-xl-block"><a routerLink="/portfolio/{{arrId[4]}}"><img [src]="imageUrl + arr[4]" alt=""></a></div>
+            <div class="col-6 offset-1 five d-none d-sm-none d-md-block d-xl-block addHover"><a
+                routerLink="/portfolio/{{arrId[3]}}"><img [src]="imageUrl + arr[3]" alt=""></a>
+                <div class="hover">
+                    <div class="textHover">
+                    <p>{{arrHover[3].en}}</p>
+                    <a routerLink="/portfolio/{{arrId[3]}}">View project</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4 six d-sm-none d-none d-md-block d-xl-block addHover"><a routerLink="/portfolio/{{arrId[4]}}"><img
+                [src]="imageUrl + arr[4]" alt=""></a>
+                <div class="hover">
+                    <div class="textHover">
+                    <p>{{arrHover[4].en}}</p>
+                    <a routerLink="/portfolio/{{arrId[4]}}">View project</a>
+                    </div>
+                </div>
+            </div>
         </div>
-<!--        <a routerLink="allPortfolios">-->
-<!--        <div class="col-12 bottomBtn">-->
-<!--            <button class="btn btn-link">More works</button>-->
-<!--        </div>-->
-<!--        </a>-->
+        <!--        <a routerLink="allPortfolios">-->
+        <!--        <div class="col-12 bottomBtn">-->
+        <!--            <button class="btn btn-link">More works</button>-->
+        <!--        </div>-->
+        <!--        </a>-->
 
     </div>
 </div>

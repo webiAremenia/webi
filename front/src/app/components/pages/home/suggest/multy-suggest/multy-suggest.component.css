@@ -72,4 +72,15 @@ button img {
     .about-text{
         font-size: 18px;
     }
+
+
+.currant-image-wrapper img{
+    height: auto;
+}
+}
+@media (max-width: 768px){
+    .about-text{
+        font-size: 14px;
+    }
+
 }
