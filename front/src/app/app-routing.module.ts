@@ -7,10 +7,8 @@ import {AllTeamComponent} from './components/pages/home/team/all-team/all-team.c
 import {BlogComponent} from './components/pages/blog/blog.component';
 import {BlogDetailesComponent} from './components/pages/blog/blog-detailes/blog-detailes.component';
 import {AllPortfoliosComponent} from './components/pages/portfolio/all-portfolios/all-portfolios.component';
-import {PortfolioDetailesComponent} from "./components/pages/portfolio/portfolio-detailes/portfolio-detailes.component";
-
-
-
+import {PortfolioDetailesComponent} from './components/pages/portfolio/portfolio-detailes/portfolio-detailes.component';
+import {EcomerceComponent} from './components/pages/ecomerce/ecomerce.component';
 
 
 const routes: Routes = [
@@ -19,7 +17,8 @@ const routes: Routes = [
     {path: 'blog', component: BlogComponent, pathMatch: 'full'},
     {path: 'allPortfolios', component: AllPortfoliosComponent, pathMatch: 'full'},
     {path: 'blog/:id', component: BlogDetailesComponent},
-    {path: 'portfolio/:id', component: PortfolioDetailesComponent}
+    {path: 'portfolio/:id', component: PortfolioDetailesComponent},
+    {path: 'ecomerce', component: EcomerceComponent}
 ];
 
 

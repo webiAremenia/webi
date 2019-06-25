@@ -34,7 +34,7 @@ export class CardCreateComponent implements OnInit {
             amDescription: [null],
             ruDescription: [null],
             enDescription: [null, Validators.required],
-            url: [null, Validators.required],
+            url: [null],
             bgColor: [null],
             textColor: [null]
         });
