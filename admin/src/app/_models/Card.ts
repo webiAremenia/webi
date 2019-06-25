@@ -4,4 +4,5 @@ export class Card {
     description: object;
     url: String;
     background: String;
+    textColor: String;
 }

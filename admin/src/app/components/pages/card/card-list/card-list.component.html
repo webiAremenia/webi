@@ -22,8 +22,8 @@
     <tbody>
     <tr *ngFor="let card of cards ; let i = index" [style.background]="card.background">
 
-        <td>{{card.title.en}}</td>
-        <td style="width: 65%;">{{card.description.en | slice:0:100}}</td>
+        <td [style.color]="card.textColor">{{card.title.en}}</td>
+        <td style="width: 65%;"  [style.color]="card.textColor">{{card.description.en | slice:0:100}}{{card.textColor}}</td>
         <td>{{card.url}}</td>
 
         <td>

@@ -14,6 +14,7 @@ const Card = new Schema({
 
     },
     background: {type: String, default: null},
+    textColor: {type: String, default: null},
     url: {type: String, default: null}
 });
 

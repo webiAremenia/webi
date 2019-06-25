@@ -17,6 +17,7 @@ export class CardEditComponent implements OnInit {
     myForm: FormGroup;
     language: String = 'en';
     background: String;
+    textColor: String;
 
     constructor(
         private formBuilder: FormBuilder,
@@ -32,6 +33,7 @@ export class CardEditComponent implements OnInit {
     ngOnInit() {
         this.card = this.itemService.card;
         this.background = this.card.background;
+        this.textColor = this.card.textColor;
         this.done = true;
 
         this.myForm = this.formBuilder.group({
@@ -42,7 +44,8 @@ export class CardEditComponent implements OnInit {
             ruDescription: [this.card.description['ru']],
             enDescription: [this.card.description['en'], Validators.required],
             url: [this.card.url],
-            bgColor: [this.card.background]
+            bgColor: [this.card.background],
+            textColor: [this.card.textColor]
         });
     }
 
@@ -62,6 +65,7 @@ export class CardEditComponent implements OnInit {
         form['title'] = title;
         form['description'] = description;
         form['background'] = this.background;
+        form['textColor'] = this.textColor;
 
         console.log(form);
 

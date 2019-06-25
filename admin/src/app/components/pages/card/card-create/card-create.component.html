@@ -42,6 +42,13 @@
       </div>
 
       <div class="form-group color-piker-wrapper">
+        <label for="text-color" class="my-label"> Slide Text Color:
+        </label>
+        <input [(colorPicker)]="textColor" [style.background]="textColor" [type]="'text'" [value]="textColor"
+               id="text-color" class="form-control" formControlName="textColor">
+      </div>
+
+      <div class="form-group color-piker-wrapper">
         <label for="slide-url" class="my-label"> Slide url:
         </label>
         <input type="text" id="slide-url" class="form-control" formControlName="url">

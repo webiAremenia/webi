@@ -44,6 +44,7 @@ module.exports = {
             title: req.body.title,
             description: req.body.description,
             background: req.body.background,
+            textColor: req.body.textColor,
             url: req.body.url
         };
         new Card(card).save()

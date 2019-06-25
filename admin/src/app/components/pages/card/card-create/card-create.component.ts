@@ -15,6 +15,7 @@ export class CardCreateComponent implements OnInit {
     language: String = 'en';
     url;
     bgColor = '#5582ca';
+    textColor = '#000';
 
     constructor(
         private formBuilder: FormBuilder,
@@ -34,7 +35,8 @@ export class CardCreateComponent implements OnInit {
             ruDescription: [null],
             enDescription: [null, Validators.required],
             url: [null, Validators.required],
-            bgColor: [null]
+            bgColor: [null],
+            textColor: [null]
         });
     }
 
@@ -54,6 +56,7 @@ export class CardCreateComponent implements OnInit {
         form['title'] = title;
         form['description'] = description;
         form['background'] = this.bgColor;
+        form['textColor'] = this.textColor;
 
         this.dataService.sendData(form, 'cards').subscribe(data => {
             if (data['success']) {

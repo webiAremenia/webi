@@ -1,4 +1,7 @@
 import {Component, OnInit} from '@angular/core';
+import {Card} from '../../_models/card';
+import {CardService} from '../../_services/card.service';
+import {Subscription} from 'rxjs';
 
 @Component({
     selector: 'app-slider',
@@ -6,6 +9,8 @@ import {Component, OnInit} from '@angular/core';
     styleUrls: ['./slider.component.scss']
 })
 export class SliderComponent implements OnInit {
+    cards: Card[] | Subscription;
+    done = false;
     customOptions: any = {
         loop: true,
         mouseDrag: true,
@@ -13,7 +18,7 @@ export class SliderComponent implements OnInit {
         pullDrag: false,
         dots: false,
         navSpeed: 700,
-        navText: ['<img src="./assets/images/prew-button.png" alt=""/>', '<img src="./assets/images/next-button.png" alt=""/>'],
+        navText: ['<img src="assets/images/prew-button.png" alt=""/>', '<img src="assets/images/next-button.png" alt=""/>'],
         navClass: ['', ''],
         responsive: {
             0: {
@@ -33,10 +38,20 @@ export class SliderComponent implements OnInit {
 
     };
 
-    constructor() {
+    constructor(private service: CardService) {
+
     }
 
     ngOnInit() {
+        this.initCards();
     }
 
+    initCards() {
+        this.service.getAll().subscribe(
+            d => {
+                this.cards = d;
+                this.done = true;
+            }
+        );
+    }
 }
