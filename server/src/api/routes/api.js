@@ -12,6 +12,7 @@ import menu from './crud/menu';
 import language from './crud/language';
 import category from './crud/category';
 import card from './crud/card';
+import eCommerce from './pages/ecommerce';
 
 
 
@@ -25,6 +26,7 @@ router.use('/menu', menu);
 router.use('/language', language);
 router.use('/category', category);
 router.use('/cards', card);
+router.use('/ecommerce', eCommerce);
 
 
 router.post('/contact', contactController.sendMail);
