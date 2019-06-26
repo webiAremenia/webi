@@ -2,13 +2,33 @@ import {Component, OnInit} from '@angular/core';
 import {Card} from '../../_models/card';
 import {CardService} from '../../_services/card.service';
 import {Subscription} from 'rxjs';
+import {animate, state, style, transition, trigger} from '@angular/animations';
+import {ScrollService} from '../../_services/scroll.service';
 
 @Component({
     selector: 'app-slider',
     templateUrl: './slider.component.html',
-    styleUrls: ['./slider.component.scss']
+    styleUrls: ['./slider.component.scss'],
+    animations: [
+        trigger('scrollAnimation', [
+            state('show', style({
+                opacity: 1,
+                transform: 'translateY(0)'
+            })),
+            state('hide',   style({
+                opacity: 0,
+                transform: 'translateY(+100%)'
+            })),
+            transition('show => hide', animate('700ms ease-out')),
+            transition('hide => show', animate('700ms ease-in'))
+        ])
+    ]
 })
 export class SliderComponent implements OnInit {
+
+    state = 'show';
+    stateSubscription: Subscription;
+
     cards: Card[] | Subscription;
     done = false;
     customOptions: any = {
@@ -38,8 +58,10 @@ export class SliderComponent implements OnInit {
 
     };
 
-    constructor(private service: CardService) {
-
+    constructor(private service: CardService, private scrollService: ScrollService,) {
+        this.stateSubscription = this.scrollService.getScrollAnimation().subscribe(
+            animation => this.state = animation.introduction
+        );
     }
 
     ngOnInit() {
