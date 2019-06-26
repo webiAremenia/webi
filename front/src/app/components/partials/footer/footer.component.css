@@ -34,7 +34,7 @@
 input, textarea, button {
     display: block;
     background-color: #1c488e;
-    width: 415px;
+    width: 100%;
     border: 1px solid #3966be;
     border-radius: 5px;
     margin-bottom: 15px;
@@ -67,8 +67,8 @@ button {
     color: white;
     width: 100px;
     height: 38px;
-    margin-left: 315px;
     cursor: pointer;
+    float: right;
 }
 
 button:hover {
@@ -121,7 +121,7 @@ button:hover {
     }
 
     input, textarea, button {
-        width: 280px;
+        width: 100%;
     }
 
     button {
