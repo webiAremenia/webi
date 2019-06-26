@@ -154,6 +154,12 @@ img {
 }
 
 @media (max-width: 768px) {
+    .bottom-first{
+        padding-bottom: 20px;
+    }
+    .bottom-line{
+        padding-top: 0;
+    }
     .portfolio {
         height: 100%;
         /*padding-bottom: 0;*/

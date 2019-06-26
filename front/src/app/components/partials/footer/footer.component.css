@@ -1,79 +1,89 @@
-.footer{
-  font-family: Arial;
-  color: white;
-  padding-left: 5px;
+.footer {
+    font-family: Arial;
+    color: white;
+    padding-left: 5px;
 }
 
-.first{
+.first {
     background: #1c488e;
     margin-right: 0;
     padding-right: 0;
 }
-.content{
-  background-color: #1c488e;
-  color: #fff;
-  padding: 50px 0;
+
+.content {
+    background-color: #1c488e;
+    color: #fff;
+    padding: 50px 0;
 }
-.contact{
-  font-size: 18px;
+
+.contact {
+    font-size: 18px;
 }
+
 /*.line{*/
 /*  width: 80px;*/
 /*  margin: 30px 0;*/
 /*  border: 1px solid white;*/
 /*}*/
 
-.address{
-    margin-bottom:0;
+.address {
+    margin-bottom: 0;
     font-size: 15px;
 }
-input, textarea, button{
-  display: block;
-  background-color: #1c488e;
-  width: 415px;
-  border: 1px solid #3966be;
-  border-radius: 5px;
-  margin-bottom: 15px;
+
+input, textarea, button {
+    display: block;
+    background-color: #1c488e;
+    width: 415px;
+    border: 1px solid #3966be;
+    border-radius: 5px;
+    margin-bottom: 15px;
     color: white;
     opacity: 0.6;
 }
-input{
-  height: 38px;
-  padding: 12px;
-  font-size: 12px;
+
+input {
+    height: 38px;
+    padding: 12px;
+    font-size: 12px;
 }
-textarea{
-  height: 120px;
-  padding: 10px;
-  resize: none;
-  color: #fff;
-  font-size: 12px;
-  opacity: 0.6;
-  font-weight: 100;
+
+textarea {
+    height: 120px;
+    padding: 10px;
+    resize: none;
+    color: #fff;
+    font-size: 12px;
+    opacity: 0.6;
+    font-weight: 100;
 }
-textarea:focus, input:focus{
+
+textarea:focus, input:focus {
     background-color: #3966ae;
     color: #ffffff;
 }
-button{
-  color: white;
-  width: 100px;
-  height: 38px;
-  margin-left:315px;
-  cursor: pointer;
+
+button {
+    color: white;
+    width: 100px;
+    height: 38px;
+    margin-left: 315px;
+    cursor: pointer;
 }
-button:hover{
+
+button:hover {
     background-color: #3966ae;
 
 }
-.copyRight{
-  height: 10%;
-  text-align: center;
-  padding: 24px 0;
-  color:#fff;
+
+.copyRight {
+    height: 10%;
+    text-align: center;
+    padding: 24px 0;
+    color: #fff;
 }
 
-.error{
+.error {
     display: inline-block;
     color: #f16060;
     font-size: 12px;
@@ -83,36 +93,40 @@ button:hover{
 
 }
 
-.footer_end{
+.footer_end {
     background-color: #3966ae;
 }
 
-@media(max-width: 768px){
+@media (max-width: 768px) {
 
-    input, textarea, button{
-        width: 330px;
+    input, textarea, button {
+        width: 100%;
     }
-  button{
 
-    margin-left:180px;
-    width: 150px;
-  }
+    button {
+
+        margin-left: 0;
+        width: 150px;
+    }
 
 }
-@media(max-width: 370px){
-    .footer{
+
+@media (max-width: 370px) {
+    .footer {
         font-size: 10px;
     }
-    .contact{
+
+    .contact {
         font-size: 12px;
     }
 
-    input, textarea, button{
+    input, textarea, button {
         width: 280px;
     }
-    button{
 
-        margin-left:180px;
+    button {
+
+        margin-left: 180px;
         width: 100px;
     }
 
@@ -122,14 +136,17 @@ button:hover{
     color: #fff;
     opacity: 0.6;
 }
+
 ::-moz-placeholder {
     color: #fff;
     opacity: 0.6;
 }
+
 :-ms-input-placeholder {
     color: #fff;
     opacity: 0.6;
 }
+
 :-moz-placeholder {
     color: #fff;
     opacity: 0.6;

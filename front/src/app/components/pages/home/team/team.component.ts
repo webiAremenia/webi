@@ -3,6 +3,7 @@ import {TeamService} from '../../../_services/team.service';
 import {Team} from '../../../_models/team';
 import {SettingService} from '../../../_services/setting.service';
 import {Globals} from '../../../../app.globals';
+import {el} from "@angular/platform-browser/testing/src/browser_util";
 
 @Component({
     selector: 'app-team',
@@ -10,7 +11,7 @@ import {Globals} from '../../../../app.globals';
     styleUrls: ['./team.component.css']
 })
 export class TeamComponent implements OnInit, AfterViewInit {
-    visible = true;
+    visible: boolean;
     done = false;
     team: Team[];
     title;
@@ -30,7 +31,11 @@ export class TeamComponent implements OnInit, AfterViewInit {
         this.getTeam();
         this.title = this.settingsService.getValueByKeyLanguage('home-team-title', 'en');
         this.text = this.settingsService.getValueByKeyLanguage('home-team-text', 'en');
-        this.visible = true;
+        if (window.innerWidth < 768) {
+            this.visible = false;
+        } else {
+            this.visible = true;
+        }
     }
 
     onClick() {
@@ -48,7 +53,7 @@ export class TeamComponent implements OnInit, AfterViewInit {
     }
 
     ngAfterViewInit(): void {
-        this.visible = true;
+
     }
 }
 
