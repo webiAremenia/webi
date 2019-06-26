@@ -75,12 +75,15 @@ button img {
 
 
 .currant-image-wrapper img{
-    height: auto;
+    height: 100%;
+    object-fit: cover;
 }
 }
 @media (max-width: 768px){
     .about-text{
         font-size: 14px;
     }
-
+    .cont h3{
+        font-size: 24px;
+    }
 }

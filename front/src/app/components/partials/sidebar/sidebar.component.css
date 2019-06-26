@@ -1,30 +1,30 @@
-.sidebar{
-  height: 100vh;
-  width: calc(72px + (100vw - 144px)/12);
-  position: fixed;
-  display: block;
-  top: auto;
-  left: 0;
-  z-index: 1000;
-    padding-top: 10%;
+.sidebar {
+    height: 100vh;
+    width: calc(72px + (100vw - 144px) / 12);
+    position: fixed;
+    display: block;
+    top: auto;
+    left: 0;
+    z-index: 1000;
 }
 
-.line{
-  width: 18px;
-  height: 0px;
-  border: 1px solid #727272;
-  text-align: center;
-  margin: 0 auto;
-  margin-top: 50px;
-  transition: border 1s ease;
+.line {
+    width: 18px;
+    height: 0px;
+    border: 1px solid #727272;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 50px;
+    transition: border 1s ease;
 }
 
-.active{
-  width: 40px;
-  border: 1px solid white;
+.active {
+    width: 40px;
+    border: 1px solid white;
 }
+
 @media (max-width: 1200px ) {
-    .sidebar{
+    .sidebar {
         display: none;
     }
 }

@@ -19,7 +19,7 @@
 }
 
 .navbar {
-    height: 180px;
+    height: calc(72px - 12px + (100vw - 144px) / 12);
     font-family: 'Poppins', sans-serif;
     box-sizing: border-box;
     background: none;
@@ -96,7 +96,7 @@ button {
     }
 
     .navbar {
-        height: auto;
+        height: 80px;
         padding-left: 20px;
     }
 
@@ -105,15 +105,16 @@ button {
     }
 
     .logo-wrapper {
-        height: 120px;
+        height: 80px;
         left: -5px;
         width: 100px;
         text-align: center;
         padding: 0;
-
+        position: relative;
     }
 
     #logo {
+        line-height: 80px;
         margin: 5px auto;
     }
 
@@ -125,14 +126,12 @@ button {
 }
 
 
-@media (max-width: 990px) {
+@media (max-width: 992px) {
     .topNav {
         height: 10%;
     }
 
     .navbar-expand-lg .navbar-collapse {
-        /*display: none !important;*/
-        /*flex-basis: auto;*/
         background-color: white;
         color: #3966ae !important;
         height: 302px;
@@ -161,17 +160,18 @@ button {
 
     .navbar {
         text-align: left;
-        height: auto;
+        height: 80px;
         margin-top: 10px;
     }
 
     .navbar-brand {
+        padding-left: 40px;
         font-size: 40px !important;
     }
 
     .logo-wrapper {
-        top: -30px;
-        left: -20px;
+        top: 0;
+        left: 0;
         height: 80px;
         text-align: center;
         padding: 0;
@@ -179,7 +179,8 @@ button {
     }
 
     #logo {
-        margin: 15px auto;
+        line-height: 80px;
+        /*margin: 15px auto;*/
     }
 
     #logo img {
@@ -225,80 +226,24 @@ button {
     }
 }
 
-@media (max-width: 768px) {
-    #logo {
-        margin: 15px auto;
-        padding-top: 5px;
-    }
-
-
-}
-
-
-@media (max-width: 650px) {
-    #logo {
-
-        padding: 5px 10px 0 0;
-
-    }
-
-    #logo img {
-        width: 50%;
-        height: 50%;
-
-    }
-
+@media (max-width: 767px) {
     .navbar {
-        margin-left: 15px;
-        height: 20%;
+        text-align: left;
+        height: 70px;
     }
-
-    .navbar-brand {
-        font-size: 35px !important;
-    }
-
-}
-
-@media (max-width: 500px) {
-    #logo {
-
+    .logo-wrapper {
+        top: 0;
+        left: 0;
+        height: 70px;
+        text-align: center;
         padding: 0;
-
+        background-color: transparent;
     }
-
-
-    #logo img {
-        width: 50%;
-        height: 50%;
-
-    }
-
-    .navbar {
-        margin-left: 20px;
-        height: 20%;
-        margin-top: 10px;
-    }
-
-    .navbar-brand {
-        font-size: 30px !important;
-    }
-
-    .blueToggle {
-        bottom: -20px;
-    }
-
-    .whiteToggle {
-        bottom: -20px;
-    }
-
-}
-
-@media (max-width: 500px) {
     #logo {
-
-        padding: 10px;
-
+        line-height: 70px;
+        /*margin: 15px auto;*/
     }
+
 }
 
 

@@ -1,5 +1,5 @@
 <div class="my-container">
-    <div class="row multy d-none d-sm-block">
+    <div class="row multy">
         <div class="col-10 offset-1">
 <!--            <div class="row">-->
 <!--                <div class="col-lg-3 one">-->
@@ -21,7 +21,7 @@
 <!--                </div>-->
 <!--            </div>-->
             <div class="row">
-                <div class="col-4 three" *ngFor='let team of teams' (click)="onClick(team, customModal)">
+                <div class="col-12 col-md-4 three" *ngFor='let team of teams' (click)="onClick(team, customModal)">
                     <img [src]="imageUrl + team.avatar" alt="">
                     <h6><b>{{team.fullName.en}}</b></h6>
 
@@ -53,12 +53,12 @@
     </div>
 
 </div>
-<div class="row d-sm-block d-md-none">
-    <div class="col-sm-12 mobil-team" *ngFor='let team of teams'>
-        <img [src]="imageUrl + team.avatar" alt="" class="m-auto">
-        <h6><b>{{team.fullName.en}}</b></h6>
+<!--<div class="row d-sm-block d-md-none">-->
+<!--    <div class="col-sm-12 mobil-team" *ngFor='let team of teams'>-->
+<!--        <img [src]="imageUrl + team.avatar" alt="" class="m-auto">-->
+<!--        <h6><b>{{team.fullName.en}}</b></h6>-->
 
-    </div>
-</div>
+<!--    </div>-->
+<!--</div>-->
 
 

@@ -32,6 +32,7 @@ export class TeamComponent implements OnInit, AfterViewInit, OnDestroy {
     stateSubscription: Subscription;
 
     visible = true;
+
     done = false;
     team: Team[];
     title;
@@ -60,7 +61,11 @@ export class TeamComponent implements OnInit, AfterViewInit, OnDestroy {
         this.getTeam();
         this.title = this.settingsService.getValueByKeyLanguage('home-team-title', 'en');
         this.text = this.settingsService.getValueByKeyLanguage('home-team-text', 'en');
-        this.visible = true;
+        if (window.innerWidth < 768) {
+            this.visible = false;
+        } else {
+            this.visible = true;
+        }
     }
 
     ngOnDestroy() {
@@ -82,7 +87,7 @@ export class TeamComponent implements OnInit, AfterViewInit, OnDestroy {
     }
 
     ngAfterViewInit(): void {
-        this.visible = true;
+
     }
 }
 
