@@ -1,16 +1,36 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, ElementRef, OnInit, OnDestroy, AfterContentChecked} from '@angular/core';
 import {PortfolioService} from '../../_services/portfolio.service';
 import {Portfolio} from '../../_models/portfolio';
 import {Globals} from '../../../app.globals';
 import {SettingService} from '../../_services/setting.service';
+import {Subscription} from 'rxjs';
+import {ScrollService} from '../../_services/scroll.service';
+import { trigger, state, style, transition, animate } from '@angular/animations';
 
 
 @Component({
     selector: 'app-portfolio',
     templateUrl: './portfolio.component.html',
-    styleUrls: ['./portfolio.component.css']
+    styleUrls: ['./portfolio.component.css'],
+    animations: [
+        trigger('scrollAnimation', [
+            state('show', style({
+                opacity: 1,
+                // transform: 'translateZ(0)'
+            })),
+            state('hide', style({
+                opacity: 0,
+                // transform: 'translate(-100%)'
+            })),
+            transition('show => hide', animate('700ms ease-out')),
+            transition('hide => show', animate('700ms ease-in'))
+        ])
+    ]
 })
-export class PortfolioComponent implements OnInit {
+export class PortfolioComponent implements OnInit, OnDestroy {
+    state = 'hide';
+    stateSubscription: Subscription;
+
     title;
     text;
     imageUrl;
@@ -21,11 +41,20 @@ export class PortfolioComponent implements OnInit {
     arrHover = [];
 
     constructor(
+        private scrollService: ScrollService,
+        private el: ElementRef,
         private portfolioService: PortfolioService,
         private  settingsService: SettingService,
         global: Globals
     ) {
         this.imageUrl = global.imageUrl + 'portfolio/';
+        this.stateSubscription = this.scrollService.getScrollAnimation().subscribe(
+            animation => this.state = animation.portfolio
+        );
+    }
+
+    componentHeight() {
+        return this.el.nativeElement.offsetTop;
     }
 
     ngOnInit() {
@@ -33,6 +62,10 @@ export class PortfolioComponent implements OnInit {
         this.title = this.settingsService.getValueByKeyLanguage('home-portfolio-title', 'en');
         this.text = this.settingsService.getValueByKeyLanguage('home-portfolio-text', 'en');
 
+    }
+
+    ngOnDestroy() {
+        this.stateSubscription.unsubscribe();
     }
 
     getPortfolio() {
@@ -73,6 +106,7 @@ export class PortfolioComponent implements OnInit {
             }
         }
     }
+
     loadPortfolioHover() {
         this.arrHover = [];
         let i = 0;
