@@ -5,8 +5,6 @@ import {SuggestComponent} from './suggest/suggest.component';
 import {TeamComponent} from './team/team.component';
 import {ScrollService} from '../../_services/scroll.service';
 import {PortfolioComponent} from '../portfolio/portfolio.component';
-
-
 @Component({
     selector: 'app-home',
     templateUrl: './home.component.html',
@@ -14,7 +12,6 @@ import {PortfolioComponent} from '../portfolio/portfolio.component';
 })
 export class HomeComponent implements OnInit, AfterViewInit {
     currentSection = 'section1';
-
     mouseWheel: number;
     introductionComponentHeight: number;
     processComponentHeight: number;
@@ -22,36 +19,25 @@ export class HomeComponent implements OnInit, AfterViewInit {
     suggestComponentHeight: number;
     teamComponentHeight: number;
     divider = 30;
-    location = {
-        introduction: true,
-        process: false,
-        portfolio: false,
-        suggest: false,
-        team: false
-    };
-
+    // @ts-ignore
     @ViewChild(IntroductionComponent, {static: false})
     private introductionComponent: IntroductionComponent;
-
+    // @ts-ignore
     @ViewChild(ProcessComponent, {static: false})
     private processComponent: ProcessComponent;
-
+    // @ts-ignore
     @ViewChild(PortfolioComponent, {static: false})
     private portfolioComponent: PortfolioComponent;
-
+    // @ts-ignore
     @ViewChild(SuggestComponent, {static: false})
     private suggestComponent: SuggestComponent;
-
+    // @ts-ignore
     @ViewChild(TeamComponent, {static: false})
     private teamComponent: TeamComponent;
-
-
     constructor(private scrollService: ScrollService) {
     }
-
     ngOnInit() {
     }
-
     ngAfterViewInit() {
         setTimeout(() => {
             this.introductionComponentHeight = this.introductionComponent.componentHeight();
@@ -67,22 +53,16 @@ export class HomeComponent implements OnInit, AfterViewInit {
                 this.teamComponentHeight);
             console.log(document.documentElement.clientHeight);
         }, 500);
-
     }
-
     onSectionChange(sectionId: string) {
         this.currentSection = sectionId;
     }
-
     @HostListener('document:mousewheel', ['$event']) onDocumentMousewheelEvent(event) {
         this.mouseWheel = event.deltaY;
     }
-
-
     @HostListener('window:scroll', ['$event']) checkScroll() {
         const scrollPosition = window.pageYOffset;
         console.log(scrollPosition);
-
         if (scrollPosition === this.introductionComponentHeight ||
             scrollPosition === this.processComponentHeight ||
             scrollPosition === this.portfolioComponentHeight ||
@@ -90,9 +70,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
             scrollPosition === this.teamComponentHeight) {
             this.mouseWheel = null;
         }
-
-        if (this.location.introduction === true) {
-
+        if (scrollPosition >= this.introductionComponentHeight && scrollPosition <= this.processComponentHeight) {
             if (this.mouseWheel > 0 && scrollPosition + document.documentElement.clientHeight > this.processComponentHeight) {
                 if (pageYOffset + this.divider > this.processComponentHeight) {
                     return scrollTo(0, this.processComponentHeight);
@@ -104,9 +82,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
                 }
                 scrollTo(0, pageYOffset - this.divider);
             }
-
-        } else if (this.location.process === true) {
-
+        } else if (scrollPosition >= this.processComponentHeight && scrollPosition <= this.portfolioComponentHeight) {
             if (this.mouseWheel > 0 && scrollPosition + document.documentElement.clientHeight > this.portfolioComponentHeight) {
                 if (pageYOffset + this.divider > this.portfolioComponentHeight) {
                     return scrollTo(0, this.portfolioComponentHeight);
@@ -118,12 +94,10 @@ export class HomeComponent implements OnInit, AfterViewInit {
                 }
                 scrollTo(0, pageYOffset - this.divider);
             }
-
-        } else if (this.location.portfolio === true) {
-
+        } else if (scrollPosition >= this.portfolioComponentHeight && scrollPosition <= this.suggestComponentHeight) {
             if (this.mouseWheel > 0 && scrollPosition + document.documentElement.clientHeight > this.suggestComponentHeight) {
                 if (pageYOffset + this.divider > this.suggestComponentHeight) {
-                    scrollTo(0, this.suggestComponentHeight);
+                    return scrollTo(0, this.suggestComponentHeight);
                 }
                 scrollTo(0, pageYOffset + this.divider);
             } else if (this.mouseWheel < 0) {
@@ -132,32 +106,23 @@ export class HomeComponent implements OnInit, AfterViewInit {
                 }
                 scrollTo(0, pageYOffset - this.divider);
             }
-
-        } else if (this.location.suggest === true) {
+        } else if (scrollPosition >= this.suggestComponentHeight && scrollPosition <= this.teamComponentHeight) {
             if (this.mouseWheel > 0 && scrollPosition + document.documentElement.clientHeight > this.teamComponentHeight) {
-             if (pageYOffset + this.divider > this.teamComponentHeight) {
-                 return scrollTo(0, this.teamComponentHeight);
-             }
-             scrollTo(0, pageYOffset + this.divider);
+                if (pageYOffset + this.divider > this.teamComponentHeight) {
+                    return scrollTo(0, this.teamComponentHeight);
+                }
+                scrollTo(0, pageYOffset + this.divider);
             } else if (this.mouseWheel < 0) {
                 if (pageYOffset - this.divider < this.suggestComponentHeight) {
                     return scrollTo(0, this.suggestComponentHeight);
                 }
                 scrollTo(0, pageYOffset - this.divider);
             }
-
         }
-
         // // // Show Components // // //
-
         if (scrollPosition === this.introductionComponentHeight || scrollPosition === 0) {
-            this.location = {
-                introduction: true,
-                process: false,
-                portfolio: false,
-                suggest: false,
-                team: false
-            };
+            this.currentSection = 'section1';
+            console.log(`introductionComponentHeight`);
             const data = {
                 introduction: 'show',
                 process: 'hide',
@@ -167,13 +132,8 @@ export class HomeComponent implements OnInit, AfterViewInit {
             };
             this.scrollService.setScrollAnimation(data);
         } else if (scrollPosition === this.processComponentHeight) {
-            this.location = {
-                introduction: false,
-                process: true,
-                portfolio: false,
-                suggest: false,
-                team: false
-            };
+            console.log(`processComponentHeight`);
+            this.currentSection = 'section2';
             const data = {
                 introduction: 'hide',
                 process: 'show',
@@ -183,13 +143,8 @@ export class HomeComponent implements OnInit, AfterViewInit {
             };
             this.scrollService.setScrollAnimation(data);
         } else if (scrollPosition === this.portfolioComponentHeight) {
-            this.location = {
-                introduction: false,
-                process: false,
-                portfolio: true,
-                suggest: false,
-                team: false
-            };
+            console.log(`portfolioComponentHeight`);
+            this.currentSection = 'section3';
             const data = {
                 introduction: 'hide',
                 process: 'hide',
@@ -199,13 +154,8 @@ export class HomeComponent implements OnInit, AfterViewInit {
             };
             this.scrollService.setScrollAnimation(data);
         } else if (scrollPosition === this.suggestComponentHeight) {
-            this.location = {
-                introduction: false,
-                process: false,
-                portfolio: false,
-                suggest: true,
-                team: false
-            };
+            console.log(`suggestComponentHeight`);
+            this.currentSection = 'section4';
             const data = {
                 introduction: 'hide',
                 process: 'hide',
@@ -215,13 +165,8 @@ export class HomeComponent implements OnInit, AfterViewInit {
             };
             this.scrollService.setScrollAnimation(data);
         } else if (scrollPosition === this.teamComponentHeight) {
-            this.location = {
-                introduction: false,
-                process: false,
-                portfolio: false,
-                suggest: false,
-                team: true
-            };
+            console.log(`teamComponentHeight`);
+            this.currentSection = 'section5';
             const data = {
                 introduction: 'hide',
                 process: 'hide',
@@ -232,5 +177,4 @@ export class HomeComponent implements OnInit, AfterViewInit {
             this.scrollService.setScrollAnimation(data);
         }
     }
-
 }

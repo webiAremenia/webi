@@ -38,6 +38,7 @@ export class TeamComponent implements OnInit, AfterViewInit, OnDestroy {
     title;
     text;
     imageUrl;
+    // @ts-ignore
     @ViewChild('btnImg', {static: false}) btnImg: ElementRef;
 
     constructor(
