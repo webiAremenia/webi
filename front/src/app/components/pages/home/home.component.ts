@@ -52,7 +52,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
                 this.suggestComponentHeight,
                 this.teamComponentHeight);
             console.log(document.documentElement.clientHeight);
-        }, 500);
+        }, 1500);
     }
     onSectionChange(sectionId: string) {
         this.currentSection = sectionId;

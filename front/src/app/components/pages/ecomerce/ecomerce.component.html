@@ -38,36 +38,58 @@
         <div class="container section-contact-box">
             <div class="row">
                 <div class="col-6 section-1-contact-box-image">
-                    <img src="{{url}}" alt="">
+                    <img [src]="imageUrl + 'undraw_businessman_97x4.svg'" alt="">
                 </div>
                 <div class="col-6">
-                    <div class="row">
+                    <form [formGroup]="myForm" class="row" (ngSubmit)="sendData()">
 
                         <div class="col-12 contact-box-input">
-                            <label for="name">NAME</label>
+                            <label for="name">NAME
+                                <span class="error-span"
+                                      *ngIf="myForm.controls.name.invalid &&
+                                        myForm.controls.name.touched">required</span></label>
                             <div class="form-group">
-                                <input class="form-control" id="name" type="text" placeholder="+977 - (000) - 0000312">
+                                <input formControlName="name" id="name" type="text" placeholder="+977 - (000) - 0000312"
+                                       [ngClass]="myForm.controls.name.invalid &&
+                                        myForm.controls.name.touched ? 'form-error form-control': 'form-control'">
                             </div>
                         </div>
 
                         <div class="col-12 contact-box-input">
-                            <label for="email">EMAIL</label>
+                            <label for="email">EMAIL
+                                <span class="error-span"
+                                      *ngIf="myForm.controls.email.invalid &&
+                                        myForm.controls.email.touched">required</span></label>
                             <div class="form-group">
-                                <input class="form-control" id="email" type="text" placeholder="ishan02016@gmail.com">
+                                <input formControlName="email" id="email" type="text" placeholder="ishan02016@gmail.com"
+                                       [ngClass]="myForm.controls.email.invalid &&
+                                        myForm.controls.email.touched ? 'form-error form-control': 'form-control'">
                             </div>
                         </div>
 
                         <div class="col-12 contact-box-input">
-                            <label for="phone">PHONE</label>
+                            <label for="phone">PHONE
+                                <span class="error-span"
+                                      *ngIf="myForm.controls.phone.invalid &&
+                                        myForm.controls.phone.touched">required</span></label>
                             <div class="form-group">
-                                <input class="form-control" id="phone" type="text" placeholder="+977 - (000) - 0000312">
+                                <input formControlName="phone" id="phone" type="text"
+                                       placeholder="+977 - (000) - 0000312"
+                                       [ngClass]="myForm.controls.phone.invalid &&
+                                        myForm.controls.phone.touched ? 'form-error form-control': 'form-control'">
                             </div>
                         </div>
 
                         <div class="col-12 contact-box-input">
-                            <label for="companyName">COMPANY NAME</label>
+                            <label for="companyName">COMPANY NAME
+                                <span class="error-span"
+                                      *ngIf="myForm.controls.companyName.invalid &&
+                                        myForm.controls.companyName.touched">required</span></label>
                             <div class="form-group">
-                                <input class="form-control" id="companyName" type="text" placeholder="Sanepa Height">
+                                <input formControlName="companyName" id="companyName" type="text"
+                                       placeholder="Sanepa Height"
+                                       [ngClass]="myForm.controls.companyName.invalid &&
+                                        myForm.controls.companyName.touched ? 'form-error form-control': 'form-control'">
                             </div>
                         </div>
 
@@ -76,12 +98,14 @@
                                 <div class="col-4"></div>
                                 <div class="col-4"></div>
                                 <div class="col-4">
-                                    <button class="btn btn-primary contact-box-button">Next</button>
+                                    <button [disabled]="myForm.invalid" class="btn btn-primary contact-box-button">
+                                        Next
+                                    </button>
                                 </div>
                             </div>
                         </div>
 
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>
@@ -229,7 +253,7 @@
                 <div class="col-4 card-hover">
                     <div class="col-12 card-body">
                         <div class="card-image">
-                            <img src="{{url1}}" alt="">
+                            <img [src]="imageUrl + 'Breakfast.svg'" alt="">
                         </div>
                         <div class="card-heading">
                             <h4>Dedicated team</h4>
@@ -244,7 +268,7 @@
                 <div class="col-4 card-hover">
                     <div class="col-12 card-body">
                         <div class="card-image">
-                            <img src="{{url1}}" alt="">
+                            <img [src]="imageUrl + 'Breakfast.svg'" alt="">
                         </div>
                         <div class="card-heading">
                             <h4>Cost-Effective Delivery</h4>
@@ -258,7 +282,7 @@
                 <div class="col-4 card-hover">
                     <div class="col-12 card-body">
                         <div class="card-image">
-                            <img src="{{url1}}" alt="">
+                            <img [src]="imageUrl + 'Breakfast.svg'" alt="">
                         </div>
                         <div class="card-heading">
                             <h4>Complete Solution</h4>
@@ -456,7 +480,7 @@
                 <div class="col-4">
                     <div class="col-12 people-body">
                         <div class="people-image">
-                            <img src="{{url2}}" alt="">
+                            <img [src]="imageUrl + 'people.jpg'" alt="">
                         </div>
 
                         <div class="people-text">
@@ -474,7 +498,7 @@
                 <div class="col-4 people-hover">
                     <div class="col-12 people-body">
                         <div class="people-image">
-                            <img src="{{url2}}" alt="">
+                            <img [src]="imageUrl + 'people.jpg'" alt="">
                         </div>
 
                         <div class="people-text">
@@ -491,7 +515,7 @@
                 <div class="col-4 people-hover">
                     <div class="col-12 people-body">
                         <div class="people-image">
-                            <img src="{{url2}}" alt="">
+                            <img [src]="imageUrl + 'people.jpg'" alt="">
                         </div>
 
                         <div class="people-text">
@@ -528,7 +552,7 @@
         <div class="container section-contact-box">
             <div class="row">
                 <div class="col-6 section-8-contact-box-image">
-                    <img src="{{url}}" alt="">
+                    <img [src]="imageUrl + 'undraw_businessman_97x4.svg'" alt="">
                 </div>
                 <div class="col-6">
                     <div class="row">
