@@ -34,6 +34,7 @@ export class TeamComponent implements OnInit, AfterViewInit, OnDestroy {
     stateSubscription: Subscription;
 
     visible = true;
+
     done = false;
     team: Team[];
     title;
@@ -92,7 +93,7 @@ export class TeamComponent implements OnInit, AfterViewInit, OnDestroy {
     }
 
     ngAfterViewInit(): void {
-        this.visible = true;
+
     }
 }
 
