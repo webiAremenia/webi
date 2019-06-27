@@ -17,6 +17,7 @@ export class ScrollService {
     setScrollAnimation(e) {
         const data = {
             introduction: e.introduction,
+            slider: e.slider,
             process: e.process,
             portfolio: e.portfolio,
             suggest: e.suggest,

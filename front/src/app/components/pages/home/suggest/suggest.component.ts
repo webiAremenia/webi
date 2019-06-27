@@ -1,4 +1,4 @@
-import {Component, ElementRef, OnDestroy, OnInit, AfterContentChecked} from '@angular/core';
+import {Component, ElementRef, OnDestroy, OnInit, AfterContentChecked, HostListener} from '@angular/core';
 import {SettingService} from '../../../_services/setting.service';
 import {animate, state, style, transition, trigger} from '@angular/animations';
 import {Subscription} from 'rxjs';
@@ -34,7 +34,11 @@ export class SuggestComponent implements OnInit, OnDestroy {
         private  settingsService: SettingService,
         private el: ElementRef) {
         this.stateSubscription = this.scrollService.getScrollAnimation().subscribe(
-            animation => this.state = animation.suggest
+            animation => {
+                if (animation.suggest) {
+                    this.state = animation.suggest;
+                }
+            }
         );
     }
 

@@ -1,4 +1,4 @@
-import {Component, ElementRef, OnInit, OnDestroy, AfterContentChecked} from '@angular/core';
+import {Component, ElementRef, OnInit, OnDestroy, AfterContentChecked, HostListener} from '@angular/core';
 import {PortfolioService} from '../../_services/portfolio.service';
 import {Portfolio} from '../../_models/portfolio';
 import {Globals} from '../../../app.globals';
@@ -49,7 +49,11 @@ export class PortfolioComponent implements OnInit, OnDestroy {
     ) {
         this.imageUrl = global.imageUrl + 'portfolio/';
         this.stateSubscription = this.scrollService.getScrollAnimation().subscribe(
-            animation => this.state = animation.portfolio
+            animation => {
+                if (animation.portfolio) {
+                    this.state = animation.portfolio;
+                }
+            }
         );
     }
 

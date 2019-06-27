@@ -18,7 +18,7 @@ const routes: Routes = [
     {path: 'allPortfolios', component: AllPortfoliosComponent, pathMatch: 'full'},
     {path: 'blog/:id', component: BlogDetailesComponent},
     {path: 'portfolio/:id', component: PortfolioDetailesComponent},
-    {path: 'ecomerce', component: EcomerceComponent}
+    {path: 'ecommerce', component: EcomerceComponent}
 ];
 
 
