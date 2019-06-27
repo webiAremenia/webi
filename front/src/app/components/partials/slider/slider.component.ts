@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ElementRef, OnDestroy, HostListener} from '@angular/core';
 import {Card} from '../../_models/card';
 import {CardService} from '../../_services/card.service';
 import {Subscription} from 'rxjs';
@@ -17,16 +17,16 @@ import {ScrollService} from '../../_services/scroll.service';
             })),
             state('hide',   style({
                 opacity: 0,
-                transform: 'translateY(+100%)'
+                transform: 'translateY(-100%)'
             })),
-            transition('show => hide', animate('700ms ease-out')),
+            transition('show => hide', animate('400ms ease-out')),
             transition('hide => show', animate('700ms ease-in'))
         ])
     ]
 })
-export class SliderComponent implements OnInit {
+export class SliderComponent implements OnInit, OnDestroy {
 
-    state = 'show';
+    state = 'hide';
     stateSubscription: Subscription;
 
     cards: Card[] | Subscription;
@@ -58,14 +58,26 @@ export class SliderComponent implements OnInit {
 
     };
 
-    constructor(private service: CardService, private scrollService: ScrollService,) {
+    constructor(private service: CardService, private scrollService: ScrollService, private el: ElementRef) {
         this.stateSubscription = this.scrollService.getScrollAnimation().subscribe(
-            animation => this.state = animation.introduction
+            animation => {
+                if (animation.slider) {
+                    this.state = animation.slider;
+                }
+            }
         );
     }
 
     ngOnInit() {
         this.initCards();
+    }
+
+    ngOnDestroy() {
+        this.stateSubscription.unsubscribe();
+    }
+
+    componentHeight() {
+        return this.el.nativeElement.offsetTop;
     }
 
     initCards() {

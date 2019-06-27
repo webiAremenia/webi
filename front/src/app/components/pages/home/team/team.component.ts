@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, ElementRef, OnDestroy, OnInit, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, OnDestroy, OnInit, ViewChild, HostListener} from '@angular/core';
 import {TeamService} from '../../../_services/team.service';
 import {Team} from '../../../_models/team';
 import {SettingService} from '../../../_services/setting.service';
@@ -15,12 +15,14 @@ import {ScrollService} from '../../../_services/scroll.service';
     animations: [
         trigger('scrollAnimation', [
             state('show', style({
-                opacity: 1,
-                transform: 'translateY(0)'
+                transform: 'scale(1)'
+                // opacity: 1,
+                // transform: 'translateX(0)'
             })),
             state('hide', style({
-                opacity: 0,
-                transform: 'translateY(-100%)'
+                transform: 'scale(0)'
+                // opacity: 0,
+                // transform: 'translateX(-100%)'
             })),
             transition('show => hide', animate('700ms ease-out')),
             transition('hide => show', animate('700ms ease-in'))
@@ -49,7 +51,11 @@ export class TeamComponent implements OnInit, AfterViewInit, OnDestroy {
         global: Globals
     ) {
         this.stateSubscription = this.scrollService.getScrollAnimation().subscribe(
-            animation => this.state = animation.team
+            animation => {
+                if (animation.team) {
+                    this.state = animation.team;
+                }
+            }
         );
         this.imageUrl = global.imageUrl + 'team/';
     }

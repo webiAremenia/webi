@@ -1,4 +1,4 @@
-import {Component, ElementRef, OnDestroy, OnInit} from '@angular/core';
+import {Component, ElementRef, OnDestroy, OnInit, HostListener} from '@angular/core';
 import {SettingService} from '../../../_services/setting.service';
 import {animate, state, style, transition, trigger} from '@angular/animations';
 import {Subscription} from 'rxjs';
@@ -11,11 +11,11 @@ import {ScrollService} from '../../../_services/scroll.service';
     animations: [
         trigger('scrollAnimation', [
             state('show', style({
-                opacity: 1,
+                // opacity: 1,
                 transform: 'translateX(0)'
             })),
             state('hide', style({
-                opacity: 0,
+                // opacity: 0,
                 transform: 'translateX(-100%)'
             })),
             transition('show => hide', animate('700ms ease-out')),
@@ -35,7 +35,11 @@ export class ProcessComponent implements OnInit, OnDestroy {
         private settingsService: SettingService,
         private el: ElementRef) {
         this.stateSubscription = this.scrollService.getScrollAnimation().subscribe(
-            animation => this.state = animation.process
+            animation => {
+                if (animation.process) {
+                    this.state = animation.process;
+                }
+            }
         );
     }
 

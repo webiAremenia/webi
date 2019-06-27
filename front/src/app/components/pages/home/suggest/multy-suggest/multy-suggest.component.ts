@@ -1,4 +1,4 @@
-import {Component, ElementRef, OnDestroy, OnInit} from '@angular/core';
+import {Component, ElementRef, OnDestroy, OnInit, HostListener} from '@angular/core';
 import {animate, state, style, transition, trigger} from '@angular/animations';
 import {Subscription} from 'rxjs';
 import {ScrollService} from '../../../../_services/scroll.service';
@@ -29,12 +29,17 @@ export class MultySuggestComponent implements OnInit, OnDestroy {
 
     constructor(private scrollService: ScrollService, private el: ElementRef) {
         this.stateSubscription = this.scrollService.getScrollAnimation().subscribe(
-            animation => this.state = animation.suggest
-        );
-    }
+            animation => {
+                if (animation.suggest) {
+                    this.state = animation.suggest;
+                }
+            }
+            );
+        }
 
     ngOnInit() {
     }
+
 
     ngOnDestroy() {
         this.stateSubscription.unsubscribe();

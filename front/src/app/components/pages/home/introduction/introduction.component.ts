@@ -1,4 +1,4 @@
-import {AfterViewInit, Component, ElementRef, OnDestroy, OnInit, ViewChild} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, OnDestroy, OnInit, ViewChild, HostListener} from '@angular/core';
 import {SettingService} from '../../../_services/setting.service';
 import {animate, state, style, transition, trigger} from '@angular/animations';
 import {ScrollService} from '../../../_services/scroll.service';
@@ -17,7 +17,7 @@ import {Subscription} from 'rxjs';
             })),
             state('hide',   style({
                 opacity: 0,
-                transform: 'translateY(-100%)'
+                transform: 'translateY(+100%)'
             })),
             transition('show => hide', animate('700ms ease-out')),
             transition('hide => show', animate('700ms ease-in'))
