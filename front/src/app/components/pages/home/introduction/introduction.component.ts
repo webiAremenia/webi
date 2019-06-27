@@ -25,6 +25,7 @@ import {Subscription} from 'rxjs';
     ]
 })
 export class IntroductionComponent implements OnInit, AfterViewInit, OnDestroy {
+    // @ts-ignore
     @ViewChild('myCanvas', {static: false}) myCanvas: ElementRef;
     public ctx: CanvasRenderingContext2D;
     state = 'show';
