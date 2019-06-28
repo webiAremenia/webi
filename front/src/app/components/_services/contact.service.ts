@@ -15,4 +15,7 @@ export class ContactService {
     sendEmail(form): any {
         return this.http.post(`${this.url}contact`, form);
     }
+    sendECommerceEmail(form): any {
+        return this.http.post(`${this.url}ecommerce/send-email`, form);
+    }
 }

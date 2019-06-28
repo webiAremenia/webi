@@ -3,7 +3,7 @@ body, html {
 }
 .multy{
   color:white;
-  font-family: Arial;
+  font-family: Arial sans-serif;
   padding: 40px 0;
 }
 
@@ -81,3 +81,8 @@ ng-template p{
     padding-top: 20px;
 }
 
+@media (max-width: 768px) {
+  .three img {
+    margin: 10px 0;
+  }
+}

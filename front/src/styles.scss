@@ -3,16 +3,11 @@
     margin: 0;
     padding: 0;
 }
-
-/*body {*/
-/*background-color: #3966ae;*/
-
-/*}*/
-
-
-
-body, html {
-    //overflow-x: hidden;
+.form-error{
+    border: 3px solid darkred !important;
+}
+ html {
+    overflow-x: hidden;
 }
 
 div[class^="col-"] {
@@ -20,6 +15,9 @@ div[class^="col-"] {
     padding-right: 12px;
 }
 
+.navbar-toggler{
+    margin-top: -25px;
+}
 .my-container {
     padding-left: 72px;
     padding-right: 72px;
