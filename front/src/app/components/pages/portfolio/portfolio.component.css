@@ -80,7 +80,7 @@ img {
     object-fit: cover;
 }
 
-.hover {
+.hover{
     width: 20%;
     height: 20%;
     background: #3966be;
@@ -137,7 +137,11 @@ img {
     opacity: 0.9;
 
 }
-
+img:hover .hover {
+    width: 100%;
+    height: 100%;
+    opacity: 0.8;
+}
 
 .addHover:hover p {
     font-size: 1em;

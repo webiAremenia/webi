@@ -1,0 +1,17 @@
+<div class="my-container">
+    <div class="row">
+        <div class="col-11 offset-1 pt-5 pb-5">
+            <div class="row">
+
+                    <div class="iconsWrapper" *ngFor="let icon of icons let i = index">
+
+                        <div class="badge">
+                            <img src="assets/texnologi-icons/{{icon.img}}" alt="">
+                            <p class="iconTitle">{{icon.title}}</p>
+                     </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
