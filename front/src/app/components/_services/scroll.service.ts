@@ -20,6 +20,7 @@ export class ScrollService {
             slider: e.slider,
             process: e.process,
             portfolio: e.portfolio,
+            technology: e.technology,
             suggest: e.suggest,
             team: e.team
         };
