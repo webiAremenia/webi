@@ -132,14 +132,12 @@ button:active {
 }
 
 @media (max-width: 650px) {
-  .introduction {
-    padding-top: 25% !important;
-  }
+
 }
 
 @media (max-width: 768px) {
   .introduction {
-    padding-top: 15%;
+    padding-top: 0;
   }
   .title {
     position: relative;
