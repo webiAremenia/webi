@@ -1,11 +1,30 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, ElementRef, OnDestroy, OnInit} from '@angular/core';
+import {animate, state, style, transition, trigger} from '@angular/animations';
+import {Subscription} from 'rxjs';
+import {ScrollService} from '../../_services/scroll.service';
 
 @Component({
     selector: 'app-technology',
     templateUrl: './technology.component.html',
-    styleUrls: ['./technology.component.css']
+    styleUrls: ['./technology.component.css'],
+    animations: [
+        trigger('scrollAnimation', [
+            state('show', style({
+                opacity: 1,
+                transform: 'translateX(0)'
+            })),
+            state('hide', style({
+                opacity: 0,
+                transform: 'translateX(-100%)'
+            })),
+            transition('show => hide', animate('700ms ease-out')),
+            transition('hide => show', animate('700ms ease-in'))
+        ])
+    ]
 })
-export class TechnologyComponent implements OnInit {
+export class TechnologyComponent implements OnInit, OnDestroy {
+    state = 'hide';
+    stateSubscription: Subscription;
     icons =
         [
             {img: 'Jira.png', title: 'JIRA'},
@@ -34,10 +53,28 @@ export class TechnologyComponent implements OnInit {
             {img: 'Sketch.png', title: 'Sketch'}
         ];
 
-    constructor() {
+
+    constructor(
+        private scrollService: ScrollService,
+        private el: ElementRef) {
+        this.stateSubscription = this.scrollService.getScrollAnimation().subscribe(
+            animation => {
+                if (animation.technology) {
+                    this.state = animation.technology;
+                }
+            }
+        );
+    }
+
+    componentHeight() {
+        return this.el.nativeElement.offsetTop;
     }
 
     ngOnInit() {
+    }
+
+    ngOnDestroy() {
+        this.stateSubscription.unsubscribe();
     }
 
 }

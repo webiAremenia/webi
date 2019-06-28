@@ -1,12 +1,18 @@
-import {AfterViewInit, Component, HostListener, OnInit, ViewChild, AfterViewChecked, AfterContentInit, OnDestroy} from '@angular/core';
+import {
+    AfterViewInit,
+    Component,
+    HostListener,
+    OnInit,
+    ViewChild
+} from '@angular/core';
 import {IntroductionComponent} from './introduction/introduction.component';
 import {ProcessComponent} from './process/process.component';
 import {SuggestComponent} from './suggest/suggest.component';
 import {TeamComponent} from './team/team.component';
 import {ScrollService} from '../../_services/scroll.service';
 import {PortfolioComponent} from '../portfolio/portfolio.component';
-
-import { SliderComponent } from '../../partials/slider/slider.component';
+import {SliderComponent} from '../../partials/slider/slider.component';
+import {TechnologyComponent} from '../technology/technology.component';
 
 @Component({
     selector: 'app-home',
@@ -19,6 +25,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
     sliderComponentHeight: number;
     processComponentHeight: number;
     portfolioComponentHeight: number;
+    technologyComponentHeight: number;
     suggestComponentHeight: number;
     teamComponentHeight: number;
 
@@ -38,21 +45,28 @@ export class HomeComponent implements OnInit, AfterViewInit {
     @ViewChild(PortfolioComponent, {static: false})
     private portfolioComponent: PortfolioComponent;
     // @ts-ignore
+    @ViewChild(TechnologyComponent, {static: false})
+    private technologyComponent: TechnologyComponent;
+    // @ts-ignore
     @ViewChild(SuggestComponent, {static: false})
     private suggestComponent: SuggestComponent;
     // @ts-ignore
     @ViewChild(TeamComponent, {static: false})
     private teamComponent: TeamComponent;
+
     constructor(private scrollService: ScrollService) {
     }
+
     ngOnInit() {
     }
+
     ngAfterViewInit() {
         setTimeout(() => {
             this.introductionComponentHeight = this.introductionComponent.componentHeight();
             this.sliderComponentHeight = this.sliderComponent.componentHeight();
             this.processComponentHeight = this.processComponent.componentHeight();
             this.portfolioComponentHeight = this.portfolioComponent.componentHeight();
+            this.technologyComponentHeight = this.technologyComponent.componentHeight();
             this.suggestComponentHeight = this.suggestComponent.componentHeight();
             this.teamComponentHeight = this.teamComponent.componentHeight();
             console.log(
@@ -60,48 +74,61 @@ export class HomeComponent implements OnInit, AfterViewInit {
                 this.sliderComponentHeight,
                 this.processComponentHeight,
                 this.portfolioComponentHeight,
+                this.technologyComponentHeight,
                 this.suggestComponentHeight,
                 this.teamComponentHeight);
             console.log(document.documentElement.clientHeight);
-        }, 1500);
+        }, 1000);
     }
+
     onSectionChange(sectionId: string) {
         this.currentSection = sectionId;
     }
 
     @HostListener('window:scroll', ['$event']) checkScroll() {
         const scrollPosition = Math.ceil(window.pageYOffset + (document.documentElement.clientHeight / 2));
-        if (scrollPosition  > this.sliderComponentHeight &&
+        if (scrollPosition > this.sliderComponentHeight -200 &&
             scrollPosition < this.processComponentHeight) {
             this.currentSection = 'section1';
-            const data  = {
+            const data = {
                 slider: 'show'
             };
             this.scrollService.setScrollAnimation(data);
         } else if (scrollPosition > this.processComponentHeight &&
             scrollPosition < this.portfolioComponentHeight) {
             this.currentSection = 'section2';
-            const data  = {
+            const data = {
                 process: 'show'
             };
             this.scrollService.setScrollAnimation(data);
         } else if (scrollPosition > this.portfolioComponentHeight &&
-            scrollPosition < this.suggestComponentHeight) {
+            scrollPosition < this.technologyComponentHeight) {
             this.currentSection = 'section3';
-            const data  = {
+            const data = {
                 portfolio: 'show'
             };
             this.scrollService.setScrollAnimation(data);
+
+
+        } else if (scrollPosition > this.technologyComponentHeight &&
+            scrollPosition < this.suggestComponentHeight) {
+            this.currentSection = 'section4';
+            const data = {
+                technology: 'show'
+            };
+            this.scrollService.setScrollAnimation(data);
+
+
         } else if (scrollPosition > this.suggestComponentHeight &&
             scrollPosition < this.teamComponentHeight) {
-            this.currentSection = 'section4';
-            const data  = {
+            this.currentSection = 'section5';
+            const data = {
                 suggest: 'show'
             };
             this.scrollService.setScrollAnimation(data);
         } else if (scrollPosition > this.teamComponentHeight) {
-            this.currentSection = 'section5';
-            const data  = {
+            this.currentSection = 'section6';
+            const data = {
 
                 team: 'show'
             };
