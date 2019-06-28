@@ -1,8 +1,9 @@
 
+<!--appScrollSpy [spiedTags]="['DIV']" (sectionChange)="onSectionChange($event)"-->
 
   <app-top-menu></app-top-menu>
 
-<div id="parentDiv" appScrollSpy [spiedTags]="['DIV']" (sectionChange)="onSectionChange($event)" class="row">
+<div id="parentDiv"  class="">
 
     <app-sidebar [currentSection]='currentSection'></app-sidebar>
 

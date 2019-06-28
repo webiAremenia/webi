@@ -26,7 +26,7 @@ export class TechnologyComponent implements OnInit {
             {img: 'Net-Core.png', title: 'Net-Core'},
             {img: 'Firebase.png', title: 'Firebase'},
             {img: 'CSS3.png', title: 'CSS3'},
-            {img: 'HTML.png', title: 'HTML'},
+            {img: 'HTML5.png', title: 'HTML'},
             {img: 'Polymer.png', title: 'Polymer'},
             {img: 'Appium-1.png', title: 'Appium'},
             {img: 'Adobe-CC.png', title: 'Adobe-CC'},

@@ -1,5 +1,5 @@
 body, html {
-  overflow: hidden;
+  /*overflow: hidden;*/
 
 }
 
@@ -9,8 +9,8 @@ body, html {
 
 #parentDiv{
   height: 100vh;
-  overflow-y: auto;
-  overflow-x: hidden;
+  /*overflow-y: auto;*/
+  /*overflow-x: hidden;*/
 }
 #section2{
     margin-right: 0;

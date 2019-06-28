@@ -11,6 +11,7 @@ import news from './crud/news';
 import menu from './crud/menu';
 import language from './crud/language';
 import category from './crud/category';
+import card from './crud/card';
 
 
 
@@ -23,6 +24,7 @@ router.use('/news', news);
 router.use('/menu', menu);
 router.use('/language', language);
 router.use('/category', category);
+router.use('/cards', card);
 
 
 router.post('/contact', contactController.sendMail);

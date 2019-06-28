@@ -44,15 +44,9 @@ export class TeamComponent implements OnInit, AfterViewInit {
     }
 
     getTeam() {
-        if(this.teamService)
-        this.teamService.getAll().subscribe(
-            data => {
-                this.team = data;
-                this.done = true;
-            },
-            err => console.log(err)
-        );
+        this.team = this.teamService.allTeem || this.teamService.getAll().subscribe();
     }
+
     ngAfterViewInit(): void {
         this.visible = true;
     }

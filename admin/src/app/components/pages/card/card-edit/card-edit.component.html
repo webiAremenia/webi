@@ -1,0 +1,62 @@
+<div class="row">
+  <div class="col-md-10 offset-1">
+    <h2 class="text-center" translate>Create</h2>
+    <form [formGroup]="myForm">
+
+      <button class="btn btn-primary" (click)="changeLanguage('en')">en</button>
+      <button class="btn btn-primary ml-1" (click)="changeLanguage('ru')">ru</button>
+      <button class="btn btn-primary ml-1" (click)="changeLanguage('am')">am</button>
+      <br>
+
+      <div class="form-group">
+        <label translate>Title</label>
+        <input type="text" placeholder="en" class="form-control" formControlName="enTitle" *ngIf="language=='en'">
+        <input type="text" placeholder="ru" class="form-control" formControlName="ruTitle" *ngIf="language=='ru'">
+        <input type="text" placeholder="am" class="form-control" formControlName="amTitle" *ngIf="language=='am'">
+        <p *ngIf="myForm.get('enTitle').invalid && myForm.get('enTitle').touched" class="invalid">Type en
+          Title</p>
+
+      </div>
+
+
+      <div class="form-group">
+        <label translate>Description</label>
+
+        <textarea class="form-control" placeholder="en" rows="3" formControlName="enDescription"
+                  *ngIf="language=='en'"></textarea>
+        <textarea class="form-control" placeholder="ru" rows="3" formControlName="ruDescription"
+                  *ngIf="language=='ru'"></textarea>
+        <textarea class="form-control" placeholder="am" rows="3" formControlName="amDescription"
+                  *ngIf="language=='am'"></textarea>
+
+        <p *ngIf="myForm.get('enDescription').invalid && myForm.get('enDescription').touched"
+           class="invalid">Type en Description</p>
+
+      </div>
+
+      <div class="form-group color-piker-wrapper">
+        <label for="bg-color" class="my-label"> Slide Background Color:
+        </label>
+        <input [(colorPicker)]="background" [style.background]="background" type="text" [value]="background"
+               id="bg-color" class="form-control" formControlName="bgColor">
+      </div>
+
+      <div class="form-group color-piker-wrapper">
+        <label for="text-color" class="my-label"> Slide Text Color:
+        </label>
+        <input [(colorPicker)]="textColor" [style.background]="textColor" type="text" [value]="textColor"
+               id="text-color" class="form-control" formControlName="textColor">
+      </div>
+
+      <div class="form-group color-piker-wrapper">
+        <label for="slide-url" class="my-label"> Slide url:
+        </label>
+        <input type="text" id="slide-url" class="form-control" formControlName="url">
+      </div>
+
+      <button type="button" class="btn btn-info" (click)="sendData()" [disabled]="!myForm.valid" translate>Save Changes<i
+              class="fa fa-check"></i></button>
+    </form>
+  </div>
+</div>
+

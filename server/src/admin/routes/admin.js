@@ -9,9 +9,10 @@ import portfolio from './crud/portfolio';
 import setting from './crud/setting';
 import team from './crud/team';
 import menu from './crud/menu';
-import category from './crud/category'
-import language from './crud/language'
-import news from './crud/news'
+import category from './crud/category';
+import language from './crud/language';
+import news from './crud/news';
+import serviceCards from './crud/cards';
 import multer from "multer";
 
 const router = express.Router();
@@ -51,6 +52,7 @@ router.use('/menu', menu);
 router.use('/category', category);
 router.use('/language', language);
 router.use('/news', news);
+router.use('/cards', serviceCards);
 
 
 module.exports = router;

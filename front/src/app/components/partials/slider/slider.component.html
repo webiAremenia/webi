@@ -1,95 +1,61 @@
-<div id="slider" class="my-container">
+<div id="slider" class="my-container" *ngIf="cards">
     <div class="col-lg-10 offset-lg-1 col-md-10 offset-md-1 col-sm-12">
         <div class="row px-0 m-0 h-auto">
-            <div class="col-12 p-0 m-0 h-auto d-none d-sm-block">
+            <div class="col-12 p-0 m-0 h-auto d-none d-md-block" *ngIf="done">
                 <owl-carousel-o [options]="customOptions" class="m-0 p-0">
 
-                    <ng-template carouselSlide>
-                        <div class="one">
-                            <p class="number">01</p>
-                            <h5>Website & Web App Development</h5>
-                            <p class="lorem">
-                                WEBI developers are responsible for a variety of enterprise Websites and Web
-                                applications around the world
-                                <br>
-                                We develop websites and web applications on PHP & Node.Js
-<!--                                <br>-->
-<!--                                Web applications are Websites that appear and act more as interactive applications on-->
-<!--                                the users’ devices-->
-                            </p>
-<!--                            <button><img src="./assets/images/right-black.png" alt=""></button>-->
-                        </div>
-                    </ng-template>
-
-                    <ng-template carouselSlide>
-                        <div class="two">
-                            <p class="number">02</p>
-                            <h5>Custom & Secure eCommerce</h5>
-                            <p class="lorem">
-                                We collaborate with our customers to develop robust and reliable eCommerce Websites,
-                                that offer a high level of security (when compared with lower tier platforms such as
-                                Wordpress and so on)
-                            </p>
-<!--                            <button><img src="./assets/images/right-filled.png" alt=""></button>-->
-                        </div>
-                    </ng-template>
-
-                    <ng-template carouselSlide>
-                        <div class="three">
-                            <p>03</p>
-                            <h5>Mobile Apps (iOS & Android)</h5>
-                            <p class="lorem">
-                                Our specialties include the ability to custom develop user engaging mobile applications
-                                for both the Google Play and Apple App stores.
-                            </p>
-                        </div>
-                    </ng-template>
-
+                    <ng-container *ngFor="let card of cards; let i = index">
+                        <ng-template carouselSlide>
+                            <div class="one" [style.background]="card.bgColor" [style.color]="card.textColor">
+                                <p class="number">{{i < 10 ? '0' + (i + 1) : i + 1}}</p>
+                                <h5>{{card.title.en}}</h5>
+                                <p class="lorem">
+                                    {{card.description.en}}
+                                </p>
+                                <a *ngIf="card.url" [routerLink]="card.url"><img src="assets/images/right-black.png" alt=""></a>
+                            </div>
+                        </ng-template>
+                    </ng-container>
 
                 </owl-carousel-o>
             </div>
 
-            <div class="col-12 p-0 h-auto d-block d-sm-none">
-                <div class="row">
-                    <div class="col-12 one">
-                        <p class="number">01</p>
-                        <h5>Website & Web App Development</h5>
-                        <p class="lorem">
-                            WEBI developers are responsible for a variety of enterprise Websites and Web
-                            applications around the world
-                            <br>
-                            We develop websites and web applications on Python, PHP, C# and Java with Node.Js
-                            <br>
-                            Web applications are Websites that appear and act more as interactive applications on
-                            the users’ devices
-
-                        </p>
-<!--                        <button><img src="./assets/images/right-black.png" alt=""></button>-->
+            <div class="col-12 p-0 h-auto d-block d-md-none">
+                <ng-container *ngFor="let card of cards; let i = index">
+                    <div class="row" *ngIf="done">
+                        <div class="col-12 one" [style.background]="card.bgColor" [style.color]="card.textColor">
+                            <p class="number">{{i < 10 ? '0' + (i + 1) : i + 1}}</p>
+                            <h5>{{card.title.en}}</h5>
+                            <p class="lorem">
+                                {{card.description.en}}
+                            </p>
+                            <!--                        <button><img src="./assets/images/right-black.png" alt=""></button>-->
+                        </div>
                     </div>
-                </div>
-                <div class="row">
-                    <div class="col-12 two">
-                        <p class="number">02</p>
-                        <h5>Custom & Secure eCommerce</h5>
-                        <p class="lorem">
-                            We collaborate with our customers to develop robust and reliable eCommerce Websites,
-                            that offer a high level of security (when compared with lower tier platforms such as
-                            Wordpress and so on)
-                        </p>
-<!--                        <button><img src="./assets/images/right-filled.png" alt=""></button>-->
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-12 three">
-                        <p>03</p>
-                        <h5>Mobile Apps (iOS & Android)</h5>
-                        <p class="lorem">
-                            Our specialties include the ability to custom develop user engaging mobile applications
-                            for both the Google Play and Apple App stores.
-                        </p>
-<!--                        <button><img src="./assets/images/right-filled.png" alt=""></button>-->
-                    </div>
-                </div>
+                </ng-container>
+                <!--                <div class="row">-->
+                <!--                    <div class="col-12 two">-->
+                <!--                        <p class="number">02</p>-->
+                <!--                        <h5>Custom & Secure eCommerce</h5>-->
+                <!--                        <p class="lorem">-->
+                <!--                            We collaborate with our customers to develop robust and reliable eCommerce Websites,-->
+                <!--                            that offer a high level of security (when compared with lower tier platforms such as-->
+                <!--                            Wordpress and so on)-->
+                <!--                        </p>-->
+                <!--                        &lt;!&ndash;                        <button><img src="./assets/images/right-filled.png" alt=""></button>&ndash;&gt;-->
+                <!--                    </div>-->
+                <!--                </div>-->
+                <!--                <div class="row">-->
+                <!--                    <div class="col-12 three">-->
+                <!--                        <p>03</p>-->
+                <!--                        <h5>Mobile Apps (iOS & Android)</h5>-->
+                <!--                        <p class="lorem">-->
+                <!--                            Our specialties include the ability to custom develop user engaging mobile applications-->
+                <!--                            for both the Google Play and Apple App stores.-->
+                <!--                        </p>-->
+                <!--                        &lt;!&ndash;                        <button><img src="./assets/images/right-filled.png" alt=""></button>&ndash;&gt;-->
+                <!--                    </div>-->
+                <!--                </div>-->
             </div>
 
         </div>
