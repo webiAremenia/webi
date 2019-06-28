@@ -29,9 +29,9 @@ export class FooterComponent implements OnInit {
     }
 
     ngOnInit() {
-        this.phone = this.settingsService.getValueByKeyLanguage('footer-phone', 'en');
-        this.Email = this.settingsService.getValueByKeyLanguage('footer-email', 'en');
-        this.address = this.settingsService.getValueByKeyLanguage('footer-address', 'en').split('   ');
+        this.phone = this.settingsService.getValueByKeyLanguage('footer-phone', 'en').split('///');
+        this.Email = this.settingsService.getValueByKeyLanguage('footer-email', 'en').split('///');
+        this.address = this.settingsService.getValueByKeyLanguage('footer-address', 'en').split('///');
     }
 
     submit() {

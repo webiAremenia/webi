@@ -23,12 +23,15 @@ export class HomeComponent implements OnInit, AfterViewInit {
     teamComponentHeight: number;
 
 
+    // @ts-ignore
     @ViewChild(IntroductionComponent, {static: false})
     private introductionComponent: IntroductionComponent;
 
+    // @ts-ignore
     @ViewChild(SliderComponent, {static: false})
     private sliderComponent: SliderComponent;
 
+    // @ts-ignore
     @ViewChild(ProcessComponent, {static: false})
     private processComponent: ProcessComponent;
     // @ts-ignore
@@ -70,34 +73,34 @@ export class HomeComponent implements OnInit, AfterViewInit {
         const scrollPosition = Math.ceil(window.pageYOffset + (document.documentElement.clientHeight / 2));
         if (scrollPosition  > this.sliderComponentHeight &&
             scrollPosition < this.processComponentHeight) {
-            console.log('sliderComponentHeight');
+            this.currentSection = 'section1';
             const data  = {
                 slider: 'show'
             };
             this.scrollService.setScrollAnimation(data);
         } else if (scrollPosition > this.processComponentHeight &&
             scrollPosition < this.portfolioComponentHeight) {
-            console.log('processComponentHeight');
+            this.currentSection = 'section2';
             const data  = {
                 process: 'show'
             };
             this.scrollService.setScrollAnimation(data);
         } else if (scrollPosition > this.portfolioComponentHeight &&
             scrollPosition < this.suggestComponentHeight) {
-            console.log('portfolioComponentHeight');
+            this.currentSection = 'section3';
             const data  = {
                 portfolio: 'show'
             };
             this.scrollService.setScrollAnimation(data);
         } else if (scrollPosition > this.suggestComponentHeight &&
             scrollPosition < this.teamComponentHeight) {
-            console.log('suggestComponentHeight');
+            this.currentSection = 'section4';
             const data  = {
                 suggest: 'show'
             };
             this.scrollService.setScrollAnimation(data);
         } else if (scrollPosition > this.teamComponentHeight) {
-            console.log('teamComponentHeight');
+            this.currentSection = 'section5';
             const data  = {
 
                 team: 'show'
