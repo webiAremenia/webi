@@ -15,15 +15,15 @@
                     <div class="row">
                         <div class="col-6">
                             <p><b><i>Main office</i></b></p>
-                            <p class="address">{{address}}</p>
-                            <p class="address">{{phone}}</p>
-                            <p class="address">{{Email}}</p>
+                            <p class="address">{{address[0]}}</p>
+                            <p class="address">{{phone[0]}}</p>
+                            <p class="address">{{Email[0]}}</p>
                         </div>
                         <div class="col-6">
-                            <p><b><i>Our representitive partners </i></b></p>
-                            <p class="address">{{address}}</p>
-                            <p class="address">{{phone}}</p>
-                            <p class="address">{{Email}}</p>
+                            <p><b><i>Our representative partners </i></b></p>
+                            <p class="address">{{address[1] || ''}}</p>
+                            <p class="address">{{phone[1] || ''}}</p>
+                            <p class="address">{{Email[1] || ''}}</p>
                         </div>
 
                     </div>
@@ -34,29 +34,29 @@
                     <div class="forms">
                         <form [formGroup]="myForm" novalidate (ngSubmit)="submit()">
                             <div class="form-group">
-                                <label>First name</label>
+                                <label for="firstName">First name</label>
                                 <p class="error"
                                    *ngIf="myForm.controls['firstName'].invalid && myForm.controls['firstName'].touched">
                                     *Enter your name</p>
-                                <input type="text" placeholder="Enter your first name" class="form-control"
+                                <input type="text" placeholder="Enter your first name" class="form-control" id="firstName"
                                        formControlName="firstName">
 
                             </div>
                             <div class="form-group">
-                                <label>Email</label>
+                                <label for="email">Email</label>
                                 <p class="error"
                                    *ngIf="myForm.controls['email'].invalid && myForm.controls['email'].touched">
                                     *Incorrect Email</p>
-                                <input type="text" placeholder="Enter your email" class="form-control"
+                                <input type="text" placeholder="Enter your email" class="form-control" id="email"
                                        formControlName="email">
 
                             </div>
                             <div class="form-group">
-                                <label>Message</label>
+                                <label for="message">Message</label>
                                 <p class="error"
                                    *ngIf="myForm.controls['message'].invalid && myForm.controls['message'].touched">
                                     *Enter text</p>
-                                <textarea name="Enter your first name" id="" cols="30" rows="10" class="form-control"
+                                <textarea name="Enter your first name" id="message" cols="30" rows="10" class="form-control"
                                           formControlName="message"></textarea>
                             </div>
                             <div class="form-group" style="text-align: right">

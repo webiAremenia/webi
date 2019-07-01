@@ -4,7 +4,7 @@ import {FormSectionComponent} from './form-section/form-section.component';
 import {EcomerceComponent} from './ecomerce.component';
 import {CardsTypeOneComponent} from './cards-type-one/cards-type-one.component';
 import {TestimonialsComponent} from './testimonials/testimonials.component';
-import { SliderComponent } from './slider/slider.component';
+import { EcomerceSliderComponent } from './ecomerce-slider/ecomerce-slider.component';
 import {CarouselModule} from 'ngx-owl-carousel-o';
 import { DescriptionComponent } from './description/description.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
@@ -16,7 +16,7 @@ import { CardsTypeThreeComponent } from './cards-type-three/cards-type-three.com
         EcomerceComponent,
         FormSectionComponent,
         TestimonialsComponent,
-        SliderComponent,
+        EcomerceSliderComponent,
         DescriptionComponent,
         CardsTypeOneComponent,
         CardsTypeTwoComponent,
@@ -32,7 +32,7 @@ import { CardsTypeThreeComponent } from './cards-type-three/cards-type-three.com
         EcomerceComponent,
         FormSectionComponent,
         TestimonialsComponent,
-        SliderComponent,
+        EcomerceSliderComponent,
         DescriptionComponent,
         CardsTypeOneComponent,
         CardsTypeTwoComponent,

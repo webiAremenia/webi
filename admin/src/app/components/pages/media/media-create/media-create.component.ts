@@ -14,7 +14,7 @@ export class MediaCreateComponent implements OnInit {
   language: String = 'en';
   public Editor = ClassicEditor;
   options: any;
-  categories: any = ['slider', 'media'];
+  categories: any = ['ecomerce-slider', 'media'];
 
   constructor(private formBuilder: FormBuilder, private dataService: DataService, private router: Router) {
   }
