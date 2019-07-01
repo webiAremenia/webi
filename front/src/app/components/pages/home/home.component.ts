@@ -5,8 +5,8 @@ import {SuggestComponent} from './suggest/suggest.component';
 import {TeamComponent} from './team/team.component';
 import {ScrollService} from '../../_services/scroll.service';
 import {PortfolioComponent} from '../portfolio/portfolio.component';
-import { SliderComponent } from '../../partials/slider/slider.component';
 
+import { SliderComponent } from '../../partials/slider/slider.component';
 
 @Component({
     selector: 'app-home',
@@ -15,13 +15,13 @@ import { SliderComponent } from '../../partials/slider/slider.component';
 })
 export class HomeComponent implements OnInit, AfterViewInit {
     currentSection = 'section1';
-
     introductionComponentHeight: number;
     sliderComponentHeight: number;
     processComponentHeight: number;
     portfolioComponentHeight: number;
     suggestComponentHeight: number;
     teamComponentHeight: number;
+
 
     @ViewChild(IntroductionComponent, {static: false})
     private introductionComponent: IntroductionComponent;
@@ -31,23 +31,19 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
     @ViewChild(ProcessComponent, {static: false})
     private processComponent: ProcessComponent;
-
+    // @ts-ignore
     @ViewChild(PortfolioComponent, {static: false})
     private portfolioComponent: PortfolioComponent;
-
+    // @ts-ignore
     @ViewChild(SuggestComponent, {static: false})
     private suggestComponent: SuggestComponent;
-
+    // @ts-ignore
     @ViewChild(TeamComponent, {static: false})
     private teamComponent: TeamComponent;
-
-
     constructor(private scrollService: ScrollService) {
     }
-
     ngOnInit() {
     }
-
     ngAfterViewInit() {
         setTimeout(() => {
             this.introductionComponentHeight = this.introductionComponent.componentHeight();
@@ -65,9 +61,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
                 this.teamComponentHeight);
             console.log(document.documentElement.clientHeight);
         }, 500);
-
     }
-
     onSectionChange(sectionId: string) {
         this.currentSection = sectionId;
     }
@@ -105,10 +99,10 @@ export class HomeComponent implements OnInit, AfterViewInit {
         } else if (scrollPosition > this.teamComponentHeight) {
             console.log('teamComponentHeight');
             const data  = {
+
                 team: 'show'
             };
             this.scrollService.setScrollAnimation(data);
         }
     }
-
 }
