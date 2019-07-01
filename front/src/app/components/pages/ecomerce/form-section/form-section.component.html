@@ -1,0 +1,87 @@
+
+<div class="container-fluid">
+  <div class="row">
+      <div class="col-12 heading">
+          <h2 [ngClass]="{'custom-h2': isCustom}">{{formSectionHeading}}</h2>
+      </div>
+  </div>
+</div>
+
+<div class="container contact-box">
+  <div class="row">
+      <div class="col-6 contact-box-image">
+          <img class="img-fluid" src="{{url}}" alt="">
+      </div>
+      <div class="col-6">
+          <div class="row">
+
+              <form [formGroup]="myForm" class="row" (ngSubmit)="sendData()">
+
+                  <div class="col-12 contact-box-input">
+                      <label for="name">NAME
+                          <span class="error-span"
+                                *ngIf="myForm.controls.name.invalid &&
+                                        myForm.controls.name.touched">required</span></label>
+                      <div class="form-group">
+                          <input formControlName="name" id="name" type="text" placeholder="+977 - (000) - 0000312"
+                                 [ngClass]="myForm.controls.name.invalid &&
+                                        myForm.controls.name.touched ? 'form-error form-control': 'form-control'">
+                      </div>
+                  </div>
+
+                  <div class="col-12 contact-box-input">
+                      <label for="email">EMAIL
+                          <span class="error-span"
+                                *ngIf="myForm.controls.email.invalid &&
+                                        myForm.controls.email.touched">required</span></label>
+                      <div class="form-group">
+                          <input formControlName="email" id="email" type="text" placeholder="ishan02016@gmail.com"
+                                 [ngClass]="myForm.controls.email.invalid &&
+                                        myForm.controls.email.touched ? 'form-error form-control': 'form-control'">
+                      </div>
+                  </div>
+
+                  <div class="col-12 contact-box-input">
+                      <label for="phone">PHONE
+                          <span class="error-span"
+                                *ngIf="myForm.controls.phone.invalid &&
+                                        myForm.controls.phone.touched">required</span></label>
+                      <div class="form-group">
+                          <input formControlName="phone" id="phone" type="text"
+                                 placeholder="+977 - (000) - 0000312"
+                                 [ngClass]="myForm.controls.phone.invalid &&
+                                        myForm.controls.phone.touched ? 'form-error form-control': 'form-control'">
+                      </div>
+                  </div>
+
+                  <div class="col-12 contact-box-input">
+                      <label for="companyName">COMPANY NAME
+                          <span class="error-span"
+                                *ngIf="myForm.controls.companyName.invalid &&
+                                        myForm.controls.companyName.touched">required</span></label>
+                      <div class="form-group">
+                          <input formControlName="companyName" id="companyName" type="text"
+                                 placeholder="Sanepa Height"
+                                 [ngClass]="myForm.controls.companyName.invalid &&
+                                        myForm.controls.companyName.touched ? 'form-error form-control': 'form-control'">
+                      </div>
+                  </div>
+
+                  <div class="col-12 contact-box-button-section">
+                      <div class="row">
+                          <div class="col-4"></div>
+                          <div class="col-4"></div>
+                          <div class="col-4">
+                              <button [disabled]="myForm.invalid" class="btn btn-primary contact-box-button">
+                                  Next
+                              </button>
+                          </div>
+                      </div>
+                  </div>
+
+              </form>
+
+          </div>
+      </div>
+  </div>
+</div>

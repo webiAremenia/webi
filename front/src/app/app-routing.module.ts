@@ -8,7 +8,6 @@ import {BlogComponent} from './components/pages/blog/blog.component';
 import {BlogDetailesComponent} from './components/pages/blog/blog-detailes/blog-detailes.component';
 import {AllPortfoliosComponent} from './components/pages/portfolio/all-portfolios/all-portfolios.component';
 import {PortfolioDetailesComponent} from './components/pages/portfolio/portfolio-detailes/portfolio-detailes.component';
-import {EcomerceComponent} from './components/pages/ecomerce/ecomerce.component';
 
 
 const routes: Routes = [
@@ -18,7 +17,7 @@ const routes: Routes = [
     {path: 'allPortfolios', component: AllPortfoliosComponent, pathMatch: 'full'},
     {path: 'blog/:id', component: BlogDetailesComponent},
     {path: 'portfolio/:id', component: PortfolioDetailesComponent},
-    {path: 'ecommerce', component: EcomerceComponent}
+    {path: 'ecommerce', loadChildren: () => import('./components/pages/ecomerce//ecomerce.module').then(m => m.EcomerceModule)}
 ];
 
 

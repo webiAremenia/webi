@@ -25,7 +25,7 @@ router.use('/news', news);
 router.use('/menu', menu);
 router.use('/language', language);
 router.use('/category', category);
-router.use('/cards', card);
+router.use('/cards-type-one', card);
 router.use('/ecommerce', eCommerce);
 
 

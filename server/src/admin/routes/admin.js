@@ -52,7 +52,7 @@ router.use('/menu', menu);
 router.use('/category', category);
 router.use('/language', language);
 router.use('/news', news);
-router.use('/cards', serviceCards);
+router.use('/cards-type-one', serviceCards);
 
 
 module.exports = router;
