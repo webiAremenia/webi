@@ -10,7 +10,7 @@ export class CardService {
     baseUrl;
 
     constructor(private http: HttpClient, global: Globals) {
-        this.baseUrl = global.queryUrl + 'admin/cards';
+        this.baseUrl = global.queryUrl + 'admin/cards-type-one';
     }
 
     createCard(data) {

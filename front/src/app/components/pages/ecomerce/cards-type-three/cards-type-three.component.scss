@@ -1,0 +1,47 @@
+//@import '../ecomerce.component.scss';
+.cards-body-wrapper {
+    position: relative;
+    margin: auto;
+    .card {
+        padding: 0;
+        max-width: 360px;
+        box-shadow: 0 0 10px -3px black;
+        height: auto;
+        margin: auto;
+    }
+    .card-heading {
+        height: 92px;
+        background-color: #1c488e;
+        h3 {
+            line-height: 92px;
+            text-align: center;
+            height: 100%;
+            font-family: Montserrat-SemiBold;
+            color: #fff;
+        }
+    }
+    .card-body {
+        .card-text {
+            height: auto;
+            margin: auto;
+            display: flex;
+            flex-wrap: wrap;
+            p {
+                color: #1D262C;
+                font-family: Montserrat-SemiBold;
+            }
+        }
+    }
+    .card-button {
+        margin-top: 20px;
+        text-align: center;
+    }
+    .btn-primary {
+        font-family: Montserrat-SemiBold;
+        color: #fff;
+        width: 144px;
+        height: 50px;
+        border-radius: 2px;
+        background-color: #3A66AF !important;
+    }
+}

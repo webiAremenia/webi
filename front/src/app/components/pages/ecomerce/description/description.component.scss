@@ -1,0 +1,24 @@
+@import '../ecomerce.component';
+
+.description-title {
+    p {
+        margin-bottom: 42px;
+        max-width: 812px;
+        line-height: 32px;
+        font-family: Montserrat-SemiBold;
+        color: #1D262C;
+    }
+}
+
+.description-sub-title {
+    p {
+        max-width: 762px;
+        height: 96px;
+        font-family: Montserrat-SemiBold;
+        color: #1D262C;
+    }
+}
+
+.description-button {
+    text-align: center;
+}

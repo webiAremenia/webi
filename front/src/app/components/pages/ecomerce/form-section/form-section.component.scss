@@ -1,0 +1,60 @@
+@import '../ecomerce.component.scss';
+
+.custom-h2 {
+    font-family: Montserrat-Regular;
+    color: #71828A;
+    font-size: 18px;
+    line-height: 32px;
+}
+
+.contact-box {
+    margin-bottom: 82px;
+
+    .contact-box-input {
+        width: 455px;
+
+        label {
+            float: left;
+            font-family: Montserrat-SemiBold;
+            font-size: 12px;
+            line-height: 15px;
+            color: #000;
+            letter-spacing: 0;
+            margin-bottom: 15px;
+            margin-top: 42px;
+        }
+
+        input[placeholder] {
+            padding: 0 20px;
+            font-family: Montserrat-Regular;
+            font-size: 16px;
+            color: #697B8C;
+            text-align: left;
+            line-height: 16px;
+            line-height: 16px;
+        }
+
+        .form-control {
+            font-weight: 1px;
+            border: 1px solid #DBDBDB;
+            border-radius: 7px;
+            height: 60px;
+            width: 100%;
+        }
+
+    }
+
+    .contact-box-button-section {
+        margin-top: 45px;
+
+        .contact-box-button {
+            float: right;
+        }
+    }
+
+}
+.error-span {
+    color: darkred;
+    font-style: italic;
+    font-size: 14px;
+}
