@@ -1,7 +1,7 @@
 import {
     AfterViewInit,
     Component,
-    HostListener,
+    HostListener, OnDestroy,
     OnInit,
     ViewChild
 } from '@angular/core';
@@ -19,7 +19,7 @@ import {TechnologyComponent} from '../technology/technology.component';
     templateUrl: './home.component.html',
     styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements OnInit, AfterViewInit {
+export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     currentSection = 'section1';
     introductionComponentHeight: number;
     sliderComponentHeight: number;
@@ -69,15 +69,6 @@ export class HomeComponent implements OnInit, AfterViewInit {
             this.technologyComponentHeight = this.technologyComponent.componentHeight();
             this.suggestComponentHeight = this.suggestComponent.componentHeight();
             this.teamComponentHeight = this.teamComponent.componentHeight();
-            console.log(
-                this.introductionComponentHeight,
-                this.sliderComponentHeight,
-                this.processComponentHeight,
-                this.portfolioComponentHeight,
-                this.technologyComponentHeight,
-                this.suggestComponentHeight,
-                this.teamComponentHeight);
-            console.log(document.documentElement.clientHeight);
         }, 1000);
     }
 
@@ -87,7 +78,7 @@ export class HomeComponent implements OnInit, AfterViewInit {
 
     @HostListener('window:scroll', ['$event']) checkScroll() {
         const scrollPosition = Math.ceil(window.pageYOffset + (document.documentElement.clientHeight / 2));
-        if (scrollPosition > this.sliderComponentHeight -200 &&
+        if (scrollPosition > this.sliderComponentHeight - 300 &&
             scrollPosition < this.processComponentHeight) {
             this.currentSection = 'section1';
             const data = {
@@ -134,5 +125,9 @@ export class HomeComponent implements OnInit, AfterViewInit {
             };
             this.scrollService.setScrollAnimation(data);
         }
+    }
+
+    ngOnDestroy(): void {
+        window.scrollTo(0, window.innerWidth < 1000 ? 100 : 200);
     }
 }

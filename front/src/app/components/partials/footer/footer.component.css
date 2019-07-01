@@ -99,6 +99,10 @@ button:hover {
 
 @media (max-width: 768px) {
 
+    .forms {
+        padding-top: 30px;
+    }
+
     input, textarea, button {
         width: 100%;
     }

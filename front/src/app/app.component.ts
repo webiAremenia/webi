@@ -1,7 +1,8 @@
 import {Component} from '@angular/core';
 import {TranslateService} from '@ngx-translate/core';
 import {SettingService} from './components/_services/setting.service';
-import {TeamService} from "./components/_services/team.service";
+import {TeamService} from './components/_services/team.service';
+import {PortfolioService} from './components/_services/portfolio.service';
 
 
 @Component({
@@ -17,7 +18,8 @@ export class AppComponent {
     constructor(
         private translate: TranslateService,
         private settings: SettingService,
-        private teamService: TeamService
+        private teamService: TeamService,
+        private portfolioService: PortfolioService
     ) {
         settings.getAll().subscribe(
             d => {
@@ -29,6 +31,7 @@ export class AppComponent {
                 this.done2 = true;
             }
         );
+        this.portfolioService.getAll().subscribe();
         translate.setDefaultLang('en');
         this.translate.currentLang = 'en';
     }

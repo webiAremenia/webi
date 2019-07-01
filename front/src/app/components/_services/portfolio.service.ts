@@ -14,11 +14,12 @@ export class PortfolioService {
     }
 
     query = this.global.queryUrl;
+    allPortfolio: Portfolio[];
 
     getAll(): Observable<Portfolio[]> {
         return this.http.get(`${this.query}portfolio`)
             .pipe(map(data => {
-                    return data['data'].map(item => {
+                    this.allPortfolio = data['data'].map(item => {
                         return {
                             id: item._id,
                             title: {
@@ -45,6 +46,7 @@ export class PortfolioService {
                             image: item.image,
                         };
                     });
+                    return this.allPortfolio;
                 }),
                 catchError(err => {
                     console.log(err);
