@@ -1,0 +1,37 @@
+@import '../ecomerce.component';
+
+.section-7-heading {
+    h2 {
+        width: 288px;
+        font-family: Poppins-Regular;
+        color: #171C34;
+    }
+}
+.section-7-people {
+    .people-body {
+        max-width: 420px;
+        height: 420px;
+        margin: auto;
+
+        .people-image {
+            text-align: center;
+            img {
+                margin-top: 42px;
+                border-radius: 80px;
+                width: 80px;
+                height: 80px;
+            }
+        }
+
+        .people-text {
+            margin: 42px 0;
+            p {
+                max-width: 340px;
+                height: 115px;
+                font-family: Poppins-Regular;
+                font-size: 20px;
+                color: #171C34;
+            }
+        }
+    }
+}

@@ -1,0 +1,24 @@
+<div class="container description-body">
+
+    <div class="row description-heading heading">
+        <div class="col-12">
+            <h2>{{descriptionHeading}}</h2>
+        </div>
+    </div>
+
+    <div class="row description-title title">
+        <div class="col-12" >
+            <p>{{descriptionText}}</p>
+        </div>
+        <div class="col-12" *ngIf="descriptionTextAdditional">
+            <p>{{descriptionTextAdditional}}</p>
+        </div>
+    </div>
+
+    <div class="row" *ngIf="descriptionButton">
+        <div class="col-12 description-button">
+            <button class="btn btn-primary">CTA button</button>
+        </div>
+    </div>
+
+</div>

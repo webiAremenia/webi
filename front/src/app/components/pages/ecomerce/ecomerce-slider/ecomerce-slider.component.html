@@ -1,0 +1,27 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-12 slider-heading heading">
+            <h2>Some Examples</h2>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12 slider-title title">
+            <p>The following are just a few samples of our work</p>
+        </div>
+    </div>
+</div>
+
+<div class="container slider-container">
+    <div class="row">
+        <div class="col-12 slider-container-images">
+            <owl-carousel-o [options]="SliderOptions" class="slider_owl">
+
+                <ng-template carouselSlide *ngFor="let img of images">
+                    <div class="slider-image" [ngStyle]="{'background-image': 'url('+img+')'} "> </div>
+                </ng-template>
+
+            </owl-carousel-o>
+        </div>
+    </div>
+</div>

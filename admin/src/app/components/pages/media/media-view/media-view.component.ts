@@ -15,7 +15,7 @@ export class MediaViewComponent implements OnInit {
   language: String = 'en';
   done: boolean;
   delete: any;
-  categories: any = ['slider', 'media'];
+  categories: any = ['ecomerce-slider', 'media'];
   optionVal: any;
 
   constructor(private formBuilder: FormBuilder, private dataService: DataService, private router: Router, private itemService: ItemService) {
