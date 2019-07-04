@@ -57,8 +57,6 @@ export class HomeComponent implements OnInit, OnDestroy {
     }
 
     ngOnInit() {
-
-        console.log(1);
         if (this.scrollService.data !== null) {
             this.done = true;
             console.log(2);
@@ -70,11 +68,10 @@ export class HomeComponent implements OnInit, OnDestroy {
             this.technologyComponentHeight = this.scrollService.data.technology;
             this.suggestComponentHeight = this.scrollService.data.suggest;
             this.teamComponentHeight = this.scrollService.data.team;
-        }
+        } else {
+            setTimeout(() => {
+                this.done = true;
 
-        window.onload = () => {
-            this.done = true;
-            if (this.scrollService.data === null) {
                 this.introductionComponentHeight = this.introductionComponent.componentHeight();
                 this.sliderComponentHeight = this.sliderComponent.componentHeight();
                 this.processComponentHeight = this.processComponent.componentHeight();
@@ -93,12 +90,8 @@ export class HomeComponent implements OnInit, OnDestroy {
                     team: this.teamComponent.componentHeight()
                 };
                 this.scrollService.setComponentsHeight(data);
-            }
-        };
-    }
-
-    onSectionChange(sectionId: string) {
-        this.currentSection = sectionId;
+            }, 1000);
+        }
     }
 
     @HostListener('window:scroll', ['$event']) checkScroll() {
