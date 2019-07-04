@@ -1,4 +1,4 @@
-<div class="container-fluid section-2-header">
+<div class="container-fluid section-2-header" [@scrollAnimation]="state">
     <div class="row">
         <div class="col-12 section-2-heading heading">
             <h2></h2>
@@ -6,10 +6,10 @@
     </div>
 </div>
 
-<div class="container cards-body-wrapper">
+<div class="container cards-body-wrapper" [@scrollAnimation]="state">
     <div class="row">
 
-        <div class="col-md-4 col-12">
+        <div class="col-md-4 col-12 card-wrapper">
             <div class="col-12 card">
                 <div class="card-heading">
                     <h3>BASIC</h3>
@@ -34,7 +34,7 @@
             </div>
         </div>
 
-        <div class="col-md-4 col-12">
+        <div class="col-md-4 col-12 card-wrapper">
             <div class="col-12 card">
                 <div class="card-heading">
                     <h3>ADVANCED</h3>
@@ -59,7 +59,7 @@
             </div>
         </div>
 
-        <div class="col-md-4 col-12">
+        <div class="col-md-4 col-12 card-wrapper">
             <div class="col-12 card">
                 <div class="card-heading">
                     <h3>CUSTOM</h3>

@@ -1,26 +1,14 @@
-import {Component, ElementRef, OnDestroy, OnInit} from '@angular/core';
-import {animate, state, style, transition, trigger} from '@angular/animations';
+import {AfterContentChecked, Component, ElementRef, OnChanges, OnDestroy, OnInit} from '@angular/core';
 import {Subscription} from 'rxjs';
 import {ScrollService} from '../../_services/scroll.service';
+import {fadeInXAnimation} from '../../_animations';
 
 @Component({
     selector: 'app-technology',
     templateUrl: './technology.component.html',
     styleUrls: ['./technology.component.css'],
-    animations: [
-        trigger('scrollAnimation', [
-            state('show', style({
-                opacity: 1,
-                transform: 'translateX(0)'
-            })),
-            state('hide', style({
-                opacity: 0,
-                transform: 'translateX(-100%)'
-            })),
-            transition('show => hide', animate('700ms ease-out')),
-            transition('hide => show', animate('700ms ease-in'))
-        ])
-    ]
+    animations: [fadeInXAnimation]
+
 })
 export class TechnologyComponent implements OnInit, OnDestroy {
     state = 'hide';

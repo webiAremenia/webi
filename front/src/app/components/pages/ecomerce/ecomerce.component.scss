@@ -84,19 +84,19 @@ p {
 
 // // // HEADER // // //
 .header {
-    position: absolute;
+    //position: absolute;
     .header-info {
         height: 42px;
     }
     .header-title {
-        position: relative;
         width: 100%;
         background-color: #3A66AF;
         height: 90px;
         span {
-            position: relative;
-            left: 252px;
-            width: 114px;
+            //width: 114px;
+            cursor: pointer;
+            outline: none;
+            margin-left: 15%;
             height: 66px;
             font-size: 66px;
             line-height: 90px; // 66px
@@ -107,8 +107,7 @@ p {
 
 // // // SECTION-1 // // //
 .section-1 {
-    position: absolute;
-    top: 237px;
+    margin-top: 82px;
     .section-1-heading {
         h2 {
             max-width: 1056px;
@@ -119,44 +118,37 @@ p {
 
 // // // SECTION-2 // // //
 .section-2 {
-    position: absolute;
-    top: 1252px;
+    margin-top: 82px;
 }
 
 // // // SECTION-3 // // //
 .section-3 {
-    position: absolute;
-    top: 2094px;
+    margin-top: 82px;
 }
 
 // // // SECTION-4 // // //
 .section-4 {
-    position: absolute;
-    top: 3720px;
+    margin-top: 82px;
 }
 
 // // // SECTION-5 // // //
 .section-5 {
-    position: absolute;
-    top: 4564px;
+    margin-top: 82px;
 }
 
 // // // SECTION-6 // // //
 .section-6 {
-    position: absolute;
-    top: 4969px;
+    margin-top: 82px;
 }
 
 // // // SECTION-7 // // //
 .section-7 {
-    position: absolute;
-    top: 6041px;
+    margin-top: 82px;
 }
 
 // // // SECTION-8 // // //
 .section-8 {
-    position: absolute;
-    top: 6739px;
+    margin-top: 82px;
     .section-8-title {
         font-family: Montserrat-SemiBold;
         font-size: 24px;
@@ -169,8 +161,7 @@ p {
 
 // // // FOOTER // // //
 .footer {
-    position: absolute;
-    top: 7784px;
+    margin-top: 82px;
     background-color: #3A66AF;
     height: 59px;
     .footer-text {

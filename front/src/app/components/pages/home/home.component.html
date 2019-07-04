@@ -1,39 +1,49 @@
 
 <!--appScrollSpy [spiedTags]="['DIV']" (sectionChange)="onSectionChange($event)"-->
+<ng-container *ngIf="!done">
+   <div class="loading">
+       <div class="loading-background"></div>
+       <div class="loading-animation">
+           <svg class="spinner" viewBox="0 0 50 50">
+               <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="5"></circle>
+           </svg>
+       </div>
+   </div>
+</ng-container>
 
-  <app-top-menu></app-top-menu>
+ <app-top-menu></app-top-menu>
 
-<div id="parentDiv"  class="">
+ <div id="parentDiv"  class="">
 
-    <app-sidebar [currentSection]='currentSection'></app-sidebar>
+     <app-sidebar [currentSection]='currentSection'></app-sidebar>
 
-    <div class="container-fluid">
-        <div id="section1">
-            <app-introduction></app-introduction>
-        </div>
-        <div id="section2">
-            <app-slider></app-slider>
-        </div>
-        <div id="section3">
-            <app-process></app-process>
-        </div>
-        <div id="section4">
-            <app-portfolio></app-portfolio>
-        </div>
-        <div id="section5">
-            <app-technology></app-technology>
-        </div>
-        <div id="section6">
-            <app-suggest></app-suggest>
-        </div>
-        <div id="section7">
-            <app-team></app-team>
-        </div>
-        <div id="section8">
-            <app-footer></app-footer>
-        </div>
+     <div class="container-fluid">
+         <div id="section1">
+             <app-introduction></app-introduction>
+         </div>
+         <div id="section2">
+             <app-slider></app-slider>
+         </div>
+         <div id="section3">
+             <app-process></app-process>
+         </div>
+         <div id="section4">
+             <app-portfolio></app-portfolio>
+         </div>
+         <div id="section5">
+             <app-technology></app-technology>
+         </div>
+         <div id="section6">
+             <app-suggest></app-suggest>
+         </div>
+         <div id="section7">
+             <app-team></app-team>
+         </div>
+         <div id="section8">
+             <app-footer></app-footer>
+         </div>
 
-    </div>
+     </div>
 
-</div>
+ </div>
 

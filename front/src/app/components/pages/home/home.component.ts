@@ -1,5 +1,4 @@
 import {
-    AfterViewInit,
     Component,
     HostListener, OnDestroy,
     OnInit,
@@ -17,9 +16,10 @@ import {TechnologyComponent} from '../technology/technology.component';
 @Component({
     selector: 'app-home',
     templateUrl: './home.component.html',
-    styleUrls: ['./home.component.css']
+    styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
+export class HomeComponent implements OnInit, OnDestroy {
+    done = false;
     currentSection = 'section1';
     introductionComponentHeight: number;
     sliderComponentHeight: number;
@@ -33,11 +33,9 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     // @ts-ignore
     @ViewChild(IntroductionComponent, {static: false})
     private introductionComponent: IntroductionComponent;
-
     // @ts-ignore
     @ViewChild(SliderComponent, {static: false})
     private sliderComponent: SliderComponent;
-
     // @ts-ignore
     @ViewChild(ProcessComponent, {static: false})
     private processComponent: ProcessComponent;
@@ -58,18 +56,43 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
     }
 
     ngOnInit() {
-    }
 
-    ngAfterViewInit() {
-        setTimeout(() => {
-            this.introductionComponentHeight = this.introductionComponent.componentHeight();
-            this.sliderComponentHeight = this.sliderComponent.componentHeight();
-            this.processComponentHeight = this.processComponent.componentHeight();
-            this.portfolioComponentHeight = this.portfolioComponent.componentHeight();
-            this.technologyComponentHeight = this.technologyComponent.componentHeight();
-            this.suggestComponentHeight = this.suggestComponent.componentHeight();
-            this.teamComponentHeight = this.teamComponent.componentHeight();
-        }, 1000);
+        if (this.scrollService.data !== null) {
+            this.done = true;
+
+            this.introductionComponentHeight = this.scrollService.data.introduction;
+            this.sliderComponentHeight = this.scrollService.data.slider;
+            this.processComponentHeight = this.scrollService.data.process;
+            this.portfolioComponentHeight = this.scrollService.data.portfolio;
+            this.technologyComponentHeight = this.scrollService.data.technology;
+            this.suggestComponentHeight = this.scrollService.data.suggest;
+            this.teamComponentHeight = this.scrollService.data.team;
+        }
+
+        window.onload = () => {
+            this.done = true;
+
+            if (this.scrollService.data === null) {
+                this.introductionComponentHeight = this.introductionComponent.componentHeight();
+                this.sliderComponentHeight = this.sliderComponent.componentHeight();
+                this.processComponentHeight = this.processComponent.componentHeight();
+                this.portfolioComponentHeight = this.portfolioComponent.componentHeight();
+                this.technologyComponentHeight = this.technologyComponent.componentHeight();
+                this.suggestComponentHeight = this.suggestComponent.componentHeight();
+                this.teamComponentHeight = this.teamComponent.componentHeight();
+
+                const data = {
+                    introduction: this.introductionComponent.componentHeight(),
+                    slider: this.sliderComponent.componentHeight(),
+                    process: this.processComponent.componentHeight(),
+                    portfolio: this.portfolioComponent.componentHeight(),
+                    technology: this.technologyComponent.componentHeight(),
+                    suggest: this.suggestComponent.componentHeight(),
+                    team: this.teamComponent.componentHeight()
+                };
+                this.scrollService.setComponentsHeight(data);
+            }
+        };
     }
 
     onSectionChange(sectionId: string) {
@@ -78,7 +101,7 @@ export class HomeComponent implements OnInit, AfterViewInit, OnDestroy {
 
     @HostListener('window:scroll', ['$event']) checkScroll() {
         const scrollPosition = Math.ceil(window.pageYOffset + (document.documentElement.clientHeight / 2));
-        if (scrollPosition > this.sliderComponentHeight - 300 &&
+        if (scrollPosition > this.sliderComponentHeight - 200 &&
             scrollPosition < this.processComponentHeight) {
             this.currentSection = 'section1';
             const data = {

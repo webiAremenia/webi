@@ -43,6 +43,7 @@ import {InterceptorService} from './client/_services/interceptor.service';
 import {EcomerceModule} from './components/pages/ecomerce/ecomerce.module';
 import {PortfolioDetailesComponent} from './components/pages/portfolio/portfolio-detailes/portfolio-detailes.component';
 import {TechnologyComponent} from './components/pages/technology/technology.component';
+import {SharedComponentsModule, SharedModule} from './components/_modules';
 
 
 export function HttpLoaderFactory(http: HttpClient) {
@@ -52,42 +53,28 @@ export function HttpLoaderFactory(http: HttpClient) {
 @NgModule({
     declarations: [
         AppComponent,
-        TopMenuComponent,
-        HomeComponent,
         ContactComponent,
         AboutComponent,
-        FooterComponent,
-        PortfolioComponent,
         MessageComponent,
         AllPortfoliosComponent,
         ScrollSpyDirective,
-        IntroductionComponent,
-        SidebarComponent,
-        SliderComponent,
-        TeamComponent,
         AllTeamComponent,
         BlogComponent,
         BlogDetailesComponent,
-        ProcessComponent,
-        SuggestComponent,
-        MultyTeamComponent,
-        MultySuggestComponent,
         CabinetComponent,
         LoginComponent,
         TopMenuClientComponent,
-        TechnologyComponent,
         PortfolioDetailesComponent
     ],
     imports: [
-        BrowserAnimationsModule,
-        NgbModule,
+        SharedModule,
+        SharedComponentsModule,
         BrowserModule,
-        HttpClientModule,
+        BrowserAnimationsModule,
         AppRoutingModule,
-        CarouselModule,
-        FormsModule,
+        NgbModule,
+        HttpClientModule,
         ClientModule,
-        ReactiveFormsModule,
         RouterModule.forRoot([]),
         TranslateModule.forRoot({
             loader: {
@@ -95,8 +82,7 @@ export function HttpLoaderFactory(http: HttpClient) {
                 useFactory: HttpLoaderFactory,
                 deps: [HttpClient]
             }
-        }),
-        EcomerceModule
+        })
     ],
     providers: [Globals,
         {

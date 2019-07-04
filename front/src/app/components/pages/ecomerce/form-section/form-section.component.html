@@ -1,5 +1,5 @@
 
-<div class="container-fluid">
+<div class="container-fluid" [@scrollAnimation]="state">
   <div class="row">
       <div class="col-12 heading">
           <h2 [ngClass]="{'custom-h2': isCustom}">{{formSectionHeading}}</h2>
@@ -7,15 +7,15 @@
   </div>
 </div>
 
-<div class="container contact-box">
+<div class="container contact-box" [@scrollAnimation]="state">
   <div class="row">
-      <div class="col-6 contact-box-image">
+      <div class="col-lg-6 contact-box-image">
           <img class="img-fluid" src="{{url}}" alt="">
       </div>
-      <div class="col-6">
+      <div class="col-lg-6 col-12">
           <div class="row">
 
-              <form [formGroup]="myForm" class="row" (ngSubmit)="sendData()">
+              <form [formGroup]="myForm" class="row form-group-box" (ngSubmit)="sendData()">
 
                   <div class="col-12 contact-box-input">
                       <label for="name">NAME
