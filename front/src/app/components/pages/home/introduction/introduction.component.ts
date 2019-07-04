@@ -1,28 +1,23 @@
-import {AfterViewInit, Component, ElementRef, OnDestroy, OnInit, ViewChild, HostListener} from '@angular/core';
+import {
+    AfterViewInit,
+    Component,
+    ElementRef,
+    OnDestroy,
+    OnInit,
+    ViewChild,
+} from '@angular/core';
 import {SettingService} from '../../../_services/setting.service';
-import {animate, state, style, transition, trigger} from '@angular/animations';
 import {ScrollService} from '../../../_services/scroll.service';
 import {Subscription} from 'rxjs';
+import {fadeInYAnimation} from '../../../_animations';
+
 // import {$} from 'protractor';
 
 @Component({
     selector: 'app-introduction',
     templateUrl: './introduction.component.html',
     styleUrls: ['./introduction.component.scss'],
-    animations: [
-        trigger('scrollAnimation', [
-            state('show', style({
-                opacity: 1,
-                transform: 'translateY(0)'
-            })),
-            state('hide',   style({
-                opacity: 0,
-                transform: 'translateY(+100%)'
-            })),
-            transition('show => hide', animate('700ms ease-out')),
-            transition('hide => show', animate('700ms ease-in'))
-        ])
-    ]
+    animations: [fadeInYAnimation]
 })
 export class IntroductionComponent implements OnInit, AfterViewInit, OnDestroy {
     // @ts-ignore
@@ -50,7 +45,6 @@ export class IntroductionComponent implements OnInit, AfterViewInit, OnDestroy {
     ngOnInit() {
         this.title = this.settingsService.getValueByKeyLanguage('home-introduction-title', 'en');
         this.text = this.settingsService.getValueByKeyLanguage('home-introduction-text', 'en');
-
     }
 
     ngOnDestroy() {
@@ -269,7 +263,6 @@ export class IntroductionComponent implements OnInit, AfterViewInit, OnDestroy {
                     mouseBall.x = el.offsetX;
                     mouseBall.y = el.offsetY;
                 });
-
             }
         }, 0);
     }

@@ -1,11 +1,14 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, ElementRef, HostListener, OnInit} from '@angular/core';
+import {fadeInXAnimation} from '../../../_animations';
 
 @Component({
     selector: 'app-ecomerce-slider',
     templateUrl: './ecomerce-slider.component.html',
-    styleUrls: ['./ecomerce-slider.component.scss']
+    styleUrls: ['./ecomerce-slider.component.scss'],
+    animations: [fadeInXAnimation]
 })
 export class EcomerceSliderComponent implements OnInit {
+    state = 'hide';
 
     images = [
         'assets/images/test/site.jpg',
@@ -33,10 +36,17 @@ export class EcomerceSliderComponent implements OnInit {
         dotsClass: 'owl-dots'
     };
 
-    constructor() {
+    constructor(private el: ElementRef) {
     }
 
     ngOnInit() {
+    }
+
+    @HostListener('window:scroll', ['$event']) checkScroll() {
+        const scrollPosition = Math.ceil(window.pageYOffset + (document.documentElement.clientHeight / 2));
+        if (scrollPosition > this.el.nativeElement.offsetTop) {
+            this.state = 'show';
+        }
     }
 
 }

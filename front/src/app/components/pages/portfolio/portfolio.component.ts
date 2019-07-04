@@ -1,31 +1,24 @@
-import {Component, ElementRef, OnInit, OnDestroy, AfterContentChecked, HostListener} from '@angular/core';
+import {
+    Component,
+    ElementRef,
+    OnInit,
+    OnDestroy, AfterContentInit, AfterContentChecked, OnChanges,
+} from '@angular/core';
 import {PortfolioService} from '../../_services/portfolio.service';
 import {Portfolio} from '../../_models/portfolio';
 import {Globals} from '../../../app.globals';
 import {SettingService} from '../../_services/setting.service';
 import {Subscription} from 'rxjs';
 import {ScrollService} from '../../_services/scroll.service';
-import { trigger, state, style, transition, animate } from '@angular/animations';
+
+import {fadeInOpacityAnimation} from '../../_animations';
 
 
 @Component({
     selector: 'app-portfolio',
     templateUrl: './portfolio.component.html',
     styleUrls: ['./portfolio.component.css'],
-    animations: [
-        trigger('scrollAnimation', [
-            state('show', style({
-                opacity: 1,
-                // transform: 'translateZ(0)'
-            })),
-            state('hide', style({
-                opacity: 0,
-                // transform: 'translate(-100%)'
-            })),
-            transition('show => hide', animate('700ms ease-out')),
-            transition('hide => show', animate('700ms ease-in'))
-        ])
-    ]
+    animations: [fadeInOpacityAnimation]
 })
 export class PortfolioComponent implements OnInit, OnDestroy {
     state = 'hide';
@@ -65,25 +58,48 @@ export class PortfolioComponent implements OnInit, OnDestroy {
         this.getPortfolio();
         this.title = this.settingsService.getValueByKeyLanguage('home-portfolio-title', 'en');
         this.text = this.settingsService.getValueByKeyLanguage('home-portfolio-text', 'en');
+    }
 
+    ready() {
+        console.log(this.componentHeight());
     }
 
     ngOnDestroy() {
-        this.stateSubscription.unsubscribe();
+            this.stateSubscription.unsubscribe();
     }
 
     getPortfolio() {
-        this.portfolioService.getAll().subscribe(
-            data => {
+        const a = async () => {
+            try {
+                const data = await this.portfolioService.getAll().toPromise();
                 this.portfolio = data;
+                // console.log(this.portfolio);
+                await this.loadPortfolio();
+                await this.loadPortfolioId();
+                await this.loadPortfolioHover();
                 this.done = true;
-                this.loadPortfolio();
-                this.loadPortfolioId();
-                this.loadPortfolioHover();
-                console.log(data);
-            },
-            err => console.log(err)
-        );
+            } catch (e) {
+                console.log(e);
+            }
+        };
+        a();
+
+
+        // const a = await this.portfolioService.getAll().subscribe(
+        //     data => {
+        //         this.portfolio = data;
+        //         this.done = true;
+        //         this.loadPortfolio();
+        //         this.loadPortfolioId();
+        //         this.loadPortfolioHover();
+        //         console.log(data);
+        //     },
+        //     err => console.log(err)
+        // );
+
+        // console.log(2)
+
+
     }
 
     loadPortfolio() {
@@ -96,7 +112,6 @@ export class PortfolioComponent implements OnInit, OnDestroy {
                 i = 0;
             }
         }
-
     }
 
     loadPortfolioId() {
@@ -124,5 +139,4 @@ export class PortfolioComponent implements OnInit, OnDestroy {
     }
 
 }
-
 

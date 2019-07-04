@@ -1,35 +1,20 @@
-import {AfterViewInit, Component, ElementRef, OnDestroy, OnInit, ViewChild, HostListener} from '@angular/core';
+import {Component, ElementRef, OnDestroy, OnInit, ViewChild} from '@angular/core';
 import {TeamService} from '../../../_services/team.service';
 import {Team} from '../../../_models/team';
 import {SettingService} from '../../../_services/setting.service';
 import {Globals} from '../../../../app.globals';
-import {animate, state, style, transition, trigger} from '@angular/animations';
 import {Subscription} from 'rxjs';
-import {Scroll} from '@angular/router';
 import {ScrollService} from '../../../_services/scroll.service';
+import {fadeInSacleAnimation} from '../../../_animations';
 
 @Component({
     selector: 'app-team',
     templateUrl: './team.component.html',
     styleUrls: ['./team.component.css'],
-    animations: [
-        trigger('scrollAnimation', [
-            state('show', style({
-                transform: 'scale(1)'
-                // opacity: 1,
-                // transform: 'translateX(0)'
-            })),
-            state('hide', style({
-                transform: 'scale(0)'
-                // opacity: 0,
-                // transform: 'translateX(-100%)'
-            })),
-            transition('show => hide', animate('700ms ease-out')),
-            transition('hide => show', animate('700ms ease-in'))
-        ])
-    ]
+    animations: [fadeInSacleAnimation]
+
 })
-export class TeamComponent implements OnInit, AfterViewInit, OnDestroy {
+export class TeamComponent implements OnInit, OnDestroy {
     state = 'hide';
     stateSubscription: Subscription;
 
@@ -68,11 +53,7 @@ export class TeamComponent implements OnInit, AfterViewInit, OnDestroy {
         this.getTeam();
         this.title = this.settingsService.getValueByKeyLanguage('home-team-title', 'en');
         this.text = this.settingsService.getValueByKeyLanguage('home-team-text', 'en');
-        if (window.innerWidth < 768) {
-            this.visible = false;
-        } else {
-            this.visible = true;
-        }
+        this.visible = window.innerWidth >= 768; // Changed
     }
 
     ngOnDestroy() {
@@ -93,9 +74,6 @@ export class TeamComponent implements OnInit, AfterViewInit, OnDestroy {
         this.team = this.teamService.allTeem || this.teamService.getAll().subscribe();
     }
 
-    ngAfterViewInit(): void {
-
-    }
 }
 
 

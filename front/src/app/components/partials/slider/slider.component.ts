@@ -2,27 +2,14 @@ import {Component, OnInit, ElementRef, OnDestroy, HostListener} from '@angular/c
 import {Card} from '../../_models/card';
 import {CardService} from '../../_services/card.service';
 import {Subscription} from 'rxjs';
-import {animate, state, style, transition, trigger} from '@angular/animations';
 import {ScrollService} from '../../_services/scroll.service';
+import {fadeInYAnimation} from '../../_animations';
 
 @Component({
     selector: 'app-slider',
     templateUrl: './slider.component.html',
     styleUrls: ['./slider.component.scss'],
-    animations: [
-        trigger('scrollAnimation', [
-            state('show', style({
-                opacity: 1,
-                transform: 'translateY(0)'
-            })),
-            state('hide',   style({
-                opacity: 0,
-                transform: 'translateY(-100%)'
-            })),
-            transition('show => hide', animate('400ms ease-out')),
-            transition('hide => show', animate('700ms ease-in'))
-        ])
-    ]
+    animations: [fadeInYAnimation]
 })
 export class SliderComponent implements OnInit, OnDestroy {
 
@@ -79,6 +66,19 @@ export class SliderComponent implements OnInit, OnDestroy {
     componentHeight() {
         return this.el.nativeElement.offsetTop;
     }
+
+    // async initCards() {
+    //     try {
+    //         const d = await this.service.getAll().toPromise();
+    //         this.cards = d;
+    //         this.done = true;
+    //         const slider = true;
+    //         this.scrollService.setComponentHeight({slider});
+    //     } catch (e) {
+    //         console.log(e);
+    //     }
+    //
+    // }
 
     initCards() {
         this.service.getAll().subscribe(

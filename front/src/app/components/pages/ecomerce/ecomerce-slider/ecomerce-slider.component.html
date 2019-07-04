@@ -1,4 +1,4 @@
-<div class="container-fluid">
+<div class="container-fluid" [@scrollAnimation]="state">
     <div class="row">
         <div class="col-12 slider-heading heading">
             <h2>Some Examples</h2>
@@ -12,7 +12,7 @@
     </div>
 </div>
 
-<div class="container slider-container">
+<div class="container slider-container" [@scrollAnimation]="state">
     <div class="row">
         <div class="col-12 slider-container-images">
             <owl-carousel-o [options]="SliderOptions" class="slider_owl">

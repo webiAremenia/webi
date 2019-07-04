@@ -45,3 +45,9 @@
         background-color: #3A66AF !important;
     }
 }
+
+@media (max-width: 768px) {
+    .card-wrapper {
+        margin-bottom: 24px;
+    }
+}

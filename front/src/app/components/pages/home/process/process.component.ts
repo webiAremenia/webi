@@ -1,27 +1,14 @@
 import {Component, ElementRef, OnDestroy, OnInit, HostListener} from '@angular/core';
 import {SettingService} from '../../../_services/setting.service';
-import {animate, state, style, transition, trigger} from '@angular/animations';
 import {Subscription} from 'rxjs';
 import {ScrollService} from '../../../_services/scroll.service';
+import {fadeInXAnimation} from '../../../_animations';
 
 @Component({
     selector: 'app-process',
     templateUrl: './process.component.html',
     styleUrls: ['./process.component.scss'],
-    animations: [
-        trigger('scrollAnimation', [
-            state('show', style({
-                // opacity: 1,
-                transform: 'translateX(0)'
-            })),
-            state('hide', style({
-                // opacity: 0,
-                transform: 'translateX(-100%)'
-            })),
-            transition('show => hide', animate('700ms ease-out')),
-            transition('hide => show', animate('700ms ease-in'))
-        ])
-    ]
+    animations: [fadeInXAnimation]
 })
 export class ProcessComponent implements OnInit, OnDestroy {
     title;

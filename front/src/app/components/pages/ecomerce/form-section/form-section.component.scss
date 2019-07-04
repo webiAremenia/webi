@@ -11,7 +11,7 @@
     margin-bottom: 82px;
 
     .contact-box-input {
-        width: 455px;
+        //width: 455px;
 
         label {
             float: left;
@@ -58,3 +58,23 @@
     font-style: italic;
     font-size: 14px;
 }
+@media (max-width: 991px) {
+    .contact-box-image {
+        display: none;
+    }
+}
+@media (max-width: 576px) {
+    .contact-box {
+        max-width: 320px;
+    }
+}
+@media (min-width: 576px) and (max-width: 991px){
+    .form-group-box {
+        background-image: url('../../../../../assets/images/test/undraw_businessman_97x4.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+    }
+}
+
+

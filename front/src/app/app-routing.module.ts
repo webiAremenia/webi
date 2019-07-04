@@ -2,7 +2,6 @@ import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 
 
-import {HomeComponent} from './components/pages/home/home.component';
 import {AllTeamComponent} from './components/pages/home/team/all-team/all-team.component';
 import {BlogComponent} from './components/pages/blog/blog.component';
 import {BlogDetailesComponent} from './components/pages/blog/blog-detailes/blog-detailes.component';
@@ -11,7 +10,8 @@ import {PortfolioDetailesComponent} from './components/pages/portfolio/portfolio
 
 
 const routes: Routes = [
-    {path: '', component: HomeComponent, pathMatch: 'full'},
+    // {path: '', component: HomeComponent, pathMatch: 'full'},
+    {path: '', loadChildren: () => import('./components/pages/home/home.module').then(m => m.HomeModule)},
     {path: 'allTeam', component: AllTeamComponent},
     {path: 'blog', component: BlogComponent, pathMatch: 'full'},
     {path: 'allPortfolios', component: AllPortfoliosComponent, pathMatch: 'full'},

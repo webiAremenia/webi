@@ -6,9 +6,16 @@ import {Subject} from 'rxjs';
 })
 export class ScrollService {
     scrollAnimation = new Subject<any>();
+    data = null;
 
     constructor() {
     }
+
+    setComponentsHeight(e) {
+        this.data = e;
+    }
+
+    // // // Scroll Animation // // //
 
     getScrollAnimation() {
         return this.scrollAnimation.asObservable();
