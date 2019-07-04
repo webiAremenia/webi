@@ -1,6 +1,6 @@
 import {
     Component,
-    HostListener,
+    HostListener, OnDestroy,
     OnInit,
     ViewChild
 } from '@angular/core';
@@ -18,7 +18,7 @@ import {TechnologyComponent} from '../technology/technology.component';
     templateUrl: './home.component.html',
     styleUrls: ['./home.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, OnDestroy {
     done = false;
     currentSection = 'section1';
     introductionComponentHeight: number;
@@ -148,5 +148,9 @@ export class HomeComponent implements OnInit {
             };
             this.scrollService.setScrollAnimation(data);
         }
+    }
+
+    ngOnDestroy(): void {
+        window.scrollTo(0, window.innerWidth < 1000 ? 100 : 200);
     }
 }

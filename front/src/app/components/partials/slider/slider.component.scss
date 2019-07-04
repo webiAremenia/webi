@@ -93,6 +93,27 @@ a img {
   }
 }
 
+@media (max-width: 1350px) {
+  .one, .two, .three, .four {
+    padding: 5px;
+    height: 210px;
+    width: 100%;
+  }
+  h5 {
+    font-size: 18px;
+    font-weight: 600;
+  }
+  .one p, .two p, .three p, .four p {
+    font-size: 12px;
+    margin-bottom:0;
+  }
+
+  button {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+  }
+}
 
 
 
@@ -111,7 +132,7 @@ a img {
     font-weight: 600;
   }
   .one p, .two p, .three p, .four p {
-    font-size: 12px;
+    font-size: 13px;
       margin-bottom:0;
   }
   button {
@@ -122,25 +143,4 @@ a img {
       bottom: 13px;
       opacity: 1;
   }
-}
-@media (max-width: 1350px) {
-    .one, .two, .three, .four {
-        padding: 5px;
-        height: 210px;
-        width: 100%;
-    }
-    h5 {
-        font-size: 18px;
-        font-weight: 600;
-    }
-    .one p, .two p, .three p, .four p {
-        font-size: 12px;
-        margin-bottom:0;
-    }
-
-    button {
-        position: absolute;
-        bottom: 20px;
-        right: 20px;
-    }
 }

@@ -32,19 +32,22 @@ export class PortfolioDetailesComponent implements OnInit {
         this.routeSubscription = this.route.params.subscribe(params => this.id = params.id);
         this.getPortfolio();
         this.onVisible();
-
-
     }
 
     getPortfolio() {
-        this.portfolioService.getAll().subscribe(
-            data => {
-                this.portfolio = data;
-                this.done = true;
-                this.getFourPortfolio();
-            },
-            err => console.log(err)
-        );
+        if (this.portfolioService.allPortfolio) {
+            this.portfolio = this.portfolioService.allPortfolio;
+            this.done = true;
+        } else {
+            this.portfolioService.getAll().subscribe(
+                data => {
+                    this.portfolio = data;
+                    this.done = true;
+                    this.getFourPortfolio();
+                },
+                err => console.log(err)
+            );
+        }
     }
 
     getFourPortfolio() {
@@ -62,6 +65,7 @@ export class PortfolioDetailesComponent implements OnInit {
     onVisible() {
         this.portfolioService.getOne(this.id).subscribe(
             d => {
+                window.scrollTo(0, window.innerWidth < 1000 ? 100 : 200);
                 this.singlPortfolio = d;
             }
         );

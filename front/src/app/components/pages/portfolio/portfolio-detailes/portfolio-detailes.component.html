@@ -1,9 +1,9 @@
 <app-top-menu></app-top-menu>
 
 <div class="container-fluid one">
-    <div class="row sectionOne" *ngIf="singlPortfolio != undefined">
+    <div class="row sectionOne" *ngIf="singlPortfolio">
 
-        <div class="col-12 col-sm-12 col-md-5 offset-md-1 col-lg-5 offset-lg-1 pr-5 box">
+        <div class="col-12 col-sm-12 col-md-5 offset-md-1 col-lg-5 offset-lg-1 pr-md-5 box">
             <h5 class="title">{{singlPortfolio.title.en}}</h5>
             <p [innerHTML]="singlPortfolio.description.en"></p>
         </div>
@@ -17,7 +17,7 @@
 
 
 
-<div class="container-fluid two" *ngIf="arrPort != undefined">
+<div class="container-fluid two" *ngIf="arrPort">
     <div class="row">
         <div class="col-12 col-md-11 offset-md-1 col-lg-11 offset-lg-1">
             <div class="row">
