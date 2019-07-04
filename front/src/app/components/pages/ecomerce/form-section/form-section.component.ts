@@ -18,6 +18,7 @@ export class FormSectionComponent implements OnInit {
     emailPattern = '^[a-z0-9._%+-]{5,15}@[a-z0-9.-]+\.[a-z]{2,4}$';
 
     @Input() formSectionHeading: string;
+    @Input() visible: string;
 
     constructor( private fb: FormBuilder, private contactService: ContactService, private el: ElementRef) {
         this.myForm = fb.group({
@@ -33,6 +34,7 @@ export class FormSectionComponent implements OnInit {
             'Our expertise is in setting up, customizing and developing your brand new or ongoing Shopify eCommerce shop') {
             this.isCustom = true;
         }
+        this.state = this.visible || 'hide';
     }
 
     @HostListener('window:scroll', ['$event']) checkScroll() {

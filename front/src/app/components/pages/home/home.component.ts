@@ -1,4 +1,5 @@
 import {
+    AfterViewChecked, AfterViewInit,
     Component,
     HostListener, OnDestroy,
     OnInit,
@@ -57,8 +58,10 @@ export class HomeComponent implements OnInit, OnDestroy {
 
     ngOnInit() {
 
+        console.log(1);
         if (this.scrollService.data !== null) {
             this.done = true;
+            console.log(2);
 
             this.introductionComponentHeight = this.scrollService.data.introduction;
             this.sliderComponentHeight = this.scrollService.data.slider;
@@ -71,7 +74,6 @@ export class HomeComponent implements OnInit, OnDestroy {
 
         window.onload = () => {
             this.done = true;
-
             if (this.scrollService.data === null) {
                 this.introductionComponentHeight = this.introductionComponent.componentHeight();
                 this.sliderComponentHeight = this.sliderComponent.componentHeight();
