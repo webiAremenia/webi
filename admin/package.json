@@ -32,7 +32,7 @@
     "core-js": "^2.5.4",
     "flag-icon-css": "^3.3.0",
     "font-awesome": "^4.7.0",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "jwt-decode": "^2.2.0",
     "ngx-color-picker": "^8.0.1",
     "ngx-tree-dnd": "^2.6.0",
